@@ -49,7 +49,7 @@
     <!--     Issue managements and mailing lists.                    -->
     <!-- =========================================================== -->
     <scm>
-        <url>scm:hg:http://javaforge.com/hg/unitsofmeasure</url>
+        <url>http://unitsofmeasure.googlecode.com/svn/trunk/</url>
     </scm>
 
     <issueManagement>
