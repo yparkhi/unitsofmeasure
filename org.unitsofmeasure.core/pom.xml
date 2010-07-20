@@ -25,7 +25,7 @@
     <groupId>org.unitsofmeasure</groupId>
     <artifactId>org.unitsofmeasure.core</artifactId>
     <packaging>jar</packaging>
-    <version>0.5.1</version>
+    <version>0.5.2.SNAPSHOT</version>
     <name>Units of Measure API</name>
 	<url>http://www.unitsofmeasure.org</url>
 	<organization>
