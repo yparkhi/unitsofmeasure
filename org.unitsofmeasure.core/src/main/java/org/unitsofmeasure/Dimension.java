@@ -1,8 +1,8 @@
 /**
- *  The Units of Measure API, UCUM codes, UCUM table (regardless of format),
- *  and UCUM Specification are copyright © 1999-2010, Regenstrief Institute, Inc.
- *  and the Unified Codes for Units of Measures (UCUM) Organization.
- *  All rights reserved.
+ * The Units of Measure API, UCUM codes, UCUM table (regardless of format),
+ * and UCUM Specification are copyright © 1999-2010, 
+ * Regenstrief Institute, Inc. and the Unified Codes for Units of Measures
+ * (UCUM) Organization. All rights reserved.
  *
  * See TermsOfUse for details.
  */

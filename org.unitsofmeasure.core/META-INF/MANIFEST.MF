@@ -9,4 +9,4 @@ Import-Package: org.osgi.framework;version="1.3.0",
  org.osgi.util.tracker;version="1.3.1"
 Export-Package: org.unitsofmeasure,
  org.unitsofmeasure.quantity;uses:="org.unitsofmeasure",
- org.unitsofmeasure.service;uses:="org.unitsofmeasure"
+ org.unitsofmeasure.util

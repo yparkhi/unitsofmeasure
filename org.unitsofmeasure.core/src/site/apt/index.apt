@@ -6,18 +6,12 @@
 ~~
 ~~ See TermsOfUse for details.
 ~~
-~~  See TermsOfUse.txt for Copyright Notice and License
-~~
-~~  See LICENSE.txt for full License
-~~
-~~  See LICENSE.txt for full License
-~~
                                     ------
                                     Index
                                     ------
                                     Werner Keil
                                     ------
-                                     24 May 2010
+                                     24 July 2010
 
 [./images/logo90.png] Logo
 
@@ -40,7 +34,7 @@ Gunther Schadow, Clement J. !McDonald
 
   The Unified Code for Units of Measure is inspired by and heavily based on ISO 2955-1983, ANSI X3.50-1986, and HL7's extensions called ``ISO+''. The respective ISO and ANSI standards are both entitled Representation of [...] units in systems with limited character sets where ISO 2955 refers to SI and other units provided by ISO 1000-1981, while ANSI X3.50 extends ISO 2955 to include U.S. customary units. Because these standards carry the restriction of ``limited character sets'' in their names they seem to be of less value today where graphical user interface and laser printers are in wide-spread use, which is why the european standard ENV 12435 in its clause 7.3 declares ISO 2955 obsolete.
 
-  ENV 12435 is dedicated exclusively to the communication of measurements between humans in display and print, and does not provide codes that can be used in communication between systems. It does not even provide a specification that would allow communication of units from one system to the screen or printer of another system. The issue about displaying units in the common style defined by the 9th Conférence Générale des Poids et Mesures (CGPM) in 1947 is not just the character set. Although The Unicode Standard and its predecessor ISO/IEC 10646 is the richest character set ever it is still not enough to specify the presentation of units because there are important typographical details such as superscripts, subscripts, roman and italics.^1^
+  ENV 12435 is dedicated exclusively to the communication of measurements between humans in display and print, and does not provide codes that can be used in communication between systems. It does not even provide a specification that would allow communication of units from one system to the screen or printer of another system. The issue about displaying units in the common style defined by the 9th Conférence Générale des Poids et Mesures (CGPM) in 1947 is not just the character set. Although The Unicode Standard and its predecessor ISO/IEC 10646 is the richest character set ever it is still not enough to specify the presentation of units because there are important typographical details such as superscripts, subscripts, roman and italics.
 
 ~~  Paragraph 1, line 1.
 ~~  Paragraph 1, line 2.
