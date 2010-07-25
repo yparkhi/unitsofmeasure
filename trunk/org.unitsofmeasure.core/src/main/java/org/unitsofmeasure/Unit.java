@@ -1,8 +1,8 @@
 /**
- *  The Units of Measure API, UCUM codes, UCUM table (regardless of format),
- *  and UCUM Specification are copyright © 1999-2010, Regenstrief Institute, Inc.
- *  and the Unified Codes for Units of Measures (UCUM) Organization.
- *  All rights reserved.
+ * The Units of Measure API, UCUM codes, UCUM table (regardless of format),
+ * and UCUM Specification are copyright © 1999-2010,
+ * Regenstrief Institute, Inc. and the Unified Codes for Units of Measures
+ * (UCUM) Organization. All rights reserved.
  *
  * See TermsOfUse for details.
  */
@@ -50,7 +50,7 @@ import java.util.Map;
  * @author <a href="mailto:steve@unidata.ucar.edu">Steve Emmerson</a>
  * @author <a href="mailto:desruisseaux@users.sourceforge.net">Martin
  *         Desruisseaux</a>
- * @author  <a href="mailto:jsr275@catmedia.us">Werner Keil</a>
+ * @author <a href="mailto:jsr275@catmedia.us">Werner Keil</a>
  * @see <a href="http://en.wikipedia.org/wiki/Units_of_measurement"> Wikipedia:
  *      Units of measurement</a>
  * @version 1.1 ($Revision$), $Date$
@@ -63,8 +63,8 @@ public interface Unit<Q extends Quantity<Q>> {
     /**
      * Returns the name of this unit.
      * 
-     * @return this unit name or <code>null</code> if this unit has no
-     *         specific symbol associated with (e.g. product of units).
+     * @return this unit name or <code>null</code> if this unit has no specific
+     *         symbol associated with (e.g. product of units).
      */
     String getName();
 
@@ -75,7 +75,7 @@ public interface Unit<Q extends Quantity<Q>> {
      *         specific symbol associated with (e.g. product of units).
      */
     String getSymbol();
-    
+
     /**
      * Returns the simple units and their exponent whose product is this unit or
      * <code>null</code> if this unit is a simple unit (not a product of
