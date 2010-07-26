@@ -15,7 +15,8 @@ package org.unitsofmeasure;
  * metric units}.
  * 
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
- * @version 1.1 ($Revision$), $Date$
+ * @author <a href="mailto:jsr275@catmedia.us">Werner Keil</a>
+ * @version 1.1.1 ($Revision$), $Date$
  */
 public class UnconvertibleException extends RuntimeException {
 
@@ -31,5 +32,16 @@ public class UnconvertibleException extends RuntimeException {
      */
     public UnconvertibleException(String message) {
 	super(message);
+    }
+
+    /**
+     * Constructs a <code>UnconvertibleException</code> with the specified
+     * detail message.
+     * 
+     * @param cause
+     *            the original exception.
+     */
+    public UnconvertibleException(Throwable cause) {
+	super(cause);
     }
 }
