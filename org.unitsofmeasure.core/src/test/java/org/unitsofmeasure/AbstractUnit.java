@@ -21,8 +21,9 @@ public abstract class AbstractUnit<Q extends Quantity<Q>> implements Unit<Q> {
 
     static final Unit<Dimensionless> ONE = null;
 
-    // public static final Unit<Mass> METRIC_MASS = QuantityFactory.getInstance(
-    // Mass.class).getMetricUnit();
+    public static final Unit<Mass> METRIC_MASS = QuantityFactory.getInstance(
+	    Mass.class).getMetricUnit();
+
     String symbol; // e.g. "A"
     String name; // e.g. "Angstrom"
     double multFactor; // e.g. 1E-10
