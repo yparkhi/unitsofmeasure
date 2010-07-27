@@ -42,20 +42,17 @@ public abstract class AbstractUnit<Q extends Quantity<Q>> implements Unit<Q> {
 	this(name, 0);
     }
 
-    @Override
     public Unit<Q> add(double offset) {
 	// TODO Auto-generated method stub
 	return null;
     }
 
-    @Override
     public Unit<?> alternate(String symbol) {
 	// TODO Auto-generated method stub
 	return null;
     }
 
     @SuppressWarnings("unchecked")
-    @Override
     public <T extends Quantity<T>> Unit<T> asType(Class<T> type)
 	    throws ClassCastException {
 	// Unit<T> metricUnit =
@@ -68,94 +65,78 @@ public abstract class AbstractUnit<Q extends Quantity<Q>> implements Unit<Q> {
 	return null;
     }
 
-    @Override
     public Unit<Q> divide(double divisor) {
 	// TODO Auto-generated method stub
 	return null;
     }
 
-    @Override
     public Unit<?> divide(Unit<?> that) {
 	// TODO Auto-generated method stub
 	return null;
     }
 
-    @Override
     public UnitConverter getConverterTo(Unit<Q> that)
 	    throws UnconvertibleException {
 	// TODO Auto-generated method stub
 	return null;
     }
 
-    @Override
     public UnitConverter getConverterToAny(Unit<?> that)
 	    throws IncommensurableException, UnconvertibleException {
 	// TODO Auto-generated method stub
 	return null;
     }
 
-    @Override
     public Dimension getDimension() {
 	// TODO Auto-generated method stub
 	return null;
     }
 
-    @Override
     public String getName() {
 	return name;
     }
 
-    @Override
     public Map<Unit<?>, Integer> getProductUnits() {
 	// TODO Auto-generated method stub
 	return null;
     }
 
-    @Override
     public String getSymbol() {
 	return symbol;
     }
 
-    @Override
     public Unit<?> inverse() {
 	// TODO Auto-generated method stub
 	return null;
     }
 
-    @Override
     public boolean isCompatible(Unit<?> that) {
 	// TODO Auto-generated method stub
 	return false;
     }
 
-    @Override
     public Unit<Q> multiply(double factor) {
 	// TODO Auto-generated method stub
 	return null;
     }
 
-    @Override
     public Unit<?> multiply(Unit<?> that) {
 	// TODO Auto-generated method stub
 	return null;
     }
 
-    @Override
     public Unit<?> pow(int n) {
 	// TODO Auto-generated method stub
 	return null;
     }
 
-    @Override
     public Unit<?> root(int n) {
 	// TODO Auto-generated method stub
 	return null;
     }
 
-    @Override
     public abstract Unit<Q> toMetric();
 
-    @Override
     public Unit<Q> transform(UnitConverter operation) {
 	// TODO Auto-generated method stub
 	return null;
