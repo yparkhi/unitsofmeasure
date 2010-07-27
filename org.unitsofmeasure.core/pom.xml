@@ -84,9 +84,9 @@
 		<developer>
 			<name>Werner Keil</name>
 			<id>werner.keil</id>
-			<organization>Creative Arts &amp; Technologies</organization>
-			<organizationUrl>http://www.catmedia.us</organizationUrl>
-			<email>jsr275@catmedia.us</email>
+			<organization>emergn</organization>
+			<organizationUrl>http://www.emergn.com</organizationUrl>
+			<email>werner@emergn.com</email>
 			<timezone>0</timezone>
 			<roles>
 				<role>Architect</role>
@@ -217,11 +217,12 @@
 		</contributor>
 		<contributor>
 			<name>Brian Frank</name>
-			<organization>Tridium, Inc</organization>
-			<email>bfrank@tridium.com</email>
+			<organization>SkyFoundry</organization>
+			<email>brian@skyfoundry.com</email>
 			<roles>
 				<role>EG Member (Emeritus)</role>
 				<role>Java Developer</role>
+				<role>Fantom Lead</role>
 			</roles>
 		</contributor>
 		<contributor>
