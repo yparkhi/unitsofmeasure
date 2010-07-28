@@ -9,11 +9,15 @@
 package org.unitsofmeasure.util;
 
 /**
- * A static helper class, checking e.g. if some tests require optional console output
- * XXX this could be done using a logging framework eventually
- *
- * @version $Revision: 189 $, $Date: 2010-02-24 14:10:17 +0100 (Mi, 24 Feb 2010) $
- * @author $Author: dautelle $
+ * A static helper class, checking e.g. if some tests require optional console
+ * output XXX this could be done using a logging framework eventually
+ * 
+ * It prints a given object to the console only if the system property
+ * <code>-DtestConsoleOutput=true</code> was set.
+ * 
+ * @version $Revision$, $Date: 2010-02-24 14:10:17 +0100 (Mi, 24 Feb 2010)
+ *          $
+ * @author $Author$
  */
 public abstract class TestUtil {
     private static final String TEST_CONSOLE_OUTPUT = "testConsoleOutput";
