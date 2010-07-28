@@ -106,10 +106,10 @@
 			</roles>
 		</developer>
 		<developer>
-			<id>duck.asteroid</id>
+			<id>christopher.senior</id>
 			<name>Chris Senior</name>
-			<organization>Teradyne</organization>
-			<email>chris.senior@teradyne.com</email>
+			<organization>Snap-on Inc.</organization>
+			<email>christopher.senior@gmail.com</email>
 			<roles>
 				<role>Java Developer</role>
 			</roles>
