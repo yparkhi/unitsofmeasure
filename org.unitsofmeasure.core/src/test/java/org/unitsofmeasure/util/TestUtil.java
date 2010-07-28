@@ -15,8 +15,7 @@ package org.unitsofmeasure.util;
  * It prints a given object to the console only if the system property
  * <code>-DtestConsoleOutput=true</code> was set.
  * 
- * @version $Revision$, $Date: 2010-02-24 14:10:17 +0100 (Mi, 24 Feb 2010)
- *          $
+ * @version $Revision$, $Date$
  * @author $Author$
  */
 public abstract class TestUtil {
