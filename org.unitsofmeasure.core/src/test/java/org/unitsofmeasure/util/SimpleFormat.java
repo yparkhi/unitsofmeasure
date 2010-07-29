@@ -102,72 +102,6 @@ public class SimpleFormat extends BaseFormat {
 		String mapSymbol = symbolMap.get(unit);
 		if (mapSymbol != null) {
 			symbol = mapSymbol;
-			// } else if (unit instanceof ProductUnit<?>) {
-			// ProductUnit<?> productUnit = (ProductUnit<?>) unit;
-			// StringBuffer app = new StringBuffer();
-			// for (int i = 0; i < productUnit.getUnitCount(); i++) {
-			// if (productUnit.getUnitRoot(i) != 1) {
-			// throw new IllegalArgumentException(
-			//			    "Unable to format units in UCUM (fractional powers not supported)"); //$NON-NLS-1$
-			// }
-			// StringBuffer temp = new StringBuffer();
-			// temp = (StringBuffer) format(productUnit.getUnit(i), temp);
-			//		if ((temp.indexOf(".") >= 0) || (temp.indexOf("/") >= 0)) { //$NON-NLS-1$ //$NON-NLS-2$
-			// temp.insert(0, '(');
-			// temp.append(')');
-			// }
-			// int pow = productUnit.getUnitPow(i);
-			// if (i > 0) {
-			// if (pow >= 0) {
-			// app.append('.');
-			// } else if (i < (productUnit.getUnitCount() - 1)) {
-			// app.append('.');
-			// } else {
-			// app.append('/');
-			// pow = -pow;
-			// }
-			// } else if (pow < 0) {
-			// app.append('/');
-			// pow = -pow;
-			// }
-			// app.append(temp);
-			// if (pow != 1) {
-			// app.append(Integer.toString(pow));
-			// }
-			// }
-			// symbol = app;
-			// } else if ((unit instanceof TransformedUnit<?>)
-			// || unit.equals(MetricSystem.KILOGRAM)) {
-			// StringBuffer temp = new StringBuffer();
-			// UnitConverter converter;
-			// boolean printSeparator;
-			// if (unit.equals(MetricSystem.KILOGRAM)) {
-			// // A special case because KILOGRAM is a BaseUnit instead of
-			// // a transformed unit, for compatability with existing SI
-			// // unit system.
-			// temp = format(UCUM.GRAM, temp, new FieldPosition(0));
-			// converter = Prefix.KILO.getConverter();
-			// printSeparator = true;
-			// } else {
-			// TransformedUnit<?> transformedUnit = (TransformedUnit<?>) unit;
-			// Unit<?> parentUnits = transformedUnit.getParentUnit();
-			// converter = transformedUnit.toParentUnit();
-			// if (parentUnits.equals(MetricSystem.KILOGRAM)) {
-			// // More special-case hackery to work around gram/kilogram
-			// // incosistency
-			// parentUnits = GRAM;
-			// converter = converter.concatenate(Prefix.KILO
-			// .getConverter());
-			// }
-			// temp = format(parentUnits, temp, new FieldPosition(0));
-			// printSeparator = !parentUnits.equals(Unit.ONE);
-			// }
-			// formatConverter(converter, printSeparator, temp);
-			// symbol = temp;
-			// } else if (unit instanceof BaseUnit<?>) {
-			// symbol = ((BaseUnit<?>) unit).getSymbol();
-			// } else if (unit instanceof AlternateUnit<?>) {
-			// symbol = ((AlternateUnit<?>) unit).getSymbol();
 		} else {
 			throw new IllegalArgumentException(
 					"Symbol mapping for unit of type " + //$NON-NLS-1$
@@ -216,48 +150,6 @@ public class SimpleFormat extends BaseFormat {
 		String prefix = "";
 		if ((prefix != null) && (!unitIsExpression)) {
 			buffer.insert(0, symbolMap.get(prefix));
-			// } else if (converter == UnitConverter.IDENTITY) {
-			// // do nothing
-			// } else if (converter instanceof MultiplyConverter) {
-			// if (unitIsExpression) {
-			// buffer.insert(0, '(');
-			// buffer.append(')');
-			// }
-			// MultiplyConverter multiplyConverter = (MultiplyConverter)
-			// converter;
-			// double factor = multiplyConverter.getFactor();
-			// long lFactor = (long) factor;
-			// if ((lFactor != factor) || (lFactor < -9007199254740992L)
-			// || (lFactor > 9007199254740992L)) {
-			// throw new IllegalArgumentException(
-			//			"Only integer factors are supported in UCUM"); //$NON-NLS-1$
-			// }
-			// if (continued) {
-			// buffer.append('.');
-			// }
-			// buffer.append(lFactor);
-			// } else if (converter instanceof RationalConverter) {
-			// if (unitIsExpression) {
-			// buffer.insert(0, '(');
-			// buffer.append(')');
-			// }
-			// RationalConverter rationalConverter = (RationalConverter)
-			// converter;
-			// if (!rationalConverter.getDividend().equals(BigInteger.ONE)) {
-			// if (continued) {
-			// buffer.append('.');
-			// }
-			// buffer.append(rationalConverter.getDividend());
-			// }
-			// if (!rationalConverter.getDivisor().equals(BigInteger.ONE)) {
-			// buffer.append('/');
-			// buffer.append(rationalConverter.getDivisor());
-			// }
-			// } else if (converter instanceof UnitConverter.Compound) {
-			// UnitConverter.Compound compound = (UnitConverter.Compound)
-			// converter;
-			// formatConverter(compound.getLeft(), true, buffer);
-			// // formatConverter(compound.getRight(), true, buffer);
 		} else {
 			throw new IllegalArgumentException(
 					"Unable to format units (unsupported UnitConverter " //$NON-NLS-1$
@@ -265,74 +157,8 @@ public class SimpleFormat extends BaseFormat {
 		}
 	}
 
-	@Override
 	public Unit<?> parse(CharSequence csq, ParsePosition cursor)
 			throws IllegalArgumentException {
 	return AbstractUnit.METRIC_MASS;
 	}
-
-	/**
-	 * The Parsing format outputs formats and parses units according to the
-	 * "c/s" or "c/i" column in the UCUM standard, depending on which SymbolMap
-	 * is passed to its constructor.
-	 */
-	// private static class Parsing extends SimpleFormat {
-	//
-	// /**
-	// *
-	// */
-	// private static final long serialVersionUID = -922531801940132715L;
-	//
-	// private static final SymbolMapImpl CASE_SENSITIVE_SYMBOLS = new
-	// SymbolMapImpl(
-	//		ResourceBundle.getBundle(BUNDLE_BASE + "_CS")); //$NON-NLS-1$
-	// private static final SymbolMapImpl CASE_INSENSITIVE_SYMBOLS = new
-	// SymbolMapImpl(
-	//		ResourceBundle.getBundle(BUNDLE_BASE + "_CI")); //$NON-NLS-1$
-	// private static final Parsing DEFAULT_CS = new Parsing(
-	// CASE_SENSITIVE_SYMBOLS, true);
-	// private static final Parsing DEFAULT_CI = new Parsing(
-	// CASE_INSENSITIVE_SYMBOLS, false);
-	// private final boolean _caseSensitive;
-	//
-	// public Parsing(SymbolMapImpl symbols, boolean caseSensitive) {
-	// super(symbols);
-	// _caseSensitive = caseSensitive;
-	// }
-	//
-	// @SuppressWarnings("unchecked")
-	// @Override
-	// public Unit<? extends Quantity> parse(CharSequence csq,
-	// ParsePosition cursor) throws IllegalArgumentException {
-	// // Parsing reads the whole character sequence from the parse
-	// // position.
-	// int start = cursor.getIndex();
-	// int end = csq.length();
-	// if (end <= start)
-	// return Unit.ONE;
-	// String source = csq.subSequence(start, end).toString().trim();
-	// if (source.length() == 0)
-	// return Unit.ONE;
-	// if (!_caseSensitive) {
-	// source = source.toUpperCase();
-	// }
-	// UCUMParser parser = new UCUMParser(symbolMap,
-	// new ByteArrayInputStream(source.getBytes()));
-	// try {
-	// Unit<?> result = parser.parseUnit();
-	// cursor.setIndex(end);
-	// return result;
-	// } catch (org.unitsofmeasure.ucum.ParseException e) {
-	// if (e.currentToken != null) {
-	// cursor.setErrorIndex(start + e.currentToken.endColumn);
-	// } else {
-	// cursor.setErrorIndex(start);
-	// }
-	// throw new IllegalArgumentException(e.getMessage());
-	// } catch (TokenMgrError e) {
-	// cursor.setErrorIndex(start);
-	// throw new IllegalArgumentException(e.getMessage());
-	// }
-	// }
-	// }
 }
