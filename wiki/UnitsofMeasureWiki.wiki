@@ -1,6 +1,4 @@
-#summary One-sentence summary of this page.
 #labels Units,Measure,Measurement,Featured
-
 = Introduction =
 
 Welcome to Units of Measure API.
