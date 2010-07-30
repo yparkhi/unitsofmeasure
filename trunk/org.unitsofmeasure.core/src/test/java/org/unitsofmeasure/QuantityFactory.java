@@ -34,7 +34,7 @@ import org.unitsofmeasure.quantity.*;
  * 
  * @author <a href="mailto:desruisseaux@users.sourceforge.net">Martin
  *         Desruisseaux</a>
- * @author <a href="mailto:jsr275@catmedia.us">Werner Keil</a>
+ * @author <a href="mailto:jcp@catmedia.us">Werner Keil</a>
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @version 1.0.8 ($Revision: 47 $), $Date: 2010-07-04 12:32:52 +0100 (So, 04
  *          Jul 2010) $

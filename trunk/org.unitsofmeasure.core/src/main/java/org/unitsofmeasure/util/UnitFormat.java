@@ -20,7 +20,7 @@ import org.unitsofmeasure.Unit;
  * </p>
  * 
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
- * @author <a href="mailto:jsr275@catmedia.us">Werner Keil</a>
+ * @author <a href="mailto:jcp@catmedia.us">Werner Keil</a>
  * @version 1.2 ($Revision$), $Date$
  * 
  */

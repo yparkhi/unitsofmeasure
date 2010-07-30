@@ -16,7 +16,7 @@ import org.unitsofmeasure.Unit;
  * This class provides support for common binary prefixes to be used by units.
  * </p>
  * 
- * @author <a href="mailto:jsr275@catmedia.us">Werner Keil</a>
+ * @author <a href="mailto:jcp@catmedia.us">Werner Keil</a>
  * @version 1.1.1 ($Revision$), $Date$
  */
 public final class BinaryPrefix {

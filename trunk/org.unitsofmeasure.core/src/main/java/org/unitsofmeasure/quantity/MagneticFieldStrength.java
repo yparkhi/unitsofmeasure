@@ -15,7 +15,7 @@ import org.unitsofmeasure.Quantity;
  * quantity is "A/m" (ampere per meter).
  * 
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
- * @author <a href="mailto:jsr275@catmedia.us">Werner Keil</a>
+ * @author <a href="mailto:jcp@catmedia.us">Werner Keil</a>
  * @version 1.0.2 ($Revision: 1.5 $), $Date: 2010/02/02 20:17:02 $
  */
 public interface MagneticFieldStrength extends Quantity<MagneticFieldStrength> {

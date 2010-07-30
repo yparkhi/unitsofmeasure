@@ -30,7 +30,7 @@ package org.unitsofmeasure;
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author <a href="mailto:desruisseaux@users.sourceforge.net">Martin
  *         Desruisseaux</a>
- * @author <a href="mailto:jsr275@catmedia.us">Werner Keil</a>
+ * @author <a href="mailto:jcp@catmedia.us">Werner Keil</a>
  * @see <a href="http://en.wikipedia.org/wiki/Quantity">Wikipedia: Quantity</a>
  * @version 1.0
  */
