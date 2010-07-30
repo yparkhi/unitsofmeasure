@@ -7,8 +7,9 @@ conditions are met:
 Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
 Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following 
 disclaimer in the documentation and/or other materials provided with the distribution.
-Neither the name of the Regenstrief Institute, Inc. and the UCUM Organization nor the names of its contributors may be used
-to endorse or promote products derived from this software without specific prior written permission.
+Neither the name of the Regenstrief Institute, Inc. and "UCUM Organization" nor the names of its contributors may be used
+to endorse or promote products derived from this software without prior written permission of The Organization. 
+To request written permission, please contact ucum@unitsofmeasure.org (at unitsofmeasure.org).
 
 REGENSTRIEF INSTITUTE, INC. AND THE UCUM ORGANIZATION DO NOT ACCEPT LIABILITY FOR ANY OMISSIONS OR ERRORS 
 IN THE LICENSED MATERIALS OR ANY OTHER MATERIALS OBTAINED FROM REGENSTRIEF INSTITUTE, INC. AND/OR THE UCUM ORGANIZATION.  
