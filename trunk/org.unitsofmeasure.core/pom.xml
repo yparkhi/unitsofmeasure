@@ -130,7 +130,7 @@
 			<id>paul.morrison</id>
 			<name>John Paul Morrison</name>
 			<organization>J.P. Morrison Enterprises, Ltd.</organization>
-			<timezone>-6</timezone>
+			<timezone>-5</timezone>
 			<roles>
 				<role>Java Developer</role>
 			</roles>
