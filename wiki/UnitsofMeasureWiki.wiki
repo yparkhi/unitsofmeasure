@@ -6,6 +6,9 @@
 Welcome to Units of Measure API.
 
 
-= Background =
+= Scope =
 
-Developers frequently encounter the need to model units of measure, because objects in the real world are subject to these measures. When working with units, developers need to understand the mathematics of units, how to convert between systems, and how to format and parse string representations of units. Most of this work can be consolidated into one or two Java packages, which is a primary aim of this project. This package will help developers create safe, correct software to deal with common problem of modeling units.
+  * Implementation of Units of Measure API
+  ** Static Type Safe Units of Measure support (*Compile time* support)
+
+The focus of the project is on *Java* implementations, but other languages both on the JVM or outside will be supported as appropriate, desired and/or contributed.
