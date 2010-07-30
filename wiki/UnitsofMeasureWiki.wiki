@@ -1,5 +1,5 @@
 #summary One-sentence summary of this page.
-#labels Units,Measure,Phase-Requirements,Measurement,Featured
+#labels Units,Measure,Measurement,Featured
 
 = Introduction =
 
