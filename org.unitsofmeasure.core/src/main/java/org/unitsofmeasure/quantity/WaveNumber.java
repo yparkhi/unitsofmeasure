@@ -15,7 +15,7 @@ import org.unitsofmeasure.Quantity;
  * The system unit for this quantity is "1/m" (reciprocal meters).
  * 
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
- * @author <a href="mailto:jsr275@catmedia.us">Werner Keil</a>
+ * @author <a href="mailto:jcp@catmedia.us">Werner Keil</a>
  * @version 1.8 ($Revision: 1.7 $), $Date: 2010/02/02 20:17:02 $
  * @see <a href="http://en.wikipedia.org/wiki/Wavenumber">Wikipedia's
  *      Wavenumber</a>
