@@ -52,7 +52,6 @@ public abstract class AbstractUnit<Q extends Quantity<Q>> implements Unit<Q> {
 	return null;
     }
 
-    @SuppressWarnings("unchecked")
     public <T extends Quantity<T>> Unit<T> asType(Class<T> type)
 	    throws ClassCastException {
 	// Unit<T> metricUnit =
