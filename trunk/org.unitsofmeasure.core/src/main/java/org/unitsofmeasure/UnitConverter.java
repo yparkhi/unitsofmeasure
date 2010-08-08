@@ -84,6 +84,20 @@ public interface UnitConverter {
 	    throws ArithmeticException;
 
     /**
+     * Converts a {@link Number}.
+     * 
+     * @param value
+     *            the decimal number to convert.
+     * @return the decimal number after conversion.
+     * @throws ArithmeticException
+     *             if the result is inexact but the rounding mode is
+     *             <code>MathContext.UNLIMITED</code> or
+     *             <code>mathContext.precision == 0</code> and the quotient has
+     *             a non-terminating decimal expansion.
+     */
+    Number convert(Number value);
+    
+    /**
      * Concatenates this converter with another converter. The resulting
      * converter is equivalent to first converting by the specified converter
      * (right converter), and then converting by this converter (left

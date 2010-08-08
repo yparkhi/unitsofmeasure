@@ -4,7 +4,7 @@
  * Regenstrief Institute, Inc. and the Unified Codes for Units of Measures 
  * (UCUM) Organization. All rights reserved.
  *
- * See TermsOfUse for details.
+ * See LICENSE.txt for details.
  */
 package org.unitsofmeasure;
 
@@ -32,7 +32,7 @@ package org.unitsofmeasure;
  *         Desruisseaux</a>
  * @author <a href="mailto:jcp@catmedia.us">Werner Keil</a>
  * @see <a href="http://en.wikipedia.org/wiki/Quantity">Wikipedia: Quantity</a>
- * @version 1.0
+ * @version 1.1 ($Revision$), $Date$
  */
 public interface Quantity<Q extends Quantity<Q>> {
 

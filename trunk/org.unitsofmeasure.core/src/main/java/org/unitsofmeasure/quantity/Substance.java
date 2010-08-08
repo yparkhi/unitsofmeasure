@@ -15,9 +15,9 @@ import org.unitsofmeasure.Quantity;
  * substance. The metric system unit for this quantity is "mol" (mole).
  * 
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
- * @version 1.0, April 15, 2009
- * @deprecated use <type>Substance</type> instead
+ * @author <a href="mailto:jcp@catmedia.us">Werner Keil</a>
+ * @version 1.1, $Date$
  */
-public interface AmountOfSubstance extends Quantity<AmountOfSubstance> {
-    // FIXME rename to Substance ?!
+public interface Substance extends Quantity<Substance> {
+    // TODO name? Substance or e.g. SubstanceNumber, SubstanceElements, etc.?
 }
