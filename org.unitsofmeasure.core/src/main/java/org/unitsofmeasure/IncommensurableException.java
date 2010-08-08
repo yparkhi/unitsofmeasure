@@ -4,7 +4,7 @@
  * Regenstrief Institute, Inc. and the Unified Codes for Units of Measures 
  * (UCUM) Organization. All rights reserved.
  *
- * See TermsOfUse for details.
+ * See LICENSE.txt for details.
  */
 package org.unitsofmeasure;
 

@@ -4,7 +4,7 @@
  * Regenstrief Institute, Inc. and the Unified Codes for Units of Measures
  * (UCUM) Organization. All rights reserved.
  *
- * See TermsOfUse for details.
+ * See LICENSE.txt for details.
  */
 package org.unitsofmeasure;
 
@@ -28,9 +28,10 @@ import java.util.Map;
  * </p>
  * 
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
+ * @author <a href="mailto:jcp@catmedia.us">Werner Keil</a>
  * @see <a href="http://en.wikipedia.org/wiki/Dimensional_analysis"> Wikipedia:
  *      Dimensional Analysis</a>
- * @version 1.0
+ * @version 1.1 ($Revision$), $Date$
  */
 public interface Dimension {
 

@@ -15,7 +15,10 @@ import org.unitsofmeasure.Quantity;
  * is "Bq" (Becquerel).
  * 
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
- * @version 1.0, April 15, 2009
+ * @author <a href="mailto:jcp@catmedia.us">Werner Keil</a>
+ * @version 1.1 ($Revision$), $Date$
+ * 
+ * TODO rename to RadioActivity ?!
  */
 public interface RadioactiveActivity extends Quantity<RadioactiveActivity> {
 

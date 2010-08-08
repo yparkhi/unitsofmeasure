@@ -4,7 +4,7 @@
  *  and the Unified Codes for Units of Measures (UCUM) Organization.
  *  All rights reserved.
  *
- * See TermsOfUse for details.
+ * See LICENSE.txt for details.
  */
 package org.unitsofmeasure;
 
@@ -21,40 +21,40 @@ import java.util.Set;
  * 
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author <a href="mailto:jcp@catmedia.us">Werner Keil</a>
- * @version 1.1.1 ($Revision: 169 $), $Date: 2010-02-21 18:48:40 +0100 (So, 21
+ * @version 1.2 ($Revision: 169 $), $Date: 2010-02-21 18:48:40 +0100 (So, 21
  *          Feb 2010) $
  */
 public abstract class SystemOfUnits {
 
-    /**
-     * Default constructor.
-     */
-    protected SystemOfUnits() {
-    }
-
-    /**
-     * Returns a read only view over the units defined in this system.
-     * 
-     * @return the collection of units.
-     */
-    public abstract Set<Unit<?>> getUnits();
-
-    /**
-     * Returns the units defined in this system having the specified dimension
-     * (convenience method). This method returns all the units in this system of
-     * units having the specified dimension.
-     * 
-     * @param dimension
-     *            the dimension of the units to be returned.
-     * @return the collection of units of specified dimension.
-     */
-    public Set<Unit<?>> getUnits(Dimension dimension) {
-	final Set<Unit<?>> units = new HashSet<Unit<?>>();
-	for (Unit<?> unit : getUnits()) {
-	    if (unit.getDimension().equals(dimension)) {
-		units.add(unit);
-	    }
+	/**
+	 * Default constructor.
+	 */
+	protected SystemOfUnits() {
 	}
-	return units;
-    }
+
+	/**
+	 * Returns a read only view over the units defined in this system.
+	 * 
+	 * @return the collection of units.
+	 */
+	public abstract Set<Unit<?>> getUnits();
+
+	/**
+	 * Returns the units defined in this system having the specified dimension
+	 * (convenience method). This method returns all the units in this system of
+	 * units having the specified dimension.
+	 * 
+	 * @param dimension
+	 *            the dimension of the units to be returned.
+	 * @return the collection of units of specified dimension.
+	 */
+	public Set<Unit<?>> getUnits(Dimension dimension) {
+		final Set<Unit<?>> units = new HashSet<Unit<?>>();
+		for (Unit<?> unit : getUnits()) {
+			if (unit.getDimension().equals(dimension)) {
+				units.add(unit);
+			}
+		}
+		return units;
+	}
 }
