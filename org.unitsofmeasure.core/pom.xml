@@ -20,7 +20,7 @@
 	<!--     Project description (including license)          -->
 	<!-- ==================================================== -->
 	<groupId>org.unitsofmeasure</groupId>
-	<artifactId>org.unitsofmeasure.core</artifactId>
+	<artifactId>unit-api</artifactId>
 	<packaging>jar</packaging>
 	<version>0.5.2.SNAPSHOT</version>
 	<name>Units of Measure API</name>
