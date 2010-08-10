@@ -22,7 +22,7 @@
 	<groupId>org.unitsofmeasure</groupId>
 	<artifactId>unit-api</artifactId>
 	<packaging>jar</packaging>
-	<version>0.5.2.SNAPSHOT</version>
+	<version>0.5.2</version>
 	<name>Units of Measure API</name>
 	<url>http://www.unitsofmeasure.org</url>
 	<organization>
