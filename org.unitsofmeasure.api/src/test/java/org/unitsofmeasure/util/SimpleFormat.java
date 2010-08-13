@@ -93,7 +93,7 @@ public class SimpleFormat extends BaseFormat {
 	public Appendable format(Unit<?> unit, Appendable appendable)
 			throws IOException {
 		CharSequence symbol;
-		CharSequence annotation = null;
+//		CharSequence annotation = null;
 		// if (unit instanceof AnnotatedUnit<?>) {
 		// AnnotatedUnit<?> annotatedUnit = (AnnotatedUnit<?>) unit;
 		// unit = annotatedUnit.getActualUnit();
@@ -110,9 +110,9 @@ public class SimpleFormat extends BaseFormat {
 		}
 
 		appendable.append(symbol);
-		if (annotation != null && annotation.length() > 0) {
-			appendAnnotation(unit, symbol, annotation, appendable);
-		}
+//		if (annotation != null && annotation.length() > 0) {
+//			appendAnnotation(unit, symbol, annotation, appendable);
+//		}
 
 		return appendable;
 	}
