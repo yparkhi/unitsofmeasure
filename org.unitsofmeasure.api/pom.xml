@@ -55,7 +55,7 @@
 	</issueManagement>
 	<ciManagement>
 		<system>Hudson</system>
-		<url>http://hudson.geomatys.com/job/JSR-275/</url>
+		<url>http://hudson.geomatys.com/job/Unit-API/</url>
 	</ciManagement>
 
 	<mailingLists>
