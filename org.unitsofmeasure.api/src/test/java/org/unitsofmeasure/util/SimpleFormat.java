@@ -159,6 +159,6 @@ public class SimpleFormat extends BaseFormat {
 
 	public Unit<?> parse(CharSequence csq, ParsePosition cursor)
 			throws IllegalArgumentException {
-	return AbstractUnit.METRIC_MASS;
+	return AbstractUnit.ONE;
 	}
 }
