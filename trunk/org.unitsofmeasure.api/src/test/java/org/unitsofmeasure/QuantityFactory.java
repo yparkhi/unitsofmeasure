@@ -44,8 +44,8 @@ abstract class QuantityFactory<Q extends Quantity<Q>> {
     /**
      * Holds the current instances.
      */
-    @SuppressWarnings("unchecked")
-    private static final ConcurrentHashMap<Class, QuantityFactory> INSTANCES = new ConcurrentHashMap<Class, QuantityFactory>();
+    @SuppressWarnings("rawtypes")
+	private static final ConcurrentHashMap<Class, QuantityFactory> INSTANCES = new ConcurrentHashMap<Class, QuantityFactory>();
 
     private static final Logger logger = Logger.getLogger(QuantityFactory.class
 	    .getName());
@@ -124,8 +124,8 @@ abstract class QuantityFactory<Q extends Quantity<Q>> {
      * @param factory
      *            the quantity factory
      */
-    @SuppressWarnings("unchecked")
-    protected static <Q extends Quantity> void setInstance(final Class<Q> type,
+    @SuppressWarnings("rawtypes")
+	protected static <Q extends Quantity> void setInstance(final Class<Q> type,
 	    QuantityFactory factory) {
 	if (!Quantity.class.isAssignableFrom(type))
 	    // This exception is not documented because it should never happen
@@ -189,7 +189,7 @@ abstract class QuantityFactory<Q extends Quantity<Q>> {
 	    metricUnit = CLASS_TO_METRIC_UNIT.get(type);
 	}
 
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings("rawtypes")
 	static final HashMap<Class, Unit> CLASS_TO_METRIC_UNIT = new HashMap<Class, Unit>();
 	static {
 	    CLASS_TO_METRIC_UNIT.put(Dimensionless.class, AbstractUnit.ONE);
@@ -258,7 +258,7 @@ abstract class QuantityFactory<Q extends Quantity<Q>> {
 	    this.value = value;
 	}
 
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public Object invoke(final Object proxy, final Method method,
 		final Object[] args) {
 	    final String name = method.getName();
