@@ -1,17 +1,16 @@
 /**
  * The Units of Measure API, UCUM codes, UCUM table (regardless of format),
- * and UCUM Specification are copyright © 1999-2010,
+ * and UCUM Specification are copyright © 1999-2010, 
  * Regenstrief Institute, Inc. and the Unified Codes for Units of Measures
  * (UCUM) Organization. All rights reserved.
  *
- * See TermsOfUse for details.
+ * See LICENSE.txt for details.
  */
 package org.unitsofmeasure;
 
 import java.util.Map;
 
 import org.unitsofmeasure.quantity.Dimensionless;
-import org.unitsofmeasure.quantity.Mass;
 
 /**
  * @author paul.morrison
@@ -19,10 +18,10 @@ import org.unitsofmeasure.quantity.Mass;
  */
 public abstract class AbstractUnit<Q extends Quantity<Q>> implements Unit<Q> {
 
-    static final Unit<Dimensionless> ONE = null;
+    public static final Unit<Dimensionless> ONE = new BaseUnit<Dimensionless>("one");
 
-    public static final Unit<Mass> METRIC_MASS = QuantityFactory.getInstance(
-	    Mass.class).getMetricUnit();
+//    public static final Unit<Mass> METRIC_MASS = QuantityFactory.getInstance(
+//	    Mass.class).getMetricUnit();
 
     String symbol; // e.g. "A"
     String name; // e.g. "Angstrom"
