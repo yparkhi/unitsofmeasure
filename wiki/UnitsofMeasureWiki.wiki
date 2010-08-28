@@ -5,7 +5,7 @@ Welcome to Units of Measure API.
 
 Visit the Hudson CI Server for this project at: [http://hudson.geomatys.com/job/Unit-API/ http://hudson.geomatys.com/job/Unit-API/]
 
-(special thanks to [http://www.geomatys.com GeoAPI])
+(special thanks to [http://geoapi.sourceforge.net/ GeoAPI])
 
 = Scope =
 
