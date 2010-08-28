@@ -4,7 +4,7 @@
  * Regenstrief Institute, Inc. and the Unified Codes for Units of Measures
  * (UCUM) Organization. All rights reserved.
  *
- * See TermsOfUse for details.
+ * See LICENCE.txt for details.
  */
 package org.unitsofmeasure;
 
@@ -212,7 +212,7 @@ public interface Unit<Q extends Quantity<Q>> {
     /**
      * Returns the unit derived from this unit using the specified converter.
      * The converter does not need to be linear. For example:[code]
-     * Unit<Dimensionless> DECIBEL = Unit.ONE.transform( new
+     * Unit<Dimensionless> DECIBEL = UnitImpl.ONE.transform( new
      * LogConverter(10).inverse().concatenate( new RationalConverter(1, 10)));
      * [/code]
      * 
