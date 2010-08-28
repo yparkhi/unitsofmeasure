@@ -4,7 +4,7 @@
  * Regenstrief Institute, Inc. and the Unified Codes for Units of Measures
  * (UCUM) Organization. All rights reserved.
  *
- * See TermsOfUse for details.
+ * See LICENSE.txt for details.
  */
 package org.unitsofmeasure;
 
@@ -16,7 +16,7 @@ package org.unitsofmeasure;
  * 
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author <a href="mailto:jcp@catmedia.us">Werner Keil</a>
- * @version 1.1.1 ($Revision$), $Date$
+ * @version 1.1.2 ($Revision$), $Date$
  */
 public class UnconvertibleException extends RuntimeException {
 

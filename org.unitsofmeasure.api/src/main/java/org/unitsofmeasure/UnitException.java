@@ -4,7 +4,7 @@
  * Regenstrief Institute, Inc. and the Unified Codes for Units of Measures
  * (UCUM) Organization. All rights reserved.
  *
- * See TermsOfUse for details.
+ * See LICENCE.txt for details.
  */
 // $Id: UnitException.java 64 2006-07-12 22:30:50Z edavis $
 /*
