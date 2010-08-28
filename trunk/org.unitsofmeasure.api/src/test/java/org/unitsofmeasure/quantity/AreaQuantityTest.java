@@ -4,7 +4,7 @@
  * Regenstrief Institute, Inc. and the Unified Codes for Units of Measures
  * (UCUM) Organization. All rights reserved.
  *
- * See TermsOfUse for details.
+ * See LICENCE.txt for details.
  */
 package org.unitsofmeasure.quantity;
 
@@ -19,7 +19,7 @@ import org.unitsofmeasure.DistanceUnit;
 
 /**
  * @author Werner Keil
- * 
+ * @version $Revision$, $Date$
  */
 public class AreaQuantityTest {
 
