@@ -22,12 +22,12 @@
 	<groupId>org.unitsofmeasure</groupId>
 	<artifactId>unit-api</artifactId>
 	<packaging>jar</packaging>
-	<version>0.5.2</version>
+	<version>0.5.3-SNAPSHOT</version>
 	<name>Units of Measure API</name>
-	<url>http://www.unitsofmeasure.org</url>
+	<url>http://code.google.com/p/unitsofmeasure/</url>
 	<organization>
-		<name>The UCUM Organization</name>
-		<url>http://www.unitsofmeasure.org</url>
+		<name>Units of Measure API</name>
+		<url>http://code.google.com/p/unitsofmeasure/</url>
 	</organization>
 	<inceptionYear>2005</inceptionYear>
 	<description>
@@ -50,8 +50,8 @@
 	</scm>
 
 	<issueManagement>
-		<system>Trac</system>
-		<url>http://www.unitsofmeasure.org/report</url>
+		<system>Google Code</system>
+		<url>http://code.google.com/p/unitsofmeasure/issues/list</url>
 	</issueManagement>
 	<ciManagement>
 		<system>Hudson</system>
