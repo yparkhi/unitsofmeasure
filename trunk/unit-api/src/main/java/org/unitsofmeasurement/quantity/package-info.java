@@ -43,7 +43,7 @@
  *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 2.1, $Date$
+ * @version 2.1.1, $Date$
  */
 package org.unitsofmeasurement.quantity;
 

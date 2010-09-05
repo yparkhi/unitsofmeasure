@@ -14,8 +14,8 @@ package org.unitsofmeasurement.quantity;
  * quantity is "H/m" (henry per meter).
  * 
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
- * @author <a href="mailto:jcp@catmedia.us">Werner Keil</a>
- * @version 1.8 ($Revision: 1.7 $), $Date: 2010/02/02 20:17:02 $
+ * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
+ * @version 1.8.1 ($Revision: 1.7 $), $Date: 2010/02/02 20:17:02 $
  * @see <a href="http://en.wikipedia.org/wiki/Permeability_(electromagnetism)">
  *      Wikipedia's Permeability</a>
  * 

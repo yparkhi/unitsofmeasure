@@ -13,7 +13,8 @@ package org.unitsofmeasurement.quantity;
  * this quantity is "kg/s" (kilogram per second).
  * 
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
- * @version 3.2, $Date$
+ * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
+ * @version 3.2.1, $Date$
  * @see <a href="http://en.wikipedia.org/wiki/Mass_flow_rate"> Wikipedia: Mass
  *      Flow Rate</a>
  */

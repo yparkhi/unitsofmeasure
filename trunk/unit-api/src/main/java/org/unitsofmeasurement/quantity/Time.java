@@ -13,7 +13,7 @@ package org.unitsofmeasurement.quantity;
  * this quantity is "s" (second).
  * 
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.1, $Date: 2010-02-21 18:48:40 +0100 (dim., 21 févr. 2010) $
+ * @version 1.2, $Date$
  */
 public interface Time extends Quantity<Time> {
 }

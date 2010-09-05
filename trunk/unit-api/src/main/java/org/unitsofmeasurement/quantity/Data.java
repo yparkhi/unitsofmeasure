@@ -13,8 +13,8 @@ package org.unitsofmeasurement.quantity;
  * "bit".
  * 
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
- * @author <a href="mailto:jcp@catmedia.us">Werner Keil</a>
- * @version 1.0 ($Revision$), $Date$
+ * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
+ * @version 1.1 ($Revision$), $Date$
  */
 public interface Data extends Quantity<Data> {
 
