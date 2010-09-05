@@ -16,10 +16,10 @@ import org.unitsofmeasurement.quantity.Quantity;
  * 
  * <pre>
  * <code>
- *     import static my.unitsofmeasure.impl.SI.*;       // Static import.
- *     import static org.unitsofmeasure.MetricPrefix.*; // Static import.
- *     import org.unitsofmeasure.Unit;   
- *     import org.unitsofmeasure.quantity.*;
+ *     import static my.units.impl.SI.*;       // Static import.
+ *     import static org.unitsofmeasurement.MetricPrefix.*; // Static import.
+ *     import org.unitsofmeasurement.Unit;   
+ *     import org.unitsofmeasurement.quantity.*;
  *     ...
  *     Unit<Pressure> HECTOPASCAL = HECTO(PASCAL);
  *     Unit<Length> KILOMETRE = KILO(METRE);
@@ -29,11 +29,11 @@ import org.unitsofmeasurement.quantity.Quantity;
  * </p>
  * 
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
- * @author <a href="mailto:jcp@catmedia.us">Werner Keil</a>
+ * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @see <a
  *      href="http://en.wikipedia.org/wiki/International_System_of_Units">Wikipedia:
  *      International System of Units</a>
- * @version 1.0.1 ($Revision$), $Date$
+ * @version 1.0.2 ($Revision$), $Date$
  */
 public final class MetricPrefix {
 
