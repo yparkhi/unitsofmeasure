@@ -12,8 +12,8 @@ package org.unitsofmeasurement.quantity;
  * Represents a period of existence or persistence. The metric system unit for
  * this quantity is "s" (second).
  * 
- * @author <a href="mailto:jcp@catmedia.us">Werner Keil</a>
- * @version 1.0, $Date: 2010-02-21 18:48:40 +0100 (dim., 21 févr. 2010) $
+ * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
+ * @version 1.1, $Date: 2010-02-21 18:48:40 +0100 (dim., 21 févr. 2010) $
  */
 public interface Time extends Quantity<Time> {
 }

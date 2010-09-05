@@ -18,7 +18,7 @@ import org.unitsofmeasurement.UnitConverter;
 /**
  * <p>
  * This class provides the interface for formatting and parsing
- * {@link javax.measure.unit.Unit units} according to the <a
+ * {@link org.unitsofmeasurement.Unit units} according to the <a
  * href="http://unitsofmeasure.org/">Uniform Code for Units of Measure</a>
  * (UCUM).
  * </p>
