@@ -1,11 +1,11 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Units of Measure API
-Bundle-SymbolicName: org.unitsofmeasure.api;singleton:=true
-Bundle-Version: 0.5.2
-Bundle-Vendor: UCUM
+Bundle-Name: Units of Measurement API
+Bundle-SymbolicName: org.unitsofmeasurement;singleton:=true
+Bundle-Version: 0.5.3
+Bundle-Vendor: Unit-API contributors
 Bundle-RequiredExecutionEnvironment: J2SE-1.5,
  OSGi/Minimum-1.1
-Export-Package: org.unitsofmeasure,
- org.unitsofmeasure.quantity;uses:="org.unitsofmeasure",
- org.unitsofmeasure.util
+Export-Package: org.unitsofmeasurement,
+ org.unitsofmeasurement.quantity;uses:="org.unitsofmeasure",
+ org.unitsofmeasurement.util

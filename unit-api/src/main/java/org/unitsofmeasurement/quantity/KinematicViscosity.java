@@ -1,0 +1,21 @@
+/**
+ * Unit-API - Units of Measurement API for Java
+ * Copyright (c) 2005-2010, Unit-API contributors, JScience and others
+ * All rights reserved.
+ *
+ * See LICENSE.txt for details.
+ */
+package org.unitsofmeasurement.quantity;
+
+
+/**
+ * This interface represents the diffusion of momentum. The system unit for this
+ * quantity is "m2/s".
+ * 
+ * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
+ * @version 3.2, $Date$
+ * @see <a href="http://en.wikipedia.org/wiki/Viscosity"> Wikipedia:
+ *      Viscosity</a>
+ */
+public interface KinematicViscosity extends Quantity<KinematicViscosity> {
+}
