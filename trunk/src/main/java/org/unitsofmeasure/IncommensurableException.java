@@ -1,0 +1,39 @@
+/**
+ * The Units of Measure API, UCUM codes, UCUM table (regardless of format),
+ * and UCUM Specification are copyright © 1999-2010, 
+ * Regenstrief Institute, Inc. and the Unified Codes for Units of Measures 
+ * (UCUM) Organization. All rights reserved.
+ *
+ * See LICENSE.txt for details.
+ */
+package org.unitsofmeasure;
+
+/**
+ * Signals that a problem of some sort has occurred due to incommensurable of
+ * some quantities/units. Only commensurable quantity (quantities with the same
+ * dimensions) may be compared, equated, added, or subtracted. Also, one unit
+ * can be converted to another unit only if both units are commensurable.
+ * 
+ * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
+ * @author <a href="mailto:jcp@catmedia.us">Werner Keil</a>
+ * @see <a
+ *      href="http://en.wikipedia.org/wiki/Unit_commensurability#Commensurability">
+ *      Wikipedia: Unit Commensurability</a>
+ * @version 1.1 ($Revision: 48 $), $Date: 2010-08-13 21:23:31 +0200 (Fr, 13 Aug 2010) $
+ */
+public class IncommensurableException extends UnitException {
+
+    /** The serialVersionUID */
+    private static final long serialVersionUID = 678172064267032047L;
+
+    /**
+     * Constructs a <code>IncommensurableException</code> with the specified
+     * detail message.
+     * 
+     * @param message
+     *            the detail message.
+     */
+    public IncommensurableException(String message) {
+	super(message);
+    }
+}
