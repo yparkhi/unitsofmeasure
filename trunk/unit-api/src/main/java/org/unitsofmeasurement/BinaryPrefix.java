@@ -18,8 +18,8 @@ import org.unitsofmeasurement.quantity.Quantity;
  * </p>
  * @noextend This class is not intended to be extended by clients.
  * 
- * @author <a href="mailto:jcp@catmedia.us">Werner Keil</a>
- * @version 1.2 ($Revision$), $Date$
+ * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
+ * @version 1.2.1 ($Revision$), $Date$
  */
 public final class BinaryPrefix {
 
@@ -35,7 +35,7 @@ public final class BinaryPrefix {
 	 *            any unit.
 	 * @return <code>unit.times(1024)</code>.
 	 */
-	public static final <Q extends Quantity<Q>> Unit<?> KIBI(Unit<?> unit) {
+	public static <Q extends Quantity<Q>> Unit<?> KIBI(Unit<?> unit) {
 		return unit.multiply(1024);
 	}
 
@@ -47,7 +47,7 @@ public final class BinaryPrefix {
 	 *            any unit.
 	 * @return <code>unit.times(1048576)</code>.
 	 */
-	public static final <Q extends Quantity<Q>> Unit<?> MEBI(Unit<?> unit) {
+	public static <Q extends Quantity<Q>> Unit<?> MEBI(Unit<?> unit) {
 		return unit.multiply(1048576);
 	}
 
@@ -59,7 +59,7 @@ public final class BinaryPrefix {
 	 *            any unit.
 	 * @return <code>unit.times(1073741824)</code>.
 	 */
-	public static final <Q extends Quantity<Q>> Unit<?> GIBI(Unit<?> unit) {
+	public static <Q extends Quantity<Q>> Unit<?> GIBI(Unit<?> unit) {
 		return unit.multiply(1073741824);
 	}
 
@@ -71,7 +71,7 @@ public final class BinaryPrefix {
 	 *            any unit.
 	 * @return <code>unit.times(1099511627776L)</code>.
 	 */
-	public static final <Q extends Quantity<Q>> Unit<?> TEBI(Unit<?> unit) {
+	public static <Q extends Quantity<Q>> Unit<?> TEBI(Unit<?> unit) {
 		return unit.multiply(1099511627776L);
 	}
 
@@ -83,7 +83,7 @@ public final class BinaryPrefix {
 	 *            any unit.
 	 * @return <code>unit.times(1125899906842624L)</code>.
 	 */
-	public static final <Q extends Quantity<Q>> Unit<?> PEBI(Unit<?> unit) {
+	public static <Q extends Quantity<Q>> Unit<?> PEBI(Unit<?> unit) {
 		return unit.multiply(1125899906842624L);
 	}
 
@@ -95,7 +95,7 @@ public final class BinaryPrefix {
 	 *            any unit.
 	 * @return <code>unit.times(1152921504606846976L)</code>.
 	 */
-	public static final <Q extends Quantity<Q>> Unit<?> EXBI(Unit<?> unit) {
+	public static <Q extends Quantity<Q>> Unit<?> EXBI(Unit<?> unit) {
 		return unit.multiply(1152921504606846976L);
 	}
 }
