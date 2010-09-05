@@ -6,7 +6,7 @@
 		=======================================================================
 	-->
 
-	<!-- $Id: pom.xml 217 2010-03-03 18:27:06Z keilw $ -->
+	<!-- $Id$ -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
                              http://maven.apache.org/maven-v4_0_0.xsd">
@@ -330,7 +330,7 @@
 
 			<!-- ======================================================= -->
 			<!--     License Plugin                                      -->
-			<!-- ======================================================= -->
+			<!-- ======================================================= 
 			<plugin>
 				<groupId>com.google.code.maven-license-plugin</groupId>
 				<artifactId>maven-license-plugin</artifactId>
@@ -342,7 +342,7 @@
 				<phase>compile</phase> <goals> <goal>format</goal> </goals>
 				</execution> </executions> 
 		    </plugin> 
-			<!--	TODO enable this only for major
+				TODO enable this only for major
 				upgrades (ensure to copy LICENSE.txt to LICENSE.bak first)
 			-->
 
@@ -397,7 +397,7 @@
 								mode>development</mode> TODO call it stage?
 								<SCM-Revision>${buildNumber}</SCM-Revision
 							-->
-							<SCM-Revision>$Revision: 217 $</SCM-Revision>
+							<SCM-Revision>$Revision$</SCM-Revision>
 						</manifestEntries>
 						<manifestFile>META-INF/MANIFEST.MF</manifestFile>
 					</archive>
@@ -442,7 +442,7 @@
 					<noqualifier>all</noqualifier>   <!-- Omit qualifying package name before class names in output. -->
 					<quiet>true</quiet>              <!-- Shuts off non-error and non-warning messages.              -->
 					<keywords>true</keywords>        <!-- Adds HTML meta keyword tags to the generated files.        -->
-					<excludePackageNames>javax.measure.unit.format:javax.measure.unit.converter:javax.measure.util</excludePackageNames>
+					<!-- excludePackageNames>org.unitsofmeasurement.format:org.unitsofmeasurement.converter:org.unitsofmeasurement.util</excludePackageNames -->
 					<!-- Creates links to existing javadoc-generated   -->
 					<!-- documentation of external referenced classes. -->
 					<links>

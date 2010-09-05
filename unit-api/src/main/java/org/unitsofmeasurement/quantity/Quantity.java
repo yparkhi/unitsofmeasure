@@ -18,7 +18,7 @@ package org.unitsofmeasurement.quantity;
  * This interface has no method (tagging interface) is used solely to specify
  * the quantitative property associated to a class through class
  * parameterization and to provide limited compile time dimension
- * consistency.[code] Unit<Mass> pound = ... Measure<Length> size = ...
+ * consistency.[code] Unit<Mass> pound = ... Quantity<Length> size = ...
  * Sensor<Temperature> thermometer = ... Vector3D<Velocity> aircraftSpeed = ...
  * [/code]
  * </p>
@@ -31,7 +31,7 @@ package org.unitsofmeasurement.quantity;
  *         Desruisseaux</a>
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @see <a href="http://en.wikipedia.org/wiki/Quantity">Wikipedia: Quantity</a>
- * @version 1.2 ($Revision$), $Date$
+ * @version 1.2.1 ($Revision$), $Date$
  */
 public interface Quantity<Q extends Quantity<Q>> {
 
