@@ -14,7 +14,8 @@ package org.unitsofmeasurement.quantity;
  * second).
  * 
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
- * @version 3.2, $Date$
+ * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
+ * @version 3.2.1, $Date$
  * @see <a href="http://en.wikipedia.org/wiki/Rate_of_fluid_flow"> Wikipedia:
  *      Volumetric Flow Rate</a>
  */

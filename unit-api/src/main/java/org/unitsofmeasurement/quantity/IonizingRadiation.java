@@ -15,7 +15,8 @@ package org.unitsofmeasurement.quantity;
  * "C/kg ("coulomb per kilogram).
  * 
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
- * @version 1.2, $Date$
+ * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
+ * @version 1.2.1, $Date$
  * @see <a href="http://en.wikipedia.org/wiki/Ionizing_radiation">Wikipedia's
  *      Ionizing Radiation</a>
  */
