@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 	<!--
 		=======================================================================
-		Maven Project Configuration File for the Units of Measure API
-		http://www.unitsofmeasure.org
+		Maven Project Configuration File for the Units of Measurement API
+		http://www.unitsofmeasurement.org
 		=======================================================================
 	-->
 
@@ -19,14 +19,14 @@
 	<!-- ==================================================== -->
 	<!--     Project description (including license)          -->
 	<!-- ==================================================== -->
-	<groupId>org.unitsofmeasure</groupId>
+	<groupId>org.unitsofmeasurement</groupId>
 	<artifactId>unit-api</artifactId>
 	<packaging>jar</packaging>
 	<version>0.5.3-SNAPSHOT</version>
-	<name>Units of Measure API</name>
+	<name>Units of Measurement API</name>
 	<url>http://code.google.com/p/unitsofmeasure/</url>
 	<organization>
-		<name>Units of Measure API</name>
+		<name>Units of Measurement API</name>
 		<url>http://code.google.com/p/unitsofmeasure/</url>
 	</organization>
 	<inceptionYear>2005</inceptionYear>
@@ -60,8 +60,16 @@
 
 	<mailingLists>
 		<mailingList>
-			<name>UOM EG</name>
-			<post>jsr-275-eg@jcp.org</post>
+			<name>Units-Dev</name>
+			<post>units-dev@googlegroups.com</post>
+		</mailingList>
+		<mailingList>
+			<name>Units-Users</name>
+			<post>units-users@googlegroups.com</post>
+		</mailingList>
+		<mailingList>
+			<name>Units@JScience</name>
+			<post>unitsofmeasure@jscience.dev.java.net</post>
 		</mailingList>
 	</mailingLists>
 
@@ -84,10 +92,10 @@
 		<developer>
 			<name>Werner Keil</name>
 			<id>werner.keil</id>
-			<organization>emergn</organization>
-			<organizationUrl>http://www.emergn.com</organizationUrl>
-			<email>werner@emergn.com</email>
-			<timezone>0</timezone>
+			<organization>Creative Arts &amp; Technologies</organization>
+			<organizationUrl>http://www.catmedia.us</organizationUrl>
+			<email>units@catmedia.us</email>
+			<timezone>+1</timezone>
 			<roles>
 				<role>Architect</role>
 				<role>Java Developer</role>
@@ -322,7 +330,7 @@
 
 			<!-- ======================================================= -->
 			<!--     License Plugin                                      -->
-			<!-- =======================================================
+			<!-- ======================================================= -->
 			<plugin>
 				<groupId>com.google.code.maven-license-plugin</groupId>
 				<artifactId>maven-license-plugin</artifactId>
@@ -334,7 +342,7 @@
 				<phase>compile</phase> <goals> <goal>format</goal> </goals>
 				</execution> </executions> 
 		    </plugin> 
-				TODO enable this only for major
+			<!--	TODO enable this only for major
 				upgrades (ensure to copy LICENSE.txt to LICENSE.bak first)
 			-->
 
