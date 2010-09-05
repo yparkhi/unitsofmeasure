@@ -12,21 +12,23 @@
                                     ------
                                     Werner Keil
                                     ------
-                                     24 July 2010
-
-[./images/logo90.png] Logo
+                                    $Date$
 
 ~~ [http://aurora.regenstrief.org/~ucum/ucum.html Shortcut to the Specification] (current revision 1.8 as of 18-JUL-2009) [ChangeLog]
 
-The Unified Code for Units of Measure
+The Units of Measurement API for Java
 
 +------------------------------------------+
-Gunther Schadow, Clement J. !McDonald
+Jean-Marie Dautelle, Werner Keil
 +------------------------------------------+
 
-  Copyright © 1999-2010 Regenstrief Institute, Inc. and The UCUM Organization, Indianapolis, IN. 
-  All rights reserved. See TermsOfUse for details.
+  Copyright © 2005-2010, Unit-API contributors, JScience and others 
+  All rights reserved.
+  
+  See LICENSE.txt for details.
 
+[./images/icon.png] Logo
+  
 * What is it?
 
   The Unified Code for Units of Measure is a code system intended to include all units of measures being contemporarily used in international science, engineering, and business. The purpose is to facilitate unambiguous electronic communication of quantities together with their units. The focus is on electronic communication, as opposed to communication between humans. A typical application of The Unified Code for Units of Measure are electronic data interchange (EDI) protocols, but there is nothing that prevents it from being used in other types of machine communication.
