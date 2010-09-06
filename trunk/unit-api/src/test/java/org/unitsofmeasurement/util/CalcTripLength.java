@@ -12,11 +12,6 @@ import java.util.LinkedList;
 import org.unitsofmeasurement.DistanceUnit;
 import org.unitsofmeasurement.quantity.DistanceQuantity;
 
-//import org.eclipse.uomo.units.SI;
-//import org.eclipse.uomo.units.SI.*;
-//import org.eclipse.uomo.units.quantity.*;
-//import main.java.org.unitsofmeasure.Unit;
-//import main.java.org.unitsofmeasure.quantity.Length;
 
 /**
  * @author paul.morrison
@@ -29,7 +24,7 @@ import org.unitsofmeasurement.quantity.DistanceQuantity;
 
 public class CalcTripLength {
 
-	public static void main(String[] argv) {
+	public static void main(String[] argv)  {
 
 		final DistanceUnit klik = new DistanceUnit("kilometre", DistanceUnit.km,
 				1.0);
@@ -46,8 +41,11 @@ public class CalcTripLength {
 
 			totDist = totDist.add(t.getDist());
 		}
+		
+		boolean b = totDist.eq(new DistanceQuantity(6200,klik));
 
 		System.out.println(totDist.showInUnits(klik, 2));
+		System.out.println(b ? "true" : "false");
 
 	}
 

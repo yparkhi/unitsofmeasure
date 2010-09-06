@@ -7,89 +7,80 @@
  */
 package org.unitsofmeasurement.quantity;
 
-import static org.unitsofmeasurement.AreaUnit.sqmetre;
-import static org.unitsofmeasurement.DistanceUnit.m;
-
 import org.unitsofmeasurement.AreaUnit;
+import org.unitsofmeasurement.DistanceUnit;
 import org.unitsofmeasurement.VolumeUnit;
 
-/**
- * @author paul.morrison
- *
- * To change this generated comment edit the template variable "typecomment":
- * Window>Preferences>Java>Templates.
- * To enable and disable the creation of type comments go to
- * Window>Preferences>Java>Code Generation.
- */
+
 public class AreaQuantity extends DimensionQuantity {
-		
+	public AreaQuantity() {
+	}
 	public AreaQuantity(double val, AreaUnit un) {
-	    	      
+
 		units = val;
 		unit = un;
 		scalar = val * unit.getMultFactor();
 	}
-	/*
-	Area(double val) {
-	    
-		units = val;
-		unit = sqmetre;   // reference Unit
-		scalar = val;
-		
-	}
-	*/
-	
-	public AreaQuantity add(AreaQuantity a1) {
-		return new AreaQuantity(scalar + a1.scalar, sqmetre);
-			} 
 
-	
-	public AreaQuantity subtract(AreaQuantity a1) {
-		return new AreaQuantity(scalar - a1.scalar, sqmetre);
-	} 	
-	
-	public boolean equals(AreaQuantity a1) {
-		return (scalar ==  a1.scalar);
-	}
-	public boolean equals(Object a1) {
-	    if (a1 instanceof AreaQuantity) {
-		return equals((AreaQuantity) a1);
-	    }
-	    return false;
+	public AreaQuantity add(AreaQuantity d1) {
+		AreaQuantity dn = new AreaQuantity();
+		Object o = super.add(dn, this, d1, AreaUnit.REF_UNIT);
+		return (AreaQuantity) o;
 	}
 
-	public boolean gt(AreaQuantity a1) {
-		return (scalar >  a1.scalar);
-	} 
-	public boolean lt(AreaQuantity a1) {
-		return (scalar <  a1.scalar);
-	} 
-	public boolean ge(AreaQuantity a1) {
-		return (scalar >=  a1.scalar);
-	} 
-	public boolean le(AreaQuantity a1) {
-		return (scalar <=  a1.scalar);
-	} 
-	
+	public AreaQuantity subtract(AreaQuantity d1) {
+		AreaQuantity dn = new AreaQuantity();
+		Object o = super.subtract(dn, this, d1, AreaUnit.REF_UNIT);
+		return (AreaQuantity) o;
+	}
+	public boolean eq(AreaQuantity d1) {
+		return super.eq(d1);
+	}
+
+	public boolean ne(AreaQuantity d1) {
+		return super.ne(d1);
+	}
+
+	public boolean gt(AreaQuantity d1) {
+		return super.gt(d1);
+	}
+
+	public boolean lt(AreaQuantity d1) {
+		return super.lt(d1);
+	}
+
+	public boolean ge(AreaQuantity d1) {
+		return super.ge(d1);
+	}
+
+	public boolean le(AreaQuantity d1) {
+		return super.le(d1);
+	}
+
 	public AreaQuantity multiply(double v) {
-		return new AreaQuantity(scalar * v,  sqmetre);
+		return new AreaQuantity(units * v, (AreaUnit) unit);
 	}
-	
+
 	public AreaQuantity divide(double v) {
-		return new AreaQuantity(scalar / v, sqmetre);
+		return new AreaQuantity(units / v, (AreaUnit) unit);
 	}
-	
+
 	// mixed type operations
-	
+
 	public DistanceQuantity divide(DistanceQuantity d1) {
-		return new DistanceQuantity(scalar / 
-		  d1.scalar, m);
-	} 
+		AreaQuantity dq0 = convert(AreaUnit.sqmetre);
+		DistanceQuantity dq1 = d1.convert(DistanceUnit.m);
+		return new DistanceQuantity(dq0.units / dq1.units, DistanceUnit.m);
+	}
 	public VolumeQuantity multiply(DistanceQuantity d1) {
-		return new VolumeQuantity(scalar * 
- d1.scalar, VolumeUnit.cumetre);
-	} 
-	public AreaQuantity convert(AreaUnit newUnit){
+		AreaQuantity dq0 = convert(AreaUnit.sqmetre);
+		DistanceQuantity dq1 = d1.convert(DistanceUnit.m);
+		return new VolumeQuantity(dq0.units * dq1.units, VolumeUnit.cumetre);
+	}
+	public AreaQuantity convert(AreaUnit newUnit) {
 		return new AreaQuantity(scalar / newUnit.getMultFactor(), newUnit);
+	}
+	public String showInUnits(AreaUnit u, int precision) {
+		return super.showInUnits(u, precision);
 	}
 }

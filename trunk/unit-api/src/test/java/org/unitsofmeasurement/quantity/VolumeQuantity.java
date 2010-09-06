@@ -7,11 +7,11 @@
  */
 package org.unitsofmeasurement.quantity;
 
-import static org.unitsofmeasurement.VolumeUnit.REF_UNIT;
 
 import org.unitsofmeasurement.AreaUnit;
 import org.unitsofmeasurement.DistanceUnit;
 import org.unitsofmeasurement.VolumeUnit;
+
 
 /**
  * @author paul.morrison
@@ -22,79 +22,81 @@ import org.unitsofmeasurement.VolumeUnit;
  * Window>Preferences>Java>Code Generation.
  */
 public class VolumeQuantity extends DimensionQuantity {
-	
+	public VolumeQuantity() {
+	}
 	public VolumeQuantity(double val, VolumeUnit un) {
-	    	      
+
 		units = val;
 		unit = un;
 		scalar = val * unit.getMultFactor();
 	}
 	/*
-	Volume(double val) {
-	    
-		units = val;
-		unit = cumetre;   // reference Unit
-		scalar = val;
-		
+	 * Volume(double val) {
+	 * 
+	 * units = val; unit = cumetre; // reference Unit scalar = val;
+	 * 
+	 * }
+	 */
+	public VolumeQuantity add(VolumeQuantity d1) {
+		VolumeQuantity dn = new VolumeQuantity();
+		Object o = super.add(dn, this, d1, VolumeUnit.REF_UNIT);
+		return (VolumeQuantity) o;
 	}
-	*/
-	public VolumeQuantity add(VolumeQuantity v1) {
-		return new VolumeQuantity(scalar + 
-		v1.scalar, REF_UNIT);
-	} 
 
-	
-	public VolumeQuantity subtract(VolumeQuantity v1) {
-		return new VolumeQuantity(scalar - 
-		v1.scalar, REF_UNIT);
-	} 
-	
-	public boolean eq(VolumeQuantity v1) {
-		return (scalar == 
-		  v1.scalar);
-	} 
-	public boolean ne(VolumeQuantity v1) {
-		return (scalar != 
-		  v1.scalar);
-	} 
-	public boolean gt(VolumeQuantity v1) {
-		return (scalar >
-		  v1.scalar);
-	} 
-	public boolean lt(VolumeQuantity v1) {
-		return (scalar < 
-		  v1.scalar);
-	} 
-	public boolean ge(VolumeQuantity v1) {
-		return (scalar >= 
-		  v1.scalar);
-	} 
-	public boolean le(VolumeQuantity v1) {
-		return (scalar <= 
-		  v1.scalar);
-	} 
-	
+	public VolumeQuantity subtract(VolumeQuantity d1) {
+		VolumeQuantity dn = new VolumeQuantity();
+		Object o = super.subtract(dn, this, d1, VolumeUnit.REF_UNIT);
+		return (VolumeQuantity) o;
+	}
+
+	public boolean eq(VolumeQuantity d1) {
+		return super.eq(d1);
+	}
+
+	public boolean ne(VolumeQuantity d1) {
+		return super.ne(d1);
+	}
+
+	public boolean gt(VolumeQuantity d1) {
+		return super.gt(d1);
+	}
+
+	public boolean lt(VolumeQuantity d1) {
+		return super.lt(d1);
+	}
+
+	public boolean ge(VolumeQuantity d1) {
+		return super.ge(d1);
+	}
+
+	public boolean le(VolumeQuantity d1) {
+		return super.le(d1);
+	}
+
 	public VolumeQuantity multiply(double v) {
-		return new VolumeQuantity(scalar * v, REF_UNIT );
+		return new VolumeQuantity(units * v, (VolumeUnit) unit);
 	}
-	
+
 	public VolumeQuantity divide(double v) {
-		return new VolumeQuantity(scalar / v, REF_UNIT);
+		return new VolumeQuantity(units / v, (VolumeUnit) unit);
 	}
-	public AreaQuantity convert(AreaUnit newUnit){
-		return new AreaQuantity(scalar / newUnit.getMultFactor(), newUnit);
-	}
-	// mixed type operations
 	
+	// mixed type operations
+
 	public AreaQuantity divide(DistanceQuantity d1) {
-		return new AreaQuantity(scalar / 
-		  d1.scalar, AreaUnit.REF_UNIT);
+		VolumeQuantity dq0 = convert(VolumeUnit.cumetre);
+    	DistanceQuantity dq1 = d1.convert(DistanceUnit.m);
+	return new AreaQuantity(dq0.units / dq1.units, AreaUnit.sqmetre);
 	}
 	public DistanceQuantity divide(AreaQuantity a1) {
-		return new DistanceQuantity(scalar /
-		  a1.scalar, DistanceUnit.REF_UNIT);
-	} 
-	
-	
-
+		VolumeQuantity dq0 = convert(VolumeUnit.cumetre);
+    	AreaQuantity dq1 = a1.convert(AreaUnit.sqmetre);
+	return new DistanceQuantity(dq0.units / dq1.units, DistanceUnit.m);
+	}
+	public VolumeQuantity convert(VolumeUnit newUnit) {
+		return new VolumeQuantity(scalar / newUnit.getMultFactor(), newUnit);
+	}
+	public String showInUnits(VolumeUnit u, int precision) {
+		return super.showInUnits(u, precision);
+	}
 }

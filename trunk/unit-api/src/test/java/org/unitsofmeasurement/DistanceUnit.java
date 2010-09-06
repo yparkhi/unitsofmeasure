@@ -7,7 +7,6 @@
  */
 package org.unitsofmeasurement;
 
-import org.unitsofmeasurement.Unit;
 import org.unitsofmeasurement.quantity.Length;
 
 /**
@@ -21,6 +20,7 @@ public class DistanceUnit extends AbstractUnit<Length> {
     public static final DistanceUnit REF_UNIT = m; // reference Unit
     public static final DistanceUnit in = new DistanceUnit("in", 0.0254);
     public static final DistanceUnit km = new DistanceUnit("km", 1.0e+3);
+    public static final DistanceUnit cm = new DistanceUnit("cm", 1.0e-2);
     public static final DistanceUnit mile = new DistanceUnit("mile", 1609.0);
     public static final DistanceUnit \u00C5ngstr\u00F6m = new DistanceUnit(
 	    "\u00C5ngstr\u00F6m", 1.0e-10);
@@ -42,5 +42,7 @@ public class DistanceUnit extends AbstractUnit<Length> {
     public Unit<Length> toMetric() {
 	return REF_UNIT;
     }
+    
+    
 
 }
