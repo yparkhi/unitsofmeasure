@@ -1,5 +1,5 @@
 /**
- * Unit-API - Units of Measurement API for Java
+ * Unit-API - Units of Measurement API for Java (http://unitsofmeasurement.org)
  * Copyright (c) 2005-2010, Unit-API contributors, JScience and others
  * All rights reserved.
  *

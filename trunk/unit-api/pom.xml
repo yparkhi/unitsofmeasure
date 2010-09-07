@@ -27,7 +27,7 @@
 	<url>http://code.google.com/p/unitsofmeasure/</url>
 	<organization>
 		<name>Units of Measurement API</name>
-		<url>http://code.google.com/p/unitsofmeasure/</url>
+		<url>http://unitsofmeasurement.org</url>
 	</organization>
 	<inceptionYear>2005</inceptionYear>
 	<description>
@@ -141,6 +141,7 @@
 			<timezone>-5</timezone>
 			<roles>
 				<role>Java Developer</role>
+				<role>Test Analyst</role>
 			</roles>
 		</developer>
 		<developer>
@@ -330,7 +331,7 @@
 
 			<!-- ======================================================= -->
 			<!--     License Plugin                                      -->
-			<!-- ======================================================= 
+			<!-- =======================================================
 			<plugin>
 				<groupId>com.google.code.maven-license-plugin</groupId>
 				<artifactId>maven-license-plugin</artifactId>
