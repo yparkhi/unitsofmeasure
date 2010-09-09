@@ -51,11 +51,10 @@ public class AreaQuantityTest {
 	assertEquals(50d, result.scalar, 0);
     }
 
-    @Test
-    @Ignore
+    @Test    
     public void testEq() {
 	AreaQuantity area2 = new AreaQuantity(100, m2);
-	assertEquals(area, area2);
+	assertTrue(area2.eq(area));
     }
 
     @Test
