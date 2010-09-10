@@ -30,7 +30,7 @@ public class VolumeUnit extends AbstractUnit<Volume> {
     }
 
     @Override
-    public Unit<Volume> toMetric() {
+    public Unit<Volume> getSystemUnit() {
 	return REF_UNIT;
     }
 
