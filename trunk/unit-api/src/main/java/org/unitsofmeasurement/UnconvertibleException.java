@@ -10,8 +10,8 @@ package org.unitsofmeasurement;
 /**
  * Signals that a problem of some sort has occurred due to the impossibility of
  * constructing a converter between two units. For example, the mutiplication of
- * offset units are usually units not convertible to their {@link Unit#toStandard
- * standard units}.
+ * offset units are usually units not convertible to their {@link Unit#getSystemUnit
+ * system unit}.
  * 
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author <a href="mailto:jcp@catmedia.us">Werner Keil</a>
