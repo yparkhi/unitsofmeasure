@@ -317,8 +317,8 @@
 
 
             <!-- ======================================================= -->
-                        <!--     Compilation                                         -->
-                        <!-- ======================================================= -->
+            <!--     Compilation                                         -->
+            <!-- ======================================================= -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -331,8 +331,8 @@
             </plugin>
 
             <!-- ======================================================= -->
-                        <!--     Resources                                           -->
-                        <!-- ======================================================= -->
+            <!--     Resources                                           -->
+            <!-- ======================================================= -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
@@ -342,8 +342,8 @@
             </plugin>
 
             <!-- ======================================================= -->
-                        <!--     Custom Javadoc plugin                               -->
-                        <!--
+            <!--     Custom Javadoc plugin                               -->
+            <!--
                                 ======================================================= <plugin>
                                 <groupId>org.javolution</groupId> <artifactId>colapi</artifactId>
                                 <version>1.0.0</version> <executions> <execution> <goals>
@@ -359,7 +359,7 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
-                        <Export-Package>org.unitsofmeasurement.*,org.unitsofmeasurement.quantity.*,</Export-Package>
+                        <Export-Package>org.unitsofmeasurement.*</Export-Package>
                         <Private-Package>!*</Private-Package>
                     </instructions>
                 </configuration>
@@ -368,9 +368,9 @@
         </plugins>
 
         <!-- ======================================================= -->
-                <!--     For deployment on dev.java.net subversion           -->
-                <!--     See https://wagon-svn.dev.java.net/                 -->
-                <!-- ======================================================= -->
+        <!--     For deployment on dev.java.net subversion           -->
+        <!--     See https://wagon-svn.dev.java.net/                 -->
+        <!-- ======================================================= -->
         <extensions>
             <extension>
                 <groupId>org.jvnet.wagon-svn</groupId>
@@ -381,16 +381,16 @@
     </build>
 
     <!-- ======================================================= -->
-        <!--     Maven web site                                      -->
-        <!-- ======================================================= -->
+    <!--     Maven web site                                      -->
+    <!-- ======================================================= -->
     <reporting>
         <plugins>
             <!-- ======================================================= -->
-                        <!--     Javadoc generation                                  -->
-                        <!--                                                         -->
-                        <!--     Do not set <docfilessubdirs> to true, since this    -->
-                        <!--     cause the unwanted copy of .svn sub-directories.    -->
-                        <!-- ======================================================= -->
+            <!--     Javadoc generation                                  -->
+            <!--                                                         -->
+            <!--     Do not set <docfilessubdirs> to true, since this    -->
+            <!--     cause the unwanted copy of .svn sub-directories.    -->
+            <!-- ======================================================= -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
@@ -414,8 +414,8 @@
             </plugin>
 
             <!-- ======================================================= -->
-                        <!--     Code analysis                                       -->
-                        <!-- ======================================================= -->
+            <!--     Code analysis                                       -->
+            <!-- ======================================================= -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-pmd-plugin</artifactId>
@@ -427,8 +427,8 @@
             </plugin>
 
             <!-- ======================================================= -->
-                        <!--     Report on test results                              -->
-                        <!-- ======================================================= -->
+            <!--     Report on test results                              -->
+            <!-- ======================================================= -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-report-plugin</artifactId>
@@ -436,8 +436,8 @@
             </plugin>
 
             <!-- ======================================================= -->
-                        <!--     Report on test coverage                             -->
-                        <!-- ======================================================= -->
+            <!--     Report on test coverage                             -->
+            <!-- ======================================================= -->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>emma-maven-plugin</artifactId>
@@ -449,8 +449,8 @@
             </plugin>
 
             <!-- ======================================================= -->
-                        <!--     Static analysis for occurences of bug patterns      -->
-                        <!-- ======================================================= -->
+            <!--     Static analysis for occurences of bug patterns      -->
+            <!-- ======================================================= -->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>findbugs-maven-plugin</artifactId>
@@ -468,12 +468,12 @@
     </reporting>
 
     <!-- ======================================================= -->
-        <!--
-                Repositories. This is where Maven looks for dependencies.
-                The Maven repository is implicit and doesn't
-                need to be specified.
-        -->
-        <!-- ======================================================= -->
+    <!--
+             Repositories. This is where Maven looks for dependencies.
+             The Maven repository is implicit and doesn't
+             need to be specified.
+    -->
+    <!-- ======================================================= -->
     <pluginRepositories>
         <pluginRepository>
             <id>maven2-repository.dev.java.net</id>
@@ -483,8 +483,8 @@
     </pluginRepositories>
 
     <!-- ==================================================== -->
-        <!--     Deployment to public servers                     -->
-        <!-- ==================================================== -->
+    <!--     Deployment to public servers                     -->
+    <!-- ==================================================== -->
     <distributionManagement>
         <repository>
             <id>java.net-maven2-repository</id>

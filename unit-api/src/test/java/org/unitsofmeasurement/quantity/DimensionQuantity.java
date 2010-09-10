@@ -19,7 +19,7 @@ import org.unitsofmeasurement.AbstractUnit;
 class DimensionQuantity  {
 	protected double scalar; // value in reference units
 	protected double units; // value in units (Unit unit)
-	protected AbstractUnit<?> unit;
+	protected AbstractUnit unit;
 
 	
 

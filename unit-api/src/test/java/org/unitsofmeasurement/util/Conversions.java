@@ -10,7 +10,7 @@ package org.unitsofmeasurement.util;
 import org.unitsofmeasurement.DistanceUnit;
 import org.unitsofmeasurement.quantity.DistanceQuantity;
 
-public class TestConverts {
+public class Conversions {
 
 	/**
 	 * @param args

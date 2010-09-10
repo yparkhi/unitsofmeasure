@@ -17,7 +17,7 @@ import org.unitsofmeasurement.quantity.Quantity;
  * 
  * <p> It is helpful to think of instances of this class as recording the history by
  * which they are created. Thus, for example, the string "g/kg" (which is a
- * {@link #isDimensionless} unit) would result from invoking the method
+ * dimensionless unit) would result from invoking the method
  * toString() on a unit that was created by dividing a gram unit by a kilogram
  * unit. Yet, "kg" divided by "kg" returns {@link #ONE} and not "kg/kg" due to
  * automatic unit factorization.</p>
