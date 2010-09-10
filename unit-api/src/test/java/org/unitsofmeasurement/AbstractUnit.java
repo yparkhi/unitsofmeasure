@@ -138,7 +138,7 @@ public abstract class AbstractUnit<Q extends Quantity<Q>> implements Unit<Q> {
 	return null;
     }
 
-    public abstract Unit<Q> toMetric();
+    public abstract Unit<Q> getSystemUnit();
 
     public Unit<Q> transform(UnitConverter operation) {
 	// TODO Auto-generated method stub

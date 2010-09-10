@@ -39,7 +39,7 @@ public class DistanceUnit extends AbstractUnit<Length> {
     }
 
     @Override
-    public Unit<Length> toMetric() {
+    public Unit<Length> getSystemUnit() {
 	return REF_UNIT;
     }
     

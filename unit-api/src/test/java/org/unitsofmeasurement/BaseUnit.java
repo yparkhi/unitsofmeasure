@@ -74,7 +74,7 @@ public class BaseUnit<Q extends Quantity<Q>> extends AbstractUnit<Q> {
     }
 
     @Override
-    public Unit<Q> toMetric() {
+    public Unit<Q> getSystemUnit() {
         return this;
     }
 }

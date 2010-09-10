@@ -30,7 +30,7 @@ public class AreaUnit extends AbstractUnit<Area> {
     }
 
     @Override
-    public Unit<Area> toMetric() {
+    public Unit<Area> getSystemUnit() {
 	return REF_UNIT;
     }
 

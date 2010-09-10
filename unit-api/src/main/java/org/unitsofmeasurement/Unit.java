@@ -92,7 +92,7 @@ public interface Unit<Q extends Quantity<Q>> {
      *
      * @return the simple units and their exponent making up this unit.
      */
-    Map<Unit, Integer> getProductUnits();
+    Map<Unit<?>, Integer> getProductUnits();
 
     /**
      * Indicates if this unit is compatible with the unit specified. Units don't
