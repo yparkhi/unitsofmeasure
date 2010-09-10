@@ -10,21 +10,14 @@ package org.unitsofmeasurement;
 import java.util.Map;
 
 /**
- * <p>
- * This interface represents the dimension of a unit.
- * </p>
+ * <p> This interface represents the dimension of a unit.</p>
  * 
- * <p>
- * Concrete dimensions are obtained through the {@link Unit#getDimension()}
- * method. Each {@link UnitFactory#getBaseUnit base unit} has its own
- * fundamental dimension.
- * </p>
+ * <p> Concrete dimensions are obtained through the {@link Unit#getDimension()}
+ *     method.</p>
  * 
- * <p>
- * Two units <code>u1</code> and <code>u2</code> are {@link Unit#isCompatible
- * compatible} if and only if
- * <code>(u1.getDimension().equals(u2.getDimension())))</code>
- * </p>
+ * <p> Two units <code>u1</code> and <code>u2</code> are
+ *     {@link Unit#isCompatible compatible} if and only if
+ *     <code>(u1.getDimension().equals(u2.getDimension())))</code></p>
  * 
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author <a href="mailto:jcp@catmedia.us">Werner Keil</a>
@@ -37,8 +30,7 @@ public interface Dimension {
     /**
      * Returns the product of this dimension with the one specified.
      * 
-     * @param that
-     *            the dimension multiplicand.
+     * @param that the dimension multiplicand.
      * @return <code>this * that</code>
      */
     Dimension multiply(Dimension that);
@@ -46,8 +38,7 @@ public interface Dimension {
     /**
      * Returns the quotient of this dimension with the one specified.
      * 
-     * @param that
-     *            the dimension divisor.
+     * @param that the dimension divisor.
      * @return <code>this / that</code>
      */
     Dimension divide(Dimension that);
@@ -55,8 +46,7 @@ public interface Dimension {
     /**
      * Returns this dimension raised to an exponent.
      * 
-     * @param n
-     *            the exponent.
+     * @param n the exponent.
      * @return the result of raising this dimension to the exponent.
      */
     Dimension pow(int n);
@@ -64,11 +54,9 @@ public interface Dimension {
     /**
      * Returns the given root of this dimension.
      * 
-     * @param n
-     *            the root's order.
+     * @param n the root's order.
      * @return the result of taking the given root of this dimension.
-     * @throws ArithmeticException
-     *             if <code>n == 0</code>.
+     * @throws ArithmeticException if <code>n == 0</code>.
      */
     Dimension root(int n);
 

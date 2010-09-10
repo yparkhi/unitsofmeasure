@@ -20,17 +20,13 @@ package org.unitsofmeasurement;
  *      Wikipedia: Unit Commensurability</a>
  * @version 1.1 ($Revision$), $Date$
  */
-public class IncommensurableException extends UnitException {
-
-    /** The serialVersionUID */
-    private static final long serialVersionUID = 678172064267032047L;
+public class IncommensurableException extends RuntimeException {
 
     /**
      * Constructs a <code>IncommensurableException</code> with the specified
      * detail message.
      * 
-     * @param message
-     *            the detail message.
+     * @param message the detail message.
      */
     public IncommensurableException(String message) {
 	super(message);

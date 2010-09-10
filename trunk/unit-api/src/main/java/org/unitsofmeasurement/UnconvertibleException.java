@@ -10,8 +10,8 @@ package org.unitsofmeasurement;
 /**
  * Signals that a problem of some sort has occurred due to the impossibility of
  * constructing a converter between two units. For example, the mutiplication of
- * offset units are usually units not convertible to their {@link Unit#toMetric
- * metric units}.
+ * offset units are usually units not convertible to their {@link Unit#toStandard
+ * standard units}.
  * 
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author <a href="mailto:jcp@catmedia.us">Werner Keil</a>
@@ -19,15 +19,11 @@ package org.unitsofmeasurement;
  */
 public class UnconvertibleException extends RuntimeException {
 
-    /** The serialVersionUID */
-    private static final long serialVersionUID = 2738859544898650397L;
-
     /**
      * Constructs a <code>UnconvertibleException</code> with the specified
      * detail message.
      * 
-     * @param message
-     *            the detail message.
+     * @param message the detail message.
      */
     public UnconvertibleException(String message) {
 	super(message);
@@ -37,8 +33,7 @@ public class UnconvertibleException extends RuntimeException {
      * Constructs a <code>UnconvertibleException</code> with the specified
      * detail message.
      * 
-     * @param cause
-     *            the original exception.
+     * @param cause the original exception.
      */
     public UnconvertibleException(Throwable cause) {
 	super(cause);

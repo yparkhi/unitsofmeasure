@@ -12,14 +12,10 @@ import java.math.MathContext;
 import java.util.List;
 
 /**
- * <p>
- * This interface represents a converter of numeric values.
- * </p>
+ * <p> This interface represents a converter of numeric values.</p>
  * 
- * <p>
- * Instances of this class are obtained through the {@link Unit#getConverterTo}
- * method.
- * </p>
+ * <p> Instances of this class are obtained through the
+ *     {@link Unit#getConverterTo} method.</p>
  * 
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author <a href="mailto:jcp@catmedia.us">Werner Keil</a>
@@ -58,43 +54,24 @@ public interface UnitConverter {
     /**
      * Converts a <code>double</code> value.
      * 
-     * @param value
-     *            the numeric value to convert.
+     * @param value the numeric value to convert.
      * @return the <code>double</code> value after conversion.
      */
     double convert(double value);
 
     /**
-     * Converts a {@link BigDecimal} number according to the specified math
-     * context.
-     * 
-     * @param value
-     *            the decimal number to convert.
-     * @param ctx
-     *            the math context being used for conversion.
+     * Converts a {@link BigDecimal} number according to the specified
+     * math context.
+     *
+     * @param value the decimal number to convert.
+     * @param ctx the math context being used for conversion.
      * @return the decimal number after conversion.
-     * @throws ArithmeticException
-     *             if the result is inexact but the rounding mode is
-     *             <code>MathContext.UNLIMITED</code> or
-     *             <code>mathContext.precision == 0</code> and the quotient has
-     *             a non-terminating decimal expansion.
+     * @throws ArithmeticException if the result is inexact but the
+     *         rounding mode is <code>MathContext.UNLIMITED</code> or
+     *         <code>mathContext.precision == 0</code> and the quotient has a
+     *         non-terminating decimal expansion.
      */
-    BigDecimal convert(BigDecimal value, MathContext ctx)
-	    throws ArithmeticException;
-
-    /**
-     * Converts a {@link Number}.
-     * 
-     * @param value
-     *            the decimal number to convert.
-     * @return the decimal number after conversion.
-     * @throws ArithmeticException
-     *             if the result is inexact but the rounding mode is
-     *             <code>MathContext.UNLIMITED</code> or
-     *             <code>mathContext.precision == 0</code> and the quotient has
-     *             a non-terminating decimal expansion.
-     */
-    Number convert(Number value);
+    BigDecimal convert(BigDecimal value, MathContext ctx) throws ArithmeticException;
     
     /**
      * Concatenates this converter with another converter. The resulting
@@ -102,8 +79,7 @@ public interface UnitConverter {
      * (right converter), and then converting by this converter (left
      * converter).
      * 
-     * @param converter
-     *            the other converter.
+     * @param converter the other converter.
      * @return the concatenation of this converter with the other converter.
      */
     UnitConverter concatenate(UnitConverter converter);
