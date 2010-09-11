@@ -17,8 +17,7 @@ import java.util.Set;
  * 
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author <a href="mailto:jcp@catmedia.us">Werner Keil</a>
- * @version 1.2.1 ($Revision$), $Date: 2010-02-21 18:48:40 +0100 (So, 21
- *          Feb 2010) $
+ * @version 1.2.1 ($Revision$), $Date$
  */
 public interface SystemOfUnits {
 
