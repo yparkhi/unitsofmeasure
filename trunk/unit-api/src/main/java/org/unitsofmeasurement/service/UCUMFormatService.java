@@ -19,6 +19,7 @@ import org.unitsofmeasurement.Unit;
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @see <a href="http://aurora.regenstrief.org/~ucum/ucum.html">UCUM Full Specification</a>
  * @version 1.0
+ * @deprecated identical signature to LocalFormatService
  */
 public interface UCUMFormatService {
 
