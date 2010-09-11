@@ -23,6 +23,11 @@ package org.unitsofmeasurement;
 public class IncommensurableException extends RuntimeException {
 
     /**
+	 * 
+	 */
+	private static final long serialVersionUID = -3676414292638136515L;
+
+	/**
      * Constructs a <code>IncommensurableException</code> with the specified
      * detail message.
      * 

@@ -20,6 +20,11 @@ package org.unitsofmeasurement;
 public class UnconvertibleException extends RuntimeException {
 
     /**
+	 * 
+	 */
+	private static final long serialVersionUID = -4623551240019830166L;
+
+	/**
      * Constructs a <code>UnconvertibleException</code> with the specified
      * detail message.
      * 
