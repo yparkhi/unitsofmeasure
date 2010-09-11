@@ -10,14 +10,14 @@ package org.unitsofmeasurement;
 import java.util.Set;
 
 /**
- * <p> This class represents a system of units, it groups units together for
+ * <p> This interface represents a system of units, it groups units together for
  * historical or cultural reasons. Nothing prevents a unit from belonging to
  * several systems of units at the same time (for example an imperial system
  * would have many of the units held by <code>USCustomary</code>).</p>
  * 
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author <a href="mailto:jcp@catmedia.us">Werner Keil</a>
- * @version 1.2 ($Revision: 169 $), $Date: 2010-02-21 18:48:40 +0100 (So, 21
+ * @version 1.2.1 ($Revision$), $Date: 2010-02-21 18:48:40 +0100 (So, 21
  *          Feb 2010) $
  */
 public interface SystemOfUnits {
