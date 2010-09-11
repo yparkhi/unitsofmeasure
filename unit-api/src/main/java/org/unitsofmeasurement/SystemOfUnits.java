@@ -12,11 +12,11 @@ import java.util.Set;
 /**
  * <p> This interface represents a system of units, it groups units together for
  * historical or cultural reasons. Nothing prevents a unit from belonging to
- * several systems of units at the same time (for example an imperial system
+ * several systems of units at the same time (for example an <code>Imperial</code> system
  * would have many of the units held by <code>USCustomary</code>).</p>
  * 
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
- * @author <a href="mailto:jcp@catmedia.us">Werner Keil</a>
+ * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @version 1.2.1 ($Revision$), $Date$
  */
 public interface SystemOfUnits {
