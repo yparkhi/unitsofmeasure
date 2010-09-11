@@ -13,7 +13,7 @@ package org.unitsofmeasurement.quantity;
  *
  * @author  <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @version 1.1, $Date$
- * @deprecated renamed Data
+ * @deprecated renamed {@link #Data}
  */
 public interface DataAmount extends Quantity<DataAmount> {
 
