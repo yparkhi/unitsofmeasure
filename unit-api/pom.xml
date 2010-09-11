@@ -343,16 +343,17 @@
 
             <!-- ======================================================= -->
             <!--     Custom Javadoc plugin                               -->
-            <!--
-                                ======================================================= <plugin>
-                                <groupId>org.javolution</groupId> <artifactId>colapi</artifactId>
-                                <version>1.0.0</version> <executions> <execution> <goals>
-                                <goal>colorize</goal> </goals> </execution> </executions> </plugin>
+            <!-- ======================================================= 
+            <plugin>
+            	<groupId>org.javolution</groupId> <artifactId>colapi</artifactId>
+                <version>1.0.0</version> <executions> <execution> <goals>
+               	<goal>colorize</goal> </goals> </execution> </executions>
+            </plugin>
                         -->
 
-                        <!-- ======================================================= -->
-                        <!--     Packaging (OSGi bundle)                             -->
-                        <!-- ======================================================= -->
+            <!-- ======================================================= -->
+            <!--     Packaging (OSGi bundle)                             -->
+            <!-- ======================================================= -->
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
