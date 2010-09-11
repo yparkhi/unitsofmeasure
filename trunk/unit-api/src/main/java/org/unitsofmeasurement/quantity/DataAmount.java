@@ -12,7 +12,8 @@ package org.unitsofmeasurement.quantity;
  * The metric system unit for this quantity is "bit".
  *
  * @author  <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
- * @version 1.0, April 15, 2009
+ * @version 1.1, $Date$
+ * @deprecated renamed Data
  */
 public interface DataAmount extends Quantity<DataAmount> {
 

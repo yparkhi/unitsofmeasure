@@ -15,6 +15,7 @@ package org.unitsofmeasurement.quantity;
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @version 1.2, $Date$
+ * @deprecated renamed AmountOfSubstance
  */
 public interface Substance extends Quantity<Substance> {
     // TODO name? SubstanceNumber, SubstanceElements, etc.?
