@@ -13,7 +13,7 @@ import org.unitsofmeasurement.quantity.Length;
  * @author paul.morrison
  * 
  */
-public class DistanceUnit extends AbstractUnit<Length> {
+public class DistanceUnit extends BaseUnit<Length> {
 
     public static final DistanceUnit m = new DistanceUnit("m", 1.0); // reference
     // Unit
@@ -29,13 +29,15 @@ public class DistanceUnit extends AbstractUnit<Length> {
 	    3.08e+16);
 
     public DistanceUnit(String name2, double convF) {
-	name = name2;
-	multFactor = convF;
+    	super("", name2);
+		name = name2;
+		multFactor = convF;
     }
 
     public DistanceUnit(String name2, DistanceUnit unit, double convF) {
-	name = name2;
-	multFactor = unit.multFactor * convF;
+    	super("", name2);
+		name = name2;
+		multFactor = unit.multFactor * convF;
     }
 
     @Override
