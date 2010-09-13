@@ -10,10 +10,11 @@ package org.unitsofmeasurement;
 import java.io.IOException;
 import java.text.ParsePosition;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
-import org.unitsofmeasurement.Unit;
-import org.unitsofmeasurement.UnitConverter;
+import org.unitsofmeasurement.unit.Unit;
+import org.unitsofmeasurement.unit.UnitConverter;
 
 /**
  * <p>
@@ -159,4 +160,8 @@ public class SimpleFormat extends BaseFormat {
 			throws IllegalArgumentException {
 	return AbstractUnit.ONE;
 	}
+
+    public Locale getLocale() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
 }
