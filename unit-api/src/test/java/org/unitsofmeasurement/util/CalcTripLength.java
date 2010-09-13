@@ -9,8 +9,8 @@ package org.unitsofmeasurement.util;
 
 import java.util.LinkedList;
 
-import org.unitsofmeasurement.DistanceUnit;
 import org.unitsofmeasurement.quantity.DistanceQuantity;
+import org.unitsofmeasurement.unit.DistanceUnit;
 
 
 /**

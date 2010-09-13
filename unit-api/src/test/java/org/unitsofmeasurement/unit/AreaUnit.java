@@ -5,7 +5,7 @@
  *
  * See LICENSE.txt for details.
  */
-package org.unitsofmeasurement;
+package org.unitsofmeasurement.unit;
 
 import org.unitsofmeasurement.unit.Unit;
 import org.unitsofmeasurement.quantity.Area;

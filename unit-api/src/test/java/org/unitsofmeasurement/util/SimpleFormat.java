@@ -5,7 +5,7 @@
  *
  * See LICENSE.txt for details.
  */
-package org.unitsofmeasurement;
+package org.unitsofmeasurement.util;
 
 import java.io.IOException;
 import java.text.ParsePosition;
@@ -13,6 +13,7 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
+import org.unitsofmeasurement.unit.AbstractUnit;
 import org.unitsofmeasurement.unit.Unit;
 import org.unitsofmeasurement.unit.UnitConverter;
 

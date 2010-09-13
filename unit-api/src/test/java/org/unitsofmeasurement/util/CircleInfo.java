@@ -7,9 +7,9 @@
  */
 package org.unitsofmeasurement.util;
 
-import org.unitsofmeasurement.DistanceUnit;
 import org.unitsofmeasurement.quantity.AreaQuantity;
 import org.unitsofmeasurement.quantity.DistanceQuantity;
+import org.unitsofmeasurement.unit.DistanceUnit;
 
 public class CircleInfo {
 

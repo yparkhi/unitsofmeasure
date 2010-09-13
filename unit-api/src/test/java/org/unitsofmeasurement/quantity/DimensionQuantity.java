@@ -9,7 +9,7 @@ package org.unitsofmeasurement.quantity;
 
 import java.math.*;
 
-import org.unitsofmeasurement.AbstractUnit;
+import org.unitsofmeasurement.unit.AbstractUnit;
 
 
 

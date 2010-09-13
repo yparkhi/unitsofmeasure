@@ -5,7 +5,7 @@
  *
  * See LICENSE.txt for details.
  */
-package org.unitsofmeasurement;
+package org.unitsofmeasurement.util;
 
 import java.io.IOException;
 import java.text.FieldPosition;
