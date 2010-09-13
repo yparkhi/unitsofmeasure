@@ -5,7 +5,7 @@
  *
  * See LICENSE.txt for details.
  */
-package org.unitsofmeasurement.service;
+package org.unitsofmeasurement.unit;
 
 import java.util.Set;
 import org.unitsofmeasurement.unit.Dimension;
@@ -21,8 +21,7 @@ import org.unitsofmeasurement.quantity.Quantity;
  * 
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.2.1 ($Revision$), $Date$
- * @deprecated this doesn't feel too right here. Seems better in {@link unit}
+ * @version 1.2.1 ($Revision: 111 $), $Date: 2010-09-13 18:42:10 +0200 (Mo, 13 Sep 2010) $
  */
 public interface SystemOfUnits {
 
