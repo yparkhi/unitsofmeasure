@@ -9,11 +9,11 @@ package org.unitsofmeasurement;
 
 import java.util.Map;
 
-import org.unitsofmeasurement.Dimension;
-import org.unitsofmeasurement.IncommensurableException;
-import org.unitsofmeasurement.UnconvertibleException;
-import org.unitsofmeasurement.Unit;
-import org.unitsofmeasurement.UnitConverter;
+import org.unitsofmeasurement.unit.Dimension;
+import org.unitsofmeasurement.unit.IncommensurableException;
+import org.unitsofmeasurement.unit.UnconvertibleException;
+import org.unitsofmeasurement.unit.Unit;
+import org.unitsofmeasurement.unit.UnitConverter;
 import org.unitsofmeasurement.quantity.Dimensionless;
 import org.unitsofmeasurement.quantity.Quantity;
 

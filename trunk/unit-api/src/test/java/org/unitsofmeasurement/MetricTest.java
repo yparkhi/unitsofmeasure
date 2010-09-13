@@ -7,6 +7,7 @@
  */
 package org.unitsofmeasurement;
 
+import org.unitsofmeasurement.service.SystemOfUnits;
 import static org.junit.Assert.*;
 
 import org.junit.Before;

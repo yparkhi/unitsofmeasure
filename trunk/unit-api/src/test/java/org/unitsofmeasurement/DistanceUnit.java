@@ -7,6 +7,7 @@
  */
 package org.unitsofmeasurement;
 
+import org.unitsofmeasurement.unit.Unit;
 import org.unitsofmeasurement.quantity.Length;
 
 /**

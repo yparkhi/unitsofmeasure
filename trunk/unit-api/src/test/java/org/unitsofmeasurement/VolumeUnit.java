@@ -7,7 +7,7 @@
  */
 package org.unitsofmeasurement;
 
-import org.unitsofmeasurement.Unit;
+import org.unitsofmeasurement.unit.Unit;
 import org.unitsofmeasurement.quantity.Volume;
 
 /**
