@@ -14,8 +14,8 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
-import org.unitsofmeasurement.AreaUnit;
-import org.unitsofmeasurement.DistanceUnit;
+import org.unitsofmeasurement.unit.AreaUnit;
+import org.unitsofmeasurement.unit.DistanceUnit;
 
 /**
  * @author Werner Keil

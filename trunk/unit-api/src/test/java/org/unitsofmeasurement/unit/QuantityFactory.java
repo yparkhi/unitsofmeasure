@@ -5,7 +5,7 @@
  *
  * See LICENSE.txt for details.
  */
-package org.unitsofmeasurement;
+package org.unitsofmeasurement.unit;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

@@ -8,9 +8,9 @@
 package org.unitsofmeasurement.quantity;
 
 
-import org.unitsofmeasurement.AreaUnit;
-import org.unitsofmeasurement.DistanceUnit;
-import org.unitsofmeasurement.VolumeUnit;
+import org.unitsofmeasurement.unit.AreaUnit;
+import org.unitsofmeasurement.unit.DistanceUnit;
+import org.unitsofmeasurement.unit.VolumeUnit;
 
 
 /**

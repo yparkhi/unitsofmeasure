@@ -5,7 +5,7 @@
  *
  * See LICENSE.txt for details.
  */
-package org.unitsofmeasurement;
+package org.unitsofmeasurement.unit;
 
 import org.unitsofmeasurement.service.SystemOfUnits;
 import static org.junit.Assert.*;
