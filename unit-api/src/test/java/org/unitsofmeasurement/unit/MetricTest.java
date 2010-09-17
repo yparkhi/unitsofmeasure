@@ -7,7 +7,7 @@
  */
 package org.unitsofmeasurement.unit;
 
-import org.unitsofmeasurement.service.SystemOfUnits;
+import org.unitsofmeasurement.service.SystemOfUnitsService;
 import static org.junit.Assert.*;
 
 import org.junit.Before;
@@ -17,7 +17,7 @@ import org.junit.Test;
 @Ignore
 public class MetricTest {
 
-	private SystemOfUnits metric;
+	private SystemOfUnitsService metric;
 
 	@Before
 	public void setUp() {
