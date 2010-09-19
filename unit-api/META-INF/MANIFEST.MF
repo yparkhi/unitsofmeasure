@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Units of Measurement API
 Bundle-SymbolicName: org.unitsofmeasurement.unit-api;singleton:=true
-Bundle-Version: 0.6.0.SNAPSHOT
+Bundle-Version: 0.6.0.RC1
 Bundle-Vendor: Unit-API contributors
 Bundle-RequiredExecutionEnvironment: J2SE-1.5,
  OSGi/Minimum-1.1
