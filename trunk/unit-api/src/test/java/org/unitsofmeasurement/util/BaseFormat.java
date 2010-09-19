@@ -14,7 +14,7 @@ import java.text.ParsePosition;
 import java.util.Locale;
 
 import org.unitsofmeasurement.unit.Unit;
-import org.unitsofmeasurement.service.LocalUnitFormat;
+import org.unitsofmeasurement.unit.UnitFormat;
 
 /**
  * <p>
@@ -46,7 +46,7 @@ import org.unitsofmeasurement.service.LocalUnitFormat;
  * @version 1.0
  * @see <a href="http://org.unitsofmeasure">Unified Code of Measure (UCUM)</a>
  */
-abstract class BaseFormat extends Format implements LocalUnitFormat {
+abstract class BaseFormat extends Format implements UnitFormat {
 
     /** The serialVersionUID */
     private static final long serialVersionUID = 7765623276257908888L;
