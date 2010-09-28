@@ -11,7 +11,7 @@ package org.unitsofmeasurement.quantity;
 /**
  * Represents a period of existence or persistence. The metric system unit for
  * this quantity is "s" (second).
- * 
+ *
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @version 1.2, $Date$
  */

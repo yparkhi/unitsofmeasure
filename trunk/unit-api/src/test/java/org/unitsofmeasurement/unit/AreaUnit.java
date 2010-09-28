@@ -19,19 +19,19 @@ public class AreaUnit extends AbstractUnit<Area> {
     // Unit
     public static final AreaUnit REF_UNIT = sqmetre; // reference Unit
     public static final AreaUnit sqmile = new AreaUnit("sqmile",
-	    1609.0 * 1609.0);
+        1609.0 * 1609.0);
     public static final AreaUnit acre = new AreaUnit("acre", 4047.0);
     public static final AreaUnit hectare = new AreaUnit("hectare", 1.0e4);
 
     public AreaUnit(String name2, double convF) {
-	name = name2;
-	multFactor = convF;
+    name = name2;
+    multFactor = convF;
 
     }
 
     @Override
     public Unit<Area> getSystemUnit() {
-	return REF_UNIT;
+    return REF_UNIT;
     }
 
 }

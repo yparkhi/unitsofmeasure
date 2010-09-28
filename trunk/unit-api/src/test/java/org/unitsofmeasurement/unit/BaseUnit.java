@@ -13,7 +13,7 @@ import org.unitsofmeasurement.quantity.Quantity;
 /**
  * <p> This class represents the building blocks on top of which all others
  *     units are created. Base units are always unscaled metric units.</p>
- * 
+ *
  * <p> When using the {@linkplain Dimensional.Model#STANDARD standard} model
  *     (default), all seven base units are dimensionally independent.</p>
  *
@@ -39,9 +39,9 @@ public class BaseUnit<Q extends Quantity<Q>> extends AbstractUnit<Q> {
      */
     public BaseUnit(String symbol, String name) {
         super(name);
-    	this.symbol = symbol;
+        this.symbol = symbol;
     }
-    
+
     /**
      * Creates a base unit having the specified symbol.
      *
@@ -50,9 +50,9 @@ public class BaseUnit<Q extends Quantity<Q>> extends AbstractUnit<Q> {
      *         associated to a different unit.
      */
     public BaseUnit(String symbol) {
-    	this(symbol, null);
+        this(symbol, null);
     }
-	
+
     @Override
     public String getSymbol() {
         return symbol;

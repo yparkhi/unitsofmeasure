@@ -10,12 +10,12 @@ package org.unitsofmeasurement.service;
 import org.unitsofmeasurement.unit.SystemOfUnits;
 
 /**
- * <p> This interface represents the service to obtain a {@link SystemOfUnits 
+ * <p> This interface represents the service to obtain a {@link SystemOfUnits
  *     system of units}.</p>
  *
  * <p> Common system of units are "SI" (System International), "Imperial"
  *     (British),  "USCustomary".</p>
- * 
+ *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @version 1.2.1 ($Revision$), $Date$

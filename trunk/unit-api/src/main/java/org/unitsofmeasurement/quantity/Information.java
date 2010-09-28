@@ -11,7 +11,7 @@ package org.unitsofmeasurement.quantity;
 /**
  * Represents a measure of information. The metric system unit for this quantity is
  * "bit".
- * 
+ *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @version 1.1 ($Revision$), $Date$
