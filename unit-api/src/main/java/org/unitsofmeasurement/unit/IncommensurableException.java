@@ -12,7 +12,7 @@ package org.unitsofmeasurement.unit;
  * some quantities/units. Only commensurable quantity (quantities with the same
  * dimensions) may be compared, equated, added, or subtracted. Also, one unit
  * can be converted to another unit only if both units are commensurable.
- * 
+ *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author <a href="mailto:jcp@catmedia.us">Werner Keil</a>
  * @see <a
@@ -23,17 +23,17 @@ package org.unitsofmeasurement.unit;
 public class IncommensurableException extends RuntimeException {
 
     /**
-	 * 
-	 */
-	private static final long serialVersionUID = -3676414292638136515L;
+     *
+     */
+    private static final long serialVersionUID = -3676414292638136515L;
 
-	/**
+    /**
      * Constructs a <code>IncommensurableException</code> with the specified
      * detail message.
-     * 
+     *
      * @param message the detail message.
      */
     public IncommensurableException(String message) {
-	super(message);
+    super(message);
     }
 }

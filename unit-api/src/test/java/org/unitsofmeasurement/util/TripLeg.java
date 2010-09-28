@@ -20,19 +20,19 @@ import org.unitsofmeasurement.quantity.DistanceQuantity;
  * Window>Preferences>Java>Code Generation.
  */
 public class TripLeg {
-	
-	String fromAirport;	
+
+    String fromAirport;
     String toAirport;
-    DistanceQuantity distance; 
+    DistanceQuantity distance;
 
     public TripLeg(String fA, String tA, DistanceQuantity dist) {
-    	fromAirport = fA;
-    	toAirport = tA;
-    	distance = dist;
+        fromAirport = fA;
+        toAirport = tA;
+        distance = dist;
     }
-    
+
     public DistanceQuantity getDist() {
-    	return distance;
+        return distance;
     }
 
 }

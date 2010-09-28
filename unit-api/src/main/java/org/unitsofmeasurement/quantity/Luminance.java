@@ -12,7 +12,7 @@ package org.unitsofmeasurement.quantity;
  * This interface represents the luminous intensity per unit area of light
  * traveling in a given direction. The system unit for this quantity is "cd/m2"
  * (candela per square meter).
- * 
+ *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @version 1.2, $Date$
  */

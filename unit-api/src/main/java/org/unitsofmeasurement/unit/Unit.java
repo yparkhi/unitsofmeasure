@@ -17,28 +17,28 @@ import org.unitsofmeasurement.quantity.Quantity;
 /**
  * <p> This interface represents a determinate {@link Quantity quantity} (as of
  * length, time, heat, or value) adopted as a standard of measurement.</p>
- * 
+ *
  * <p> It is helpful to think of instances of this class as recording the history by
  * which they are created. Thus, for example, the string "g/kg" (which is a
  * dimensionless unit) would result from invoking the method
  * toString() on a unit that was created by dividing a gram unit by a kilogram
  * unit. Yet, "kg" divided by "kg" returns <code>ONE</code> and not "kg/kg" due to
  * automatic unit factorization.</p>
- * 
+ *
  * <p> This interface supports the multiplication of offsets units. The result is
  * usually a unit not convertible to its {@link #getSystemUnit standard unit}. Such
  * units may appear in derivative quantities. For example Celsius per meter is
  * an unit of gradient, which is common in atmospheric and oceanographic
  * research.</p>
- * 
+ *
  * <p> Units raised at non-integral powers are not supported. For example,
  * <code>LITRE.root(2)</code> raises an <code>ArithmeticException</code>; but
  * <code>LITRE.getSystemUnit().root(2)</code> returns <code>METRE</code>.</p>
- * 
+ *
  * <p>Unit instances should be immutable.</p>
- * 
+ *
  * @param <Q> The type of the quantity measured by this unit.
- * 
+ *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author <a href="mailto:steve@unidata.ucar.edu">Steve Emmerson</a>
  * @author <a href="mailto:desruisseaux@users.sourceforge.net">Martin

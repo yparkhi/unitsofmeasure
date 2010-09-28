@@ -10,7 +10,7 @@ package org.unitsofmeasurement.quantity;
 
 /**
  * Represents a dimensionless quantity.
- * 
+ *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @version 1.0, April 15, 2009
  */

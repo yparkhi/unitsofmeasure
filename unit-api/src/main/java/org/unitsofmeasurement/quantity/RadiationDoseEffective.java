@@ -12,11 +12,11 @@ package org.unitsofmeasurement.quantity;
  * Represents the effective (or "equivalent") dose of radiation received by a
  * human or some other living organism. The metric system unit for this quantity
  * is "Sv" (Sievert).
- * 
+ *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @version 1.0, April 15, 2009
  */
 public interface RadiationDoseEffective extends
-	Quantity<RadiationDoseEffective> {
+    Quantity<RadiationDoseEffective> {
 
 }

@@ -343,11 +343,11 @@
 
             <!-- ======================================================= -->
             <!--     Custom Javadoc plugin                               -->
-            <!-- ======================================================= 
+            <!-- =======================================================
             <plugin>
-            	<groupId>org.javolution</groupId> <artifactId>colapi</artifactId>
+                <groupId>org.javolution</groupId> <artifactId>colapi</artifactId>
                 <version>1.0.0</version> <executions> <execution> <goals>
-               	<goal>colorize</goal> </goals> </execution> </executions>
+                <goal>colorize</goal> </goals> </execution> </executions>
             </plugin>
                         -->
 

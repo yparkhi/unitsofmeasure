@@ -11,7 +11,7 @@ package org.unitsofmeasurement.quantity;
 /**
  * This interface represents the dynamic viscosity. The system unit for this
  * quantity is "Pa.s" (Pascal-Second).
- * 
+ *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @version 3.1, $Date$
  * @see <a href="http://en.wikipedia.org/wiki/Viscosity"> Wikipedia:

@@ -18,7 +18,7 @@ import org.unitsofmeasurement.quantity.Quantity;
  *     several systems of units at the same time (for example an
  *     <code>Imperial</code> system would have many of the units held by
  *     <code>USCustomary</code>).</p>
- * 
+ *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @version 1.2.1 ($Revision: 111 $), $Date: 2010-09-13 18:42:10 +0200 (Mo, 13 Sep 2010) $

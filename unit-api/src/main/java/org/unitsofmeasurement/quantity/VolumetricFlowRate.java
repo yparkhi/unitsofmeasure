@@ -12,7 +12,7 @@ package org.unitsofmeasurement.quantity;
  * This interface represents the volume of fluid passing a point in a system per
  * unit of time. The system unit for this quantity is "m3/s" (cubic metre per
  * second).
- * 
+ *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @version 3.2.1, $Date$

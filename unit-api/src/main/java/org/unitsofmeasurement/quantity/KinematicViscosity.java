@@ -11,7 +11,7 @@ package org.unitsofmeasurement.quantity;
 /**
  * This interface represents the diffusion of momentum. The system unit for this
  * quantity is "m2/s".
- * 
+ *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @version 3.2.1, $Date$
