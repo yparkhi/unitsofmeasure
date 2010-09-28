@@ -31,8 +31,8 @@
 
     <licenses>
         <license>
-            <name>Copyright Notice and License</name>
-            <url>LICENSE.txt</url>
+            <name>BSD</name>
+            <url>http://unitsofmeasure.googlecode.com/svn/trunk/unit-api/LICENSE.txt</url>
         </license>
     </licenses>
 
@@ -299,30 +299,11 @@
         <plugins>
 
             <!-- ======================================================= -->
-            <!--     License Plugin                                      -->
-            <!-- ======================================================= -->
-            <!--
-            <plugin>
-                <groupId>com.google.code.maven-license-plugin</groupId>
-                <artifactId>maven-license-plugin</artifactId>
-                <version>1.4.0</version> <configuration>
-                    <basedir>${basedir}</basedir>
-                    <header>${basedir}/src/etc/header.txt</header> <quiet>false</quiet>
-                    <failIfMissing>true</failIfMissing> <aggregate>false</aggregate>
-                <encoding>UTF-8</encoding> </configuration> <executions> <execution>
-                        <phase>compile</phase> <goals> <goal>format</goal> </goals>
-                </execution> </executions>
-            </plugin>
-            -->
-
-
-            <!-- ======================================================= -->
             <!--     Compilation                                         -->
             <!-- ======================================================= -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.3.1</version>
                 <configuration>
                     <source>1.5</source>
                     <target>1.5</target>
@@ -340,16 +321,6 @@
                     <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
             </plugin>
-
-            <!-- ======================================================= -->
-            <!--     Custom Javadoc plugin                               -->
-            <!-- =======================================================
-            <plugin>
-                <groupId>org.javolution</groupId> <artifactId>colapi</artifactId>
-                <version>1.0.0</version> <executions> <execution> <goals>
-                <goal>colorize</goal> </goals> </execution> </executions>
-            </plugin>
-                        -->
 
             <!-- ======================================================= -->
             <!--     Packaging (OSGi bundle)                             -->
@@ -378,6 +349,11 @@
                 <artifactId>wagon-svn</artifactId>
                 <version>1.9</version>
             </extension>
+            <extension>
+                <groupId>org.apache.maven.wagon</groupId>
+                <artifactId>wagon-webdav</artifactId>
+                <version>1.0-beta-2</version>
+            </extension>
         </extensions>
     </build>
 
@@ -395,7 +371,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.7</version>
                 <configuration>
                     <source>1.5</source>             <!-- Enables javadoc to handle assertions present in J2SE 1.4.  -->
                     <encoding>UTF-8</encoding>       <!-- The encoding of the source files.                          -->
@@ -405,9 +380,7 @@
                     <noqualifier>all</noqualifier>   <!-- Omit qualifying package name before class names in output. -->
                     <quiet>true</quiet>              <!-- Shuts off non-error and non-warning messages.              -->
                     <keywords>true</keywords>        <!-- Adds HTML meta keyword tags to the generated files.        -->
-                                        <!-- excludePackageNames>org.unitsofmeasurement.format:org.unitsofmeasurement.converter:org.unitsofmeasurement.util</excludePackageNames -->
-                                        <!-- Creates links to existing javadoc-generated   -->
-                                        <!-- documentation of external referenced classes. -->
+                    <!-- Creates links to existing javadoc-generated documentation of external referenced classes.   -->
                     <links>
                         <link>http://java.sun.com/javase/6/docs/api</link>
                     </links>
@@ -420,7 +393,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-pmd-plugin</artifactId>
-                <version>2.5</version>
                 <configuration>
                     <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
                     <targetJdk>1.5</targetJdk>
@@ -433,7 +405,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-report-plugin</artifactId>
-                <version>2.5</version>
             </plugin>
 
             <!-- ======================================================= -->
@@ -455,12 +426,10 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>findbugs-maven-plugin</artifactId>
-                <version>2.1</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>2.5</version>
                 <configuration>
                     <configLocation>config/sun_checks.xml</configLocation>
                 </configuration>
@@ -468,13 +437,10 @@
         </plugins>
     </reporting>
 
-    <!-- ======================================================= -->
-    <!--
-             Repositories. This is where Maven looks for dependencies.
-             The Maven repository is implicit and doesn't
-             need to be specified.
-    -->
-    <!-- ======================================================= -->
+    <!-- ============================================================== -->
+    <!-- Repositories. This is where Maven looks for dependencies. The  -->
+    <!-- Maven repository is implicit and doesn't need to be specified. -->
+    <!-- ============================================================== -->
     <pluginRepositories>
         <pluginRepository>
             <id>maven2-repository.dev.java.net</id>
@@ -492,5 +458,10 @@
             <url>java-net:/maven2-repository/trunk/repository/</url>
             <uniqueVersion>false</uniqueVersion>
         </repository>
+        <site>
+            <id>unitsofmeasurement</id>
+            <name>Units Of Measurement web site</name>
+            <url>dav:http://www.unitsofmeasurement.org/</url>
+        </site>
     </distributionManagement>
 </project>
