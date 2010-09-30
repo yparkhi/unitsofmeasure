@@ -16,7 +16,7 @@
  *     org.unitsofmeasurement.quantity.Quantity Quantity} interface.</p>
  *
  * <p> This package supports <cite>measurable</cite> quantities, which can be
- *     expressed as ({@link java.lang.Number}, {@link org.unitsofmeasurement.Unit}) tuples.
+ *     expressed as ({@link java.lang.Number}, {@link org.unitsofmeasurement.unit.Unit}) tuples.
  *     Those tuples are not expected to be used directly in numerically intensive code.
  *     They are more useful as metadata converted to the application internal representation
  *     (for example {@code double} primitive type with the requirement to provide values in
