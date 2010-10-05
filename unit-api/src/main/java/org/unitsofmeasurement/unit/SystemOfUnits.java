@@ -8,8 +8,6 @@
 package org.unitsofmeasurement.unit;
 
 import java.util.Set;
-import org.unitsofmeasurement.unit.Dimension;
-import org.unitsofmeasurement.unit.Unit;
 import org.unitsofmeasurement.quantity.Quantity;
 
 /**
@@ -38,7 +36,7 @@ public interface SystemOfUnits {
      * @param quantityType the quantity type.
      * @return the unit for the specified quantity.
      */
-    <Q extends Quantity<Q>> Unit<Q> getUnit(Class<Quantity<Q>> quantityType);
+    <Q extends Quantity<Q>> Unit<Q> getUnit(Class<Q> quantityType);
 
     /**
      * Returns a read only view over the units defined in this system.
