@@ -68,6 +68,6 @@ public interface Dimension {
      * @return the mapping between the fundamental dimensions and their
      *         exponent.
      */
-    Map<Dimension, Integer> getProductDimensions();
+    Map<? extends Dimension, Integer> getProductDimensions();
 
 }

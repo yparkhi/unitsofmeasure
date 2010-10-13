@@ -43,7 +43,7 @@ public interface SystemOfUnits {
      *
      * @return the collection of units.
      */
-    Set<Unit<?>> getUnits();
+    Set<? extends Unit> getUnits();
 
     /**
      * Returns the units defined in this system having the specified dimension
@@ -52,7 +52,6 @@ public interface SystemOfUnits {
      * @param dimension the dimension of the units to be returned.
      * @return the collection of units of specified dimension.
      */
-    Set<Unit<?>> getUnits(Dimension dimension);
-
+    Set<? extends Unit> getUnits(Dimension dimension);
 
 }
