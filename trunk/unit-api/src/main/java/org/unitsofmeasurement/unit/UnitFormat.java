@@ -7,7 +7,6 @@
  */
 package org.unitsofmeasurement.unit;
 
-import org.unitsofmeasurement.unit.Unit;
 import java.io.IOException;
 import java.text.ParsePosition;
 
@@ -47,4 +46,5 @@ public interface UnitFormat {
      */
     Unit<?> parse(CharSequence csq, ParsePosition cursor)
             throws IllegalArgumentException;
+
 }

@@ -112,6 +112,6 @@ public interface UnitConverter {
      * @return the list of fundamental converters which concatenated makes up
      *         this converter.
      */
-    List<UnitConverter> getCompoundConverters();
+    List<? extends UnitConverter> getCompoundConverters();
 
 }
