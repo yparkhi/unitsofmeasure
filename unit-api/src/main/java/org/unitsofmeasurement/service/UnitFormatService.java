@@ -8,6 +8,7 @@
 package org.unitsofmeasurement.service;
 
 import java.util.Locale;
+
 import org.unitsofmeasurement.unit.UnitFormat;
 
 /**
@@ -18,7 +19,7 @@ import org.unitsofmeasurement.unit.UnitFormat;
  * @see <a href="http://aurora.regenstrief.org/~ucum/ucum.html">UCUM Full Specification</a>
  * @version 1.0
  */
-public interface UnitFormatService extends UnitFormat {
+public interface UnitFormatService {
 
     /**
      * Returns the default <a href="http://www.unitsofmeasure.org/">UCUM</a>
