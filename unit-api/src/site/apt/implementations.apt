@@ -2,7 +2,7 @@ Implementations
 
   Some projects that are known to implement the <Unit of Measurement> API are:
 
-    * {{{http://www.eclipse.org/proposals/uomo/}UOMo}} on Eclipse
+    * {{{http://www.eclipse.org/uomo/}UOMo}} at Eclipse
 
     * {{{http://jscience.org/}JScience}}
 
