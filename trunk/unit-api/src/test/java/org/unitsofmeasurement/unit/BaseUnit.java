@@ -7,7 +7,6 @@
  */
 package org.unitsofmeasurement.unit;
 
-import org.unitsofmeasurement.unit.Unit;
 import org.unitsofmeasurement.quantity.Quantity;
 
 /**
@@ -25,7 +24,7 @@ import org.unitsofmeasurement.quantity.Quantity;
  * @see <a href="http://en.wikipedia.org/wiki/SI_base_unit">
  *       Wikipedia: SI base unit</a>
  */
-public class BaseUnit<Q extends Quantity<Q>> extends AbstractUnit<Q> {
+class BaseUnit<Q extends Quantity<Q>> extends AbstractUnit<Q> {
 
     /** The serialVersionUID */
     private static final long serialVersionUID = 1234567654321265167L;
