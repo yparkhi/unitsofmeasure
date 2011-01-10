@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.text.ParsePosition;
 
 /**
- * <p> This class provides the interface for formatting and parsing {@link
+ * <p> This class provides the interface for formatting and parsing {@linkplain
  *     Unit units}.</p>
  *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>

@@ -15,7 +15,7 @@ import java.util.Map;
 import org.unitsofmeasurement.quantity.Quantity;
 
 /**
- * <p> This interface represents a determinate {@link Quantity quantity} (as of
+ * <p> This interface represents a determinate {@linkplain Quantity quantity} (as of
  * length, time, heat, or value) adopted as a standard of measurement.</p>
  *
  * <p> It is helpful to think of instances of this class as recording the history by
@@ -26,7 +26,7 @@ import org.unitsofmeasurement.quantity.Quantity;
  * automatic unit factorization.</p>
  *
  * <p> This interface supports the multiplication of offsets units. The result is
- * usually a unit not convertible to its {@link #getSystemUnit standard unit}. Such
+ * usually a unit not convertible to its {@linkplain #getSystemUnit standard unit}. Such
  * units may appear in derivative quantities. For example Celsius per meter is
  * an unit of gradient, which is common in atmospheric and oceanographic
  * research.</p>
@@ -204,10 +204,10 @@ public interface Unit<Q extends Quantity<Q>> {
     /**
      * Returns the result of multiplying this unit by the specified factor.
      * If the factor is an integer value, the multiplication is exact
-     * (recommended). For example:<pre><code>
+     * (recommended). For example:[code]
      *    FOOT = METRE.multiply(3048).divide(10000); // Exact definition.
      *    ELECTRON_MASS = KILOGRAM.multiply(9.10938188e-31); // Approximation.
-     * </code></pre>
+     * [/code]
      *
      * @param factor the factor
      * @return this unit scaled by the specified factor.
@@ -232,9 +232,10 @@ public interface Unit<Q extends Quantity<Q>> {
     /**
      * Returns the result of dividing this unit by an approximate divisor.
      * If the factor is an integer value, the division is exact.
-     * For example:<pre><code>
+     * For example:[code]
      *    QUART = GALLON_LIQUID_US.divide(4); // Exact definition.
-     * </code></pre>
+     * [/code]
+     *
      * @param divisor the divisor value.
      * @return this unit divided by the specified divisor.
      */

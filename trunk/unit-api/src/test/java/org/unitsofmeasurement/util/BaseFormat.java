@@ -18,12 +18,12 @@ import org.unitsofmeasurement.unit.UnitFormat;
 
 /**
  * <p>
- * This class provides the interface for formatting and parsing {@link Unit
+ * This class provides the interface for formatting and parsing {@linkplain Unit
  * units}.
  * </p>
  *
  * <p>
- * The {@link #getStandard standard} instance (UCUM) recognizes all metric units
+ * The {@linkplain #getStandard standard} instance (UCUM) recognizes all metric units
  * and the 20 SI prefixes used to form decimal multiples and some customory
  * units (see <a href="http://org.unitsofmeasure">UCUM</a> specification). For
  * example:
@@ -37,7 +37,7 @@ import org.unitsofmeasurement.unit.UnitFormat;
  *
  * <p>
  * OSGi bundles should use {@link org.unitsofmeasurement.UnitFormat} to
- * parse/format {@link #getStandard() standard} (UCUM) units.
+ * parse/format {@linkplain #getStandard() standard} (UCUM) units.
  * </p>
  *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
@@ -53,7 +53,7 @@ abstract class BaseFormat extends Format implements UnitFormat {
 
     /**
      * Returns the standard unit format (UCUM). OSGi bundles should use
-     * {@link org.unitsofmeasurement.UnitFormat} to parse/format standard
+     * {@link org.unitsofmeasurement.unit.UnitFormat} to parse/format standard
      * (UCUM) units.
      *
      * @return the standard format.
