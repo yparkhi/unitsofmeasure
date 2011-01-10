@@ -20,7 +20,7 @@ import org.unitsofmeasurement.unit.UnitConverter;
 /**
  * <p>
  * This class provides the interface for formatting and parsing
- * {@link org.unitsofmeasurement.Unit units} according to the <a
+ * {@linkplain org.unitsofmeasurement.unit.Unit units} according to the <a
  * href="http://unitsofmeasure.org/">Uniform Code for Units of Measure</a>
  * (UCUM).
  * </p>

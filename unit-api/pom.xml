@@ -337,6 +337,22 @@
                 </configuration>
             </plugin>
 
+            <!-- ======================================================= -->
+            <!--     Custom Javadoc plugin                               -->
+            <!-- ======================================================= -->
+            <plugin>
+                <groupId>javolution</groupId>
+                <artifactId>colapi</artifactId>
+                <version>1.0.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>colorize</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
         </plugins>
 
         <!-- ======================================================= -->

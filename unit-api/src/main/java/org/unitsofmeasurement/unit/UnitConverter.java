@@ -17,7 +17,7 @@ import java.util.List;
  * </p>
  *
  * <p>
- * Instances of this class are obtained through the {@link Unit#getConverterTo}
+ * Instances of this class are obtained through the {@link Unit#getConverterTo Unit.getConverterTo(Unit)}
  * method.
  * </p>
  *
