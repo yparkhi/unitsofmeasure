@@ -1,6 +1,6 @@
 /**
  * Unit-API - Units of Measurement API for Java (http://unitsofmeasurement.org)
- * Copyright (c) 2005-2010, Unit-API contributors, JScience and others
+ * Copyright (c) 2005-2011, Unit-API contributors, JScience and others
  * All rights reserved.
  *
  * See LICENSE.txt for details.
@@ -16,10 +16,6 @@ import org.unitsofmeasurement.unit.VolumeUnit;
 /**
  * @author paul.morrison
  *
- * To change this generated comment edit the template variable "typecomment":
- * Window>Preferences>Java>Templates.
- * To enable and disable the creation of type comments go to
- * Window>Preferences>Java>Code Generation.
  */
 public class VolumeQuantity extends DimensionQuantity {
     public VolumeQuantity() {
