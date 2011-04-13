@@ -11,8 +11,7 @@ import org.unitsofmeasurement.unit.BitRateUnit;
 
 /**
  * @author Werner Keil
- * @version 1.0 ($Revision$), $Date: 2010-10-29 17:17:07 +0100 (Fr, 29 Okt 2010)
- *          $
+ * @version 1.0 ($Revision$), $Date$
  */
 public class BitRateQuantity extends DimensionQuantity {
     public BitRateQuantity() {

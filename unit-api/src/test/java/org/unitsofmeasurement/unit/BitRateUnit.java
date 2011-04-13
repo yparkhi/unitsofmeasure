@@ -11,8 +11,7 @@ import org.unitsofmeasurement.quantity.InformationRate;
 
 /**
  * @author Werner Keil
- * @version 1.0 ($Revision: 133 $), $Date: 2010-10-29 17:17:07 +0100 (Fr, 29 Okt
- *          2010) $
+ * @version 1.0 ($Revision$), $Date$
  */
 public class BitRateUnit extends AbstractUnit<InformationRate> {
 

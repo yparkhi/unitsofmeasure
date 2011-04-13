@@ -12,7 +12,6 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.unitsofmeasurement.unit.AreaUnit;
 import org.unitsofmeasurement.unit.DistanceUnit;
