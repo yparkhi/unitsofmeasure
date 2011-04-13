@@ -11,10 +11,9 @@ package org.unitsofmeasurement.quantity;
 import org.unitsofmeasurement.unit.DistanceUnit;
 import org.unitsofmeasurement.unit.TimeUnit;
 
-
 /**
- * @author paul.morrison
- *
+ * @author Werner Keil
+ * @version 1.0 ($Revision$), $Date$
  */
 public class TimeQuantity extends DimensionQuantity {
 
