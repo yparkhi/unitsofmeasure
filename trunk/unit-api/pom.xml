@@ -21,7 +21,7 @@
     <url>http://code.google.com/p/unitsofmeasure/</url>
     <organization>
         <name>Units of Measurement API</name>
-        <url>http://unitsofmeasurement.org</url>
+        <url>http://www.unitsofmeasurement.org</url>
     </organization>
     <inceptionYear>2005</inceptionYear>
     <description>
@@ -55,10 +55,12 @@
     <mailingLists>
         <mailingList>
             <name>Units-Dev</name>
+            <subscribe>http://groups.google.com/group/units-dev/subscribe</subscribe>
             <post>units-dev@googlegroups.com</post>
         </mailingList>
         <mailingList>
             <name>Units-Users</name>
+            <subscribe>http://groups.google.com/group/units-users/subscribe</subscribe>
             <post>units-users@googlegroups.com</post>
         </mailingList>
         <mailingList>
