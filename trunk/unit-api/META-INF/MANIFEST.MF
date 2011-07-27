@@ -4,8 +4,7 @@ Bundle-Name: Units of Measurement API
 Bundle-SymbolicName: org.unitsofmeasurement.unit-api;singleton:=true
 Bundle-Version: 0.6.0
 Bundle-Vendor: Unit-API contributors
-Bundle-RequiredExecutionEnvironment: J2SE-1.5,
- OSGi/Minimum-1.1
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.unitsofmeasurement.quantity;uses:="org.unitsofmeasurement",
  org.unitsofmeasurement.service,
  org.unitsofmeasurement.unit
