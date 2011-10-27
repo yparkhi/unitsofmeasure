@@ -9,6 +9,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
          http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <prerequisites>
+        <maven>3.0.2</maven>
+    </prerequisites>
 
     <!-- ==================================================== -->
     <!--     Project description (including license)          -->
@@ -383,6 +386,118 @@ This API specifies Java packages for the programmatic, type safe handling
                 </executions>
             </plugin>
 
+            <!-- ======================================================= -->
+            <!--     Maven web site                                      -->
+            <!-- ======================================================= -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>3.0</version>
+                <configuration>
+                    <locales>en</locales>
+                    <inputEncoding>${project.build.sourceEncoding}</inputEncoding>
+                    <outputEncoding>UTF-8</outputEncoding>
+                    <reportPlugins>
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-project-info-reports-plugin</artifactId>
+                            <version>2.4</version>
+                            <reportSets>
+                                <reportSet>
+                                    <reports>
+                                        <report>index</report>
+                                        <report>summary</report>
+                                        <report>license</report>
+                                        <report>scm</report>
+                                        <report>cim</report>
+                                        <report>project-team</report>
+                                        <report>mailing-list</report>
+                                        <report>issue-tracking</report>
+                                    </reports>
+                                </reportSet>
+                            </reportSets>
+                        </plugin>
+
+                        <!-- ======================================================= -->
+                        <!--     Javadoc generation                                  -->
+                        <!--                                                         -->
+                        <!--     Do not set <docfilessubdirs> to true, since this    -->
+                        <!--     cause the unwanted copy of .svn sub-directories.    -->
+                        <!-- ======================================================= -->
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-javadoc-plugin</artifactId>
+                            <version>2.8</version>
+                            <configuration>
+                                <source>1.5</source>             <!-- Enables javadoc to handle assertions present in J2SE 1.4.  -->
+                                <encoding>UTF-8</encoding>       <!-- The encoding of the source files.                          -->
+                                <docencoding>UTF-8</docencoding> <!-- The encoding of the generated HTML files.                  -->
+                                <charset>UTF-8</charset>         <!-- Specifies the HTML character set for this document.        -->
+                                <locale>en</locale>              <!-- Locale that javadoc uses when generating documentation.    -->
+                                <noqualifier>all</noqualifier>   <!-- Omit qualifying package name before class names in output. -->
+                                <quiet>true</quiet>              <!-- Shuts off non-error and non-warning messages.              -->
+                                <keywords>true</keywords>        <!-- Adds HTML meta keyword tags to the generated files.        -->
+                                <!-- Creates links to existing javadoc-generated documentation of external referenced classes.   -->
+                                <links>
+                                    <link>http://java.sun.com/javase/6/docs/api</link>
+                                </links>
+                            </configuration>
+                        </plugin>
+
+                        <!-- ======================================================= -->
+                        <!--     Code analysis                                       -->
+                        <!-- ======================================================= -->
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-pmd-plugin</artifactId>
+                            <version>2.5</version>
+                            <configuration>
+                                <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
+                                <targetJdk>1.5</targetJdk>
+                            </configuration>
+                        </plugin>
+
+                        <!-- ======================================================= -->
+                        <!--     Report on test results                              -->
+                        <!-- ======================================================= -->
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-surefire-report-plugin</artifactId>
+                            <version>2.10</version>
+                        </plugin>
+
+                        <!-- ======================================================= -->
+                        <!--     Report on test coverage                             -->
+                        <!-- ======================================================= -->
+                        <plugin>
+                            <groupId>org.codehaus.mojo</groupId>
+                            <artifactId>emma-maven-plugin</artifactId>
+                            <version>1.0-alpha-1</version>
+                            <reportSets>
+                                <reportSet></reportSet>
+                                <reportSet></reportSet>
+                            </reportSets>
+                        </plugin>
+
+                        <!-- ======================================================= -->
+                        <!--     Static analysis for occurences of bug patterns      -->
+                        <!-- ======================================================= -->
+                        <plugin>
+                            <groupId>org.codehaus.mojo</groupId>
+                            <artifactId>findbugs-maven-plugin</artifactId>
+                            <version>2.3.2</version>
+                        </plugin>
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-checkstyle-plugin</artifactId>
+                            <version>2.7</version>
+                            <configuration>
+                                <configLocation>config/sun_checks.xml</configLocation>
+                            </configuration>
+                        </plugin>
+                    </reportPlugins>
+                </configuration>
+            </plugin>
         </plugins>
 
         <!-- ======================================================= -->
@@ -402,91 +517,6 @@ This API specifies Java packages for the programmatic, type safe handling
             </extension>
         </extensions>
     </build>
-
-    <!-- ======================================================= -->
-    <!--     Maven web site                                      -->
-    <!-- ======================================================= -->
-    <reporting>
-        <plugins>
-            <!-- ======================================================= -->
-            <!--     Javadoc generation                                  -->
-            <!--                                                         -->
-            <!--     Do not set <docfilessubdirs> to true, since this    -->
-            <!--     cause the unwanted copy of .svn sub-directories.    -->
-            <!-- ======================================================= -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.8</version>
-                <configuration>
-                    <source>1.5</source>             <!-- Enables javadoc to handle assertions present in J2SE 1.4.  -->
-                    <encoding>UTF-8</encoding>       <!-- The encoding of the source files.                          -->
-                    <docencoding>UTF-8</docencoding> <!-- The encoding of the generated HTML files.                  -->
-                    <charset>UTF-8</charset>         <!-- Specifies the HTML character set for this document.        -->
-                    <locale>en</locale>              <!-- Locale that javadoc uses when generating documentation.    -->
-                    <noqualifier>all</noqualifier>   <!-- Omit qualifying package name before class names in output. -->
-                    <quiet>true</quiet>              <!-- Shuts off non-error and non-warning messages.              -->
-                    <keywords>true</keywords>        <!-- Adds HTML meta keyword tags to the generated files.        -->
-                    <!-- Creates links to existing javadoc-generated documentation of external referenced classes.   -->
-                    <links>
-                        <link>http://java.sun.com/javase/6/docs/api</link>
-                    </links>
-                </configuration>
-            </plugin>
-
-            <!-- ======================================================= -->
-            <!--     Code analysis                                       -->
-            <!-- ======================================================= -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-pmd-plugin</artifactId>
-                <version>2.5</version>
-                <configuration>
-                    <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
-                    <targetJdk>1.5</targetJdk>
-                </configuration>
-            </plugin>
-
-            <!-- ======================================================= -->
-            <!--     Report on test results                              -->
-            <!-- ======================================================= -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-report-plugin</artifactId>
-                <version>2.10</version>
-            </plugin>
-
-            <!-- ======================================================= -->
-            <!--     Report on test coverage                             -->
-            <!-- ======================================================= -->
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>emma-maven-plugin</artifactId>
-                <version>1.0-alpha-1</version>
-                <reportSets>
-                    <reportSet></reportSet>
-                    <reportSet></reportSet>
-                </reportSets>
-            </plugin>
-
-            <!-- ======================================================= -->
-            <!--     Static analysis for occurences of bug patterns      -->
-            <!-- ======================================================= -->
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>findbugs-maven-plugin</artifactId>
-                <version>2.3.2</version>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>2.7</version>
-                <configuration>
-                    <configLocation>config/sun_checks.xml</configLocation>
-                </configuration>
-            </plugin>
-        </plugins>
-    </reporting>
 
     <!-- ============================================================== -->
     <!-- Repositories. This is where Maven looks for dependencies. The  -->
