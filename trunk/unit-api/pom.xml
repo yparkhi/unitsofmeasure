@@ -16,17 +16,19 @@
     <groupId>org.unitsofmeasurement</groupId>
     <artifactId>unit-api</artifactId>
     <packaging>bundle</packaging>
-    <version>0.6.0</version>
+    <version>0.6-RC3</version>
     <name>Units of Measurement API</name>
     <url>http://code.google.com/p/unitsofmeasure/</url>
     <organization>
-        <name>Units of Measurement API</name>
+        <name>Units of Measurement project</name>
         <url>http://www.unitsofmeasurement.org</url>
     </organization>
     <inceptionYear>2005</inceptionYear>
     <description>
-        This API specifies Java packages for the programmatic, type safe handling
-        of quantities and their expression as numbers of units.
+<!-- Left alignment because this description will be copied in META-INF/MANIFEST.MF
+     The leading space after the first line is necessary for proper formatting. -->
+This API specifies Java packages for the programmatic, type safe handling
+ of quantities and their expression as numbers of units.
     </description>
 
     <licenses>
@@ -284,7 +286,7 @@
         <dependency> <!-- Validation tests -->
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.8.1</version>
+            <version>4.10</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -306,6 +308,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
                 <configuration>
                     <source>1.5</source>
                     <target>1.5</target>
@@ -319,8 +322,32 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
+                <version>2.5</version>
                 <configuration>
                     <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+
+            <!-- ======================================================= -->
+            <!--     JAR packaging                                       -->
+            <!-- ======================================================= -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                  <archive>
+                    <manifest>
+                      <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                    </manifest>
+                    <manifestEntries>
+                      <Specification-Title>${project.name}</Specification-Title>
+                      <Specification-Version>${project.version}</Specification-Version>
+                      <Specification-Vendor>${project.organization.name}</Specification-Vendor>
+                      <Implementation-Vendor>Unit-API contributors</Implementation-Vendor>
+                      <Implementation-URL>http://www.unitsofmeasurement.org</Implementation-URL>
+                    </manifestEntries>
+                  </archive>
                 </configuration>
             </plugin>
 
@@ -330,6 +357,7 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
+                <version>2.3.5</version>
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
@@ -369,8 +397,8 @@
             </extension>
             <extension>
                 <groupId>org.apache.maven.wagon</groupId>
-                <artifactId>wagon-webdav</artifactId>
-                <version>1.0-beta-2</version>
+                <artifactId>wagon-webdav-jackrabbit</artifactId>
+                <version>2.0</version>
             </extension>
         </extensions>
     </build>
@@ -389,6 +417,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.8</version>
                 <configuration>
                     <source>1.5</source>             <!-- Enables javadoc to handle assertions present in J2SE 1.4.  -->
                     <encoding>UTF-8</encoding>       <!-- The encoding of the source files.                          -->
@@ -411,6 +440,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-pmd-plugin</artifactId>
+                <version>2.5</version>
                 <configuration>
                     <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
                     <targetJdk>1.5</targetJdk>
@@ -423,6 +453,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-report-plugin</artifactId>
+                <version>2.10</version>
             </plugin>
 
             <!-- ======================================================= -->
@@ -444,10 +475,12 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>findbugs-maven-plugin</artifactId>
+                <version>2.3.2</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>2.7</version>
                 <configuration>
                     <configLocation>config/sun_checks.xml</configLocation>
                 </configuration>
