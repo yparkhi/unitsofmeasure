@@ -17,22 +17,19 @@
  *     interface.</p>
  *
  * <p> This package supports <cite>measurable</cite> quantities, which can be
- *     expressed as ({@link java.lang.Number}, 
+ *     expressed as ({@link java.lang.Number},
  *     {@link org.unitsofmeasurement.unit.Unit}) tuples.
  *     Those tuples are not expected to be used directly in numerically
  *     intensive code.
  *     They are more useful as metadata converted to the application internal
- *     representation (for example {@code double} primitive type with the 
+ *     representation (for example {@code double} primitive type with the
  *     requirement to provide values in metres) before computation begins.
- *     
- *     For this purpose, sub-interfaces of {@code Quantity} may provide the 
- *     {@code longValue(Unit<Q>)} and {@code doubleValue(Unit<Q>)} convenience
- *     methods. Example:[code]
+ *     Example:[code]
  *        Time calculateTravelTime(Length distance, Velocity velocity) {
- *            double seconds = distance.doubleValue(METRE) /
- *                             velocity.doubleValue(METRE_PER_SECOND);
- *            return QuantityFactory.getInstance(Time.class).create(seconds,
- *             SECOND);
+ *            double tile = distance.amount().doubleValue() /
+ *                          velocity.amount().doubleValue();
+ *            return QuantityFactory.getInstance(Time.class).create(time,
+ *                    distance.unit().divide(velocity.unit()).asType(Time.class));
  *        }
  *     [/code]
  * </p>
@@ -42,10 +39,9 @@
  * here.[code]
  *        Sensor<Temperature> sensor ... // Generic sensor.
  *        Temperature temp = sensor.getValue();
- *        Quantity<Mass> weight = new QuantityImpl(180, 0.1, POUND); 
+ *        Quantity<Mass> weight = new QuantityImpl(180, 0.1, POUND);
  *        // Combination magnitude/precision/unit (measurement)
- *        Vector3D<Velocity> aircraftSpeed = new Vector3D(12.0, 34.0, -45.5, 
- *         METRE_PER_SECOND);
+ *        Vector3D<Velocity> aircraftSpeed = new Vector3D(12.0, 34.0, -45.5, METRE_PER_SECOND);
  *     [/code]</p>
  *
  * <p> This package holds only the quantities required by the metric system.</p>
