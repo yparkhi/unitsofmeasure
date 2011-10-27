@@ -30,26 +30,26 @@ Unit-API contributors, JScience and others
   The <Unit of Measurement> library provides a set of Java language programming interfaces for
   handling units and quantities. The interfaces provide a layer which separates client code,
   which would call the API, from library code, which implements the API. Various groups have
-  implemented the API, see the {{{implementations.html}list of known implementations}} for details.
+  implemented the API, see the {{{./implementations.html}list of known implementations}} for details.
 
 * The project
 
   The project is {{{http://unitsofmeasure.googlecode.com/}hosted on Google Code}}. It runs a public
-  {{{mail-lists.html}mailing list}} for user and developer questions, other issues, and general
+  {{{./mail-lists.html}mailing list}} for user and developer questions, other issues, and general
   discussion.
 
   The <Unit of Measurement> library is free software. It may be used, modified and redistributed by
   anyone for any purpose requiring only maintaining the copyright and license terms on the source
-  code and derivative files. See the {{{license.html}license}} page for details.
+  code and derivative files. See the {{{./license.html}license}} page for details.
 
 
 * Links
 
-    * {{{apidocs/index.html}Browse javadoc}}
+    * {{{./apidocs/index.html}Browse javadoc}}
 
     * {{{http://hudson.geomatys.com/job/Unit-API/}Nightly builds}}
 
-    * {{{mail-lists.html}Mailing lists}}
+    * {{{./mail-lists.html}Mailing lists}}
 
     * {{{http://www.unitsofmeasure.org/}The Unified Code for Units of Measure (UCUM)}}
 
