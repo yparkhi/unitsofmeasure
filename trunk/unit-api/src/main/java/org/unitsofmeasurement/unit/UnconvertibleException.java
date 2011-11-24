@@ -20,7 +20,7 @@ package org.unitsofmeasurement.unit;
 public class UnconvertibleException extends RuntimeException {
 
     /**
-     *
+     * For cross-version compatibility.
      */
     private static final long serialVersionUID = -4623551240019830166L;
 
@@ -31,7 +31,7 @@ public class UnconvertibleException extends RuntimeException {
      * @param message the detail message.
      */
     public UnconvertibleException(String message) {
-    super(message);
+        super(message);
     }
 
     /**
@@ -41,6 +41,6 @@ public class UnconvertibleException extends RuntimeException {
      * @param cause the original exception.
      */
     public UnconvertibleException(Throwable cause) {
-    super(cause);
+        super(cause);
     }
 }
