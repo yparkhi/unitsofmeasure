@@ -19,7 +19,7 @@
     <groupId>org.unitsofmeasurement</groupId>
     <artifactId>unit-api</artifactId>
     <packaging>bundle</packaging>
-    <version>0.6.0</version>
+    <version>0.6.1</version>
     <name>Units of Measurement API</name>
     <url>http://code.google.com/p/unitsofmeasure/</url>
     <organization>
