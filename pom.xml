@@ -19,7 +19,7 @@
     <groupId>org.unitsofmeasurement</groupId>
     <artifactId>unit-api</artifactId>
     <packaging>bundle</packaging>
-    <version>0.6.0</version>
+    <version>0.6.1</version>
     <name>Units of Measurement API</name>
     <url>http://code.google.com/p/unitsofmeasure/</url>
     <organization>
@@ -535,9 +535,9 @@ This API specifies Java packages for the programmatic, type safe handling
     <!-- ==================================================== -->
     <distributionManagement>
         <repository>
-            <id>java.net-maven2-repository</id>
-            <url>java-net:/maven2-repository/trunk/repository/</url>
-            <uniqueVersion>false</uniqueVersion>
+            <id>geotoolkit</id>
+            <name>GeoToolkit repository</name>
+            <url>dav:http://maven.geotoolkit.org</url>
         </repository>
         <site>
             <id>unitsofmeasurement</id>
