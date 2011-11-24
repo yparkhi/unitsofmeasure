@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Units of Measurement API
 Bundle-SymbolicName: org.unitsofmeasurement.unit-api;singleton:=true
-Bundle-Version: 0.6.0
+Bundle-Version: 0.6.1
 Bundle-Vendor: Unit-API contributors
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.unitsofmeasurement.quantity;uses:="org.unitsofmeasurement",
