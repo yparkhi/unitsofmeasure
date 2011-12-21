@@ -5,15 +5,16 @@
  *
  * See LICENSE.txt for details.
  */
-package org.unitsofmeasurement.unit;
+package org.unitsofmeasurement.test.unit;
 
 import org.unitsofmeasurement.quantity.Information;
+import org.unitsofmeasurement.unit.Unit;
 
 /**
  * @author Werner Keil
  * @version 1.0 ($Revision$), $Date$
  */
-public class BitUnit extends AbstractUnit<Information> {
+public class BitUnit extends TestUnit<Information> {
 
     public static final BitUnit bit = new BitUnit("bit", 1.0); // reference
     // Unit

@@ -5,7 +5,7 @@
  *
  * See LICENSE.txt for details.
  */
-package org.unitsofmeasurement.unit;
+package org.unitsofmeasurement.test.unit;
 
 import org.unitsofmeasurement.unit.Unit;
 import org.unitsofmeasurement.quantity.Volume;
@@ -14,7 +14,7 @@ import org.unitsofmeasurement.quantity.Volume;
  * @author paul.morrison
  *
  */
-public class VolumeUnit extends AbstractUnit<Volume> {
+public class VolumeUnit extends TestUnit<Volume> {
     public static final VolumeUnit cumetre = new VolumeUnit("cumetre", 1.0); // reference
     // Unit
     public static final VolumeUnit REF_UNIT = cumetre; // reference Unit

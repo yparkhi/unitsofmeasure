@@ -1,11 +1,11 @@
-package org.unitsofmeasurement.quantity;
+package org.unitsofmeasurement.test.quantity;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.unitsofmeasurement.unit.BitUnit;
-import org.unitsofmeasurement.unit.TimeUnit;
+import org.unitsofmeasurement.test.unit.BitUnit;
+import org.unitsofmeasurement.test.unit.TimeUnit;
 
 public class BitQuantityTest {
 	BitQuantity bq;

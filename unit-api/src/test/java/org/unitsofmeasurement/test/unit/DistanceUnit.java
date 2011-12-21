@@ -5,7 +5,7 @@
  *
  * See LICENSE.txt for details.
  */
-package org.unitsofmeasurement.unit;
+package org.unitsofmeasurement.test.unit;
 
 import org.unitsofmeasurement.unit.Unit;
 import org.unitsofmeasurement.quantity.Length;

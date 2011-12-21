@@ -5,17 +5,17 @@
  *
  * See LICENSE.txt for details.
  */
-package org.unitsofmeasurement.quantity;
+package org.unitsofmeasurement.test.quantity;
 
 
-import org.unitsofmeasurement.unit.DistanceUnit;
-import org.unitsofmeasurement.unit.TimeUnit;
+import org.unitsofmeasurement.test.unit.DistanceUnit;
+import org.unitsofmeasurement.test.unit.TimeUnit;
 
 /**
  * @author Werner Keil
  * @version 1.0 ($Revision$), $Date$
  */
-public class TimeQuantity extends DimensionQuantity {
+public class TimeQuantity extends TestQuantity {
 
 	public TimeQuantity(double val, TimeUnit un) {
 

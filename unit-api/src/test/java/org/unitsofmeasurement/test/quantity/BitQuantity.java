@@ -5,17 +5,17 @@
  *
  * See LICENSE.txt for details.
  */
-package org.unitsofmeasurement.quantity;
+package org.unitsofmeasurement.test.quantity;
 
 
-import org.unitsofmeasurement.unit.BitRateUnit;
-import org.unitsofmeasurement.unit.BitUnit;
+import org.unitsofmeasurement.test.unit.BitRateUnit;
+import org.unitsofmeasurement.test.unit.BitUnit;
 
 /**
  * @author Werner Keil
  * @version 1.0 ($Revision$), $Date$
  */
-public class BitQuantity extends DimensionQuantity {
+public class BitQuantity extends TestQuantity {
 
 	public BitQuantity(double val, BitUnit un) {
 

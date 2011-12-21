@@ -1,29 +1,29 @@
 /**
  * Unit-API - Units of Measurement API for Java (http://unitsofmeasurement.org)
- * Copyright (c) 2005-2010, Unit-API contributors, JScience and others
+ * Copyright (c) 2005-2011, Unit-API contributors, JScience and others
  * All rights reserved.
  *
  * See LICENSE.txt for details.
  */
-package org.unitsofmeasurement.quantity;
+package org.unitsofmeasurement.test.quantity;
 
-import java.math.*;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 
-import org.unitsofmeasurement.unit.AbstractUnit;
-
-
+import org.unitsofmeasurement.quantity.Quantity;
+import org.unitsofmeasurement.test.unit.TestUnit;
+import org.unitsofmeasurement.unit.Unit;
 
 /**
  * @author paul.morrison
  */
-class DimensionQuantity  {
+abstract class TestQuantity<Q extends Quantity<Q>> implements
+		Quantity<Q> {
     protected double scalar; // value in reference units
     protected double units; // value in units (Unit unit)
-    protected AbstractUnit unit;
+	protected TestUnit<Q> unit;
 
-
-
-    public Object add(DimensionQuantity dn, DimensionQuantity d1, DimensionQuantity d2, AbstractUnit<?> au) {
+    public Object add(TestQuantity dn, TestQuantity d1, TestQuantity d2, TestUnit<?> au) {
         if (d1.unit == d2.unit){
             dn.unit = d1.unit;
             dn.scalar = d1.scalar + d2.scalar;
@@ -36,7 +36,7 @@ class DimensionQuantity  {
         }
         return dn;
     }
-    public Object subtract(DimensionQuantity dn, DimensionQuantity d1, DimensionQuantity d2, AbstractUnit<?> au) {
+    public Object subtract(TestQuantity dn, TestQuantity d1, TestQuantity d2, TestUnit<?> au) {
         if (d1.unit == d2.unit){
             dn.unit = d1.unit;
             dn.scalar = d1.scalar - d2.scalar;
@@ -51,32 +51,30 @@ class DimensionQuantity  {
 
     }
 
-
-    public boolean eq(DimensionQuantity d1) {
+    public boolean eq(TestQuantity d1) {
         return (scalar == d1.scalar);
     }
-    public boolean ne(DimensionQuantity d1) {
+    public boolean ne(TestQuantity d1) {
         return (scalar != d1.scalar);
     }
-    public boolean gt(DimensionQuantity d1) {
+    public boolean gt(TestQuantity d1) {
         return (scalar > d1.scalar);
     }
-    public boolean lt(DimensionQuantity d1) {
+    public boolean lt(TestQuantity d1) {
         return (scalar < d1.scalar);
     }
-    public boolean ge(DimensionQuantity d1) {
+    public boolean ge(TestQuantity d1) {
         return (scalar >= d1.scalar);
     }
-    public boolean le(DimensionQuantity d1) {
+    public boolean le(TestQuantity d1) {
         return (scalar <= d1.scalar);
     }
 
     public String toString() {
-
         return (new Double(units)).toString() + ' ' + unit.getName();
     }
 
-    String showInUnits(AbstractUnit<?> u, int precision) {
+    String showInUnits(TestUnit<?> u, int precision) {
         double result = scalar / u.getMultFactor();
 
         String str = (new Double(result)).toString();
@@ -96,7 +94,14 @@ class DimensionQuantity  {
 
     }
 
+	@Override
+	public Number value() {
+		return Double.valueOf(units);
+	}
 
-
+	@Override
+	public Unit<Q> unit() {
+		return unit;
+	}
 
 }

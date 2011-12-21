@@ -5,19 +5,19 @@
  *
  * See LICENSE.txt for details.
  */
-package org.unitsofmeasurement.quantity;
+package org.unitsofmeasurement.test.quantity;
 
 
-import org.unitsofmeasurement.unit.AreaUnit;
-import org.unitsofmeasurement.unit.DistanceUnit;
-import org.unitsofmeasurement.unit.VolumeUnit;
+import org.unitsofmeasurement.test.unit.AreaUnit;
+import org.unitsofmeasurement.test.unit.DistanceUnit;
+import org.unitsofmeasurement.test.unit.VolumeUnit;
 
 
 /**
  * @author paul.morrison
  *
  */
-public class DistanceQuantity extends DimensionQuantity {
+public class DistanceQuantity extends TestQuantity {
 
     public DistanceQuantity(double val, DistanceUnit un) {
 

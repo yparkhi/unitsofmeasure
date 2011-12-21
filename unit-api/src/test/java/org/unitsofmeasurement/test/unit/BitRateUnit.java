@@ -5,15 +5,16 @@
  *
  * See LICENSE.txt for details.
  */
-package org.unitsofmeasurement.unit;
+package org.unitsofmeasurement.test.unit;
 
 import org.unitsofmeasurement.quantity.InformationRate;
+import org.unitsofmeasurement.unit.Unit;
 
 /**
  * @author Werner Keil
  * @version 1.0 ($Revision$), $Date$
  */
-public class BitRateUnit extends AbstractUnit<InformationRate> {
+public class BitRateUnit extends TestUnit<InformationRate> {
 
 	public static final BitRateUnit bps = new BitRateUnit("bps", 1.0); // reference
     // Unit

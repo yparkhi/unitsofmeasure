@@ -5,9 +5,10 @@
  *
  * See LICENSE.txt for details.
  */
-package org.unitsofmeasurement.unit;
+package org.unitsofmeasurement.test.unit;
 
 import org.unitsofmeasurement.quantity.Quantity;
+import org.unitsofmeasurement.unit.Unit;
 
 /**
  * <p> This class represents the building blocks on top of which all others
@@ -24,10 +25,7 @@ import org.unitsofmeasurement.quantity.Quantity;
  * @see <a href="http://en.wikipedia.org/wiki/SI_base_unit">
  *       Wikipedia: SI base unit</a>
  */
-class BaseUnit<Q extends Quantity<Q>> extends AbstractUnit<Q> {
-
-    /** The serialVersionUID */
-    private static final long serialVersionUID = 1234567654321265167L;
+public class BaseUnit<Q extends Quantity<Q>> extends TestUnit<Q> {
 
     /**
      * Creates a base unit having the specified symbol.

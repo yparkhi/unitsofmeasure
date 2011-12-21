@@ -5,7 +5,7 @@
  *
  * See LICENSE.txt for details.
  */
-package org.unitsofmeasurement.unit;
+package org.unitsofmeasurement.test.unit;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -21,10 +21,11 @@ import org.unitsofmeasurement.quantity.Information;
 import org.unitsofmeasurement.quantity.Length;
 import org.unitsofmeasurement.quantity.Quantity;
 import org.unitsofmeasurement.quantity.Volume;
+import org.unitsofmeasurement.unit.Unit;
 
 /**
  * A factory producing simple quantities instances (tuples {@link Number}/
- * {@link AbstractUnit}).
+ * {@link TestUnit}).
  * 
  * For example:[code] Mass m =
  * QuantityFactory.getInstance(Mass.class).create(23.0, KILOGRAM); // 23.0 kg
@@ -194,7 +195,7 @@ abstract class QuantityFactory<Q extends Quantity<Q>> {
 		@SuppressWarnings("rawtypes")
 		static final HashMap<Class, Unit> CLASS_TO_METRIC_UNIT = new HashMap<Class, Unit>();
 		static {
-			CLASS_TO_METRIC_UNIT.put(Dimensionless.class, AbstractUnit.ONE);
+			CLASS_TO_METRIC_UNIT.put(Dimensionless.class, TestUnit.ONE);
 			// CLASS_TO_METRIC_UNIT.put(Mass.class, KILOGRAM);
 			CLASS_TO_METRIC_UNIT.put(Length.class, DistanceUnit.REF_UNIT);
 			// CLASS_TO_METRIC_UNIT.put(AmountOfSubstance.class, MOLE);

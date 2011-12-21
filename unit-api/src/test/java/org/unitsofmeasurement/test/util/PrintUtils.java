@@ -5,7 +5,7 @@
  *
  * See LICENSE.txt for details.
  */
-package org.unitsofmeasurement.util;
+package org.unitsofmeasurement.test.util;
 
 /**
  * A static helper class, checking e.g. if some tests require optional console
