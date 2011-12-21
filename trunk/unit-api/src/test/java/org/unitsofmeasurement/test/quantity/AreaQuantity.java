@@ -5,14 +5,14 @@
  *
  * See LICENSE.txt for details.
  */
-package org.unitsofmeasurement.quantity;
+package org.unitsofmeasurement.test.quantity;
 
-import org.unitsofmeasurement.unit.AreaUnit;
-import org.unitsofmeasurement.unit.DistanceUnit;
-import org.unitsofmeasurement.unit.VolumeUnit;
+import org.unitsofmeasurement.test.unit.AreaUnit;
+import org.unitsofmeasurement.test.unit.DistanceUnit;
+import org.unitsofmeasurement.test.unit.VolumeUnit;
 
 
-public class AreaQuantity extends DimensionQuantity {
+public class AreaQuantity extends TestQuantity {
     public AreaQuantity() {
     }
     public AreaQuantity(double val, AreaUnit un) {

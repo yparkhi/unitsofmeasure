@@ -5,15 +5,15 @@
  *
  * See LICENSE.txt for details.
  */
-package org.unitsofmeasurement.quantity;
+package org.unitsofmeasurement.test.quantity;
 
-import org.unitsofmeasurement.unit.BitRateUnit;
+import org.unitsofmeasurement.test.unit.BitRateUnit;
 
 /**
  * @author Werner Keil
  * @version 1.0 ($Revision$), $Date$
  */
-public class BitRateQuantity extends DimensionQuantity {
+public class BitRateQuantity extends TestQuantity {
     public BitRateQuantity() {
     }
 

@@ -5,10 +5,10 @@
  *
  * See LICENSE.txt for details.
  */
-package org.unitsofmeasurement.util;
+package org.unitsofmeasurement.test;
 
-import org.unitsofmeasurement.quantity.DistanceQuantity;
-import org.unitsofmeasurement.unit.DistanceUnit;
+import org.unitsofmeasurement.test.quantity.DistanceQuantity;
+import org.unitsofmeasurement.test.unit.DistanceUnit;
 
 public class Conversions {
 

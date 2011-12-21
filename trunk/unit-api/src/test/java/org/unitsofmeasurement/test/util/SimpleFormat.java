@@ -5,7 +5,7 @@
  *
  * See LICENSE.txt for details.
  */
-package org.unitsofmeasurement.util;
+package org.unitsofmeasurement.test.util;
 
 import java.io.IOException;
 import java.text.ParsePosition;
@@ -13,7 +13,7 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
-import org.unitsofmeasurement.unit.AbstractUnit;
+import org.unitsofmeasurement.test.unit.TestUnit;
 import org.unitsofmeasurement.unit.Unit;
 import org.unitsofmeasurement.unit.UnitConverter;
 
@@ -159,7 +159,7 @@ public class SimpleFormat extends BaseFormat {
 
     public Unit<?> parse(CharSequence csq, ParsePosition cursor)
             throws IllegalArgumentException {
-    return AbstractUnit.ONE;
+    return TestUnit.ONE;
     }
 
     public Locale getLocale() {

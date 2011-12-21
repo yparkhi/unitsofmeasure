@@ -5,8 +5,8 @@
  *
  * See LICENSE.txt for details.
  */
-package org.unitsofmeasurement.util;
-import org.unitsofmeasurement.quantity.DistanceQuantity;
+package org.unitsofmeasurement.test;
+import org.unitsofmeasurement.test.quantity.DistanceQuantity;
 
 
 //import org.eclipse.uomo.units.quantity.*;

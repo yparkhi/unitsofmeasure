@@ -5,7 +5,7 @@
  *
  * See LICENSE.txt for details.
  */
-package org.unitsofmeasurement.unit;
+package org.unitsofmeasurement.test;
 
 import static org.junit.Assert.assertNull;
 
@@ -17,16 +17,16 @@ import org.unitsofmeasurement.service.SystemOfUnitsService;
 @Ignore
 public class MetricTest {
 
-    private SystemOfUnitsService metric;
+	private SystemOfUnitsService metric;
 
-    @Before
-    public void setUp() {
-    // metric = Metric.getInstance();
-    }
+	@Before
+	public void setUp() {
+		// metric = Metric.getInstance();
+	}
 
-    @Test
-    public void testGetUnits() {
-    assertNull(metric);
-    }
+	@Test
+	public void testGetUnits() {
+		assertNull(metric);
+	}
 
 }

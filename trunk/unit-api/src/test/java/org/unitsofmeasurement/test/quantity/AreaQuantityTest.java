@@ -5,7 +5,7 @@
  *
  * See LICENSE.txt for details.
  */
-package org.unitsofmeasurement.quantity;
+package org.unitsofmeasurement.test.quantity;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -13,8 +13,8 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.unitsofmeasurement.unit.AreaUnit;
-import org.unitsofmeasurement.unit.DistanceUnit;
+import org.unitsofmeasurement.test.unit.AreaUnit;
+import org.unitsofmeasurement.test.unit.DistanceUnit;
 
 /**
  * @author Werner Keil
