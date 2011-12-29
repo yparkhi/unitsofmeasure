@@ -41,7 +41,7 @@ import org.unitsofmeasurement.unit.UnitFormat;
  * </p>
  *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
- * @author <a href="mailto:jcp@catmedia.us">Werner Keil</a>
+ * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @author Eric Russell
  * @version 1.0
  * @see <a href="http://org.unitsofmeasure">Unified Code of Measure (UCUM)</a>

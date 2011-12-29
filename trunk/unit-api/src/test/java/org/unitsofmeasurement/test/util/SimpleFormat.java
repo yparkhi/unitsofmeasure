@@ -40,7 +40,7 @@ import org.unitsofmeasurement.unit.UnitConverter;
  * </p>
  *
  * @author <a href="mailto:eric-r@northwestern.edu">Eric Russell</a>
- * @author <a href="mailto:jcp@catmedia.us">Werner Keil</a>
+ * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @version 1.2.2 ($Revision: 79 $), $Date: 2010-01-03 17:24:31 +0100 (So, 03
  *          Jän 2010) $
  */

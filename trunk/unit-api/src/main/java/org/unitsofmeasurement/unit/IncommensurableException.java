@@ -14,7 +14,7 @@ package org.unitsofmeasurement.unit;
  * can be converted to another unit only if both units are commensurable.
  *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
- * @author <a href="mailto:jcp@catmedia.us">Werner Keil</a>
+ * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @see <a href="http://en.wikipedia.org/wiki/Unit_commensurability#Commensurability">
  *      Wikipedia: Unit Commensurability</a>
  * @version 1.2 ($Revision$), $Date$
