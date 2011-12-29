@@ -13,7 +13,7 @@ package org.unitsofmeasurement.quantity;
  * is "Bq" (Becquerel).
  *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
- * @author <a href="mailto:jcp@catmedia.us">Werner Keil</a>
+ * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @version 1.1 ($Revision$), $Date$
  *
  * TODO rename to RadioActivity ?!

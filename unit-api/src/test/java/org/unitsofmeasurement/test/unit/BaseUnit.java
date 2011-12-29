@@ -20,7 +20,7 @@ import org.unitsofmeasurement.unit.Unit;
  * @param <Q> The type of the quantity measured by this unit.
  *
  * @author  <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
- * @author  <a href="mailto:jcp@catmedia.us">Werner Keil</a>
+ * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @version 1.8 ($Revision: 105 $), $Date: 2010-08-05 21:44:23 +0100 (Do, 05 Aug 2010) $
  * @see <a href="http://en.wikipedia.org/wiki/SI_base_unit">
  *       Wikipedia: SI base unit</a>
