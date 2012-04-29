@@ -40,8 +40,6 @@ import org.unitsofmeasurement.unit.Unit;
 public interface NumericQuantity<Q extends Quantity<Q, Number>> extends
 		Quantity<Q, Number> {
 
-
-
     /**
      * Returns the unit of this NumericQuantity {@linkplain #value() value}.
      *
