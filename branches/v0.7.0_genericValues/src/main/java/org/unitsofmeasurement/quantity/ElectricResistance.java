@@ -11,10 +11,10 @@ package org.unitsofmeasurement.quantity;
 /**
  * Represents an electric resistance. The metric system unit for this quantity
  * is "Ohm" (Ω).
- *
+ * 
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @version 1.0, April 15, 2009
  */
-public interface ElectricResistance extends Quantity<ElectricResistance> {
+public interface ElectricResistance extends NumericQuantity<ElectricResistance> {
 
 }

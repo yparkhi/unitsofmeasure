@@ -9,7 +9,7 @@ package org.unitsofmeasurement.quantity;
 
 /**
  * This interface represents the speed of data-transmission. The system unit for
- * this quantity is "bit/s" (bit per second).
+ * this NumericQuantity is "bit/s" (bit per second).
  * 
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
@@ -18,5 +18,5 @@ package org.unitsofmeasurement.quantity;
  *      Information Rate</a>
  * 
  */
-public interface InformationRate extends Quantity<InformationRate> {
+public interface InformationRate extends NumericQuantity<InformationRate> {
 }

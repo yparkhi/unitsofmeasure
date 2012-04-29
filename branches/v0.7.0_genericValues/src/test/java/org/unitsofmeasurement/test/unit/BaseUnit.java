@@ -25,7 +25,8 @@ import org.unitsofmeasurement.unit.Unit;
  * @see <a href="http://en.wikipedia.org/wiki/SI_base_unit">
  *       Wikipedia: SI base unit</a>
  */
-public class BaseUnit<Q extends Quantity<Q>> extends TestUnit<Q> {
+public class BaseUnit<Q extends Quantity<Q, Number>> extends
+ TestUnit<Q> {
 
     /**
      * Creates a base unit having the specified symbol.
@@ -71,7 +72,7 @@ public class BaseUnit<Q extends Quantity<Q>> extends TestUnit<Q> {
     }
 
     @Override
-    public Unit<Q> getSystemUnit() {
+	public Unit<Q, Number> getSystemUnit() {
         return this;
     }
 }

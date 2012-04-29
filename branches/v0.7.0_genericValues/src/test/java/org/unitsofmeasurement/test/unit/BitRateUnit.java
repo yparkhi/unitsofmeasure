@@ -27,7 +27,7 @@ public class BitRateUnit extends TestUnit<InformationRate> {
     }
 
     @Override
-	public Unit<InformationRate> getSystemUnit() {
+	public Unit<InformationRate, Number> getSystemUnit() {
 		return REF_UNIT;
     }
 

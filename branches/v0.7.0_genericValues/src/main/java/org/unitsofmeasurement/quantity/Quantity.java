@@ -37,7 +37,7 @@ import org.unitsofmeasurement.unit.Unit;
  * @see <a href="http://en.wikipedia.org/wiki/Quantity">Wikipedia: Quantity</a>
  * @version 1.3 ($Revision$), $Date$
  */
-public interface Quantity<Q extends Quantity<Q>> {
+public interface Quantity<Q extends Quantity<Q, V>, V> {
 
     /**
      * Returns the value of this quantity as a number stated in this quantity
@@ -45,12 +45,12 @@ public interface Quantity<Q extends Quantity<Q>> {
      *
      * @return the value of this quantity (can not be {@code null}).
      */
-    Number value();
+	V value();
 
     /**
      * Returns the unit of this quantity {@linkplain #value() value}.
      *
      * @return the unit of this quantity (can not be {@code null}).
      */
-    Unit<Q> unit();
+	Unit<Q, V> unit();
 }

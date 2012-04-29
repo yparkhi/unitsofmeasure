@@ -20,6 +20,6 @@ package org.unitsofmeasurement.quantity;
  *      Action</a>
  *
  */
-public interface Action extends Quantity<Action> {
+public interface Action extends NumericQuantity<Action> {
 
 }

@@ -21,9 +21,10 @@ import org.unitsofmeasurement.unit.UnitConverter;
  * @author paul.morrison
  * 
  */
-public abstract class TestUnit<Q extends Quantity<Q>> implements Unit<Q> {
+public abstract class TestUnit<Q extends Quantity<Q, Number>> implements
+		Unit<Q, Number> {
 
-	public static final Unit<Dimensionless> ONE = new BaseUnit<Dimensionless>(
+	public static final Unit<Dimensionless, Number> ONE = new BaseUnit<Dimensionless>(
 			"one");
 
 	// public static final Unit<Mass> METRIC_MASS = QuantityFactory.getInstance(
@@ -47,17 +48,17 @@ public abstract class TestUnit<Q extends Quantity<Q>> implements Unit<Q> {
 		this(name, 0);
 	}
 
-	public Unit<Q> add(double offset) {
+	public Unit<Q, Number> add(double offset) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public Unit<?> alternate(String symbol) {
+	public Unit<?, Number> alternate(String symbol) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public <T extends Quantity<T>> Unit<T> asType(Class<T> type)
+	public <T extends Quantity<T, Number>> Unit<T, Number> asType(Class<T> type)
 			throws ClassCastException {
 		// Unit<T> metricUnit =
 		// QuantityFactory.getInstance(type).getMetricUnit();
@@ -69,23 +70,23 @@ public abstract class TestUnit<Q extends Quantity<Q>> implements Unit<Q> {
 		return null;
 	}
 
-	public Unit<Q> divide(double divisor) {
+	public Unit<Q, Number> divide(double divisor) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public Unit<?> divide(Unit<?> that) {
+	public Unit<?, Number> divide(Unit<?, Number> that) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public UnitConverter getConverterTo(Unit<Q> that)
+	public UnitConverter getConverterTo(Unit<Q, Number> that)
 			throws UnconvertibleException {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public UnitConverter getConverterToAny(Unit<?> that)
+	public UnitConverter getConverterToAny(Unit<?, Number> that)
 			throws IncommensurableException, UnconvertibleException {
 		// TODO Auto-generated method stub
 		return null;
@@ -100,7 +101,7 @@ public abstract class TestUnit<Q extends Quantity<Q>> implements Unit<Q> {
 		return name;
 	}
 
-	public Map<Unit<?>, Integer> getProductUnits() {
+	public Map<Unit<?, Number>, Integer> getProductUnits() {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -109,39 +110,39 @@ public abstract class TestUnit<Q extends Quantity<Q>> implements Unit<Q> {
 		return symbol;
 	}
 
-	public Unit<?> inverse() {
+	public Unit<?, Number> inverse() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public boolean isCompatible(Unit<?> that) {
+	public boolean isCompatible(Unit<?, Number> that) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
-	public Unit<Q> multiply(double factor) {
+	public Unit<Q, Number> multiply(double factor) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public Unit<?> multiply(Unit<?> that) {
+	public Unit<?, Number> multiply(Unit<?, Number> that) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public Unit<?> pow(int n) {
+	public Unit<?, Number> pow(int n) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public Unit<?> root(int n) {
+	public Unit<?, Number> root(int n) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public abstract Unit<Q> getSystemUnit();
+	public abstract Unit<Q, Number> getSystemUnit();
 
-	public Unit<Q> transform(UnitConverter operation) {
+	public Unit<Q, Number> transform(UnitConverter operation) {
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -28,7 +28,7 @@ public class BitUnit extends TestUnit<Information> {
     }
 
     @Override
-	public Unit<Information> getSystemUnit() {
+	public Unit<Information, Number> getSystemUnit() {
     return REF_UNIT;
     }
 

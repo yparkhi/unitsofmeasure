@@ -9,12 +9,12 @@ package org.unitsofmeasurement.quantity;
 
 
 /**
- * Represents an illuminance. The metric system unit for this quantity is "lx"
+ * Represents an illuminance. The metric system unit for this NumericQuantity is "lx"
  * (lux).
  *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @version 1.0, April 15, 2009
  */
-public interface Illuminance extends Quantity<Illuminance> {
+public interface Illuminance extends NumericQuantity<Illuminance> {
 
 }

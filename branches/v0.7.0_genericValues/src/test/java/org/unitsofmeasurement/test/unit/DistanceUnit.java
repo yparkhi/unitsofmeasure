@@ -7,8 +7,8 @@
  */
 package org.unitsofmeasurement.test.unit;
 
-import org.unitsofmeasurement.unit.Unit;
 import org.unitsofmeasurement.quantity.Length;
+import org.unitsofmeasurement.unit.Unit;
 
 /**
  * @author paul.morrison
@@ -42,7 +42,7 @@ public class DistanceUnit extends BaseUnit<Length> {
     }
 
     @Override
-    public Unit<Length> getSystemUnit() {
+	public Unit<Length, Number> getSystemUnit() {
     return REF_UNIT;
     }
 

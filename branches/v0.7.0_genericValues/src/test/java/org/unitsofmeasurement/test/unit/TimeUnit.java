@@ -30,7 +30,7 @@ public class TimeUnit extends BaseUnit<Time> {
 	}
 
 	@Override
-	public Unit<Time> getSystemUnit() {
+	public Unit<Time, Number> getSystemUnit() {
 		return REF_UNIT;
 	}
 

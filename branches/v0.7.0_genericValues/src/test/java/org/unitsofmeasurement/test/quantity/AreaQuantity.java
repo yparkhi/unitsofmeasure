@@ -12,7 +12,7 @@ import org.unitsofmeasurement.test.unit.DistanceUnit;
 import org.unitsofmeasurement.test.unit.VolumeUnit;
 
 
-public class AreaQuantity extends TestQuantity {
+public class AreaQuantity extends TestNumericQuantity {
     public AreaQuantity() {
     }
     public AreaQuantity(double val, AreaUnit un) {

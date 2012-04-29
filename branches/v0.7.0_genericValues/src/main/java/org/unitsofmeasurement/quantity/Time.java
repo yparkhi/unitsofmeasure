@@ -15,5 +15,5 @@ package org.unitsofmeasurement.quantity;
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @version 1.2, $Date$
  */
-public interface Time extends Quantity<Time> {
+public interface Time extends NumericQuantity<Time> {
 }

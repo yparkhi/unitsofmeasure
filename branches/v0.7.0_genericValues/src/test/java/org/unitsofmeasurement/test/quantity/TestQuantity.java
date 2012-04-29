@@ -10,20 +10,21 @@ package org.unitsofmeasurement.test.quantity;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-import org.unitsofmeasurement.quantity.Quantity;
+import org.unitsofmeasurement.quantity.NumericQuantity;
 import org.unitsofmeasurement.test.unit.TestUnit;
 import org.unitsofmeasurement.unit.Unit;
 
 /**
  * @author paul.morrison
  */
-abstract class TestQuantity<Q extends Quantity<Q>> implements
-		Quantity<Q> {
+abstract class TestNumericQuantity<Q extends NumericQuantity<Q>>
+		implements
+		NumericQuantity<Q> {
     protected double scalar; // value in reference units
     protected double units; // value in units (Unit unit)
 	protected TestUnit<Q> unit;
 
-    public Object add(TestQuantity dn, TestQuantity d1, TestQuantity d2, TestUnit<?> au) {
+    public Object add(TestNumericQuantity dn, TestNumericQuantity d1, TestNumericQuantity d2, TestUnit<?> au) {
         if (d1.unit == d2.unit){
             dn.unit = d1.unit;
             dn.scalar = d1.scalar + d2.scalar;
@@ -36,7 +37,7 @@ abstract class TestQuantity<Q extends Quantity<Q>> implements
         }
         return dn;
     }
-    public Object subtract(TestQuantity dn, TestQuantity d1, TestQuantity d2, TestUnit<?> au) {
+    public Object subtract(TestNumericQuantity dn, TestNumericQuantity d1, TestNumericQuantity d2, TestUnit<?> au) {
         if (d1.unit == d2.unit){
             dn.unit = d1.unit;
             dn.scalar = d1.scalar - d2.scalar;
@@ -51,22 +52,22 @@ abstract class TestQuantity<Q extends Quantity<Q>> implements
 
     }
 
-    public boolean eq(TestQuantity d1) {
+    public boolean eq(TestNumericQuantity d1) {
         return (scalar == d1.scalar);
     }
-    public boolean ne(TestQuantity d1) {
+    public boolean ne(TestNumericQuantity d1) {
         return (scalar != d1.scalar);
     }
-    public boolean gt(TestQuantity d1) {
+    public boolean gt(TestNumericQuantity d1) {
         return (scalar > d1.scalar);
     }
-    public boolean lt(TestQuantity d1) {
+    public boolean lt(TestNumericQuantity d1) {
         return (scalar < d1.scalar);
     }
-    public boolean ge(TestQuantity d1) {
+    public boolean ge(TestNumericQuantity d1) {
         return (scalar >= d1.scalar);
     }
-    public boolean le(TestQuantity d1) {
+    public boolean le(TestNumericQuantity d1) {
         return (scalar <= d1.scalar);
     }
 
@@ -94,13 +95,11 @@ abstract class TestQuantity<Q extends Quantity<Q>> implements
 
     }
 
-	@Override
 	public Number value() {
 		return Double.valueOf(units);
 	}
 
-	@Override
-	public Unit<Q> unit() {
+	public Unit<Q, Number> unit() {
 		return unit;
 	}
 

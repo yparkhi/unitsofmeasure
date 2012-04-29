@@ -17,12 +17,12 @@ public class CircleInfo {
      * @param args
      */
     public static void main(String[] args) {
-        DistanceQuantity radius = new DistanceQuantity(30, DistanceUnit.cm);
+		DistanceQuantity radius = new DistanceQuantity(30, DistanceUnit.cm);
         System.out.println("Radius = " + radius);
         double mult = 2 * Math.PI;
-        DistanceQuantity circumference = radius.multiply(mult);
+		DistanceQuantity circumference = radius.multiply(mult);
         System.out.println("Circumference = " + circumference);
-        AreaQuantity area = (radius.multiply(radius)).multiply(Math.PI);
+		AreaQuantity area = (radius.multiply(radius)).multiply(Math.PI);
         System.out.println("Area = " + area);
     }
 

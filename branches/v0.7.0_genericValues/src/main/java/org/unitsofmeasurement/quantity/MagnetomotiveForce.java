@@ -10,7 +10,7 @@ package org.unitsofmeasurement.quantity;
 
 /**
  * Represents a force that produces magnetic flux. The metric system unit for
- * this quantity is "At" (ampere-turn).
+ * this NumericQuantity is "At" (ampere-turn).
  * 
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
@@ -19,6 +19,6 @@ package org.unitsofmeasurement.quantity;
  * @see <a href="http://en.wikipedia.org/wiki/Magnetomotive_force">Wikipedia's
  *      Magnetomotive Force</a>
  */
-public interface MagnetomotiveForce extends Quantity<MagnetomotiveForce> {
+public interface MagnetomotiveForce extends NumericQuantity<MagnetomotiveForce> {
 
 }

@@ -19,7 +19,8 @@
     <groupId>org.unitsofmeasurement</groupId>
     <artifactId>unit-api</artifactId>
     <packaging>bundle</packaging>
-    <version>0.6.1</version>
+    <version>0.7-SNAPSHOT</version>
+    <!-- TODO for OSGi/Tycho a real 0.7.x version number is required! -->
     <name>Units of Measurement API</name>
     <url>http://code.google.com/p/unitsofmeasure/</url>
     <organization>

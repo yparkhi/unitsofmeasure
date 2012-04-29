@@ -16,5 +16,5 @@ package org.unitsofmeasurement.quantity;
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @version 1.2.1, $Date$
  */
-public interface VolumetricDensity extends Quantity<VolumetricDensity> {
+public interface VolumetricDensity extends NumericQuantity<VolumetricDensity> {
 }

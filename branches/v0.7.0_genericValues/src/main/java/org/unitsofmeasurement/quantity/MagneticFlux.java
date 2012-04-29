@@ -9,12 +9,12 @@ package org.unitsofmeasurement.quantity;
 
 
 /**
- * Represents a magnetic flux. The metric system unit for this quantity is "Wb"
+ * Represents a magnetic flux. The metric system unit for this NumericQuantity is "Wb"
  * (Weber).
  *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @version 1.0, April 15, 2009
  */
-public interface MagneticFlux extends Quantity<MagneticFlux> {
+public interface MagneticFlux extends NumericQuantity<MagneticFlux> {
 
 }

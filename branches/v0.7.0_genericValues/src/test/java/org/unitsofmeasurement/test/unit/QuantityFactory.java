@@ -42,7 +42,7 @@ import org.unitsofmeasurement.unit.Unit;
  * @version 1.1 ($Revision: 47 $), $Date: 2010-07-04 12:32:52 +0100 (So, 04 Jul
  *          2010) $
  */
-abstract class QuantityFactory<Q extends Quantity<Q>> {
+abstract class QuantityFactory<Q extends Quantity<Q, Number>> {
 
 	/**
 	 * Holds the current instances.
@@ -65,7 +65,7 @@ abstract class QuantityFactory<Q extends Quantity<Q>> {
 	 * @return the quantity factory for the specified type
 	 */
 	@SuppressWarnings("unchecked")
-	public static <Q extends Quantity<Q>> QuantityFactory<Q> getInstance(
+	public static <Q extends Quantity<Q, Number>> QuantityFactory<Q> getInstance(
 			final Class<Q> type) {
 
 		logger.log(LOG_LEVEL, "Type: " + type + ": " + type.isInterface());
@@ -149,7 +149,7 @@ abstract class QuantityFactory<Q extends Quantity<Q>> {
 	 *            the unit
 	 * @return the corresponding quantity
 	 */
-	public abstract Q create(Number value, Unit<Q> unit);
+	public abstract Q create(Number value, Unit<Q, Number> unit);
 
 	/**
 	 * Returns the metric unit for quantities produced by this factory or
@@ -157,7 +157,7 @@ abstract class QuantityFactory<Q extends Quantity<Q>> {
 	 * 
 	 * @return the metric units for this factory quantities.
 	 */
-	public abstract Unit<Q> getMetricUnit();
+	public abstract Unit<Q, Number> getMetricUnit();
 
 	/**
 	 * The default factory implementation. This factory uses reflection for
@@ -167,7 +167,7 @@ abstract class QuantityFactory<Q extends Quantity<Q>> {
 	 * @param <Q>
 	 *            The type of the quantity
 	 */
-	private static final class Default<Q extends Quantity<Q>> extends
+	private static final class Default<Q extends Quantity<Q, Number>> extends
 			QuantityFactory<Q> {
 
 		/**
@@ -178,7 +178,7 @@ abstract class QuantityFactory<Q extends Quantity<Q>> {
 		/**
 		 * The metric unit for quantities created by this factory.
 		 */
-		private final Unit<Q> metricUnit;
+		private final Unit<Q, Number> metricUnit;
 
 		/**
 		 * Creates a new factory for quantities of the given type.
@@ -232,7 +232,7 @@ abstract class QuantityFactory<Q extends Quantity<Q>> {
 
 		@Override
 		@SuppressWarnings("unchecked")
-		public Q create(final Number value, final Unit<Q> unit) {
+		public Q create(final Number value, final Unit<Q, Number> unit) {
 			// System.out.println("Type: " + type);
 			return (Q) Proxy
 					.newProxyInstance(type.getClassLoader(),
@@ -241,7 +241,7 @@ abstract class QuantityFactory<Q extends Quantity<Q>> {
 		}
 
 		@Override
-		public Unit<Q> getMetricUnit() {
+		public Unit<Q, Number> getMetricUnit() {
 			return metricUnit;
 		}
 	}
@@ -251,12 +251,13 @@ abstract class QuantityFactory<Q extends Quantity<Q>> {
 	 * {@link Number}. This is a fall back used when no specialized handler is
 	 * available for the number type.
 	 */
-	private static final class GenericHandler<Q extends Quantity<Q>> implements
+	private static final class GenericHandler<Q extends Quantity<Q, Number>>
+			implements
 			InvocationHandler {
-		final Unit<Q> unit;
+		final Unit<Q, Number> unit;
 		final Number value;
 
-		GenericHandler(final Number value, final Unit<Q> unit) {
+		GenericHandler(final Number value, final Unit<Q, Number> unit) {
 			this.unit = unit;
 			this.value = value;
 		}
@@ -266,12 +267,12 @@ abstract class QuantityFactory<Q extends Quantity<Q>> {
 				final Object[] args) {
 			final String name = method.getName();
 			if (name.equals("doubleValue")) { // Most frequent.
-				final Unit<Q> toUnit = (Unit<Q>) args[0];
+				final Unit<Q, Number> toUnit = (Unit<Q, Number>) args[0];
 				if ((toUnit == unit) || (toUnit.equals(unit)))
 					return value.doubleValue(); // Returns value directly.
 				return unit.getConverterTo(toUnit).convert(value.doubleValue());
 			} else if (name.equals("longValue")) {
-				final Unit<Q> toUnit = (Unit<Q>) args[0];
+				final Unit<Q, Number> toUnit = (Unit<Q, Number>) args[0];
 				if ((toUnit == unit) || (toUnit.equals(unit)))
 					return value.longValue(); // Returns value directly.
 				double doubleValue = unit.getConverterTo(toUnit).convert(

@@ -46,7 +46,7 @@ import org.unitsofmeasurement.unit.UnitFormat;
  * @version 1.0
  * @see <a href="http://org.unitsofmeasure">Unified Code of Measure (UCUM)</a>
  */
-abstract class BaseFormat extends Format implements UnitFormat {
+abstract class BaseFormat extends Format implements UnitFormat<Number> {
 
     /** The serialVersionUID */
     private static final long serialVersionUID = 7765623276257908888L;
@@ -100,7 +100,8 @@ abstract class BaseFormat extends Format implements UnitFormat {
      * @throws IOException
      *             if an error occurs.
      */
-    public abstract Appendable format(Unit<?> unit, Appendable appendable)
+	public abstract Appendable format(Unit<?, Number> unit,
+			Appendable appendable)
         throws IOException;
 
     /**
@@ -119,7 +120,7 @@ abstract class BaseFormat extends Format implements UnitFormat {
      *             if any problem occurs while parsing the specified character
      *             sequence (e.g. illegal syntax).
      */
-    public abstract Unit<?> parse(CharSequence csq, ParsePosition cursor)
+	public abstract Unit<?, Number> parse(CharSequence csq, ParsePosition cursor)
         throws IllegalArgumentException;
 
     /**
@@ -134,27 +135,28 @@ abstract class BaseFormat extends Format implements UnitFormat {
      *             if any problem occurs while parsing the specified character
      *             sequence (e.g. illegal syntax).
      */
-    public final Unit<?> parse(CharSequence csq)
+	public final Unit<?, Number> parse(CharSequence csq)
         throws IllegalArgumentException {
     return parse(csq, null);
     }
 
-    @Override
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	@Override
     public final StringBuffer format(Object obj, final StringBuffer toAppendTo,
         FieldPosition pos) {
-    if (!(obj instanceof Unit<?>))
+		if (!(obj instanceof Unit))
         throw new IllegalArgumentException("obj: Not an instance of Unit"); //$NON-NLS-1$
     if ((toAppendTo == null) || (pos == null))
         throw new NullPointerException(); // Format contract.
     try {
-        return (StringBuffer) format((Unit<?>) obj, (Appendable) toAppendTo);
+			return (StringBuffer) format((Unit) obj, (Appendable) toAppendTo);
     } catch (IOException ex) {
         throw new Error(ex); // Cannot happen.
     }
     }
 
     @Override
-    public final Unit<?> parseObject(String source, ParsePosition pos) {
+	public final Unit<?, Number> parseObject(String source, ParsePosition pos) {
     try {
         return parse(source, pos);
     } catch (IllegalArgumentException e) {

@@ -10,7 +10,7 @@ package org.unitsofmeasurement.quantity;
 
 /**
  * This interface represents how an electric field affects, and is affected by a
- * dielectric medium. The system unit for this quantity is "F/m" (farads per
+ * dielectric medium. The system unit for this NumericQuantity is "F/m" (farads per
  * meter).
  * 
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
@@ -20,5 +20,5 @@ package org.unitsofmeasurement.quantity;
  *      Electric Permittivity</a>
  * 
  */
-public interface ElectricPermittivity extends Quantity<ElectricPermittivity> {
+public interface ElectricPermittivity extends NumericQuantity<ElectricPermittivity> {
 }

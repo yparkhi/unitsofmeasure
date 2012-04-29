@@ -21,7 +21,7 @@ import java.text.ParsePosition;
  * @author Eric Russell
  * @version 1.0
  */
-public interface UnitFormat {
+public interface UnitFormat<V> {
 
     /**
      * Formats the specified unit.
@@ -31,7 +31,7 @@ public interface UnitFormat {
      * @return the appendable destination passed in with formatted text appended.
      * @throws IOException if an error occurs.
      */
-    Appendable format(Unit<?> unit, Appendable appendable)
+	Appendable format(Unit<?, V> unit, Appendable appendable)
             throws IOException;
 
     /**
@@ -46,7 +46,7 @@ public interface UnitFormat {
      * @throws IllegalArgumentException if any problem occurs while parsing the
      *         specified character sequence (e.g. illegal syntax).
      */
-    Unit<?> parse(CharSequence csq, ParsePosition cursor)
+	Unit<?, V> parse(CharSequence csq, ParsePosition cursor)
             throws IllegalArgumentException;
 
 }

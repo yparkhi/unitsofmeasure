@@ -16,5 +16,5 @@ package org.unitsofmeasurement.quantity;
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @version 1.1, $Date$
  */
-public interface AngularVelocity extends Quantity<AngularVelocity> {
+public interface AngularVelocity extends NumericQuantity<AngularVelocity> {
 }

@@ -18,5 +18,5 @@ package org.unitsofmeasurement.quantity;
  * @version 1.1 ($Revision: 169 $), $Date: 2010-02-21 18:48:40 +0100 (dim., 21
  *          févr. 2010) $
  */
-public interface Length extends Quantity<Length> {
+public interface Length extends NumericQuantity<Length> {
 }

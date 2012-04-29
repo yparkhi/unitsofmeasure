@@ -9,12 +9,12 @@ package org.unitsofmeasurement.quantity;
 
 
 /**
- * Represents a magnetic flux density. The metric system unit for this quantity
+ * Represents a magnetic flux density. The metric system unit for this NumericQuantity
  * is "T" (Tesla).
  *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @version 1.0, April 15, 2009
  */
-public interface MagneticFluxDensity extends Quantity<MagneticFluxDensity> {
+public interface MagneticFluxDensity extends NumericQuantity<MagneticFluxDensity> {
 
 }

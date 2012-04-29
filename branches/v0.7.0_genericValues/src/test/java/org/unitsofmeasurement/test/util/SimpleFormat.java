@@ -24,13 +24,13 @@ import org.unitsofmeasurement.unit.UnitConverter;
  * href="http://unitsofmeasure.org/">Uniform Code for Units of Measure</a>
  * (UCUM).
  * </p>
- *
+ * 
  * <p>
  * For a technical/historical overview of this format please read <a
  * href="http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=61354"> Units
  * of Measure in Clinical Information Systems</a>.
  * </p>
- *
+ * 
  * <p>
  * As of revision 1.16, the BNF in the UCUM standard contains an <a
  * href="http://unitsofmeasure.org/ticket/4">error</a>. I've attempted to work
@@ -38,7 +38,7 @@ import org.unitsofmeasurement.unit.UnitConverter;
  * the error in the standard is corrected, it may be necessary to modify the
  * productions in the UCUMParser.jj file to conform to the standard.
  * </p>
- *
+ * 
  * @author <a href="mailto:eric-r@northwestern.edu">Eric Russell</a>
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @version 1.2.2 ($Revision: 79 $), $Date: 2010-01-03 17:24:31 +0100 (So, 03
@@ -90,7 +90,7 @@ public class SimpleFormat extends BaseFormat {
     // //////////////
     // Formatting //
     // //////////////
-    public Appendable format(Unit<?> unit, Appendable appendable)
+	public Appendable format(Unit<?, Number> unit, Appendable appendable)
             throws IOException {
         CharSequence symbol;
 //      CharSequence annotation = null;
@@ -117,7 +117,7 @@ public class SimpleFormat extends BaseFormat {
         return appendable;
     }
 
-    void appendAnnotation(Unit<?> unit, CharSequence symbol,
+	void appendAnnotation(Unit<?, Number> unit, CharSequence symbol,
             CharSequence annotation, Appendable appendable) throws IOException {
         appendable.append('{');
         appendable.append(annotation);
@@ -157,7 +157,7 @@ public class SimpleFormat extends BaseFormat {
         }
     }
 
-    public Unit<?> parse(CharSequence csq, ParsePosition cursor)
+	public Unit<?, Number> parse(CharSequence csq, ParsePosition cursor)
             throws IllegalArgumentException {
     return TestUnit.ONE;
     }

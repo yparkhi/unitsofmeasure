@@ -7,9 +7,6 @@
  */
 package org.unitsofmeasurement.unit;
 
-import org.unitsofmeasurement.unit.UnconvertibleException;
-import org.unitsofmeasurement.unit.IncommensurableException;
-import org.unitsofmeasurement.unit.Dimension;
 import java.util.Map;
 
 import org.unitsofmeasurement.quantity.Quantity;
@@ -48,7 +45,7 @@ import org.unitsofmeasurement.quantity.Quantity;
  *      Units of measurement</a>
  * @version 1.1 ($Revision$), $Date$
  */
-public interface Unit<Q extends Quantity<Q>> {
+public interface Unit<Q extends Quantity<Q, V>, V> {
 
     /*******************/
     /** Units Queries **/
@@ -86,7 +83,7 @@ public interface Unit<Q extends Quantity<Q>> {
      * @return the system unit this unit is derived from or <code>this</code>
      *         if this unit is a system unit.
      */
-    Unit<Q> getSystemUnit();
+	Unit<Q, V> getSystemUnit();
 
     /**
      * Returns the simple units and their exponent whose product is
@@ -108,7 +105,7 @@ public interface Unit<Q extends Quantity<Q>> {
      * @return <code>this.getDimension().equals(that.getDimension())</code>
      * @see #getDimension()
      */
-    boolean isCompatible(Unit<?> that);
+	boolean isCompatible(Unit<?, V> that);
 
     /**
      * Casts this unit to a parameterized unit of specified nature or throw a
@@ -125,7 +122,7 @@ public interface Unit<Q extends Quantity<Q>> {
      * @throws UnsupportedOperationException if the specified type is
      *         not recognized.
      */
-    <T extends Quantity<T>> Unit<T> asType(Class<T> type);
+	<T extends Quantity<T, V>> Unit<T, V> asType(Class<T> type);
 
     /**
      * Returns a converter of numeric values from this unit to another unit of
@@ -135,7 +132,7 @@ public interface Unit<Q extends Quantity<Q>> {
      * @return the converter from this unit to <code>that</code> unit.
      * @throws UnconvertibleException if a converter cannot be constructed.
      */
-    UnitConverter getConverterTo(Unit<Q> that) throws UnconvertibleException;
+	UnitConverter getConverterTo(Unit<Q, V> that) throws UnconvertibleException;
 
     /**
      * Returns a converter from this unit to the specified unit of type unknown.
@@ -151,7 +148,8 @@ public interface Unit<Q extends Quantity<Q>> {
      *         <code>!this.getDimension().equals(that.getDimension())</code>
      * @throws UnconvertibleException if a converter cannot be constructed.
      */
-    UnitConverter getConverterToAny(Unit<?> that) throws IncommensurableException,
+	UnitConverter getConverterToAny(Unit<?, V> that)
+			throws IncommensurableException,
             UnconvertibleException;
 
     /**********************/
@@ -176,7 +174,7 @@ public interface Unit<Q extends Quantity<Q>> {
      * @throws IllegalArgumentException if the specified symbol is already
      *         associated to a different unit.
      */
-    Unit<?> alternate(String symbol);
+	Unit<?, V> alternate(String symbol);
 
     /**
      * Returns the unit derived from this unit using the specified converter.
@@ -189,7 +187,7 @@ public interface Unit<Q extends Quantity<Q>> {
      * @param operation the converter from the transformed unit to this unit.
      * @return the unit after the specified transformation.
      */
-    Unit<Q> transform(UnitConverter operation);
+	Unit<Q, V> transform(UnitConverter operation);
 
     /**
      * Returns the result of adding an offset to this unit. The returned unit is
@@ -199,7 +197,7 @@ public interface Unit<Q extends Quantity<Q>> {
      * <code>CELSIUS = KELVIN.add(273.15)</code>).
      * @return this unit offset by the specified value.
      */
-    Unit<Q> add(double offset);
+	Unit<Q, V> add(double offset);
 
     /**
      * Returns the result of multiplying this unit by the specified factor.
@@ -212,7 +210,7 @@ public interface Unit<Q extends Quantity<Q>> {
      * @param factor the factor
      * @return this unit scaled by the specified factor.
      */
-    Unit<Q> multiply(double factor);
+	Unit<Q, V> multiply(double factor);
 
     /**
      * Returns the product of this unit with the one specified.
@@ -220,14 +218,14 @@ public interface Unit<Q extends Quantity<Q>> {
      * @param that the unit multiplicand.
      * @return <code>this * that</code>
      */
-    Unit<?> multiply(Unit<?> that);
+	Unit<?, V> multiply(Unit<?, V> that);
 
     /**
      * Returns the inverse of this unit.
      *
      * @return <code>1 / this</code>
      */
-    Unit<?> inverse();
+	Unit<?, V> inverse();
 
     /**
      * Returns the result of dividing this unit by an approximate divisor.
@@ -239,7 +237,7 @@ public interface Unit<Q extends Quantity<Q>> {
      * @param divisor the divisor value.
      * @return this unit divided by the specified divisor.
      */
-    Unit<Q> divide(double divisor);
+	Unit<Q, V> divide(double divisor);
 
     /**
      * Returns the quotient of this unit with the one specified.
@@ -247,7 +245,7 @@ public interface Unit<Q extends Quantity<Q>> {
      * @param that the unit divisor.
      * @return <code>this / that</code>
      */
-    Unit<?> divide(Unit<?> that);
+	Unit<?, V> divide(Unit<?, V> that);
 
     /**
      * Returns a unit equals to the given root of this unit.
@@ -257,7 +255,7 @@ public interface Unit<Q extends Quantity<Q>> {
      * @throws ArithmeticException if <code>n == 0</code> or if this operation
      *         would result in an unit with a fractional exponent.
      */
-    Unit<?> root(int n);
+	Unit<?, V> root(int n);
 
     /**
      * Returns a unit equals to this unit raised to an exponent.
@@ -265,6 +263,6 @@ public interface Unit<Q extends Quantity<Q>> {
      * @param n the exponent.
      * @return the result of raising this unit to the exponent.
      */
-    Unit<?> pow(int n);
+	Unit<?, V> pow(int n);
 
 }

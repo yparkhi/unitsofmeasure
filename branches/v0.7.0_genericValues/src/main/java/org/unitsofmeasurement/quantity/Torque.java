@@ -10,7 +10,7 @@ package org.unitsofmeasurement.quantity;
 
 /**
  * This interface represents the moment of a force. The system unit for this
- * quantity is "N.m" (Newton-Metre).
+ * NumericQuantity is "N.m" (Newton-Metre).
  *
  * <p>
  * Note: The Newton-metre ("N.m") is also a way of expressing a Joule (unit of
@@ -23,5 +23,5 @@ package org.unitsofmeasurement.quantity;
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @version 1.2.1, $Date$
  */
-public interface Torque extends Quantity<Torque> {
+public interface Torque extends NumericQuantity<Torque> {
 }

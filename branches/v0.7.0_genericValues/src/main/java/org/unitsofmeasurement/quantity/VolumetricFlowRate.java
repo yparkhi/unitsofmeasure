@@ -10,7 +10,7 @@ package org.unitsofmeasurement.quantity;
 
 /**
  * This interface represents the volume of fluid passing a point in a system per
- * unit of time. The system unit for this quantity is "m3/s" (cubic metre per
+ * unit of time. The system unit for this NumericQuantity is "m3/s" (cubic metre per
  * second).
  *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
@@ -19,5 +19,5 @@ package org.unitsofmeasurement.quantity;
  * @see <a href="http://en.wikipedia.org/wiki/Rate_of_fluid_flow"> Wikipedia:
  *      Volumetric Flow Rate</a>
  */
-public interface VolumetricFlowRate extends Quantity<VolumetricFlowRate> {
+public interface VolumetricFlowRate extends NumericQuantity<VolumetricFlowRate> {
 }

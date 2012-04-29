@@ -9,11 +9,11 @@ package org.unitsofmeasurement.quantity;
 
 
 /**
- * Represents an electric capacitance. The metric system unit for this quantity
+ * Represents an electric capacitance. The metric system unit for this NumericQuantity
  * is "F" (Farad).
  *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @version 1.0, April 15, 2009
  */
-public interface ElectricCapacitance extends Quantity<ElectricCapacitance> {
+public interface ElectricCapacitance extends NumericQuantity<ElectricCapacitance> {
 }

@@ -10,7 +10,7 @@ package org.unitsofmeasurement.quantity;
 
 /**
  * This interface represents the diffusion of momentum. The system unit for this
- * quantity is "m2/s".
+ * NumericQuantity is "m2/s".
  *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
@@ -18,5 +18,5 @@ package org.unitsofmeasurement.quantity;
  * @see <a href="http://en.wikipedia.org/wiki/Viscosity"> Wikipedia:
  *      Viscosity</a>
  */
-public interface KinematicViscosity extends Quantity<KinematicViscosity> {
+public interface KinematicViscosity extends NumericQuantity<KinematicViscosity> {
 }

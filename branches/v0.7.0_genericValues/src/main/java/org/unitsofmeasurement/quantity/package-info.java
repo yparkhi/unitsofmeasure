@@ -9,11 +9,11 @@
  * Provides quantitative properties or attributes of thing such as
  * mass, time, distance, heat, and angular separation.
  * Quantities of different kinds are represented by sub-types of the
- * {@link org.unitsofmeasurement.quantity.Quantity} interface.
+ * {@link org.unitsofmeasurement.NumericQuantity.NumericQuantity} interface.
  *
  * <p> Only quantities defined in the <a href="http://en.wikipedia.org/wiki/International_System_of_Units">International System of Units</a>
- *     are provided here. Users can create their own quantity types by
- *     extending the {@link org.unitsofmeasurement.quantity.Quantity Quantity}
+ *     are provided here. Users can create their own NumericQuantity types by
+ *     extending the {@link org.unitsofmeasurement.NumericQuantity.NumericQuantity NumericQuantity}
  *     interface.</p>
  *
  * <p> This package supports <cite>measurable</cite> quantities, which can be
@@ -28,7 +28,7 @@
  *        Time calculateTravelTime(Length distance, Velocity velocity) {
  *            double tile = distance.amount().doubleValue() /
  *                          velocity.amount().doubleValue();
- *            return QuantityFactory.getInstance(Time.class).create(time,
+ *            return NumericQuantityFactory.getInstance(Time.class).create(time,
  *                    distance.unit().divide(velocity.unit()).asType(Time.class));
  *        }
  *     [/code]
@@ -39,7 +39,7 @@
  * here.[code]
  *        Sensor<Temperature> sensor ... // Generic sensor.
  *        Temperature temp = sensor.getValue();
- *        Quantity<Mass> weight = new QuantityImpl(180, 0.1, POUND);
+ *        NumericQuantity<Mass> weight = new NumericQuantityImpl(180, 0.1, POUND);
  *        // Combination magnitude/precision/unit (measurement)
  *        Vector3D<Velocity> aircraftSpeed = new Vector3D(12.0, 34.0, -45.5, METRE_PER_SECOND);
  *     [/code]</p>

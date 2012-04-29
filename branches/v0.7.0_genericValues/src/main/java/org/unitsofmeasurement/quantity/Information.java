@@ -8,7 +8,7 @@
 package org.unitsofmeasurement.quantity;
 
 /**
- * Represents a measure of information. The metric system unit for this quantity
+ * Represents a measure of information. The metric system unit for this NumericQuantity
  * is "bit".
  * 
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
@@ -18,6 +18,6 @@ package org.unitsofmeasurement.quantity;
  * @see <a href="http://en.wikipedia.org/wiki/Units_of_information"> Wikipedia:
  *      Units of Information</a>
  */
-public interface Information extends Quantity<Information> {
+public interface Information extends NumericQuantity<Information> {
 
 }

@@ -9,9 +9,9 @@ package org.unitsofmeasurement.quantity;
 
 
 /**
- * This interface represents the quantity of subatomic particles or
+ * This interface represents the NumericQuantity of subatomic particles or
  * electromagnetic waves that are energetic enough to detach electrons from
- * atoms or molecules, ionizing them. The system unit for this quantity is
+ * atoms or molecules, ionizing them. The system unit for this NumericQuantity is
  * "C/kg ("coulomb per kilogram).
  *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
@@ -20,5 +20,5 @@ package org.unitsofmeasurement.quantity;
  * @see <a href="http://en.wikipedia.org/wiki/Ionizing_radiation">Wikipedia's
  *      Ionizing Radiation</a>
  */
-public interface IonizingRadiation extends Quantity<IonizingRadiation> {
+public interface IonizingRadiation extends NumericQuantity<IonizingRadiation> {
 }

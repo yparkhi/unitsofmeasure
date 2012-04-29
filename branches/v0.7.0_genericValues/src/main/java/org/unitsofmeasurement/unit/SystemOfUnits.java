@@ -8,6 +8,7 @@
 package org.unitsofmeasurement.unit;
 
 import java.util.Set;
+
 import org.unitsofmeasurement.quantity.Quantity;
 
 /**
@@ -21,7 +22,7 @@ import org.unitsofmeasurement.quantity.Quantity;
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @version 1.2.1 ($Revision: 111 $), $Date: 2010-09-13 18:42:10 +0200 (Mo, 13 Sep 2010) $
  */
-public interface SystemOfUnits {
+public interface SystemOfUnits<V> {
 
     /**
      * Returns the name of the system of unit.
@@ -36,14 +37,14 @@ public interface SystemOfUnits {
      * @param quantityType the quantity type.
      * @return the unit for the specified quantity.
      */
-    <Q extends Quantity<Q>> Unit<Q> getUnit(Class<Q> quantityType);
+	<Q extends Quantity<Q, V>> Unit<Q, V> getUnit(Class<Q> quantityType);
 
     /**
      * Returns a read only view over the units defined in this system.
      *
      * @return the collection of units.
      */
-    Set<? extends Unit<?>> getUnits();
+	Set<? extends Unit<?, V>> getUnits();
 
     /**
      * Returns the units defined in this system having the specified dimension
@@ -52,6 +53,6 @@ public interface SystemOfUnits {
      * @param dimension the dimension of the units to be returned.
      * @return the collection of units of specified dimension.
      */
-    Set<? extends Unit<?>> getUnits(Dimension dimension);
+	Set<? extends Unit<?, V>> getUnits(Dimension dimension);
 
 }

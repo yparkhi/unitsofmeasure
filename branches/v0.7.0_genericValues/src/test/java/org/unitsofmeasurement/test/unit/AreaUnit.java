@@ -29,7 +29,7 @@ public class AreaUnit extends TestUnit<Area> {
 	}
 
 	@Override
-	public Unit<Area> getSystemUnit() {
+	public Unit<Area, Number> getSystemUnit() {
 		return REF_UNIT;
 	}
 

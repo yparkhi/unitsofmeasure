@@ -7,8 +7,8 @@
  */
 package org.unitsofmeasurement.test.unit;
 
-import org.unitsofmeasurement.unit.Unit;
 import org.unitsofmeasurement.quantity.Volume;
+import org.unitsofmeasurement.unit.Unit;
 
 /**
  * @author paul.morrison
@@ -30,7 +30,7 @@ public class VolumeUnit extends TestUnit<Volume> {
     }
 
     @Override
-    public Unit<Volume> getSystemUnit() {
+	public Unit<Volume, Number> getSystemUnit() {
     return REF_UNIT;
     }
 

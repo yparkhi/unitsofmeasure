@@ -11,7 +11,7 @@ package org.unitsofmeasurement.quantity;
 /**
  * This interface represents the degree of magnetization of a material that
  * responds linearly to an applied magnetic field. The system unit for this
- * quantity is "H/m" (henry per meter).
+ * NumericQuantity is "H/m" (henry per meter).
  *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
@@ -20,5 +20,5 @@ package org.unitsofmeasurement.quantity;
  *      Wikipedia's Permeability</a>
  *
  */
-public interface MagneticPermeability extends Quantity<MagneticPermeability> {
+public interface MagneticPermeability extends NumericQuantity<MagneticPermeability> {
 }
