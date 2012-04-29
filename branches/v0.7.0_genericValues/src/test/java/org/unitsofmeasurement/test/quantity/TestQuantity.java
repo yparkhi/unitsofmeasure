@@ -15,7 +15,7 @@ import org.unitsofmeasurement.test.unit.TestUnit;
 import org.unitsofmeasurement.unit.Unit;
 
 /**
- * @author paul.morrison
+ * @author Werner Keil
  */
 abstract class TestNumericQuantity<Q extends NumericQuantity<Q>>
 		implements
@@ -95,10 +95,12 @@ abstract class TestNumericQuantity<Q extends NumericQuantity<Q>>
 
     }
 
+	@Override
 	public Number value() {
 		return Double.valueOf(units);
 	}
 
+	@Override
 	public Unit<Q, Number> unit() {
 		return unit;
 	}

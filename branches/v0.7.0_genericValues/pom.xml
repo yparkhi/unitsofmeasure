@@ -302,6 +302,7 @@ This API specifies Java packages for the programmatic, type safe handling
     <properties>
         <sourceEncoding>UTF-8</sourceEncoding> <!-- in Maven 3. -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.build.javaVersion>1.7</project.build.javaVersion>
     </properties>
     <build>
         <plugins>
@@ -314,8 +315,8 @@ This API specifies Java packages for the programmatic, type safe handling
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>2.3.2</version>
                 <configuration>
-                    <source>1.5</source>
-                    <target>1.5</target>
+                    <source>${project.build.javaVersion}</source>
+                    <target>${project.build.javaVersion}</target>
                     <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
             </plugin>
@@ -454,7 +455,7 @@ This API specifies Java packages for the programmatic, type safe handling
                             <version>2.5</version>
                             <configuration>
                                 <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
-                                <targetJdk>1.5</targetJdk>
+                                <targetJdk>${project.build.javaVersion}</targetJdk>
                             </configuration>
                         </plugin>
 

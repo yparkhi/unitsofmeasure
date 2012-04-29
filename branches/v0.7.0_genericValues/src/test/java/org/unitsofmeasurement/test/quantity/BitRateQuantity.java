@@ -13,6 +13,7 @@ import org.unitsofmeasurement.test.unit.BitRateUnit;
  * @author Werner Keil
  * @version 1.0 ($Revision$), $Date$
  */
+@SuppressWarnings("rawtypes")
 public class BitRateQuantity extends TestNumericQuantity {
     public BitRateQuantity() {
     }
