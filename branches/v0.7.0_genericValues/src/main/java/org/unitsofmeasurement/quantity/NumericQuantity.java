@@ -1,6 +1,6 @@
 /**
  * Unit-API - Units of Measurement API for Java (http://unitsofmeasurement.org)
- * Copyright (c) 2005-2011, Unit-API contributors, JScience and others
+ * Copyright (c) 2005-2012, Unit-API contributors, JScience and others
  * All rights reserved.
  *
  * See LICENSE.txt for details.
@@ -15,27 +15,27 @@ import org.unitsofmeasurement.unit.Unit;
  * distance, heat, and angular separation are among the familiar examples of
  * quantitative properties.
  * </p>
- *
+ * 
  * <p>
  * This interface is used to specify the quantitative property associated to a
  * class through class parameterization and to provide limited compile time
  * dimension consistency.
- *
- * [code]
- * Unit<Mass> pound = ...
- * NumericQuantity<Length> size = ...
- * Sensor<Temperature> thermometer = ...
- * Vector3D<Velocity> aircraftSpeed = ...
+ * 
+ * [code] Unit<Mass> pound = ... NumericQuantity<Length> size = ...
+ * Sensor<Temperature> thermometer = ... Vector3D<Velocity> aircraftSpeed = ...
  * [/code]
  * </p>
- *
- * @param <Q> The type of the NumericQuantity.
- *
+ * 
+ * @param <Q>
+ *            The type of the NumericQuantity.
+ * 
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
- * @author <a href="mailto:desruisseaux@users.sourceforge.net">Martin Desruisseaux</a>
+ * @author <a href="mailto:desruisseaux@users.sourceforge.net">Martin
+ *         Desruisseaux</a>
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @see <a href="http://en.wikipedia.org/wiki/NumericQuantity">Wikipedia: NumericQuantity</a>
- * @version 1.3 ($Revision: 159 $), $Date: 2011-11-24 03:28:41 +0100 (Do, 24 Nov 2011) $
+ * @see <a href="http://en.wikipedia.org/wiki/NumericQuantity">Wikipedia:
+ *      NumericQuantity</a>
+ * @version 1.5 ($Revision$), $Date$
  */
 public interface NumericQuantity<Q extends Quantity<Q, Number>> extends
 		Quantity<Q, Number> {

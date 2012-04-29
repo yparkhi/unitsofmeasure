@@ -1,6 +1,6 @@
 /**
  * Unit-API - Units of Measurement API for Java (http://unitsofmeasurement.org)
- * Copyright (c) 2005-2010, Unit-API contributors, JScience and others
+ * Copyright (c) 2005-2012, Unit-API contributors, JScience and others
  * All rights reserved.
  *
  * See LICENSE.txt for details.
@@ -12,30 +12,43 @@ import java.util.Map;
 import org.unitsofmeasurement.quantity.Quantity;
 
 /**
- * <p> This interface represents a determinate {@linkplain Quantity quantity} (as of
- * length, time, heat, or value) adopted as a standard of measurement.</p>
- *
- * <p> It is helpful to think of instances of this class as recording the history by
+ * <p>
+ * This interface represents a determinate {@linkplain Quantity quantity} (as of
+ * length, time, heat, or value) adopted as a standard of measurement.
+ * </p>
+ * 
+ * <p>
+ * It is helpful to think of instances of this class as recording the history by
  * which they are created. Thus, for example, the string "g/kg" (which is a
- * dimensionless unit) would result from invoking the method
- * toString() on a unit that was created by dividing a gram unit by a kilogram
- * unit. Yet, "kg" divided by "kg" returns <code>ONE</code> and not "kg/kg" due to
- * automatic unit factorization.</p>
- *
- * <p> This interface supports the multiplication of offsets units. The result is
- * usually a unit not convertible to its {@linkplain #getSystemUnit standard unit}. Such
- * units may appear in derivative quantities. For example Celsius per meter is
- * an unit of gradient, which is common in atmospheric and oceanographic
- * research.</p>
- *
- * <p> Units raised at non-integral powers are not supported. For example,
+ * dimensionless unit) would result from invoking the method toString() on a
+ * unit that was created by dividing a gram unit by a kilogram unit. Yet, "kg"
+ * divided by "kg" returns <code>ONE</code> and not "kg/kg" due to automatic
+ * unit factorization.
+ * </p>
+ * 
+ * <p>
+ * This interface supports the multiplication of offsets units. The result is
+ * usually a unit not convertible to its {@linkplain #getSystemUnit standard
+ * unit}. Such units may appear in derivative quantities. For example Celsius
+ * per meter is an unit of gradient, which is common in atmospheric and
+ * oceanographic research.
+ * </p>
+ * 
+ * <p>
+ * Units raised at non-integral powers are not supported. For example,
  * <code>LITRE.root(2)</code> raises an <code>ArithmeticException</code>; but
- * <code>LITRE.getSystemUnit().root(2)</code> returns <code>METRE</code>.</p>
- *
- * <p>Unit instances should be immutable.</p>
- *
- * @param <Q> The type of the quantity measured by this unit.
- *
+ * <code>LITRE.getSystemUnit().root(2)</code> returns <code>METRE</code>.
+ * </p>
+ * 
+ * <p>
+ * Unit instances should be immutable.
+ * </p>
+ * 
+ * @param <Q>
+ *            The type of the quantity measured by this unit.
+ * @param <V>
+ *            The value of the quantity measured by this unit.
+ * 
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author <a href="mailto:steve@unidata.ucar.edu">Steve Emmerson</a>
  * @author <a href="mailto:desruisseaux@users.sourceforge.net">Martin
@@ -43,7 +56,8 @@ import org.unitsofmeasurement.quantity.Quantity;
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @see <a href="http://en.wikipedia.org/wiki/Units_of_measurement"> Wikipedia:
  *      Units of measurement</a>
- * @version 1.1 ($Revision$), $Date$
+ * @version 1.5 ($Revision$), $Date: 2012-04-30 01:07:51 +0200 (Mo, 30 Apr
+ *          2012) $
  */
 public interface Unit<Q extends Quantity<Q, V>, V> {
 
@@ -92,7 +106,7 @@ public interface Unit<Q extends Quantity<Q, V>, V> {
      *
      * @return the simple units and their exponent making up this unit.
      */
-    Map<? extends Unit, Integer> getProductUnits();
+	Map<? extends Unit<?, V>, Integer> getProductUnits();
 
     /**
      * Indicates if this unit is compatible with the unit specified. Units don't
@@ -264,5 +278,4 @@ public interface Unit<Q extends Quantity<Q, V>, V> {
      * @return the result of raising this unit to the exponent.
      */
 	Unit<?, V> pow(int n);
-
 }
