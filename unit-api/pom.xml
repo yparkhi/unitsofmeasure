@@ -510,11 +510,6 @@ This API specifies Java packages for the programmatic, type safe handling
                 <artifactId>wagon-svn</artifactId>
                 <version>1.9</version>
             </extension>
-            <extension>
-                <groupId>org.apache.maven.wagon</groupId>
-                <artifactId>wagon-webdav-jackrabbit</artifactId>
-                <version>2.0</version>
-            </extension>
         </extensions>
     </build>
 
@@ -542,7 +537,7 @@ This API specifies Java packages for the programmatic, type safe handling
         <site>
             <id>unitsofmeasurement</id>
             <name>Units Of Measurement web site</name>
-            <url>dav:http://www.unitsofmeasurement.org/</url>
+            <url>file:///var/www/www.unitsofmeasurement.org</url>
         </site>
     </distributionManagement>
 </project>
