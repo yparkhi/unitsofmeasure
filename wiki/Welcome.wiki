@@ -7,7 +7,7 @@ Visit the Hudson CI Server for this project at: [http://hudson.geomatys.com/job/
 
 Maven Site: [http://hudson.geomatys.com/job/Unit-API/ws/trunk/target/site/index.html http://hudson.geomatys.com/job/Unit-API/ws/trunk/target/site/index.html]
 
-(special thanks to [http://geoapi.sourceforge.net/ GeoAPI])
+(special thanks to [http://www.geoapi.org/ GeoAPI])
 
 = Scope =
 
