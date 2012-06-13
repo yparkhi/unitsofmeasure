@@ -1,15 +1,12 @@
 /**
  * Unit-API - Units of Measurement API for Java (http://unitsofmeasurement.org)
- * Copyright (c) 2005-2010, Unit-API contributors, JScience and others
+ * Copyright (c) 2005-2012, Unit-API contributors, JScience and others
  * All rights reserved.
  *
  * See LICENSE.txt for details.
  */
 package org.unitsofmeasurement.unit;
 
-import org.unitsofmeasurement.unit.UnconvertibleException;
-import org.unitsofmeasurement.unit.IncommensurableException;
-import org.unitsofmeasurement.unit.Dimension;
 import java.util.Map;
 
 import org.unitsofmeasurement.quantity.Quantity;
@@ -46,7 +43,7 @@ import org.unitsofmeasurement.quantity.Quantity;
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @see <a href="http://en.wikipedia.org/wiki/Units_of_measurement"> Wikipedia:
  *      Units of measurement</a>
- * @version 1.1 ($Revision$), $Date$
+ * @version 1.1.1 ($Revision$), $Date$
  */
 public interface Unit<Q extends Quantity<Q>> {
 
@@ -95,7 +92,7 @@ public interface Unit<Q extends Quantity<Q>> {
      *
      * @return the simple units and their exponent making up this unit.
      */
-    Map<? extends Unit, Integer> getProductUnits();
+	Map<? extends Unit<?>, Integer> getProductUnits();
 
     /**
      * Indicates if this unit is compatible with the unit specified. Units don't
