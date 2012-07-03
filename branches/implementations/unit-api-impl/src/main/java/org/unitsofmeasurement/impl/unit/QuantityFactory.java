@@ -35,6 +35,8 @@ import org.unitsofmeasurement.unit.Unit;
  * 
  * @author <a href="mailto:werner.keil@gmail.com">Werner Keil</a>
  * @version 1.1.2 ($Revision: 17458 $), $Date: 2011-07-16 17:07:12 +0530 (Sat, 16 Jul 2011) $
+ * 
+ * TODO probably move this to "quantity" package
  */
 public abstract class QuantityFactory<Q extends Quantity<Q>> {
     static final double BYTE_FACTOR = 8.0;
