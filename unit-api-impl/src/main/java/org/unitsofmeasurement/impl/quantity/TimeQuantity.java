@@ -17,19 +17,22 @@ public class TimeQuantity extends DimensionQuantity<Time> {
 	 */
 	private static final long serialVersionUID = -421330065304945228L;
 
-	private BigDecimal scalar; // value in reference unit
+	private final BigDecimal scalar; // value in reference unit
 
-    private BigDecimal value; // value in unit (Unit unit)
+    private final BigDecimal value; // value in unit (Unit unit)
 
-    private TimeUnit unit;
+    private final TimeUnit unit;
 
-    TimeQuantity(){
-    }
+//    TimeQuantity(){
+//    }
 
     public TimeQuantity(BigDecimal val, TimeUnit un) {
         value = val;
         unit = un;
-        if (val!= null && un != null) scalar = val.multiply(BigDecimal.valueOf(un.getMultFactor()));
+        if (val!= null && un != null) {
+        	scalar = val.multiply(BigDecimal.valueOf(un.getMultFactor()));
+        } 
+        else scalar = null;        
     }
 
     @Override
@@ -38,17 +41,17 @@ public class TimeQuantity extends DimensionQuantity<Time> {
     }
 
     public TimeQuantity add(TimeQuantity d1) {
-        TimeQuantity dn = new TimeQuantity();
-        return this;
+        final TimeQuantity dn = new TimeQuantity(this.value.add(d1.value), this.unit);
+        return dn;
     }
 
     public TimeQuantity subtract(TimeQuantity d1) {
-        TimeQuantity dn = new TimeQuantity();
-        return this;
+    	final TimeQuantity dn = new TimeQuantity(this.value.subtract(d1.value), this.unit);
+        return dn;
     }
 
     public boolean eq(TimeQuantity dq) {
-         return dq!=null && dq.getValue().equals(getValue()) && dq.getUnit().equals(getUnit()) &&
+         return dq!=null && dq.value().equals(value()) && dq.unit().equals(unit()) &&
                  dq.getScalar().equals(getScalar());
     }
 
@@ -73,30 +76,20 @@ public class TimeQuantity extends DimensionQuantity<Time> {
     }
 
     public TimeQuantity multiply(BigDecimal v) {
-        return new TimeQuantity(scalar.multiply(v), unit);
+        return new TimeQuantity(value.multiply(v), unit);
     }
 
     public TimeQuantity divide(BigDecimal v) {
-        return new TimeQuantity(scalar.divide(v), unit);
+        return new TimeQuantity(value.divide(v), unit);
     }
 
     public TimeQuantity convert(TimeUnit newUnit) {
-        return this;//new TimeQuantity(scalar.divide(BigDecimal.valueOf(newUnit.getMultFactor())), newUnit);
+        return new TimeQuantity(value.divide(BigDecimal.valueOf(newUnit.getMultFactor())), newUnit);
     }
 
     @Override
     public Number getScalar() {
         return scalar;
-    }
-
-    @Override
-    public Number getValue() {
-        return value;
-    }
-
-    @Override
-    public Unit<Time> getUnit() {
-        return unit;
     }
 
     @Override
@@ -111,18 +104,16 @@ public class TimeQuantity extends DimensionQuantity<Time> {
 
     @Override
     public String showInUnit(Unit<?> u, int precision, SimpleFormat.Show showWith) {
-        return showInUnit(u, scalar, precision, showWith);
+        return showInUnit(u, value, precision, showWith);
     }
 
 	@Override
 	public Number value() {
-		// TODO Auto-generated method stub
-		return null;
+		 return value;
 	}
 
 	@Override
 	public Unit<Time> unit() {
-		// TODO Auto-generated method stub
-		return null;
+		 return unit;
 	}
 }

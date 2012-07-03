@@ -165,7 +165,12 @@ public enum BitUnit implements Unit<Information>, Multiplier, LongNameEnum<BitUn
 
     @Override
     public Unit<?> multiply(Unit<?> that) {
-        return this;
+    	if (!(that instanceof BitUnit)) {
+    		throw new UnconvertibleException("Incompatible unit");
+    	}
+//        return new BitUnit(this.getSymbol(), this.longName(), 
+//        		this.getMultFactor() * ((BitUnit)that).getMultFactor());
+    	return this;
     }
 
     @Override
@@ -184,7 +189,7 @@ public enum BitUnit implements Unit<Information>, Multiplier, LongNameEnum<BitUn
     }
 
     @Override
-    public LongNameEnum[] iValues() {
+    public LongNameEnum<BitUnit>[] iValues() {
 		return BitUnit.values();
 	}
 }

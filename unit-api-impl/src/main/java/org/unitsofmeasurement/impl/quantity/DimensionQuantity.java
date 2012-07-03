@@ -27,9 +27,9 @@ public abstract class DimensionQuantity<Q extends Quantity<Q>> implements Quanti
 
 	public abstract Number getScalar();
 
-    public abstract Number getValue();
-
-    public abstract Unit<Q> getUnit();
+//    public abstract Number getValue();
+//
+//    public abstract Unit<Q> getUnit();
 
     public abstract boolean eq(DimensionQuantity<Q> dq);
 
