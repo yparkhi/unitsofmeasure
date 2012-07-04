@@ -50,11 +50,11 @@ public enum TemperatureUnit implements Unit<Temperature>, Multiplier {
 //        this.multFactor = multF;
 //    }
 
-	private static final BigDecimal FIVE = new BigDecimal("5");
-    private static final BigDecimal NINE = new BigDecimal("9");
-    private static final BigDecimal THIRTY_TWO = new BigDecimal("32");
-    private static final BigDecimal KELVIN_CELSIUS_DELTA = new BigDecimal("273");
-    private static final BigDecimal RANKINE_FAHRENHEIT_DELTA = new BigDecimal("459.67");
+//	private static final BigDecimal FIVE = new BigDecimal("5");
+//    private static final BigDecimal NINE = new BigDecimal("9");
+//    private static final BigDecimal THIRTY_TWO = new BigDecimal("32");
+//    private static final BigDecimal KELVIN_CELSIUS_DELTA = new BigDecimal("273");
+//    private static final BigDecimal RANKINE_FAHRENHEIT_DELTA = new BigDecimal("459.67");
     
     /**
      * Constructor for TemperatureUnit that accepts key characteristics of each

@@ -44,7 +44,7 @@ public enum DimensionlessUnit implements Unit<Dimensionless>, Multiplier {
     }
 
     @Override
-    public Map<? extends Unit, Integer> getProductUnits() {
+    public Map<? extends Unit<?>, Integer> getProductUnits() {
         Map<Unit<Dimensionless>, Integer> prodUnits = new HashMap<Unit<Dimensionless>, Integer>();
         prodUnits.put(ONE, Integer.valueOf(1));
         return prodUnits;
@@ -94,11 +94,12 @@ public enum DimensionlessUnit implements Unit<Dimensionless>, Multiplier {
         return false;
     }
 
-    @Override
+    @SuppressWarnings("unchecked")
+	@Override
     public <T extends Quantity<T>> Unit<T> asType(Class<T> tClass) {
         Unit<T> metricUnit = QuantityFactory.getInstance(tClass).getMetricUnit();
          if ((metricUnit == null) || metricUnit.isCompatible(this))
-          return (Unit) this;
+          return (Unit<T>) this;
            throw new ClassCastException("The unit: " + this //$NON-NLS-1$
                + " is not of parameterized type " + tClass); //$NON-NLS-1$
     }
