@@ -44,7 +44,7 @@ public enum TimeUnit implements Unit<Time>, Multiplier {
     }
 
     @Override
-    public Map<? extends Unit, Integer> getProductUnits() {
+    public Map<? extends Unit<?>, Integer> getProductUnits() {
         Map<Unit<Time>, Integer> prodUnits = new HashMap<Unit<Time>, Integer>();
         prodUnits.put(h, Integer.valueOf(2));
         return prodUnits;
@@ -100,12 +100,12 @@ public enum TimeUnit implements Unit<Time>, Multiplier {
         return false;
     }
 
-    @SuppressWarnings("rawtypes")
+    @SuppressWarnings("unchecked")
 	@Override
     public <T extends Quantity<T>> Unit<T> asType(Class<T> tClass) {
         Unit<T> metricUnit = QuantityFactory.getInstance(tClass).getMetricUnit();
          if ((metricUnit == null) || metricUnit.isCompatible(this))
-          return (Unit) this;
+          return (Unit<T>) this;
            throw new ClassCastException("The unit: " + this //$NON-NLS-1$
                + " is not of parameterized type " + tClass); //$NON-NLS-1$
     }
