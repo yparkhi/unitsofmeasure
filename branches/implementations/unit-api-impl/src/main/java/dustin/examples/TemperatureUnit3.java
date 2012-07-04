@@ -14,6 +14,7 @@ import java.math.RoundingMode;
  * tested and some conversions are likely to not be properly coded. This
  * example is intended for demonstrative purposes only.</p>
  */
+@Deprecated
 public enum TemperatureUnit3
 {
    /** Celsius, used by most of the world's population. */
