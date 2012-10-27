@@ -24,6 +24,7 @@ class TestNumericQuantity<Q extends Quantity<Q, Number>> extends
 	protected double scalar; // value in reference units
 	protected double units; // value in units (Unit unit)
 
+	@SuppressWarnings("unchecked")
 	public TestNumericQuantity<Q> add(TestNumericQuantity<Q> dn,
 			TestNumericQuantity<Q> d1, TestNumericQuantity<Q> d2,
 			BaseUnit<Number> au) {
@@ -51,6 +52,7 @@ class TestNumericQuantity<Q extends Quantity<Q, Number>> extends
 		return toAdd;
 	}
 
+	@SuppressWarnings("unchecked")
 	public TestNumericQuantity<Q> subtract(final TestNumericQuantity<Q> dn,
 			final TestNumericQuantity<Q> d1, TestNumericQuantity<Q> d2,
 			BaseUnit<Number> au) {
@@ -125,6 +127,7 @@ class TestNumericQuantity<Q extends Quantity<Q, Number>> extends
 		return unit;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public Measurement<TestQuantity<Number>, Number> add(
 			Measurement<TestQuantity<Number>, Number> that) {

@@ -5,27 +5,30 @@
  *
  * See LICENSE.txt for details.
  */
-package org.unitsofmeasurement.test.quantity;
+package org.unitsofmeasurement.test;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
+import org.unitsofmeasurement.Measurement;
 import org.unitsofmeasurement.quantity.Quantity;
 import org.unitsofmeasurement.test.unit.TestUnit;
 import org.unitsofmeasurement.unit.Unit;
 
 /**
  * @author Werner Keil
- * @version 1.1 ($Revision$), $Date$
+ * @version 1.2 ($Revision$), $Date$
  */
-abstract class StringTestQuantity<Q extends Quantity<Q, String>> implements
-		Quantity<Q, String> {
+public class StringTestMeasurement<Q extends Quantity<Q, String>> implements
+		Measurement<Q, String> {
     protected double scalar; // value in reference units
     protected double units; // value in units (Unit unit)
-	protected TestUnit unit;
+	protected TestUnit<Q, String> unit;
 
-	public Object add(StringTestQuantity dn, StringTestQuantity d1,
-			StringTestQuantity d2, TestUnit<?, String> au) {
+	public Measurement<Q, String> add(StringTestMeasurement<Q> dn,
+			StringTestMeasurement<Q> d1,
+ StringTestMeasurement<?> d2,
+			TestUnit<Q, String> au) {
         if (d1.unit == d2.unit){
             dn.unit = d1.unit;
             dn.scalar = d1.scalar + d2.scalar;
@@ -39,8 +42,8 @@ abstract class StringTestQuantity<Q extends Quantity<Q, String>> implements
         return dn;
     }
 
-	public Object subtract(StringTestQuantity dn, StringTestQuantity d1,
-			StringTestQuantity d2, TestUnit<?, String> au) {
+	public Object subtract(StringTestMeasurement dn, StringTestMeasurement d1,
+			StringTestMeasurement d2, TestUnit<?, String> au) {
         if (d1.unit == d2.unit){
             dn.unit = d1.unit;
             dn.scalar = d1.scalar - d2.scalar;
@@ -55,22 +58,22 @@ abstract class StringTestQuantity<Q extends Quantity<Q, String>> implements
 
     }
 
-    public boolean eq(StringTestQuantity d1) {
+    public boolean eq(StringTestMeasurement d1) {
         return (scalar == d1.scalar);
     }
-    public boolean ne(StringTestQuantity d1) {
+    public boolean ne(StringTestMeasurement d1) {
         return (scalar != d1.scalar);
     }
-    public boolean gt(StringTestQuantity d1) {
+    public boolean gt(StringTestMeasurement d1) {
         return (scalar > d1.scalar);
     }
-    public boolean lt(StringTestQuantity d1) {
+    public boolean lt(StringTestMeasurement d1) {
         return (scalar < d1.scalar);
     }
-    public boolean ge(StringTestQuantity d1) {
+    public boolean ge(StringTestMeasurement d1) {
         return (scalar >= d1.scalar);
     }
-    public boolean le(StringTestQuantity d1) {
+    public boolean le(StringTestMeasurement d1) {
         return (scalar <= d1.scalar);
     }
 
@@ -104,6 +107,60 @@ abstract class StringTestQuantity<Q extends Quantity<Q, String>> implements
 
 	public Unit<Q, String> unit() {
 		return unit;
+	}
+
+	@Override
+	public Measurement<Q, String> add(Measurement<Q, String> that) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Measurement<Q, String> substract(Measurement<Q, String> that) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Measurement<?, String> multiply(Measurement<?, String> that) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Measurement<?, String> multiply(String that) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Measurement<?, String> divide(Measurement<?, String> that) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Measurement<? extends Measurement<Q, String>, String> inverse() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Measurement<Q, String> to(Unit<Q, String> unit) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public double doubleValue(Unit<Q, String> unit) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public long longValue(Unit<Q, String> unit) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }

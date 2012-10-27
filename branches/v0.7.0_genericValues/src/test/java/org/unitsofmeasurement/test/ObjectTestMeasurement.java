@@ -5,11 +5,12 @@
  *
  * See LICENSE.txt for details.
  */
-package org.unitsofmeasurement.test.quantity;
+package org.unitsofmeasurement.test;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
+import org.unitsofmeasurement.Measurement;
 import org.unitsofmeasurement.quantity.Quantity;
 import org.unitsofmeasurement.test.unit.TestUnit;
 import org.unitsofmeasurement.unit.Unit;
@@ -18,14 +19,14 @@ import org.unitsofmeasurement.unit.Unit;
  * @author Werner Keil
  * @version 1.0 ($Revision$), $Date$
  */
-abstract class ObjectTestNumericQuantity<Q extends Quantity<Q, Object>>
-		implements Quantity<Q, Object> {
+public class ObjectTestMeasurement<Q extends Quantity<Q, Object>> implements
+		Measurement<Q, Object> {
     protected double scalar; // value in reference units
     protected double units; // value in units (Unit unit)
 	protected Unit<Q, Object> unit;
 
-	public Object add(ObjectTestNumericQuantity dn,
-			ObjectTestNumericQuantity d1, ObjectTestNumericQuantity d2,
+	public Object add(ObjectTestMeasurement dn, ObjectTestMeasurement d1,
+			ObjectTestMeasurement d2,
 			TestUnit<?, Object> au) {
         if (d1.unit == d2.unit){
             dn.unit = d1.unit;
@@ -40,8 +41,8 @@ abstract class ObjectTestNumericQuantity<Q extends Quantity<Q, Object>>
         return dn;
     }
 
-	public Object subtract(ObjectTestNumericQuantity dn,
-			ObjectTestNumericQuantity d1, ObjectTestNumericQuantity d2,
+	public Object subtract(ObjectTestMeasurement dn, ObjectTestMeasurement d1,
+			ObjectTestMeasurement d2,
 			TestUnit<?, Object> au) {
         if (d1.unit == d2.unit){
             dn.unit = d1.unit;
@@ -57,22 +58,27 @@ abstract class ObjectTestNumericQuantity<Q extends Quantity<Q, Object>>
 
     }
 
-    public boolean eq(ObjectTestNumericQuantity d1) {
+	public boolean eq(ObjectTestMeasurement d1) {
         return (scalar == d1.scalar);
     }
-    public boolean ne(ObjectTestNumericQuantity d1) {
+
+	public boolean ne(ObjectTestMeasurement d1) {
         return (scalar != d1.scalar);
     }
-    public boolean gt(ObjectTestNumericQuantity d1) {
+
+	public boolean gt(ObjectTestMeasurement d1) {
         return (scalar > d1.scalar);
     }
-    public boolean lt(ObjectTestNumericQuantity d1) {
+
+	public boolean lt(ObjectTestMeasurement d1) {
         return (scalar < d1.scalar);
     }
-    public boolean ge(ObjectTestNumericQuantity d1) {
+
+	public boolean ge(ObjectTestMeasurement d1) {
         return (scalar >= d1.scalar);
     }
-    public boolean le(ObjectTestNumericQuantity d1) {
+
+	public boolean le(ObjectTestMeasurement d1) {
         return (scalar <= d1.scalar);
     }
 
@@ -107,6 +113,60 @@ abstract class ObjectTestNumericQuantity<Q extends Quantity<Q, Object>>
 
 	public Unit<Q, Object> unit() {
 		return unit;
+	}
+
+	@Override
+	public Measurement<Q, Object> add(Measurement<Q, Object> that) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Measurement<Q, Object> substract(Measurement<Q, Object> that) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Measurement<?, Object> multiply(Measurement<?, Object> that) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Measurement<?, Object> multiply(Object that) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Measurement<?, Object> divide(Measurement<?, Object> that) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Measurement<? extends Measurement<Q, Object>, Object> inverse() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Measurement<Q, Object> to(Unit<Q, Object> unit) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public double doubleValue(Unit<Q, Object> unit) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public long longValue(Unit<Q, Object> unit) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }
