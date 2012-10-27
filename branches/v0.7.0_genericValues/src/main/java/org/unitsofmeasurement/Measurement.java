@@ -34,7 +34,7 @@ import org.unitsofmeasurement.unit.Unit;
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @see <a href="http://en.wikipedia.org/wiki/Units_of_measurement"> Wikipedia:
  *      Units of measurement</a>
- * @version 1.5 ($Revision: 175 $), $Date: 2012-04-30 01:07:51 +0200 (Mo, 30 Apr
+ * @version 1.5 ($Revision$), $Date: 2012-04-30 01:07:51 +0200 (Mo, 30 Apr
  *          2012) $
  */
 public interface Measurement<Q extends Quantity<Q, V>, V> {
