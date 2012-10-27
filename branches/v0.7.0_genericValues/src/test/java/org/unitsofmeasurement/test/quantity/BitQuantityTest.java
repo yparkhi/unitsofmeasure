@@ -25,9 +25,16 @@ public class BitQuantityTest {
 
 	@Test
 	public void testDivideTimeNumericQuantity() {
-		BitRateQuantity brq = bq.divide(new TimeQuantity(20, TimeUnit.s));
+		BitRateQuantity brq = bq.divideTime(new TimeQuantity(20, TimeUnit.s));
 		assertEquals(Double.valueOf(5), Double.valueOf(brq.scalar));
 		assertEquals("5.0 bps", brq.toString());
 	}
 
+	@Test
+	public void testConvertBitQuantity() {
+		@SuppressWarnings("unchecked")
+		BitQuantity bq1 = bq.to(BitUnit.kb);
+		assertEquals(Double.valueOf(0.1d), bq1.value());
+		assertEquals("0.1 kb", bq1.toString());
+	}
 }

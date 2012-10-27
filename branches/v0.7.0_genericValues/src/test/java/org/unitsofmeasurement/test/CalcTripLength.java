@@ -1,6 +1,6 @@
 /**
  * Unit-API - Units of Measurement API for Java (http://unitsofmeasurement.org)
- * Copyright (c) 2005-2010, Unit-API contributors, JScience and others
+ * Copyright (c) 2005-2012, Unit-API contributors, JScience and others
  * All rights reserved.
  *
  * See LICENSE.txt for details.
@@ -8,6 +8,7 @@
 package org.unitsofmeasurement.test;
 
 import java.util.LinkedList;
+import java.util.List;
 
 import org.unitsofmeasurement.test.quantity.DistanceQuantity;
 import org.unitsofmeasurement.test.unit.DistanceUnit;
@@ -24,7 +25,7 @@ public class CalcTripLength {
         final DistanceUnit klik = new DistanceUnit("kilometre", DistanceUnit.km,
                 1.0);
 
-        LinkedList<TripLeg> trip = new LinkedList<TripLeg>();
+		List<TripLeg> trip = new LinkedList<TripLeg>();
 
         trip.add(new TripLeg("YKK", "NYC", new DistanceQuantity(1200.0, klik)));
 
