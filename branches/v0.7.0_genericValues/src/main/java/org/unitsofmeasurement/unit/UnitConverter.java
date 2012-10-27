@@ -1,6 +1,6 @@
 /**
  * Unit-API - Units of Measurement API for Java (http://unitsofmeasurement.org)
- * Copyright (c) 2005-2010, Unit-API contributors, JScience and others
+ * Copyright (c) 2005-2012, Unit-API contributors, JScience and others
  * All rights reserved.
  *
  * See LICENSE.txt for details.
@@ -15,103 +15,117 @@ import java.util.List;
  * <p>
  * This interface represents a converter of numeric values.
  * </p>
- *
+ * 
  * <p>
- * Instances of this class are obtained through the {@link Unit#getConverterTo Unit.getConverterTo(Unit)}
- * method.
+ * Instances of this class are obtained through the {@link Unit#getConverterTo
+ * Unit.getConverterTo(Unit)} method.
  * </p>
- *
+ * * @param <V> The value of the quantity measured by this unit.
+ * 
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.1 ($Revision$), $Date$
+ * @version 1.2 ($Revision$), $Date: 2011-12-29 23:22:13 +0100 (Do, 29 Dez
+ *          2011) $
  */
-public interface UnitConverter {
+public interface UnitConverter<V> {
 
-    /**
-     * Indicates if this converter is the identity converter. The identity
-     * converter does nothing (<code>ONE.convert(x) == x</code>).
-     */
-    boolean isIdentity();
+	/**
+	 * Indicates if this converter is the identity converter. The identity
+	 * converter does nothing (<code>ONE.convert(x) == x</code>).
+	 */
+	boolean isIdentity();
 
-    /**
-     * Indicates if this converter is linear. A converter is linear if
-     * <code>convert(u + v) == convert(u) + convert(v)</code> and
-     * <code>convert(r * u) == r * convert(u)</code>. For linear converters the
-     * following property always hold:[code] y1 = c1.convert(x1); y2 =
-     * c2.convert(x2); // then y1*y2 == c1.concatenate(c2).convert(x1*x2)
-     * [/code] </p>
-     *
-     * @return <code>true</code> if this converter is linear; <code>false</code>
-     *         otherwise.
-     */
-    boolean isLinear();
+	/**
+	 * Indicates if this converter is linear. A converter is linear if
+	 * <code>convert(u + v) == convert(u) + convert(v)</code> and
+	 * <code>convert(r * u) == r * convert(u)</code>. For linear converters the
+	 * following property always hold:[code] y1 = c1.convert(x1); y2 =
+	 * c2.convert(x2); // then y1*y2 == c1.concatenate(c2).convert(x1*x2)
+	 * [/code] </p>
+	 * 
+	 * @return <code>true</code> if this converter is linear; <code>false</code>
+	 *         otherwise.
+	 */
+	boolean isLinear();
 
-    /**
-     * Returns the inverse of this converter. If <code>x</code> is a valid
-     * value, then <code>x == inverse().convert(convert(x))</code> to within the
-     * accuracy of computer arithmetic.
-     *
-     * @return the inverse of this converter.
-     */
-    UnitConverter inverse();
+	/**
+	 * Returns the inverse of this converter. If <code>x</code> is a valid
+	 * value, then <code>x == inverse().convert(convert(x))</code> to within the
+	 * accuracy of computer arithmetic.
+	 * 
+	 * @return the inverse of this converter.
+	 */
+	UnitConverter<V> inverse();
 
-    /**
-     * Converts a <code>double</code> value.
-     *
-     * @param value
-     *            the numeric value to convert.
-     * @return the <code>double</code> value after conversion.
-     */
-    double convert(double value);
+	/**
+	 * Converts a <code>double</code> value.
+	 * 
+	 * @param value
+	 *            the numeric value to convert.
+	 * @return the <code>double</code> value after conversion.
+	 */
+	double convert(double value);
 
-    /**
-     * Converts a <code>Number</code> value.
-     *
-     * @param value
-     *            the numeric value to convert.
-     * @return the <code>double</code> value after conversion.
-     */
-    Number convert(Number value);
+	/**
+	 * Converts a <code>Number</code> value.
+	 * 
+	 * @param value
+	 *            the numeric value to convert.
+	 * @return the <code>double</code> value after conversion.
+	 * @deprecated Use convert(V)
+	 */
+	Number convert(Number value);
 
-    /**
-     * Converts a {@link BigDecimal} number according to the specified math
-     * context.
-     *
-     * @param value
-     *            the decimal number to convert.
-     * @param ctx
-     *            the math context being used for conversion.
-     * @return the decimal number after conversion.
-     * @throws ArithmeticException
-     *             if the result is inexact but the rounding mode is
-     *             <code>MathContext.UNLIMITED</code> or
-     *             <code>mathContext.precision == 0</code> and the quotient has
-     *             a non-terminating decimal expansion.
-     */
-    BigDecimal convert(BigDecimal value, MathContext ctx)
-            throws ArithmeticException;
+	/**
+	 * Converts a <code>V</code> value.
+	 * 
+	 * @param value
+	 *            the V value to convert.
+	 * @return the <code>V</code> value after conversion.
+	 */
+	V convert(V value);
 
-    /**
-     * Concatenates this converter with another converter. The resulting
-     * converter is equivalent to first converting by the specified converter
-     * (right converter), and then converting by this converter (left
-     * converter).
-     *
-     * @param converter
-     *            the other converter.
-     * @return the concatenation of this converter with the other converter.
-     */
-    UnitConverter concatenate(UnitConverter converter);
+	/**
+	 * Converts a {@link BigDecimal} number according to the specified math
+	 * context.
+	 * 
+	 * @param value
+	 *            the decimal number to convert.
+	 * @param ctx
+	 *            the math context being used for conversion.
+	 * @return the decimal number after conversion.
+	 * @throws ArithmeticException
+	 *             if the result is inexact but the rounding mode is
+	 *             <code>MathContext.UNLIMITED</code> or
+	 *             <code>mathContext.precision == 0</code> and the quotient has
+	 *             a non-terminating decimal expansion.
+	 * @deprecated this hard-coded reference to BigDecimal should be removed
+	 *             from core interface
+	 */
+	BigDecimal convert(BigDecimal value, MathContext ctx)
+			throws ArithmeticException;
 
-    /**
-     * Returns the chain of fundamental converters making up this converter or
-     * <code>null</code> if this converter is a fundamental converter. For
-     * example, <code>cvtr1.concatenate(cvtr2).getCompoundConverters()</code>
-     * returns <code>{cvtr1, cvtr2}</code>
-     *
-     * @return the list of fundamental converters which concatenated makes up
-     *         this converter.
-     */
-    List<? extends UnitConverter> getCompoundConverters();
+	/**
+	 * Concatenates this converter with another converter. The resulting
+	 * converter is equivalent to first converting by the specified converter
+	 * (right converter), and then converting by this converter (left
+	 * converter).
+	 * 
+	 * @param converter
+	 *            the other converter.
+	 * @return the concatenation of this converter with the other converter.
+	 */
+	UnitConverter<V> concatenate(UnitConverter<V> converter);
+
+	/**
+	 * Returns the chain of fundamental converters making up this converter or
+	 * <code>null</code> if this converter is a fundamental converter. For
+	 * example, <code>cvtr1.concatenate(cvtr2).getCompoundConverters()</code>
+	 * returns <code>{cvtr1, cvtr2}</code>
+	 * 
+	 * @return the list of fundamental converters which concatenated makes up
+	 *         this converter.
+	 */
+	List<? extends UnitConverter<V>> getCompoundConverters();
 
 }

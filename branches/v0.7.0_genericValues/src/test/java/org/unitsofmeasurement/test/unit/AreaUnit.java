@@ -8,12 +8,11 @@
 package org.unitsofmeasurement.test.unit;
 
 import org.unitsofmeasurement.quantity.Area;
-import org.unitsofmeasurement.unit.Unit;
 
 /**
  * @author paul.morrison
  */
-public class AreaUnit extends TestUnit<Area> {
+public class AreaUnit extends BaseUnit<Area<Number>> {
 
 	public static final AreaUnit sqmetre = new AreaUnit("sqmetre", 1.0); // reference
 	// Unit
@@ -23,14 +22,23 @@ public class AreaUnit extends TestUnit<Area> {
 	public static final AreaUnit acre = new AreaUnit("acre", 4047.0);
 	public static final AreaUnit hectare = new AreaUnit("hectare", 1.0e4);
 
-	public AreaUnit(String name2, double convF) {
+	public AreaUnit(String symbol, String name2, double convF) {
+		super(symbol);
 		name = name2;
 		multFactor = convF;
 	}
 
-	@Override
-	public Unit<Area, Number> getSystemUnit() {
-		return REF_UNIT;
+	/**
+	 * @deprecated should have a symbol
+	 * @param name2
+	 * @param convF
+	 */
+	public AreaUnit(String name2, double convF) {
+		this("", name2, convF);
 	}
 
+	@Override
+	public AreaUnit getSystemUnit() {
+		return REF_UNIT;
+	}
 }

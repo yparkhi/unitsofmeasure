@@ -16,7 +16,7 @@ import org.unitsofmeasurement.unit.Unit;
 
 /**
  * @author Werner Keil
- * @version 1.0 ($Revision$), $Date$
+ * @version 1.1 ($Revision$), $Date$
  */
 abstract class StringTestQuantity<Q extends Quantity<Q, String>> implements
 		Quantity<Q, String> {
@@ -24,7 +24,8 @@ abstract class StringTestQuantity<Q extends Quantity<Q, String>> implements
     protected double units; // value in units (Unit unit)
 	protected TestUnit unit;
 
-    public Object add(StringTestQuantity dn, StringTestQuantity d1, StringTestQuantity d2, TestUnit<?> au) {
+	public Object add(StringTestQuantity dn, StringTestQuantity d1,
+			StringTestQuantity d2, TestUnit<?, String> au) {
         if (d1.unit == d2.unit){
             dn.unit = d1.unit;
             dn.scalar = d1.scalar + d2.scalar;
@@ -37,7 +38,9 @@ abstract class StringTestQuantity<Q extends Quantity<Q, String>> implements
         }
         return dn;
     }
-    public Object subtract(StringTestQuantity dn, StringTestQuantity d1, StringTestQuantity d2, TestUnit<?> au) {
+
+	public Object subtract(StringTestQuantity dn, StringTestQuantity d1,
+			StringTestQuantity d2, TestUnit<?, String> au) {
         if (d1.unit == d2.unit){
             dn.unit = d1.unit;
             dn.scalar = d1.scalar - d2.scalar;
@@ -75,7 +78,7 @@ abstract class StringTestQuantity<Q extends Quantity<Q, String>> implements
 		return (value() + ' ' + unit.getName());
     }
 
-    String showInUnits(TestUnit<?> u, int precision) {
+	String showInUnits(TestUnit<?, String> u, int precision) {
         double result = scalar / u.getMultFactor();
 
         String str = (new Double(result)).toString();

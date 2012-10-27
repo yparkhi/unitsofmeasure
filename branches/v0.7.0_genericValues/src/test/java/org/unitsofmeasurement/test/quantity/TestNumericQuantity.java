@@ -10,21 +10,23 @@ package org.unitsofmeasurement.test.quantity;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-import org.unitsofmeasurement.quantity.NumericQuantity;
-import org.unitsofmeasurement.test.unit.TestUnit;
+import org.unitsofmeasurement.quantity.Quantity;
+import org.unitsofmeasurement.test.unit.BaseUnit;
 import org.unitsofmeasurement.unit.Unit;
 
 /**
  * @author Werner Keil
  */
-abstract class TestNumericQuantity<Q extends NumericQuantity<Q>>
+class TestNumericQuantity<Q extends Quantity<Q, Number>> extends
+		TestQuantity<Number>
 		implements
-		NumericQuantity<Q> {
+		Quantity<TestQuantity<Number>, Number> {
     protected double scalar; // value in reference units
     protected double units; // value in units (Unit unit)
-	protected TestUnit<Q> unit;
 
-    public Object add(TestNumericQuantity dn, TestNumericQuantity d1, TestNumericQuantity d2, TestUnit<?> au) {
+	public TestNumericQuantity<Q> add(TestNumericQuantity<Q> dn,
+			TestNumericQuantity<Q> d1, TestNumericQuantity<Q> d2,
+			BaseUnit<Number> au) {
         if (d1.unit == d2.unit){
             dn.unit = d1.unit;
             dn.scalar = d1.scalar + d2.scalar;
@@ -37,7 +39,22 @@ abstract class TestNumericQuantity<Q extends NumericQuantity<Q>>
         }
         return dn;
     }
-    public Object subtract(TestNumericQuantity dn, TestNumericQuantity d1, TestNumericQuantity d2, TestUnit<?> au) {
+
+	/** Only to be called by subclasses */
+	protected TestNumericQuantity() {
+
+	}
+
+	public TestNumericQuantity<Q> add(final TestNumericQuantity<Q> toAdd) {
+		toAdd.scalar = toAdd.scalar + this.scalar;
+		toAdd.units = toAdd.units + this.units;
+		return toAdd;
+	}
+
+	public TestNumericQuantity<Q> subtract(final TestNumericQuantity<Q> dn,
+			final TestNumericQuantity<Q> d1,
+ TestNumericQuantity<Q> d2,
+			BaseUnit<Number> au) {
         if (d1.unit == d2.unit){
             dn.unit = d1.unit;
             dn.scalar = d1.scalar - d2.scalar;
@@ -52,22 +69,27 @@ abstract class TestNumericQuantity<Q extends NumericQuantity<Q>>
 
     }
 
-    public boolean eq(TestNumericQuantity d1) {
+	public boolean eq(TestNumericQuantity<Q> d1) {
         return (scalar == d1.scalar);
     }
-    public boolean ne(TestNumericQuantity d1) {
+
+	public boolean ne(TestNumericQuantity<Q> d1) {
         return (scalar != d1.scalar);
     }
-    public boolean gt(TestNumericQuantity d1) {
+
+	public boolean gt(TestNumericQuantity<Q> d1) {
         return (scalar > d1.scalar);
     }
-    public boolean lt(TestNumericQuantity d1) {
+
+	public boolean lt(TestNumericQuantity<Q> d1) {
         return (scalar < d1.scalar);
     }
-    public boolean ge(TestNumericQuantity d1) {
+
+	public boolean ge(TestNumericQuantity<Q> d1) {
         return (scalar >= d1.scalar);
     }
-    public boolean le(TestNumericQuantity d1) {
+
+	public boolean le(TestNumericQuantity<Q> d1) {
         return (scalar <= d1.scalar);
     }
 
@@ -75,7 +97,7 @@ abstract class TestNumericQuantity<Q extends NumericQuantity<Q>>
         return (new Double(units)).toString() + ' ' + unit.getName();
     }
 
-    String showInUnits(TestUnit<?> u, int precision) {
+	String showInUnits(BaseUnit<?> u, int precision) {
         double result = scalar / u.getMultFactor();
 
         String str = (new Double(result)).toString();
@@ -101,7 +123,7 @@ abstract class TestNumericQuantity<Q extends NumericQuantity<Q>>
 	}
 
 	@Override
-	public Unit<Q, Number> unit() {
+	public Unit<TestQuantity<Number>, Number> unit() {
 		return unit;
 	}
 

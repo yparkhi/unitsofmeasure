@@ -8,7 +8,6 @@
 package org.unitsofmeasurement.test.unit;
 
 import org.unitsofmeasurement.quantity.Length;
-import org.unitsofmeasurement.unit.Unit;
 
 /**
  * @author paul.morrison
@@ -29,21 +28,23 @@ public class DistanceUnit extends BaseUnit<Length<Number>> {
     public static final DistanceUnit parsec = new DistanceUnit("parsec",
         3.08e+16);
 
-    public DistanceUnit(String name2, double convF) {
+	public DistanceUnit(final String name2, double convF) {
         super("", name2);
         name = name2;
         multFactor = convF;
     }
 
-    public DistanceUnit(String name2, DistanceUnit unit, double convF) {
+	public DistanceUnit(final String name2, final DistanceUnit unit,
+			double convF) {
         super("", name2);
         name = name2;
         multFactor = unit.multFactor * convF;
     }
 
-    @Override
-	public Unit<Length<Number>, Number> getSystemUnit() {
-    return REF_UNIT;
+	@SuppressWarnings("unchecked")
+	@Override
+	public DistanceUnit getSystemUnit() {
+		return REF_UNIT;
     }
 
 

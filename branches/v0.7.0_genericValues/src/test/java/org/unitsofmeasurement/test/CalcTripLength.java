@@ -33,8 +33,7 @@ public class CalcTripLength {
         DistanceQuantity totDist = new DistanceQuantity(0, klik);
 
         for (TripLeg t : trip) {
-
-            totDist = totDist.add(t.getDist());
+				totDist = (DistanceQuantity) totDist.add(t.getDist());
         }
 
         boolean b = totDist.eq(new DistanceQuantity(6200,klik));

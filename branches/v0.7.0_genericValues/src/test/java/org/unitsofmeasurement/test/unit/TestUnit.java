@@ -7,31 +7,31 @@
  */
 package org.unitsofmeasurement.test.unit;
 
-import java.util.Map;
-
 import org.unitsofmeasurement.quantity.Dimensionless;
 import org.unitsofmeasurement.quantity.Quantity;
-import org.unitsofmeasurement.unit.Dimension;
-import org.unitsofmeasurement.unit.IncommensurableException;
-import org.unitsofmeasurement.unit.UnconvertibleException;
 import org.unitsofmeasurement.unit.Unit;
-import org.unitsofmeasurement.unit.UnitConverter;
 
 /**
  * @author paul.morrison
+ * @param <V>
  * 
  */
-public abstract class TestUnit<Q extends Quantity<Q, Number>> implements
-		Unit<Q, Number> {
+public abstract class TestUnit<Q extends Quantity<Q, V>, V> implements
+		Unit<Q, V> {
 
-	public static final Unit<Dimensionless, Number> ONE = new BaseUnit<Dimensionless>(
+	public static final Unit<Dimensionless, Number> ONE = (Unit<Dimensionless, Number>) new BaseUnit<Dimensionless>(
 			"one");
 
 	// public static final Unit<Mass> METRIC_MASS = QuantityFactory.getInstance(
 	// Mass.class).getMetricUnit();
 
-	String symbol; // e.g. "A"
-	String name; // e.g. "Angstrom"
+	protected String symbol; // e.g. "A"
+	protected String name; // e.g. "Angstrom"
+
+	public String getName() {
+		return name;
+	}
+
 	double multFactor; // e.g. 1E-10
 	double addFactor = 0.0; // used for temperatures
 
@@ -48,104 +48,7 @@ public abstract class TestUnit<Q extends Quantity<Q, Number>> implements
 		this(name, 0);
 	}
 
-	public Unit<Q, Number> add(double offset) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
-	public Unit<?, Number> alternate(String symbol) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public <T extends Quantity<T, Number>> Unit<T, Number> asType(Class<T> type)
-			throws ClassCastException {
-		// Unit<T> metricUnit =
-		// QuantityFactory.getInstance(type).getMetricUnit();
-		// if ((metricUnit == null) || metricUnit.isCompatible(this))
-		// return (Unit<T>) this;
-		//  throw new ClassCastException("The unit: " + this //$NON-NLS-1$
-		//      + " is not of parameterized type " + type); //$NON-NLS-1$
-		// // TODO use MsgFormat
-		return null;
-	}
-
-	public Unit<Q, Number> divide(double divisor) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public Unit<?, Number> divide(Unit<?, Number> that) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public UnitConverter getConverterTo(Unit<Q, Number> that)
-			throws UnconvertibleException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public UnitConverter getConverterToAny(Unit<?, Number> that)
-			throws IncommensurableException, UnconvertibleException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public Dimension getDimension() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public Map<Unit<?, Number>, Integer> getProductUnits() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public String getSymbol() {
-		return symbol;
-	}
-
-	public Unit<?, Number> inverse() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public boolean isCompatible(Unit<?, Number> that) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	public Unit<Q, Number> multiply(double factor) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public Unit<?, Number> multiply(Unit<?, Number> that) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public Unit<?, Number> pow(int n) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public Unit<?, Number> root(int n) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public abstract Unit<Q, Number> getSystemUnit();
-
-	public Unit<Q, Number> transform(UnitConverter operation) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	public double getMultFactor() {
 		return multFactor;

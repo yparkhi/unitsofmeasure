@@ -19,7 +19,7 @@ public class BitQuantityTest {
 
 	@Test
 	public void testAddBitQuantity() {
-		BitQuantity bq1 = bq.add(new BitQuantity(100, bu));
+		BitQuantity bq1 = (BitQuantity) bq.add(new BitQuantity(100, bu));
 		assertEquals(Double.valueOf(200), Double.valueOf(bq1.scalar));
 	}
 

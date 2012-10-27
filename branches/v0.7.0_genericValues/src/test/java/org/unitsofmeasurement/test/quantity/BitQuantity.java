@@ -8,6 +8,7 @@
 package org.unitsofmeasurement.test.quantity;
 
 
+import org.unitsofmeasurement.quantity.InformationRate;
 import org.unitsofmeasurement.test.unit.BitRateUnit;
 import org.unitsofmeasurement.test.unit.BitUnit;
 
@@ -15,7 +16,7 @@ import org.unitsofmeasurement.test.unit.BitUnit;
  * @author Werner Keil
  * @version 1.0 ($Revision$), $Date$
  */
-public class BitQuantity extends TestNumericQuantity {
+public class BitQuantity extends TestNumericQuantity<InformationRate<Number>> {
 
 	public BitQuantity(double val, BitUnit un) {
 
@@ -36,19 +37,18 @@ public class BitQuantity extends TestNumericQuantity {
      * }
      * */
 
+	//
+	// public BitQuantity add(final BitQuantity d1) {
+	// BitQuantity dn = new BitQuantity();
+	// return d1.add(this, d1, BitUnit.REF_UNIT);
+	// }
 
-	public BitQuantity add(BitQuantity d1) {
-		BitQuantity dn = new BitQuantity();
-		Object o = super.add(dn, this, d1, BitUnit.REF_UNIT);
-		return (BitQuantity) o;
-    }
 
-
-	public BitQuantity subtract(BitQuantity d1) {
-		BitQuantity dn = new BitQuantity();
-		Object o = super.subtract(dn, this, d1, BitUnit.REF_UNIT);
-		return (BitQuantity) o;
-    }
+	// public BitQuantity subtract(BitQuantity d1) {
+	// BitQuantity dn = new BitQuantity();
+	// Object o = super.subtract(dn, this, d1, BitUnit.REF_UNIT);
+	// return (BitQuantity) o;
+	// }
 
 
 	public boolean eq(BitQuantity d1) {

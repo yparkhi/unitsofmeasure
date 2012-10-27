@@ -14,7 +14,7 @@ package org.unitsofmeasurement.quantity;
  *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 3.2.1, $Date$
+ * @version 3.2.1, $Date: 2012-04-30 01:07:51 +0200 (Mo, 30 Apr 2012) $
  * @see <a href="http://en.wikipedia.org/wiki/Mass_flow_rate"> Wikipedia: Mass
  *      Flow Rate</a>
  */

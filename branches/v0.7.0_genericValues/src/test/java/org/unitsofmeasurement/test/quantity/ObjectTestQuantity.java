@@ -24,7 +24,9 @@ abstract class ObjectTestNumericQuantity<Q extends Quantity<Q, Object>>
     protected double units; // value in units (Unit unit)
 	protected Unit<Q, Object> unit;
 
-    public Object add(ObjectTestNumericQuantity dn, ObjectTestNumericQuantity d1, ObjectTestNumericQuantity d2, TestUnit<?> au) {
+	public Object add(ObjectTestNumericQuantity dn,
+			ObjectTestNumericQuantity d1, ObjectTestNumericQuantity d2,
+			TestUnit<?, Object> au) {
         if (d1.unit == d2.unit){
             dn.unit = d1.unit;
             dn.scalar = d1.scalar + d2.scalar;
@@ -37,7 +39,10 @@ abstract class ObjectTestNumericQuantity<Q extends Quantity<Q, Object>>
         }
         return dn;
     }
-    public Object subtract(ObjectTestNumericQuantity dn, ObjectTestNumericQuantity d1, ObjectTestNumericQuantity d2, TestUnit<?> au) {
+
+	public Object subtract(ObjectTestNumericQuantity dn,
+			ObjectTestNumericQuantity d1, ObjectTestNumericQuantity d2,
+			TestUnit<?, Object> au) {
         if (d1.unit == d2.unit){
             dn.unit = d1.unit;
             dn.scalar = d1.scalar - d2.scalar;
@@ -76,7 +81,7 @@ abstract class ObjectTestNumericQuantity<Q extends Quantity<Q, Object>>
  + String.valueOf(value());
     }
 
-    String showInUnits(TestUnit<?> u, int precision) {
+	String showInUnits(TestUnit<?, Object> u, int precision) {
         double result = scalar / u.getMultFactor();
 
         String str = (new Double(result)).toString();

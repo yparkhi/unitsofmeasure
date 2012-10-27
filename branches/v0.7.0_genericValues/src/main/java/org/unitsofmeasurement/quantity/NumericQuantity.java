@@ -35,7 +35,10 @@ import org.unitsofmeasurement.unit.Unit;
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @see <a href="http://en.wikipedia.org/wiki/NumericQuantity">Wikipedia:
  *      NumericQuantity</a>
- * @version 1.5 ($Revision$), $Date$
+ * @version 1.5 ($Revision: 176 $), $Date: 2012-04-30 01:36:47 +0200 (Mo, 30 Apr
+ *          2012) $
+ * @deprecated data type should be implementation specific, thus at API level
+ *             Generics preferred.
  */
 public interface NumericQuantity<Q extends Quantity<Q, Number>> extends
 		Quantity<Q, Number> {

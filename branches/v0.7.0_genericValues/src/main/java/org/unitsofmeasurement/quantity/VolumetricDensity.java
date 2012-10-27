@@ -14,7 +14,7 @@ package org.unitsofmeasurement.quantity;
  * quantity is "kg/m3" (kilogram per cubic metre).
  *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
- * @version 1.2.1, $Date$
+ * @version 1.2.1, $Date: 2012-04-30 01:07:51 +0200 (Mo, 30 Apr 2012) $
  */
 public interface VolumetricDensity extends NumericQuantity<VolumetricDensity> {
 }

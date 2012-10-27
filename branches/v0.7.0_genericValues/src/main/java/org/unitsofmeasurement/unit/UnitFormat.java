@@ -1,6 +1,6 @@
 /**
  * Unit-API - Units of Measurement API for Java (http://unitsofmeasurement.org)
- * Copyright (c) 2005-2010, Unit-API contributors, JScience and others
+ * Copyright (c) 2005-2012, Unit-API contributors, JScience and others
  * All rights reserved.
  *
  * See LICENSE.txt for details.
@@ -16,10 +16,13 @@ import java.text.ParsePosition;
  * {@linkplain Unit units}.
  * </p>
  * 
+ * @param <V>
+ *            The value of the quantity measured by this unit.
+ * 
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @author Eric Russell
- * @version 1.1
+ * @version 1.2 ($Revision$), $Date$
  */
 public interface UnitFormat<V> {
 
