@@ -1,6 +1,6 @@
 /**
  * Unit-API - Units of Measurement API for Java (http://unitsofmeasurement.org)
- * Copyright (c) 2005-2010, Unit-API contributors, JScience and others
+ * Copyright (c) 2005-2012, Unit-API contributors, JScience and others
  * All rights reserved.
  *
  * See LICENSE.txt for details.
@@ -12,14 +12,17 @@ import java.util.Locale;
 import org.unitsofmeasurement.unit.UnitFormat;
 
 /**
- * <p> This interface represent the service to obtain {@link UnitFormat}
- *     instances.</p>
- *
+ * <p>
+ * This interface represent the service to obtain {@link UnitFormat} instances.
+ * </p>
+ * 
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
- * @see <a href="http://aurora.regenstrief.org/~ucum/ucum.html">UCUM Full Specification</a>
- * @version 1.0
+ * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
+ * @see <a href="http://aurora.regenstrief.org/~ucum/ucum.html">UCUM Full
+ *      Specification</a>
+ * @version 1.1
  */
-public interface UnitFormatService {
+public interface UnitFormatService<V> {
 
     /**
      * Returns the default <a href="http://www.unitsofmeasure.org/">UCUM</a>
@@ -27,7 +30,7 @@ public interface UnitFormatService {
      *
      * @return <code>getUnitFormat("UCUM")</code>
      */
-    UnitFormat getUnitFormat();
+	UnitFormat<V> getUnitFormat();
 
     /**
      * Returns the unit format having the specified name or
@@ -36,7 +39,7 @@ public interface UnitFormatService {
      * @param name the name of the format.
      * @return the corresponding unit format.
      */
-    UnitFormat getUnitFormat(String name);
+	UnitFormat<V> getUnitFormat(String name);
 
     /**
      * Returns the unit format for the specified locale or
@@ -45,6 +48,6 @@ public interface UnitFormatService {
      * @param locale the locale for the format.
      * @return the corresponding unit format.
      */
-    UnitFormat getUnitFormat(Locale locale);
+	UnitFormat<V> getUnitFormat(Locale locale);
 
 }

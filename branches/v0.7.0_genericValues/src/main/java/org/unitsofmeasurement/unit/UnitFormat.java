@@ -19,7 +19,7 @@ import java.text.ParsePosition;
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @author Eric Russell
- * @version 1.0
+ * @version 1.1
  */
 public interface UnitFormat<V> {
 

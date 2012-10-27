@@ -14,7 +14,7 @@ import org.unitsofmeasurement.unit.Unit;
  * @author paul.morrison
  *
  */
-public class DistanceUnit extends BaseUnit<Length> {
+public class DistanceUnit extends BaseUnit<Length<Number>> {
 
     public static final DistanceUnit m = new DistanceUnit("m", 1.0); // reference
     // Unit
@@ -42,7 +42,7 @@ public class DistanceUnit extends BaseUnit<Length> {
     }
 
     @Override
-	public Unit<Length, Number> getSystemUnit() {
+	public Unit<Length<Number>, Number> getSystemUnit() {
     return REF_UNIT;
     }
 

@@ -1,6 +1,6 @@
 /**
  * Unit-API - Units of Measurement API for Java (http://unitsofmeasurement.org)
- * Copyright (c) 2005-2010, Unit-API contributors, JScience and others
+ * Copyright (c) 2005-2012, Unit-API contributors, JScience and others
  * All rights reserved.
  *
  * See LICENSE.txt for details.
@@ -22,10 +22,10 @@ import org.unitsofmeasurement.unit.SystemOfUnits;
  * 
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.2.2 ($Revision$), $Date: 2010-09-28 16:16:43 +0200 (Di, 28
- *          Sep 2010) $
+ * @version 1.3 ($Revision$), $Date: 2010-09-28 16:16:43 +0200 (Di, 28 Sep
+ *          2010) $
  */
-public interface SystemOfUnitsService {
+public interface SystemOfUnitsService<V> {
 
 	/**
 	 * Returns the default <a
@@ -34,7 +34,7 @@ public interface SystemOfUnitsService {
 	 * 
 	 * @return <code>getSystemOfUnits("SI")</code>
 	 */
-    SystemOfUnits getSystemOfUnits();
+	SystemOfUnits<V> getSystemOfUnits();
 
     /**
      * Returns the system of units having the specified name or
@@ -43,6 +43,6 @@ public interface SystemOfUnitsService {
      * @param name the system of unit name.
      * @return the system of units.
      */
-    SystemOfUnits getSystemOfUnits(String name);
+	SystemOfUnits<V> getSystemOfUnits(String name);
 
 }

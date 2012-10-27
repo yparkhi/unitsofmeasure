@@ -14,7 +14,7 @@ import org.unitsofmeasurement.unit.Unit;
  * @author Werner Keil
  * @version 1.0 ($Revision$), $Date$
  */
-public class BitRateUnit extends TestUnit<InformationRate> {
+public class BitRateUnit extends TestUnit<InformationRate<Number>> {
 
 	public static final BitRateUnit bps = new BitRateUnit("bps", 1.0); // reference
     // Unit
@@ -27,7 +27,7 @@ public class BitRateUnit extends TestUnit<InformationRate> {
     }
 
     @Override
-	public Unit<InformationRate, Number> getSystemUnit() {
+	public Unit<InformationRate<Number>, Number> getSystemUnit() {
 		return REF_UNIT;
     }
 
