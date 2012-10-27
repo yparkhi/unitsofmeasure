@@ -16,7 +16,7 @@ package org.unitsofmeasurement.quantity;
  *            The value of the quantity.
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.2 ($Revision: 169 $), $Date: 2010-02-21 18:48:40 +0100 (dim., 21
+ * @version 1.2 ($Revision$), $Date: 2010-02-21 18:48:40 +0100 (dim., 21
  *          févr. 2010) $
  */
 public interface Area<V> extends Quantity<Area<V>, V> {

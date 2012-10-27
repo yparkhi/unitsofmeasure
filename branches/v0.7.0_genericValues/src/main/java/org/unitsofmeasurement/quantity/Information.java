@@ -13,7 +13,7 @@ package org.unitsofmeasurement.quantity;
  * 
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.3 ($Revision: 173 $), $Date: 2010-10-29 17:17:07 +0100 (Fr, 29 Okt
+ * @version 1.3 ($Revision$), $Date: 2010-10-29 17:17:07 +0100 (Fr, 29 Okt
  *          2010) $
  * @see <a href="http://en.wikipedia.org/wiki/Units_of_information"> Wikipedia:
  *      Units of Information</a>

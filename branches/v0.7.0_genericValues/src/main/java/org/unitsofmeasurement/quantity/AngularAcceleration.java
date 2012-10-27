@@ -14,7 +14,7 @@ package org.unitsofmeasurement.quantity;
  * second).
  *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
- * @version 1.1, $Date: 2012-04-30 01:07:51 +0200 (Mo, 30 Apr 2012) $
+ * @version 1.1, $Date$
  */
 public interface AngularAcceleration extends
 		NumericQuantity<AngularAcceleration> {

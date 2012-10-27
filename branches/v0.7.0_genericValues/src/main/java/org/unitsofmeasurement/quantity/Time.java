@@ -14,7 +14,7 @@ package org.unitsofmeasurement.quantity;
  * @param <V>
  *            The value of the quantity.
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.3, $Date: 2012-04-30 01:07:51 +0200 (Mo, 30 Apr 2012) $
+ * @version 1.3, $Date$
  */
 public interface Time<V> extends Quantity<Time<V>, V> {
 }

@@ -14,7 +14,7 @@ package org.unitsofmeasurement.quantity;
  * 
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.0.2 ($Revision: 1.5 $), $Date: 2010/02/02 20:17:02 $
+ * @version 1.0.2 ($Revision$), $Date$
  */
 public interface MagneticFieldStrength extends NumericQuantity<MagneticFieldStrength> {
 }

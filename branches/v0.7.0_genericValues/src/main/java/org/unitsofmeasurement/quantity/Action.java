@@ -17,8 +17,7 @@ package org.unitsofmeasurement.quantity;
  *            The value of the quantity.
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.2 ($Revision$), $Date: 2012-04-30 01:07:51 +0200 (Mo, 30 Apr 2012)
- *          $
+ * @version 1.2 ($Revision$), $Date$
  * @see <a href="http://en.wikipedia.org/wiki/Action_(physics)">Wikipedia's
  *      Action</a>
  * 

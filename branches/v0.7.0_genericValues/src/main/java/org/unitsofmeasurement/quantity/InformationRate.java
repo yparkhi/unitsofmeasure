@@ -13,7 +13,7 @@ package org.unitsofmeasurement.quantity;
  * 
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.3, $Date: 2012-10-27 16:24:19 +0200 (Sa, 27 Okt 2012) $
+ * @version 1.3, $Date$
  * @param <V>
  *            The value of the quantity.
  * @see <a href="http://en.wikipedia.org/wiki/Information_rate"> Wikipedia:

@@ -48,7 +48,7 @@
  *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 2.2, $Date: 2012-04-30 01:07:51 +0200 (Mo, 30 Apr 2012) $
+ * @version 2.2, $Date$
  */
 package org.unitsofmeasurement.quantity;
 
