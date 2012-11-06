@@ -113,13 +113,15 @@ public class BitQuantity extends TestNumericQuantity<InformationRate<Number>> {
 		return new BitQuantity(scalar / newUnit.getMultFactor(), newUnit);
 	}
 
-	@Override
-	public BitQuantity to(
-Unit<TestQuantity<Number>, Number> unit) {
+
+	public BitQuantity to(Unit<InformationRate<Number>, Number> unit) {
+
 		return convert((BitUnit) unit);
 	}
 
 	public String showInUnits(BitUnit u, int precision) {
 		return super.showInUnits(u, precision);
 	}
+
+
 }

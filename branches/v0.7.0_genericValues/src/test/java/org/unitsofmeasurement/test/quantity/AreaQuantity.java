@@ -7,12 +7,15 @@
  */
 package org.unitsofmeasurement.test.quantity;
 
+import org.unitsofmeasurement.Measurement;
+import org.unitsofmeasurement.quantity.Area;
 import org.unitsofmeasurement.test.unit.AreaUnit;
 import org.unitsofmeasurement.test.unit.DistanceUnit;
 import org.unitsofmeasurement.test.unit.VolumeUnit;
+import org.unitsofmeasurement.unit.Unit;
 
 
-public class AreaQuantity extends TestNumericQuantity {
+public class AreaQuantity extends TestNumericQuantity<Area<Number>> {
     public AreaQuantity() {
     }
     public AreaQuantity(double val, AreaUnit un) {
@@ -22,18 +25,51 @@ public class AreaQuantity extends TestNumericQuantity {
         scalar = val * unit.getMultFactor();
     }
 
-    public AreaQuantity add(AreaQuantity d1) {
-        AreaQuantity dn = new AreaQuantity();
-        Object o = super.add(dn, this, d1, AreaUnit.REF_UNIT);
-        return (AreaQuantity) o;
-    }
+	protected AreaQuantity add(AreaQuantity dn, AreaQuantity d1,
+			AreaQuantity d2, AreaUnit au) {
+		if (d1.unit == d2.unit) {
+			dn.unit = d1.unit;
+			dn.scalar = d1.scalar + d2.scalar;
+			dn.units = d1.units + d2.units;
+		} else {
+			dn.unit = au;
+			dn.scalar = d1.scalar + d2.scalar;
+			dn.units = dn.scalar;
+		}
+		return dn;
+	}
+
+	protected AreaQuantity subtract(final AreaQuantity dn,
+			final AreaQuantity d1, AreaQuantity d2, AreaUnit au) {
+		if (d1.unit == d2.unit) {
+			dn.unit = d1.unit;
+			dn.scalar = d1.scalar - d2.scalar;
+			dn.units = d1.units - d2.units;
+		} else {
+			dn.unit = au;
+			dn.scalar = d1.scalar - d2.scalar;
+			dn.units = dn.scalar;
+		}
+		return dn;
+
+	}
+
+	public AreaQuantity add(AreaQuantity d1) {
+		AreaQuantity dn = new AreaQuantity();
+		return this.add(dn, this, d1, AreaUnit.REF_UNIT);
+	}
 
     public AreaQuantity subtract(AreaQuantity d1) {
         AreaQuantity dn = new AreaQuantity();
-        Object o = super.subtract(dn, this, d1, AreaUnit.REF_UNIT);
-        return (AreaQuantity) o;
+		return this.subtract(dn, this, d1, AreaUnit.REF_UNIT);
     }
-    public boolean eq(AreaQuantity d1) {
+
+	@Override
+	public Measurement<Area<Number>, Number> to(Unit<Area<Number>, Number> unit) {
+		return convert((AreaUnit) unit);
+	}
+
+	public boolean eq(AreaQuantity d1) {
         return super.eq(d1);
     }
 

@@ -13,20 +13,21 @@ import java.math.RoundingMode;
 import org.unitsofmeasurement.Measurement;
 import org.unitsofmeasurement.quantity.Quantity;
 import org.unitsofmeasurement.test.unit.BaseUnit;
+import org.unitsofmeasurement.test.unit.TestUnit;
 import org.unitsofmeasurement.unit.Unit;
 
 /**
  * @author Werner Keil
  */
-class TestNumericQuantity<Q extends Quantity<Q, Number>> extends
-		TestQuantity<Number> implements
-		Measurement<TestQuantity<Number>, Number> {
+class TestNumericQuantity<Q extends Quantity<Q, Number>> implements
+		Measurement<Q, Number> {
+	protected TestUnit<Q, Number> unit;
 	protected double scalar; // value in reference units
 	protected double units; // value in units (Unit unit)
 
 	@SuppressWarnings("unchecked")
-	public TestNumericQuantity<Q> add(TestNumericQuantity<Q> dn,
-			TestNumericQuantity<Q> d1, TestNumericQuantity<Q> d2,
+	protected TestNumericQuantity<Q> add(TestNumericQuantity<Q> dn,
+			TestNumericQuantity<Q> d1, TestNumericQuantity<?> d2,
 			BaseUnit<Number> au) {
 		if (d1.unit == d2.unit) {
 			dn.unit = d1.unit;
@@ -53,7 +54,7 @@ class TestNumericQuantity<Q extends Quantity<Q, Number>> extends
 	}
 
 	@SuppressWarnings("unchecked")
-	public TestNumericQuantity<Q> subtract(final TestNumericQuantity<Q> dn,
+	protected TestNumericQuantity<Q> subtract(final TestNumericQuantity<Q> dn,
 			final TestNumericQuantity<Q> d1, TestNumericQuantity<Q> d2,
 			BaseUnit<Number> au) {
 		if (d1.unit == d2.unit) {
@@ -94,7 +95,7 @@ class TestNumericQuantity<Q extends Quantity<Q, Number>> extends
 	}
 
 	public String toString() {
-		return (new Double(units)).toString() + ' ' + unit.getName();
+		return (new Double(units)).toString() + ' ' + unit;
 	}
 
 	String showInUnits(BaseUnit<?> u, int precision) {
@@ -123,20 +124,18 @@ class TestNumericQuantity<Q extends Quantity<Q, Number>> extends
 	}
 
 	@Override
-	public Unit<TestQuantity<Number>, Number> unit() {
-		return unit;
-	}
-
-	@SuppressWarnings("unchecked")
-	@Override
-	public Measurement<TestQuantity<Number>, Number> add(
-			Measurement<TestQuantity<Number>, Number> that) {
-		return this.addInternal((TestNumericQuantity<Q>) that);
+	public Unit<Q, Number> unit() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
-	public Measurement<TestQuantity<Number>, Number> substract(
-			Measurement<TestQuantity<Number>, Number> that) {
+	public Measurement<Q, Number> add(Measurement<Q, Number> that) {
+		return addInternal((TestNumericQuantity<Q>) that);
+	}
+
+	@Override
+	public Measurement<Q, Number> substract(Measurement<Q, Number> that) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -160,26 +159,25 @@ class TestNumericQuantity<Q extends Quantity<Q, Number>> extends
 	}
 
 	@Override
-	public Measurement<? extends Measurement<TestQuantity<Number>, Number>, Number> inverse() {
+	public Measurement<? extends Measurement<Q, Number>, Number> inverse() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Measurement<TestQuantity<Number>, Number> to(
-			Unit<TestQuantity<Number>, Number> unit) {
+	public Measurement<Q, Number> to(Unit<Q, Number> unit) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public double doubleValue(Unit<TestQuantity<Number>, Number> unit) {
+	public double doubleValue(Unit<Q, Number> unit) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public long longValue(Unit<TestQuantity<Number>, Number> unit) {
+	public long longValue(Unit<Q, Number> unit) {
 		// TODO Auto-generated method stub
 		return 0;
 	}

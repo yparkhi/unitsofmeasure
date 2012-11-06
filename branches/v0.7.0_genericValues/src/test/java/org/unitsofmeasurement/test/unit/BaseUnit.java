@@ -9,7 +9,6 @@ package org.unitsofmeasurement.test.unit;
 
 import java.util.Map;
 
-import org.unitsofmeasurement.test.quantity.TestQuantity;
 import org.unitsofmeasurement.unit.Dimension;
 import org.unitsofmeasurement.unit.IncommensurableException;
 import org.unitsofmeasurement.unit.UnconvertibleException;
@@ -115,11 +114,6 @@ public class BaseUnit<V> extends TestUnit {
 		return null;
 	}
 
-	@Override
-	public Unit<TestQuantity<V>, V> alternate(String symbol) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@Override
 	public Unit transform(UnitConverter operation) {
@@ -183,6 +177,17 @@ public class BaseUnit<V> extends TestUnit {
 			return false;
 		BaseUnit<?> thatUnit = (BaseUnit<?>) that;
 		return this.symbol.equals(thatUnit.symbol);
+	}
+
+	@Override
+	public Unit alternate(String symbol) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String toString() {
+		return getSymbol();
 	}
 
 }

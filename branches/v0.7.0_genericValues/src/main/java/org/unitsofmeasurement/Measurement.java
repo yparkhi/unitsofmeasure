@@ -36,7 +36,8 @@ import org.unitsofmeasurement.unit.Unit;
  *      Units of measurement</a>
  * @version 1.5 ($Revision$), $Date$
  */
-public interface Measurement<Q extends Quantity<Q, V>, V> {
+public interface Measurement<Q extends Quantity<Q, V>, V> extends
+		Quantity<Q, V> {
 
 	/**
 	 * Returns the sum of this amount with the one specified.

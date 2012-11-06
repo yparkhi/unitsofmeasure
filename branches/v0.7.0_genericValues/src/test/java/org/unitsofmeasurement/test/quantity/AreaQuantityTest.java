@@ -45,9 +45,9 @@ public class AreaQuantityTest {
 
     @Test
     public void testSubtract() {
-		AreaQuantity area2 = new AreaQuantity(50, m2);
+		AreaQuantity area2 = new AreaQuantity(30, m2);
 		AreaQuantity result = area.subtract(area2);
-    assertEquals(50d, result.scalar, 0);
+		assertEquals(70d, result.scalar, 0);
     }
 
     @Test

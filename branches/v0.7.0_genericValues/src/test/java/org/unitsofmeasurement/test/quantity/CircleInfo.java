@@ -22,6 +22,7 @@ public class CircleInfo {
 		System.out.println("Circumference = " + circumference);
 		AreaQuantity area = (radius.multiply(radius)).multiply(Math.PI);
 		System.out.println("Area = " + area);
+		// area.add(radius);
 	}
 
 }
