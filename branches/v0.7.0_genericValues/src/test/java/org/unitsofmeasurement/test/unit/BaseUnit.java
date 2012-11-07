@@ -184,10 +184,4 @@ public class BaseUnit<V> extends TestUnit {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-	@Override
-	public String toString() {
-		return getSymbol();
-	}
-
 }

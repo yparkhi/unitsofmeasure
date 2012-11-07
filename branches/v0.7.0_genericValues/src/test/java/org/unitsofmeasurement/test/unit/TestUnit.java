@@ -48,9 +48,12 @@ public abstract class TestUnit<Q extends Quantity<Q, V>, V> implements
 		this(name, 0);
 	}
 
-
-
 	public double getMultFactor() {
 		return multFactor;
+	}
+
+	@Override
+	public String toString() {
+		return getName();
 	}
 }

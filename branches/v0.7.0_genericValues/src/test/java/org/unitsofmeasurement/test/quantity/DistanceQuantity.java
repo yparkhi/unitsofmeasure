@@ -20,7 +20,6 @@ public class DistanceQuantity extends TestNumericQuantity<Length<Number>> {
 
 	@SuppressWarnings("unchecked")
 	public DistanceQuantity(double val, DistanceUnit un) {
-
 		units = val;
 		unit = un;
 		scalar = val * unit.getMultFactor();
