@@ -3,7 +3,7 @@
 
 Welcome to Units of Measurement API.
 
-Visit the Hudson CI Server for this project at: [http://hudson.geomatys.com/job/Unit-API/ http://hudson.geomatys.com/job/Unit-API/]
+Visit the Hudson CI Server for this project at: [http://jenkins.geotoolkit.org/job/Unit-API/ http://jenkins.geotoolkit.org/job/Unit-API/]
 
 Maven Site: [http://hudson.geomatys.com/job/Unit-API/ws/trunk/target/site/index.html http://hudson.geomatys.com/job/Unit-API/ws/trunk/target/site/index.html]
 
