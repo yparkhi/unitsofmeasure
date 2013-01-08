@@ -7,6 +7,7 @@
  */
 package org.unitsofmeasurement.test.quantity;
 
+import org.unitsofmeasurement.quantity.Length;
 import org.unitsofmeasurement.test.unit.AreaUnit;
 import org.unitsofmeasurement.test.unit.DistanceUnit;
 import org.unitsofmeasurement.test.unit.VolumeUnit;
@@ -15,7 +16,7 @@ import org.unitsofmeasurement.test.unit.VolumeUnit;
 /**
  * @author paul.morrison
  */
-public class DistanceQuantity extends TestQuantity {
+public class DistanceQuantity extends TestQuantity<Length> {
 
     public DistanceQuantity(double val, DistanceUnit un) {
         units = val;

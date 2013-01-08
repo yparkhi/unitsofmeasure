@@ -7,6 +7,7 @@
  */
 package org.unitsofmeasurement.test.quantity;
 
+import org.unitsofmeasurement.quantity.InformationRate;
 import org.unitsofmeasurement.test.unit.BitRateUnit;
 
 
@@ -14,7 +15,7 @@ import org.unitsofmeasurement.test.unit.BitRateUnit;
  * @author Werner Keil
  * @version 1.0
  */
-public class BitRateQuantity extends TestQuantity {
+public class BitRateQuantity extends TestQuantity<InformationRate> {
     public BitRateQuantity() {
     }
 
