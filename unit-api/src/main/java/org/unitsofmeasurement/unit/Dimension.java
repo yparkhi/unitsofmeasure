@@ -22,7 +22,7 @@ import java.util.Map;
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @version 1.1
  *
- * @see <a href="http://en.wikipedia.org/wiki/Dimensional_analysis">Dimensional Analysis on Wikipedia</a>
+ * @see <a href="http://en.wikipedia.org/wiki/Dimensional_analysis">Wikipedia: Dimensional Analysis</a>
  * @since 0.6.0
  */
 public interface Dimension {
