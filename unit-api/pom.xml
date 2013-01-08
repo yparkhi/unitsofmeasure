@@ -156,7 +156,6 @@ This API specifies Java packages for the programmatic, type safe handling
       <timezone>-9</timezone>
       <roles>
         <role>EG Member (Emeritus)</role>
-        <role>Repository Admin</role>
         <role>Globalization Support</role>
       </roles>
     </developer>
@@ -169,8 +168,7 @@ This API specifies Java packages for the programmatic, type safe handling
       <organization>Ikayzo</organization>
       <timezone>-9</timezone>
       <roles>
-        <role>Translator</role>
-        <role>Japanese</role>
+        <role>Japanese Translator</role>
       </roles>
     </contributor>
     <contributor>
@@ -179,8 +177,7 @@ This API specifies Java packages for the programmatic, type safe handling
       <organization>Ikayzo</organization>
       <timezone>-9</timezone>
       <roles>
-        <role>Translator</role>
-        <role>Japanese</role>
+        <role>Japanese Translator</role>
       </roles>
     </contributor>
     <contributor>
@@ -189,8 +186,7 @@ This API specifies Java packages for the programmatic, type safe handling
       <organization>Gramant</organization>
       <timezone>+4</timezone>
       <roles>
-        <role>Translator</role>
-        <role>Russian</role>
+        <role>Russian Translator</role>
       </roles>
     </contributor>
     <contributor>
@@ -393,12 +389,10 @@ This API specifies Java packages for the programmatic, type safe handling
                 <docencoding>${siteEncoding}</docencoding>
                 <charset>${siteEncoding}</charset>
                 <locale>en</locale>
+                <version>false</version>
                 <noqualifier>all</noqualifier>
                 <quiet>true</quiet>
                 <keywords>true</keywords>
-                <links>
-                  <link>http://java.sun.com/javase/6/docs/api</link>
-                </links>
               </configuration>
             </plugin>
 
@@ -418,17 +412,6 @@ This API specifies Java packages for the programmatic, type safe handling
               <groupId>org.apache.maven.plugins</groupId>
               <artifactId>maven-surefire-report-plugin</artifactId>
               <version>2.13</version>
-            </plugin>
-
-            <!-- Report on test coverage -->
-            <plugin>
-              <groupId>org.codehaus.mojo</groupId>
-              <artifactId>emma-maven-plugin</artifactId>
-              <version>1.0-alpha-1</version>
-              <reportSets>
-                <reportSet></reportSet>
-                <reportSet></reportSet>
-              </reportSets>
             </plugin>
 
             <!-- Static analysis for occurrences of bug patterns -->
@@ -475,7 +458,6 @@ This API specifies Java packages for the programmatic, type safe handling
     <repository>
       <id>java.net-maven2-repository</id>
       <url>java-net:/maven2-repository/trunk/repository/</url>
-      <uniqueVersion>false</uniqueVersion>
     </repository>
     <site>
       <id>unitsofmeasurement</id>
