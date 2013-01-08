@@ -126,7 +126,7 @@ This API specifies Java packages for the programmatic, type safe handling
       <timezone>+1</timezone>
       <roles>
         <role>Java Developer</role>
-        <role>Hudson Admin</role>
+        <role>Jenkins Admin</role>
       </roles>
     </developer>
     <developer>
@@ -303,16 +303,6 @@ This API specifies Java packages for the programmatic, type safe handling
         </configuration>
       </plugin>
 
-      <!-- Resources -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-resources-plugin</artifactId>
-        <version>2.6</version>
-        <configuration>
-          <encoding>${sourceEncoding}</encoding>
-        </configuration>
-      </plugin>
-
       <!-- JAR packaging -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -441,7 +431,7 @@ This API specifies Java packages for the programmatic, type safe handling
               </reportSets>
             </plugin>
 
-            <!-- Static analysis for occurences of bug patterns -->
+            <!-- Static analysis for occurrences of bug patterns -->
             <plugin>
               <groupId>org.codehaus.mojo</groupId>
               <artifactId>findbugs-maven-plugin</artifactId>
