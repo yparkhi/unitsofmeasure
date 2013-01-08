@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- ======================================================================= -->
-<!--     Maven Project Configuration File for the Units of Measurement API   -->
-<!--     http://www.unitsofmeasurement.org                                   -->
-<!-- ======================================================================= -->
+<!--
+  Maven Project Configuration File for the Units of Measurement API
+  http://www.unitsofmeasurement.org
+-->
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-         http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <prerequisites>
     <maven>3.0.2</maven>
   </prerequisites>
 
-  <!-- ==================================================== -->
   <!-- Project description (including license) -->
-  <!-- ==================================================== -->
   <groupId>org.unitsofmeasurement</groupId>
   <artifactId>unit-api</artifactId>
   <packaging>bundle</packaging>
@@ -41,9 +39,7 @@ This API specifies Java packages for the programmatic, type safe handling
     </license>
   </licenses>
 
-  <!-- =========================================================== -->
-  <!--     Issue managements and mailing lists.                    -->
-  <!-- =========================================================== -->
+  <!-- Issue managements and mailing lists. -->
   <scm>
     <url>http://unitsofmeasure.googlecode.com/svn/trunk/</url>
   </scm>
@@ -74,13 +70,11 @@ This API specifies Java packages for the programmatic, type safe handling
     </mailingList>
   </mailingLists>
 
-  <!-- =========================================================== -->
-  <!--     Developers and Contributors                             -->
-  <!-- =========================================================== -->
+  <!-- Developers and Contributors -->
   <developers>
     <developer>
-      <name>Jean-Marie Dautelle</name>
       <id>dautelle</id>
+      <name>Jean-Marie Dautelle</name>
       <email>jean-marie@dautelle.com</email>
       <organization>Thales</organization>
       <organizationUrl>http://www.thalesraytheon-fr.com</organizationUrl>
@@ -91,11 +85,11 @@ This API specifies Java packages for the programmatic, type safe handling
       </roles>
     </developer>
     <developer>
-      <name>Werner Keil</name>
       <id>werner.keil</id>
+      <name>Werner Keil</name>
+      <email>units@catmedia.us</email>
       <organization>Creative Arts &amp; Technologies</organization>
       <organizationUrl>http://www.catmedia.us</organizationUrl>
-      <email>units@catmedia.us</email>
       <timezone>+1</timezone>
       <roles>
         <role>Architect</role>
@@ -105,9 +99,9 @@ This API specifies Java packages for the programmatic, type safe handling
     <developer>
       <id>karen_legrand</id>
       <name>Karen Legrand</name>
+      <email>karen.legrand@iem.com</email>
       <organization>Innovation Emergency Management (IEM)</organization>
       <organizationUrl>http://www.iem.com</organizationUrl>
-      <email>karen.legrand@iem.com</email>
       <timezone>-5</timezone>
       <roles>
         <role>Architect</role>
@@ -117,15 +111,15 @@ This API specifies Java packages for the programmatic, type safe handling
     <developer>
       <id>christopher.senior</id>
       <name>Chris Senior</name>
-      <organization>Snap-on Inc.</organization>
       <email>christopher.senior@gmail.com</email>
+      <organization>Snap-on Inc.</organization>
       <roles>
         <role>Java Developer</role>
       </roles>
     </developer>
     <developer>
-      <name>Martin Desruisseaux</name>
       <id>desruisseaux</id>
+      <name>Martin Desruisseaux</name>
       <email>desruisseaux@users.sourceforge.net</email>
       <organization>Geomatys</organization>
       <organizationUrl>http://www.geomatys.com</organizationUrl>
@@ -157,8 +151,8 @@ This API specifies Java packages for the programmatic, type safe handling
     <developer>
       <id>dan.leuck</id>
       <name>Daniel Leuck</name>
-      <organization>Ikayzo</organization>
       <email>dan@ikayzo.com</email>
+      <organization>Ikayzo</organization>
       <timezone>-9</timezone>
       <roles>
         <role>EG Member (Emeritus)</role>
@@ -171,8 +165,8 @@ This API specifies Java packages for the programmatic, type safe handling
   <contributors>
     <contributor>
       <name>Scott Murphy</name>
-      <organization>Ikayzo</organization>
       <email>scott@ikayzo.com</email>
+      <organization>Ikayzo</organization>
       <timezone>-9</timezone>
       <roles>
         <role>Translator</role>
@@ -181,8 +175,8 @@ This API specifies Java packages for the programmatic, type safe handling
     </contributor>
     <contributor>
       <name>Mika Terada</name>
-      <organization>Ikayzo</organization>
       <email>mika@ikayzo.com</email>
+      <organization>Ikayzo</organization>
       <timezone>-9</timezone>
       <roles>
         <role>Translator</role>
@@ -191,8 +185,8 @@ This API specifies Java packages for the programmatic, type safe handling
     </contributor>
     <contributor>
       <name>Anatol Filin</name>
-      <organization>Gramant</organization>
       <email>anatol@gramant.ru</email>
+      <organization>Gramant</organization>
       <timezone>+4</timezone>
       <roles>
         <role>Translator</role>
@@ -219,16 +213,16 @@ This API specifies Java packages for the programmatic, type safe handling
     </contributor>
     <contributor>
       <name>Deepak Dasaratha Rao</name>
-      <organization>Samsung Electronics Corporation</organization>
       <email>deepakd@samsung.com</email>
+      <organization>Samsung Electronics Corporation</organization>
       <roles>
         <role>EG Member (Emeritus)</role>
       </roles>
     </contributor>
     <contributor>
       <name>Brian Frank</name>
-      <organization>SkyFoundry</organization>
       <email>brian@skyfoundry.com</email>
+      <organization>SkyFoundry</organization>
       <roles>
         <role>EG Member (Emeritus)</role>
         <role>Java Developer</role>
@@ -237,8 +231,8 @@ This API specifies Java packages for the programmatic, type safe handling
     </contributor>
     <contributor>
       <name>Bruce Hamilton</name>
-      <organization>Agilent</organization>
       <email>bruce_hamilton@agilent.com</email>
+      <organization>Agilent</organization>
       <roles>
         <role>EG Member (Emeritus)</role>
       </roles>
@@ -252,8 +246,8 @@ This API specifies Java packages for the programmatic, type safe handling
     </contributor>
     <contributor>
       <name>John Murray</name>
-      <organization>Sobetech</organization>
       <email>john.murray@sobetech.com</email>
+      <organization>Sobetech</organization>
       <roles>
         <role>EG Member (Emeritus)</role>
       </roles>
@@ -280,13 +274,9 @@ This API specifies Java packages for the programmatic, type safe handling
     </contributor>
   </contributors>
 
-  <!-- =========================================================== -->
-  <!--     Dependency Management                                   -->
-  <!--                                                             -->
-  <!--     Reference: http://repo1.maven.org/maven2/               -->
-  <!-- =========================================================== -->
+  <!-- Dependency Management -->
   <dependencies>
-    <dependency> <!-- Validation tests -->
+    <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.10</version>
@@ -294,19 +284,13 @@ This API specifies Java packages for the programmatic, type safe handling
     </dependency>
   </dependencies>
 
-  <!-- ======================================================= -->
-  <!--   Build Settings                                        -->
-  <!-- ======================================================= -->
+  <!-- Build Settings -->
   <properties>
     <sourceEncoding>UTF-8</sourceEncoding> <!-- in Maven 3. -->
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
   <build>
     <plugins>
-
-      <!-- ======================================================= -->
-      <!--   Compilation                                           -->
-      <!-- ======================================================= -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -318,9 +302,7 @@ This API specifies Java packages for the programmatic, type safe handling
         </configuration>
       </plugin>
 
-      <!-- ======================================================= -->
-      <!--   Resources                       -->
-      <!-- ======================================================= -->
+      <!-- Resources -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-resources-plugin</artifactId>
@@ -330,9 +312,7 @@ This API specifies Java packages for the programmatic, type safe handling
         </configuration>
       </plugin>
 
-      <!-- ======================================================= -->
-      <!--   JAR packaging                     -->
-      <!-- ======================================================= -->
+      <!-- JAR packaging -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
@@ -353,9 +333,7 @@ This API specifies Java packages for the programmatic, type safe handling
         </configuration>
       </plugin>
 
-      <!-- ======================================================= -->
-      <!--   Packaging (OSGi bundle)               -->
-      <!-- ======================================================= -->
+      <!-- OSGi bundle packaging -->
       <plugin>
         <groupId>org.apache.felix</groupId>
         <artifactId>maven-bundle-plugin</artifactId>
@@ -369,9 +347,7 @@ This API specifies Java packages for the programmatic, type safe handling
         </configuration>
       </plugin>
 
-      <!-- ======================================================= -->
-      <!--   Custom Javadoc plugin                 -->
-      <!-- ======================================================= -->
+      <!-- Custom Javadoc plugin -->
       <plugin>
         <groupId>javolution</groupId>
         <artifactId>colapi</artifactId>
@@ -385,9 +361,7 @@ This API specifies Java packages for the programmatic, type safe handling
         </executions>
       </plugin>
 
-      <!-- ======================================================= -->
-      <!--   Maven web site                    -->
-      <!-- ======================================================= -->
+      <!-- Maven web site -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-site-plugin</artifactId>
@@ -417,35 +391,27 @@ This API specifies Java packages for the programmatic, type safe handling
               </reportSets>
             </plugin>
 
-            <!-- ======================================================= -->
-            <!--   Javadoc generation                  -->
-            <!--                             -->
-            <!--   Do not set <docfilessubdirs> to true, since this    -->
-            <!--   cause the unwanted copy of .svn sub-directories.  -->
-            <!-- ======================================================= -->
+            <!-- Javadoc generation -->
             <plugin>
               <groupId>org.apache.maven.plugins</groupId>
               <artifactId>maven-javadoc-plugin</artifactId>
               <version>2.8</version>
               <configuration>
-                <source>1.5</source>             <!-- Enables javadoc to handle assertions present in J2SE 1.4.  -->
-                <encoding>UTF-8</encoding>       <!-- The encoding of the source files.                          -->
-                <docencoding>UTF-8</docencoding> <!-- The encoding of the generated HTML files.                  -->
-                <charset>UTF-8</charset>         <!-- Specifies the HTML character set for this document.        -->
-                <locale>en</locale>              <!-- Locale that javadoc uses when generating documentation.    -->
-                <noqualifier>all</noqualifier>   <!-- Omit qualifying package name before class names in output. -->
-                <quiet>true</quiet>              <!-- Shuts off non-error and non-warning messages.              -->
-                <keywords>true</keywords>        <!-- Adds HTML meta keyword tags to the generated files.        -->
-                <!-- Creates links to existing javadoc-generated documentation of external referenced classes.   -->
+                <source>1.5</source>
+                <encoding>UTF-8</encoding>
+                <docencoding>UTF-8</docencoding>
+                <charset>UTF-8</charset>
+                <locale>en</locale>
+                <noqualifier>all</noqualifier>
+                <quiet>true</quiet>
+                <keywords>true</keywords>
                 <links>
                   <link>http://java.sun.com/javase/6/docs/api</link>
                 </links>
               </configuration>
             </plugin>
 
-            <!-- ======================================================= -->
-            <!--     Code analysis                                       -->
-            <!-- ======================================================= -->
+            <!-- Code analysis -->
             <plugin>
               <groupId>org.apache.maven.plugins</groupId>
               <artifactId>maven-pmd-plugin</artifactId>
@@ -456,18 +422,14 @@ This API specifies Java packages for the programmatic, type safe handling
               </configuration>
             </plugin>
 
-            <!-- ======================================================= -->
-            <!--     Report on test results                              -->
-            <!-- ======================================================= -->
+            <!-- Report on test results -->
             <plugin>
               <groupId>org.apache.maven.plugins</groupId>
               <artifactId>maven-surefire-report-plugin</artifactId>
               <version>2.10</version>
             </plugin>
 
-            <!-- ======================================================= -->
-            <!--     Report on test coverage                             -->
-            <!-- ======================================================= -->
+            <!-- Report on test coverage -->
             <plugin>
               <groupId>org.codehaus.mojo</groupId>
               <artifactId>emma-maven-plugin</artifactId>
@@ -478,9 +440,7 @@ This API specifies Java packages for the programmatic, type safe handling
               </reportSets>
             </plugin>
 
-            <!-- ======================================================= -->
-            <!--     Static analysis for occurences of bug patterns      -->
-            <!-- ======================================================= -->
+            <!-- Static analysis for occurences of bug patterns -->
             <plugin>
               <groupId>org.codehaus.mojo</groupId>
               <artifactId>findbugs-maven-plugin</artifactId>
@@ -499,10 +459,8 @@ This API specifies Java packages for the programmatic, type safe handling
       </plugin>
     </plugins>
 
-    <!-- ======================================================= -->
-    <!--   For deployment on dev.java.net subversion       -->
-    <!--   See https://wagon-svn.dev.java.net/         -->
-    <!-- ======================================================= -->
+    <!-- For deployment on dev.java.net subversion
+         See https://wagon-svn.dev.java.net/ -->
     <extensions>
       <extension>
         <groupId>org.jvnet.wagon-svn</groupId>
@@ -512,10 +470,7 @@ This API specifies Java packages for the programmatic, type safe handling
     </extensions>
   </build>
 
-  <!-- ============================================================== -->
-  <!-- Repositories. This is where Maven looks for dependencies. The  -->
-  <!-- Maven repository is implicit and doesn't need to be specified. -->
-  <!-- ============================================================== -->
+  <!-- Repository for the colorapi plugin -->
   <pluginRepositories>
     <pluginRepository>
       <id>maven2-repository.dev.java.net</id>
@@ -524,9 +479,7 @@ This API specifies Java packages for the programmatic, type safe handling
     </pluginRepository>
   </pluginRepositories>
 
-  <!-- ==================================================== -->
-  <!--   Deployment to public servers           -->
-  <!-- ==================================================== -->
+  <!-- Deployment to public servers -->
   <distributionManagement>
     <repository>
       <id>java.net-maven2-repository</id>
