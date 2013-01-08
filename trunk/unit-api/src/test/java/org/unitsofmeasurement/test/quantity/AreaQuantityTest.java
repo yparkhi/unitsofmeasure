@@ -19,7 +19,6 @@ import org.unitsofmeasurement.test.unit.DistanceUnit;
 
 /**
  * @author Werner Keil
- * @version $Revision$, $Date$
  */
 public class AreaQuantityTest {
 
