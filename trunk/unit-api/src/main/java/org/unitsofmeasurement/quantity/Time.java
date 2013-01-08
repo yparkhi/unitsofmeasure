@@ -9,11 +9,22 @@ package org.unitsofmeasurement.quantity;
 
 
 /**
- * Represents a period of existence or persistence. The metric system unit for
- * this quantity is "s" (second).
+ * Period of existence or persistence.
+ * The metric system unit for this quantity is "s" (second).
  *
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.2, $Date$
+ * @version 1.2
+ *
+ * @see Frequency
+ * @see Velocity
+ * @see AngularVelocity
+ * @see Acceleration
+ * @see AngularAcceleration
+ * @see ElectricCurrent
+ * @see MassFlowRate
+ * @see VolumetricFlowRate
+ * @see InformationRate
+ * @see Power
  */
 public interface Time extends Quantity<Time> {
 }

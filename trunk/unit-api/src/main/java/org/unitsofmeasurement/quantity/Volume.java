@@ -9,12 +9,16 @@ package org.unitsofmeasurement.quantity;
 
 
 /**
- * Represents the amount of space occupied by a three-dimensional object or
- * region of space. The metric system unit for this quantity is "m³" (cubic
- * metre).
+ * Amount of space occupied by a three-dimensional object or region of space.
+ * The metric system unit for this quantity is "m³" (cubic metre).
  *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
- * @version 1.0, April 15, 2009
+ * @version 1.0
+ *
+ * @see Length
+ * @see Area
+ * @see VolumetricDensity
+ * @see VolumetricFlowRate
  */
 public interface Volume extends Quantity<Volume> {
 }

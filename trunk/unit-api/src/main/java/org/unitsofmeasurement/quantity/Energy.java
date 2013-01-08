@@ -9,12 +9,15 @@ package org.unitsofmeasurement.quantity;
 
 
 /**
- * Represents the capacity of a physical system to do work. The metric system
- * unit for this quantity "J" (Joule).
+ * Capacity of a physical system to do work.
+ * The metric system unit for this quantity "J" (Joule).
  *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
- * @version 1.0, April 15, 2009
+ * @version 1.0
+ *
+ * @see Force
+ * @see Power
+ * @see Time
  */
 public interface Energy extends Quantity<Energy> {
-
 }
