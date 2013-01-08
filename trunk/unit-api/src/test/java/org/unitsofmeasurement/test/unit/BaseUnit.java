@@ -15,8 +15,8 @@ import org.unitsofmeasurement.unit.Unit;
  * Building blocks on top of which all others units are created.
  * Base units are always unscaled metric units.
  *
- * <p>When using the {@linkplain Dimensional.Model#STANDARD standard} model
- * (default), all seven base units are dimensionally independent.</p>
+ * <p>When using the standard model (default),
+ * all seven base units are dimensionally independent.</p>
  *
  * @param <Q> The type of the quantity measured by this unit.
  *

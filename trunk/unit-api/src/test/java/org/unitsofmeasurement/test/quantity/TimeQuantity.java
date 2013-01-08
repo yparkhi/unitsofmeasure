@@ -7,6 +7,7 @@
  */
 package org.unitsofmeasurement.test.quantity;
 
+import org.unitsofmeasurement.quantity.Time;
 import org.unitsofmeasurement.test.unit.DistanceUnit;
 import org.unitsofmeasurement.test.unit.TimeUnit;
 
@@ -15,7 +16,7 @@ import org.unitsofmeasurement.test.unit.TimeUnit;
  * @author Werner Keil
  * @version 1.0
  */
-public class TimeQuantity extends TestQuantity {
+public class TimeQuantity extends TestQuantity<Time> {
 
     public TimeQuantity(double val, TimeUnit un) {
         units = val;

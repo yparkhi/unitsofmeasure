@@ -23,7 +23,7 @@ abstract class TestQuantity<Q extends Quantity<Q>> implements Quantity<Q> {
     protected double units; // value in units (Unit unit)
     protected TestUnit<Q> unit;
 
-    public Object add(TestQuantity dn, TestQuantity d1, TestQuantity d2, TestUnit<?> au) {
+    public Object add(TestQuantity<Q> dn, TestQuantity<Q> d1, TestQuantity<Q> d2, TestUnit<Q> au) {
         if (d1.unit == d2.unit){
             dn.unit = d1.unit;
             dn.scalar = d1.scalar + d2.scalar;
@@ -37,7 +37,7 @@ abstract class TestQuantity<Q extends Quantity<Q>> implements Quantity<Q> {
         return dn;
     }
 
-    public Object subtract(TestQuantity dn, TestQuantity d1, TestQuantity d2, TestUnit<?> au) {
+    public Object subtract(TestQuantity<Q> dn, TestQuantity<Q> d1, TestQuantity<Q> d2, TestUnit<Q> au) {
         if (d1.unit == d2.unit){
             dn.unit = d1.unit;
             dn.scalar = d1.scalar - d2.scalar;
@@ -51,30 +51,31 @@ abstract class TestQuantity<Q extends Quantity<Q>> implements Quantity<Q> {
         return dn;
     }
 
-    public boolean eq(TestQuantity d1) {
+    public boolean eq(TestQuantity<Q> d1) {
         return (scalar == d1.scalar);
     }
 
-    public boolean ne(TestQuantity d1) {
+    public boolean ne(TestQuantity<Q> d1) {
         return (scalar != d1.scalar);
     }
 
-    public boolean gt(TestQuantity d1) {
+    public boolean gt(TestQuantity<Q> d1) {
         return (scalar > d1.scalar);
     }
 
-    public boolean lt(TestQuantity d1) {
+    public boolean lt(TestQuantity<Q> d1) {
         return (scalar < d1.scalar);
     }
 
-    public boolean ge(TestQuantity d1) {
+    public boolean ge(TestQuantity<Q> d1) {
         return (scalar >= d1.scalar);
     }
 
-    public boolean le(TestQuantity d1) {
+    public boolean le(TestQuantity<Q> d1) {
         return (scalar <= d1.scalar);
     }
 
+    @Override
     public String toString() {
         return (new Double(units)).toString() + ' ' + unit.getName();
     }

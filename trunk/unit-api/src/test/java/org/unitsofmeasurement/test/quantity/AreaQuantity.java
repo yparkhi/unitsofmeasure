@@ -7,12 +7,13 @@
  */
 package org.unitsofmeasurement.test.quantity;
 
+import org.unitsofmeasurement.quantity.Area;
 import org.unitsofmeasurement.test.unit.AreaUnit;
 import org.unitsofmeasurement.test.unit.DistanceUnit;
 import org.unitsofmeasurement.test.unit.VolumeUnit;
 
 
-public class AreaQuantity extends TestQuantity {
+public class AreaQuantity extends TestQuantity<Area> {
     public AreaQuantity() {
     }
 

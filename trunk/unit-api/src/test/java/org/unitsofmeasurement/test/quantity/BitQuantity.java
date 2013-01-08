@@ -8,6 +8,7 @@
 package org.unitsofmeasurement.test.quantity;
 
 
+import org.unitsofmeasurement.quantity.Information;
 import org.unitsofmeasurement.test.unit.BitRateUnit;
 import org.unitsofmeasurement.test.unit.BitUnit;
 
@@ -15,7 +16,7 @@ import org.unitsofmeasurement.test.unit.BitUnit;
  * @author Werner Keil
  * @version 1.0
  */
-public class BitQuantity extends TestQuantity {
+public class BitQuantity extends TestQuantity<Information> {
 
     public BitQuantity(double val, BitUnit un) {
         units = val;

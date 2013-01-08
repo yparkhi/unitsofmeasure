@@ -13,44 +13,47 @@ package org.unitsofmeasurement.test.util;
  *
  * @author Werner Keil
  */
-public abstract class PrintUtils {
+public final class PrintUtils {
     private static final String CONSOLE_OUTPUT = "consoleOutput";
 
-    public static final boolean isConsoleOutput() {
+    private PrintUtils() {
+    }
+
+    public static boolean isConsoleOutput() {
         return ("true".equals(System.getProperty(CONSOLE_OUTPUT)));
     }
 
-    public static final void print(String message) {
+    public static void print(String message) {
         if (isConsoleOutput()) {
             System.out.print(message);
         }
     }
 
-    public static final void println(String message) {
+    public static void println(String message) {
         if (isConsoleOutput()) {
             System.out.println(message);
         }
     }
 
-    public static final void print(Object object) {
+    public static void print(Object object) {
         print(String.valueOf(object));
     }
 
-    public static final void println(Object object) {
+    public static void println(Object object) {
         println(String.valueOf(object));
     }
 
     /**
      * This is a Fantom-style convenience method for console output
      */
-    public static final void echo(Object obj) {
+    public static void echo(Object obj) {
         println(obj);
     }
 
     /**
      * This is a Fantom-style convenience method for console output
      */
-    public static final void echo(String str) {
+    public static void echo(String str) {
         println(str);
     }
 }

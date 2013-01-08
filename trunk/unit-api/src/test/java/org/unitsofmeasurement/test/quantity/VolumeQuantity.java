@@ -8,6 +8,7 @@
 package org.unitsofmeasurement.test.quantity;
 
 
+import org.unitsofmeasurement.quantity.Volume;
 import org.unitsofmeasurement.test.unit.AreaUnit;
 import org.unitsofmeasurement.test.unit.DistanceUnit;
 import org.unitsofmeasurement.test.unit.VolumeUnit;
@@ -16,7 +17,7 @@ import org.unitsofmeasurement.test.unit.VolumeUnit;
 /**
  * @author paul.morrison
  */
-public class VolumeQuantity extends TestQuantity {
+public class VolumeQuantity extends TestQuantity<Volume> {
     public VolumeQuantity() {
     }
 
