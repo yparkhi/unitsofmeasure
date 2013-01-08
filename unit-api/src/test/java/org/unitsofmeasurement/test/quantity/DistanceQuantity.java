@@ -7,7 +7,6 @@
  */
 package org.unitsofmeasurement.test.quantity;
 
-
 import org.unitsofmeasurement.test.unit.AreaUnit;
 import org.unitsofmeasurement.test.unit.DistanceUnit;
 import org.unitsofmeasurement.test.unit.VolumeUnit;
@@ -15,18 +14,16 @@ import org.unitsofmeasurement.test.unit.VolumeUnit;
 
 /**
  * @author paul.morrison
- *
  */
 public class DistanceQuantity extends TestQuantity {
 
     public DistanceQuantity(double val, DistanceUnit un) {
-
-    units = val;
-    unit = un;
-    scalar = val * unit.getMultFactor();
+        units = val;
+        unit = un;
+        scalar = val * unit.getMultFactor();
     }
-    public DistanceQuantity(){
 
+    public DistanceQuantity(){
     }
 
     /*
@@ -35,15 +32,12 @@ public class DistanceQuantity extends TestQuantity {
      * units = val; unit = m; // reference Unit scalar = val;
      *
      * }
-     * */
-
-
+     */
     public DistanceQuantity add(DistanceQuantity d1) {
         DistanceQuantity dn = new DistanceQuantity();
         Object o = super.add(dn, this, d1, DistanceUnit.REF_UNIT);
         return (DistanceQuantity) o;
     }
-
 
     public DistanceQuantity subtract(DistanceQuantity d1) {
         DistanceQuantity dn = new DistanceQuantity();
@@ -51,9 +45,8 @@ public class DistanceQuantity extends TestQuantity {
         return (DistanceQuantity) o;
     }
 
-
     public boolean eq(DistanceQuantity d1) {
-    return super.eq(d1);
+        return super.eq(d1);
     }
 
     public boolean ne(DistanceQuantity d1) {
@@ -81,7 +74,7 @@ public class DistanceQuantity extends TestQuantity {
     }
 
     public DistanceQuantity divide(double v) {
-    return new DistanceQuantity(units / v, (DistanceUnit) unit);
+        return new DistanceQuantity(units / v, (DistanceUnit) unit);
     }
 
 
@@ -90,14 +83,15 @@ public class DistanceQuantity extends TestQuantity {
     public AreaQuantity multiply(DistanceQuantity d1) {
         DistanceQuantity dq0 = convert(DistanceUnit.m);
         DistanceQuantity dq1 = d1.convert(DistanceUnit.m);
-    return new AreaQuantity(dq0.units * dq1.units, AreaUnit.sqmetre);
+        return new AreaQuantity(dq0.units * dq1.units, AreaUnit.sqmetre);
     }
 
     public VolumeQuantity multiply(AreaQuantity a1) {
         DistanceQuantity dq = convert(DistanceUnit.m);
         AreaQuantity aq = a1.convert(AreaUnit.sqmetre);
-    return new VolumeQuantity(dq.units * aq.units, VolumeUnit.cumetre);
+        return new VolumeQuantity(dq.units * aq.units, VolumeUnit.cumetre);
     }
+
     // public Speed divide(TimeInterval t1) {
     // return new Speed(scalar /
     // t1.scalar, Speed.refUnit);
@@ -106,9 +100,11 @@ public class DistanceQuantity extends TestQuantity {
     // return new TimeInterval(scalar /
     // s1.scalar, TimeInterval.refUnit);
     // }
+
     public DistanceQuantity convert(DistanceUnit newUnit) {
         return new DistanceQuantity(scalar / newUnit.getMultFactor(), newUnit);
-        }
+    }
+
     public String showInUnits(DistanceUnit u, int precision) {
         return super.showInUnits(u, precision);
     }

@@ -7,24 +7,23 @@
  */
 package org.unitsofmeasurement.test.quantity;
 
-
 import org.unitsofmeasurement.test.unit.DistanceUnit;
 import org.unitsofmeasurement.test.unit.TimeUnit;
 
+
 /**
  * @author Werner Keil
- * @version 1.0 ($Revision$), $Date$
+ * @version 1.0
  */
 public class TimeQuantity extends TestQuantity {
 
-	public TimeQuantity(double val, TimeUnit un) {
-
-    units = val;
-    unit = un;
-    scalar = val * unit.getMultFactor();
+    public TimeQuantity(double val, TimeUnit un) {
+        units = val;
+        unit = un;
+        scalar = val * unit.getMultFactor();
     }
-    public TimeQuantity(){
 
+    public TimeQuantity(){
     }
 
     /*
@@ -33,25 +32,21 @@ public class TimeQuantity extends TestQuantity {
      * units = val; unit = m; // reference Unit scalar = val;
      *
      * }
-     * */
-
-
+     */
     public TimeQuantity add(TimeQuantity d1) {
         TimeQuantity dn = new TimeQuantity();
-		Object o = super.add(dn, this, d1, TimeUnit.REF_UNIT);
+        Object o = super.add(dn, this, d1, TimeUnit.REF_UNIT);
         return (TimeQuantity) o;
     }
-
 
     public TimeQuantity subtract(TimeQuantity d1) {
         TimeQuantity dn = new TimeQuantity();
-		Object o = super.subtract(dn, this, d1, TimeUnit.REF_UNIT);
+        Object o = super.subtract(dn, this, d1, TimeUnit.REF_UNIT);
         return (TimeQuantity) o;
     }
 
-
     public boolean eq(TimeQuantity d1) {
-    return super.eq(d1);
+        return super.eq(d1);
     }
 
     public boolean ne(TimeQuantity d1) {
@@ -75,11 +70,11 @@ public class TimeQuantity extends TestQuantity {
     }
 
     public TimeQuantity multiply(double v) {
-		return new TimeQuantity(units * v, (TimeUnit) unit);
+        return new TimeQuantity(units * v, (TimeUnit) unit);
     }
 
     public TimeQuantity divide(double v) {
-		return new TimeQuantity(units / v, (TimeUnit) unit);
+        return new TimeQuantity(units / v, (TimeUnit) unit);
     }
 
 
@@ -104,9 +99,10 @@ public class TimeQuantity extends TestQuantity {
     // return new TimeInterval(scalar /
     // s1.scalar, TimeInterval.refUnit);
     // }
-	public TimeQuantity convert(TimeUnit newUnit) {
+    public TimeQuantity convert(TimeUnit newUnit) {
         return new TimeQuantity(scalar / newUnit.getMultFactor(), newUnit);
-        }
+    }
+
     public String showInUnits(DistanceUnit u, int precision) {
         return super.showInUnits(u, precision);
     }

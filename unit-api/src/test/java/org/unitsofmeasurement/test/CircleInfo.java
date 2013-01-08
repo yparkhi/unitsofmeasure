@@ -13,9 +13,6 @@ import org.unitsofmeasurement.test.unit.DistanceUnit;
 
 public class CircleInfo {
 
-    /**
-     * @param args
-     */
     public static void main(String[] args) {
         DistanceQuantity radius = new DistanceQuantity(30, DistanceUnit.cm);
         System.out.println("Radius = " + radius);

@@ -6,18 +6,12 @@
  * See LICENSE.txt for details.
  */
 package org.unitsofmeasurement.test;
+
 import org.unitsofmeasurement.test.quantity.DistanceQuantity;
 
 
-//import org.eclipse.uomo.units.quantity.*;
-
 /**
  * @author paul.morrison
- *
- * To change this generated comment edit the template variable "typecomment":
- * Window>Preferences>Java>Templates.
- * To enable and disable the creation of type comments go to
- * Window>Preferences>Java>Code Generation.
  */
 public class TripLeg {
 
@@ -34,5 +28,4 @@ public class TripLeg {
     public DistanceQuantity getDist() {
         return distance;
     }
-
 }

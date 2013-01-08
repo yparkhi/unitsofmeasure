@@ -10,9 +10,9 @@ package org.unitsofmeasurement.test.unit;
 import org.unitsofmeasurement.unit.Unit;
 import org.unitsofmeasurement.quantity.Length;
 
+
 /**
  * @author paul.morrison
- *
  */
 public class DistanceUnit extends BaseUnit<Length> {
 
@@ -23,11 +23,9 @@ public class DistanceUnit extends BaseUnit<Length> {
     public static final DistanceUnit km = new DistanceUnit("km", 1.0e+3);
     public static final DistanceUnit cm = new DistanceUnit("cm", 1.0e-2);
     public static final DistanceUnit mile = new DistanceUnit("mile", 1609.0);
-    public static final DistanceUnit \u00C5ngstr\u00F6m = new DistanceUnit(
-        "\u00C5ngstr\u00F6m", 1.0e-10);
+    public static final DistanceUnit \u00C5ngstr\u00F6m = new DistanceUnit("\u00C5ngstr\u00F6m", 1.0e-10);
     public static final DistanceUnit AU = new DistanceUnit("AU", 1.5e+11);
-    public static final DistanceUnit parsec = new DistanceUnit("parsec",
-        3.08e+16);
+    public static final DistanceUnit parsec = new DistanceUnit("parsec", 3.08e+16);
 
     public DistanceUnit(String name2, double convF) {
         super("", name2);
@@ -43,9 +41,6 @@ public class DistanceUnit extends BaseUnit<Length> {
 
     @Override
     public Unit<Length> getSystemUnit() {
-    return REF_UNIT;
+        return REF_UNIT;
     }
-
-
-
 }

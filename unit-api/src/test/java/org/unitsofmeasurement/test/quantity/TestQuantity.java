@@ -14,14 +14,14 @@ import org.unitsofmeasurement.quantity.Quantity;
 import org.unitsofmeasurement.test.unit.TestUnit;
 import org.unitsofmeasurement.unit.Unit;
 
+
 /**
  * @author paul.morrison
  */
-abstract class TestQuantity<Q extends Quantity<Q>> implements
-		Quantity<Q> {
+abstract class TestQuantity<Q extends Quantity<Q>> implements Quantity<Q> {
     protected double scalar; // value in reference units
     protected double units; // value in units (Unit unit)
-	protected TestUnit<Q> unit;
+    protected TestUnit<Q> unit;
 
     public Object add(TestQuantity dn, TestQuantity d1, TestQuantity d2, TestUnit<?> au) {
         if (d1.unit == d2.unit){
@@ -36,6 +36,7 @@ abstract class TestQuantity<Q extends Quantity<Q>> implements
         }
         return dn;
     }
+
     public Object subtract(TestQuantity dn, TestQuantity d1, TestQuantity d2, TestUnit<?> au) {
         if (d1.unit == d2.unit){
             dn.unit = d1.unit;
@@ -48,24 +49,28 @@ abstract class TestQuantity<Q extends Quantity<Q>> implements
             dn.units = dn.scalar;
         }
         return dn;
-
     }
 
     public boolean eq(TestQuantity d1) {
         return (scalar == d1.scalar);
     }
+
     public boolean ne(TestQuantity d1) {
         return (scalar != d1.scalar);
     }
+
     public boolean gt(TestQuantity d1) {
         return (scalar > d1.scalar);
     }
+
     public boolean lt(TestQuantity d1) {
         return (scalar < d1.scalar);
     }
+
     public boolean ge(TestQuantity d1) {
         return (scalar >= d1.scalar);
     }
+
     public boolean le(TestQuantity d1) {
         return (scalar <= d1.scalar);
     }
@@ -80,28 +85,27 @@ abstract class TestQuantity<Q extends Quantity<Q>> implements
         String str = (new Double(result)).toString();
         char cs[] = str.toCharArray();
         int i = 0;
-        while (i < cs.length && (cs[i] >= '0' && cs[i] <= '9' || cs[i] == '.'))
+        while (i < cs.length && (cs[i] >= '0' && cs[i] <= '9' || cs[i] == '.')) {
             i++;
+        }
         BigDecimal bd = new BigDecimal(new String(cs, 0, i));
         BigDecimal bd2 = bd.setScale(precision, RoundingMode.HALF_UP);
         str = bd2.toString();
 
         String exp = "";
-        if (i < cs.length)
+        if (i < cs.length) {
             exp = new String(cs, i, cs.length - i);
-
+        }
         return str + exp  + ' ' + u.getName();
-
     }
 
-	@Override
-	public Number value() {
-		return Double.valueOf(units);
-	}
+    @Override
+    public Number value() {
+        return Double.valueOf(units);
+    }
 
-	@Override
-	public Unit<Q> unit() {
-		return unit;
-	}
-
+    @Override
+    public Unit<Q> unit() {
+        return unit;
+    }
 }
