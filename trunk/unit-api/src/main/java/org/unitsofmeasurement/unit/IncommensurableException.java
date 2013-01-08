@@ -18,7 +18,7 @@ package org.unitsofmeasurement.unit;
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @version 1.3
  *
- * @see <a href="http://en.wikipedia.org/wiki/Unit_commensurability#Commensurability">Unit Commensurability on Wikipedia</a>
+ * @see <a href="http://en.wikipedia.org/wiki/Unit_commensurability#Commensurability">Wikipedia: Unit Commensurability</a>
  * @since 0.6.0
  */
 public class IncommensurableException extends Exception {
