@@ -54,6 +54,9 @@ public interface Unit<Q extends Quantity<Q>> {
      *
      * @return this unit symbol, or {@code null} if this unit has not
      *         specific symbol associated with (e.g. product of units).
+     *
+     * @see #toString()
+     * @see UnitFormat
      */
     String getSymbol();
 
@@ -286,4 +289,17 @@ public interface Unit<Q extends Quantity<Q>> {
      */
     Unit<?> pow(int n);
 
+    /**
+     * Returns a string representation of this unit. The string representation may
+     * be the unit {@linkplain #getSymbol() symbol}, or may be some representation
+     * of {@linkplain #getProductUnits() product units}, multiplication factor and
+     * offset if any. The string may be localized at implementation choice.
+     *
+     * @return the (eventually localized) string representation of this unit.
+     *
+     * @see #getSymbol()
+     * @see UnitFormat
+     */
+    @Override
+    String toString();
 }
