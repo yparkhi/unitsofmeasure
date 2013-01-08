@@ -7,40 +7,40 @@
  */
 package org.unitsofmeasurement.unit;
 
+
 /**
  * Signals that a problem of some sort has occurred due to the impossibility of
  * constructing a converter between two units. For example, the multiplication of
- * offset units are usually units not convertible to their {@linkplain Unit#getSystemUnit
+ * offset units are usually units not convertible to their {@linkplain Unit#getSystemUnit()
  * system unit}.
  *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.1.2 ($Revision$), $Date$
+ * @version 1.1.2
+ *
+ * @since 0.6.0
  */
 public class UnconvertibleException extends RuntimeException {
-
     /**
      * For cross-version compatibility.
      */
     private static final long serialVersionUID = -4623551240019830166L;
 
     /**
-     * Constructs a <code>UnconvertibleException</code> with the specified
-     * detail message.
+     * Constructs a {@code UnconvertibleException} with the given message.
      *
-     * @param message the detail message.
+     * @param message the detail message, or {@code null} if none.
      */
-    public UnconvertibleException(String message) {
+    public UnconvertibleException(final String message) {
         super(message);
     }
 
     /**
-     * Constructs a <code>UnconvertibleException</code> with the specified
-     * detail message.
+     * Constructs a {@code UnconvertibleException} with the given cause.
      *
-     * @param cause the original exception.
+     * @param cause the cause of this exception, or {@code null} if none.
      */
-    public UnconvertibleException(Throwable cause) {
+    public UnconvertibleException(final Throwable cause) {
         super(cause);
     }
 }

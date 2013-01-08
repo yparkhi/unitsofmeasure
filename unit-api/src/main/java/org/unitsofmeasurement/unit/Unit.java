@@ -40,7 +40,7 @@ import org.unitsofmeasurement.quantity.Quantity;
  * @version 1.1.1
  *
  * @see <a href="http://en.wikipedia.org/wiki/Units_of_measurement">Units of measurement on Wikipedia</a>
- * @since   0.6.0
+ * @since 0.6.0
  */
 public interface Unit<Q extends Quantity<Q>> {
 

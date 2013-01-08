@@ -9,40 +9,34 @@ package org.unitsofmeasurement.service;
 
 import org.unitsofmeasurement.unit.SystemOfUnits;
 
+
 /**
- * <p>
- * This interface represents the service to obtain a {@link SystemOfUnits system
- * of units}.
- * </p>
- * 
- * <p>
- * Common system of units are "SI" (System International), "Imperial" (British),
- * "USCustomary".
- * </p>
- * 
+ * The service to obtain a {@link SystemOfUnits} instances.
+ * Instances are obtained from their name, for example {@code "SI"} (System International),
+ * {@code "Imperial"} (British) or {@code "USCustomary"}.
+ *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.2.2 ($Revision$), $Date: 2010-09-28 16:16:43 +0200 (Di, 28
- *          Sep 2010) $
+ * @version 1.2.2
+ *
+ * @since 0.6.0
  */
 public interface SystemOfUnitsService {
-
-	/**
-	 * Returns the default <a
-	 * href=http://en.wikipedia.org/wiki/International_System_of_Units">
-	 * International System of Units</a>.
-	 * 
-	 * @return <code>getSystemOfUnits("SI")</code>
-	 */
+    /**
+     * Returns the default
+     * <a href=http://en.wikipedia.org/wiki/International_System_of_Units">International System of Units</a>.
+     *
+     * @return {@code getSystemOfUnits("SI")}
+     */
     SystemOfUnits getSystemOfUnits();
 
     /**
-     * Returns the system of units having the specified name or
-     * <code>null</code> if none.
+     * Returns the system of units having the specified name, or {@code null} if none.
+     * Common system of units are {@code "SI"} (System International), {@code "Imperial"}
+     * (British) and {@code "USCustomary"}.
      *
-     * @param name the system of unit name.
+     * @param  name the system of unit name.
      * @return the system of units.
      */
     SystemOfUnits getSystemOfUnits(String name);
-
 }

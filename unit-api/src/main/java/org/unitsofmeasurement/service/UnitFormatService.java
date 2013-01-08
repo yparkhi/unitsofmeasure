@@ -8,43 +8,38 @@
 package org.unitsofmeasurement.service;
 
 import java.util.Locale;
-
 import org.unitsofmeasurement.unit.UnitFormat;
 
+
 /**
- * <p> This interface represent the service to obtain {@link UnitFormat}
- *     instances.</p>
+ * The service to obtain {@link UnitFormat} instances.
  *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
- * @see <a href="http://aurora.regenstrief.org/~ucum/ucum.html">UCUM Full Specification</a>
  * @version 1.0
+ *
+ * @since 0.6.0
  */
 public interface UnitFormatService {
-
     /**
-     * Returns the default <a href="http://www.unitsofmeasure.org/">UCUM</a>
-     * unit format.
+     * Returns the default <a href="http://www.unitsofmeasure.org/">UCUM</a> unit format.
      *
-     * @return <code>getUnitFormat("UCUM")</code>
+     * @return {@code getUnitFormat("UCUM")}
      */
     UnitFormat getUnitFormat();
 
     /**
-     * Returns the unit format having the specified name or
-     * <code>null</code> if none.
+     * Returns the unit format having the specified name, or {@code null} if none.
      *
-     * @param name the name of the format.
+     * @param  name the name of the format.
      * @return the corresponding unit format.
      */
     UnitFormat getUnitFormat(String name);
 
     /**
-     * Returns the unit format for the specified locale or
-     * <code>null</code> if none.
+     * Returns the unit format for the specified locale, or {@code null} if none.
      *
-     * @param locale the locale for the format.
+     * @param  locale the locale for the format.
      * @return the corresponding unit format.
      */
     UnitFormat getUnitFormat(Locale locale);
-
 }
