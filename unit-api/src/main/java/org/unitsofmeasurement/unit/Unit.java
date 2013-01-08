@@ -130,8 +130,6 @@ public interface Unit<Q extends Quantity<Q>> {
      * @return this unit parameterized with the specified type.
      * @throws ClassCastException if the dimension of this unit is different
      *         from the specified quantity dimension.
-     * @throws UnsupportedOperationException if the specified type is
-     *         not recognized.
      */
     <T extends Quantity<T>> Unit<T> asType(Class<T> type) throws ClassCastException;
 
