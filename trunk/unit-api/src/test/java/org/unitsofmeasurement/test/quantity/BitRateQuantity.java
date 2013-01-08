@@ -9,16 +9,16 @@ package org.unitsofmeasurement.test.quantity;
 
 import org.unitsofmeasurement.test.unit.BitRateUnit;
 
+
 /**
  * @author Werner Keil
- * @version 1.0 ($Revision$), $Date$
+ * @version 1.0
  */
 public class BitRateQuantity extends TestQuantity {
     public BitRateQuantity() {
     }
 
-	public BitRateQuantity(double val, BitRateUnit un) {
-
+    public BitRateQuantity(double val, BitRateUnit un) {
         units = val;
         unit = un;
         scalar = val * unit.getMultFactor();
@@ -26,15 +26,16 @@ public class BitRateQuantity extends TestQuantity {
 
     public BitRateQuantity add(BitRateQuantity d1) {
         BitRateQuantity dn = new BitRateQuantity();
-		Object o = super.add(dn, this, d1, BitRateUnit.REF_UNIT);
+        Object o = super.add(dn, this, d1, BitRateUnit.REF_UNIT);
         return (BitRateQuantity) o;
     }
 
     public BitRateQuantity subtract(BitRateQuantity d1) {
         BitRateQuantity dn = new BitRateQuantity();
-		Object o = super.subtract(dn, this, d1, BitRateUnit.REF_UNIT);
+        Object o = super.subtract(dn, this, d1, BitRateUnit.REF_UNIT);
         return (BitRateQuantity) o;
     }
+
     public boolean eq(BitRateQuantity d1) {
         return super.eq(d1);
     }
@@ -60,31 +61,31 @@ public class BitRateQuantity extends TestQuantity {
     }
 
     public BitRateQuantity multiply(double v) {
-		return new BitRateQuantity(units * v, (BitRateUnit) unit);
+        return new BitRateQuantity(units * v, (BitRateUnit) unit);
     }
 
     public BitRateQuantity divide(double v) {
-		return new BitRateQuantity(units / v, (BitRateUnit) unit);
+        return new BitRateQuantity(units / v, (BitRateUnit) unit);
     }
 
     // mixed type operations
 
-	// public DistanceQuantity divide(DistanceQuantity d1) {
-	// BitRateQuantity dq0 = convert(AreaUnit.sqmetre);
-	// DistanceQuantity dq1 = d1.convert(DistanceUnit.m);
-	// return new DistanceQuantity(dq0.units / dq1.units, DistanceUnit.m);
-	// }
-	// public VolumeQuantity multiply(DistanceQuantity d1) {
-	// BitRateQuantity dq0 = convert(BitRateUnit.bps);
-	// DistanceQuantity dq1 = d1.convert(DistanceUnit.m);
-	// return new VolumeQuantity(dq0.units * dq1.units, VolumeUnit.cumetre);
-	// }
+    // public DistanceQuantity divide(DistanceQuantity d1) {
+    // BitRateQuantity dq0 = convert(AreaUnit.sqmetre);
+    // DistanceQuantity dq1 = d1.convert(DistanceUnit.m);
+    // return new DistanceQuantity(dq0.units / dq1.units, DistanceUnit.m);
+    // }
+    // public VolumeQuantity multiply(DistanceQuantity d1) {
+    // BitRateQuantity dq0 = convert(BitRateUnit.bps);
+    // DistanceQuantity dq1 = d1.convert(DistanceUnit.m);
+    // return new VolumeQuantity(dq0.units * dq1.units, VolumeUnit.cumetre);
+    // }
 
-	public BitRateQuantity convert(BitRateUnit newUnit) {
+    public BitRateQuantity convert(BitRateUnit newUnit) {
         return new BitRateQuantity(scalar / newUnit.getMultFactor(), newUnit);
     }
 
-	public String showInUnits(BitRateUnit u, int precision) {
+    public String showInUnits(BitRateUnit u, int precision) {
         return super.showInUnits(u, precision);
     }
 }

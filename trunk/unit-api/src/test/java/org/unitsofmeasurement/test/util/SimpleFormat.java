@@ -16,38 +16,28 @@ import java.util.Map;
 import org.unitsofmeasurement.test.unit.TestUnit;
 import org.unitsofmeasurement.unit.Unit;
 import org.unitsofmeasurement.unit.UnitConverter;
+import org.unitsofmeasurement.unit.UnitFormat;
+
 
 /**
- * <p>
- * This class provides the interface for formatting and parsing
- * {@linkplain org.unitsofmeasurement.unit.Unit units} according to the <a
- * href="http://unitsofmeasure.org/">Uniform Code for Units of Measure</a>
- * (UCUM).
- * </p>
+ * Provides the interface for formatting and parsing {@linkplain Unit units} according to the
+ * <a href="http://unitsofmeasure.org/">Uniform Code for Units of Measure</a> (UCUM) syntax.
  *
- * <p>
- * For a technical/historical overview of this format please read <a
- * href="http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=61354"> Units
- * of Measure in Clinical Information Systems</a>.
- * </p>
+ * <p>For a technical/historical overview of this format please read
+ * <a href="http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=61354">Units
+ * of Measure in Clinical Information Systems</a>.</p>
  *
- * <p>
- * As of revision 1.16, the BNF in the UCUM standard contains an <a
- * href="http://unitsofmeasure.org/ticket/4">error</a>. I've attempted to work
+ * <p>As of revision 1.16, the BNF in the UCUM standard contains an
+ * <a href="http://unitsofmeasure.org/ticket/4">error</a>. I've attempted to work
  * around the problem by modifying the BNF productions for &lt;Term&gt;. Once
  * the error in the standard is corrected, it may be necessary to modify the
- * productions in the UCUMParser.jj file to conform to the standard.
- * </p>
+ * productions in the {@code UCUMParser.jj} file to conform to the standard.</p>
  *
  * @author <a href="mailto:eric-r@northwestern.edu">Eric Russell</a>
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.2.2 ($Revision: 79 $), $Date: 2010-01-03 17:24:31 +0100 (So, 03
- *          Jän 2010) $
+ * @version 1.2.2
  */
 public class SimpleFormat extends BaseFormat {
-    /**
-     *
-     */
     private static final long serialVersionUID = -7753687108842507677L;
 
     private final Map<String, String> symbolMap = new HashMap<String, String>();
@@ -58,7 +48,7 @@ public class SimpleFormat extends BaseFormat {
     // Class methods //
     // /////////////////
     /** Returns the instance for formatting using "print" symbols */
-    public static BaseFormat getPrintInstance() {
+    public static UnitFormat getPrintInstance() {
         return DEFAULT;
     }
 
@@ -74,7 +64,7 @@ public class SimpleFormat extends BaseFormat {
      * Returns the instance for formatting and parsing using case insensitive
      * symbols
      */
-    public static BaseFormat getStandardInstance() {
+    public static UnitFormat getStandardInstance() {
         return DEFAULT;
     }
 
@@ -90,35 +80,35 @@ public class SimpleFormat extends BaseFormat {
     // //////////////
     // Formatting //
     // //////////////
-    public Appendable format(Unit<?> unit, Appendable appendable)
-            throws IOException {
+    public Appendable format(final Unit<?> unit, final Appendable appendable)
+            throws IOException
+    {
         CharSequence symbol;
 //      CharSequence annotation = null;
-        // if (unit instanceof AnnotatedUnit<?>) {
-        // AnnotatedUnit<?> annotatedUnit = (AnnotatedUnit<?>) unit;
-        // unit = annotatedUnit.getActualUnit();
-        // annotation = annotatedUnit.getAnnotation();
-        // }
+//      if (unit instanceof AnnotatedUnit<?>) {
+//          AnnotatedUnit<?> annotatedUnit = (AnnotatedUnit<?>) unit;
+//          unit = annotatedUnit.getActualUnit();
+//          annotation = annotatedUnit.getAnnotation();
+//      }
         String mapSymbol = symbolMap.get(unit);
         if (mapSymbol != null) {
             symbol = mapSymbol;
         } else {
             throw new IllegalArgumentException(
                     "Symbol mapping for unit of type " + //$NON-NLS-1$
-                            unit.getClass().getName() + " has not been set " + //$NON-NLS-1$
-                            "(see UnitFormat.SymbolMap)"); //$NON-NLS-1$
+                    unit.getClass().getName() + " has not been set " + //$NON-NLS-1$
+                    "(see UnitFormat.SymbolMap)"); //$NON-NLS-1$
         }
-
         appendable.append(symbol);
 //      if (annotation != null && annotation.length() > 0) {
 //          appendAnnotation(unit, symbol, annotation, appendable);
 //      }
-
         return appendable;
     }
 
-    void appendAnnotation(Unit<?> unit, CharSequence symbol,
-            CharSequence annotation, Appendable appendable) throws IOException {
+    void appendAnnotation(final Unit<?> unit, final CharSequence symbol,
+            final CharSequence annotation, final Appendable appendable) throws IOException
+    {
         appendable.append('{');
         appendable.append(annotation);
         appendable.append('}');
@@ -142,8 +132,9 @@ public class SimpleFormat extends BaseFormat {
      *            the <code>StringBuffer</code> to append to. Contains the
      *            already-formatted unit being modified by the given converter.
      */
-    void formatConverter(UnitConverter converter, boolean continued,
-            StringBuffer buffer) {
+    void formatConverter(final UnitConverter converter, final boolean continued,
+            final StringBuffer buffer)
+    {
         boolean unitIsExpression = ((buffer.indexOf(".") >= 0) || (buffer //$NON-NLS-1$
                 .indexOf("/") >= 0)); //$NON-NLS-1$
         // Prefix prefix = symbolMap.getPrefixObject(converter);
@@ -157,9 +148,8 @@ public class SimpleFormat extends BaseFormat {
         }
     }
 
-    public Unit<?> parse(CharSequence csq, ParsePosition cursor)
-            throws IllegalArgumentException {
-    return TestUnit.ONE;
+    public Unit<?> parse(CharSequence csq, ParsePosition cursor) throws IllegalArgumentException {
+        return TestUnit.ONE;
     }
 
     public Locale getLocale() {

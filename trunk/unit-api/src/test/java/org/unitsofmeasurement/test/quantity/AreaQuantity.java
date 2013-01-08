@@ -15,8 +15,8 @@ import org.unitsofmeasurement.test.unit.VolumeUnit;
 public class AreaQuantity extends TestQuantity {
     public AreaQuantity() {
     }
-    public AreaQuantity(double val, AreaUnit un) {
 
+    public AreaQuantity(double val, AreaUnit un) {
         units = val;
         unit = un;
         scalar = val * unit.getMultFactor();
@@ -33,6 +33,7 @@ public class AreaQuantity extends TestQuantity {
         Object o = super.subtract(dn, this, d1, AreaUnit.REF_UNIT);
         return (AreaQuantity) o;
     }
+
     public boolean eq(AreaQuantity d1) {
         return super.eq(d1);
     }
@@ -72,14 +73,17 @@ public class AreaQuantity extends TestQuantity {
         DistanceQuantity dq1 = d1.convert(DistanceUnit.m);
         return new DistanceQuantity(dq0.units / dq1.units, DistanceUnit.m);
     }
+
     public VolumeQuantity multiply(DistanceQuantity d1) {
         AreaQuantity dq0 = convert(AreaUnit.sqmetre);
         DistanceQuantity dq1 = d1.convert(DistanceUnit.m);
         return new VolumeQuantity(dq0.units * dq1.units, VolumeUnit.cumetre);
     }
+
     public AreaQuantity convert(AreaUnit newUnit) {
         return new AreaQuantity(scalar / newUnit.getMultFactor(), newUnit);
     }
+
     public String showInUnits(AreaUnit u, int precision) {
         return super.showInUnits(u, precision);
     }

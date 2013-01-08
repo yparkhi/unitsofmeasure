@@ -15,17 +15,17 @@ import org.unitsofmeasurement.test.unit.VolumeUnit;
 
 /**
  * @author paul.morrison
- *
  */
 public class VolumeQuantity extends TestQuantity {
     public VolumeQuantity() {
     }
-    public VolumeQuantity(double val, VolumeUnit un) {
 
+    public VolumeQuantity(double val, VolumeUnit un) {
         units = val;
         unit = un;
         scalar = val * unit.getMultFactor();
     }
+
     /*
      * Volume(double val) {
      *
@@ -82,16 +82,19 @@ public class VolumeQuantity extends TestQuantity {
     public AreaQuantity divide(DistanceQuantity d1) {
         VolumeQuantity dq0 = convert(VolumeUnit.cumetre);
         DistanceQuantity dq1 = d1.convert(DistanceUnit.m);
-    return new AreaQuantity(dq0.units / dq1.units, AreaUnit.sqmetre);
+        return new AreaQuantity(dq0.units / dq1.units, AreaUnit.sqmetre);
     }
+
     public DistanceQuantity divide(AreaQuantity a1) {
         VolumeQuantity dq0 = convert(VolumeUnit.cumetre);
         AreaQuantity dq1 = a1.convert(AreaUnit.sqmetre);
-    return new DistanceQuantity(dq0.units / dq1.units, DistanceUnit.m);
+        return new DistanceQuantity(dq0.units / dq1.units, DistanceUnit.m);
     }
+
     public VolumeQuantity convert(VolumeUnit newUnit) {
         return new VolumeQuantity(scalar / newUnit.getMultFactor(), newUnit);
     }
+
     public String showInUnits(VolumeUnit u, int precision) {
         return super.showInUnits(u, precision);
     }

@@ -16,34 +16,28 @@ import java.util.Locale;
 import org.unitsofmeasurement.unit.Unit;
 import org.unitsofmeasurement.unit.UnitFormat;
 
+
 /**
- * <p>
- * This class provides the interface for formatting and parsing {@linkplain Unit
- * units}.
- * </p>
+ * Provides the interface for formatting and parsing {@linkplain Unit units}.
  *
- * <p>
- * The {@linkplain #getStandard standard} instance (UCUM) recognizes all metric units
- * and the 20 SI prefixes used to form decimal multiples and some customory
- * units (see <a href="http://org.unitsofmeasure">UCUM</a> specification). For
- * example:
+ * <p>The {@linkplain #getStandard standard} instance (UCUM) recognizes all metric units
+ * and the 20 SI prefixes used to form decimal multiples and some customary units
+ * (see <a href="http://org.unitsofmeasure">UCUM</a> specification). For example:</p>
  *
- * <pre><code>
- *        UnitFormat.getStandard().valueOf("kW").equals(KILO(WATT))
- *        UnitFormat.getStandard().valueOf("[ft_i]").equals(METRE.multiply(3048).divide(10000))
- *        UnitFormat.getInstance(Locale.USA).valueOf("ft").equals(METRE.multiply(3048).divide(10000))
+ * [code]
+ *     UnitFormat.getStandard().valueOf("kW").equals(KILO(WATT))
+ *     UnitFormat.getStandard().valueOf("[ft_i]").equals(METRE.multiply(3048).divide(10000))
+ *     UnitFormat.getInstance(Locale.USA).valueOf("ft").equals(METRE.multiply(3048).divide(10000))
  * [/code]
- * </p>
  *
- * <p>
- * OSGi bundles should use {@link org.unitsofmeasurement.UnitFormat} to
- * parse/format {@linkplain #getStandard() standard} (UCUM) units.
- * </p>
+ * <p>OSGi bundles should use {@link org.unitsofmeasurement.UnitFormat} to
+ * parse/format {@linkplain #getStandard() standard} (UCUM) units.</p>
  *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @author Eric Russell
  * @version 1.0
+ *
  * @see <a href="http://org.unitsofmeasure">Unified Code of Measure (UCUM)</a>
  */
 abstract class BaseFormat extends Format implements UnitFormat {
@@ -58,8 +52,8 @@ abstract class BaseFormat extends Format implements UnitFormat {
      *
      * @return the standard format.
      */
-    public static BaseFormat getStandard() {
-    return SimpleFormat.getStandardInstance();
+    public static UnitFormat getStandard() {
+        return SimpleFormat.getStandardInstance();
     }
 
     /**
@@ -67,8 +61,8 @@ abstract class BaseFormat extends Format implements UnitFormat {
      *
      * @return the locale format.
      */
-    public static BaseFormat getInstance() {
-    return SimpleFormat.getStandardInstance();
+    public static UnitFormat getInstance() {
+        return SimpleFormat.getStandardInstance();
     }
 
     /**
@@ -78,8 +72,8 @@ abstract class BaseFormat extends Format implements UnitFormat {
      *            the locale for which the format is returned.
      * @return the format for the specified locale.
      */
-    public static BaseFormat getInstance(Locale locale) {
-    return SimpleFormat.getStandardInstance();
+    public static UnitFormat getInstance(Locale locale) {
+        return SimpleFormat.getStandardInstance();
     }
 
     /**
@@ -101,7 +95,7 @@ abstract class BaseFormat extends Format implements UnitFormat {
      *             if an error occurs.
      */
     public abstract Appendable format(Unit<?> unit, Appendable appendable)
-        throws IOException;
+            throws IOException;
 
     /**
      * Parses a portion of the specified <code>CharSequence</code> from the
@@ -120,7 +114,7 @@ abstract class BaseFormat extends Format implements UnitFormat {
      *             sequence (e.g. illegal syntax).
      */
     public abstract Unit<?> parse(CharSequence csq, ParsePosition cursor)
-        throws IllegalArgumentException;
+            throws IllegalArgumentException;
 
     /**
      * Parses the specified character sequence to produce a unit (convenience
@@ -134,33 +128,31 @@ abstract class BaseFormat extends Format implements UnitFormat {
      *             if any problem occurs while parsing the specified character
      *             sequence (e.g. illegal syntax).
      */
-    public final Unit<?> parse(CharSequence csq)
-        throws IllegalArgumentException {
-    return parse(csq, null);
+    public final Unit<?> parse(CharSequence csq) throws IllegalArgumentException {
+        return parse(csq, null);
     }
 
     @Override
-    public final StringBuffer format(Object obj, final StringBuffer toAppendTo,
-        FieldPosition pos) {
-    if (!(obj instanceof Unit<?>))
-        throw new IllegalArgumentException("obj: Not an instance of Unit"); //$NON-NLS-1$
-    if ((toAppendTo == null) || (pos == null))
-        throw new NullPointerException(); // Format contract.
-    try {
-        return (StringBuffer) format((Unit<?>) obj, (Appendable) toAppendTo);
-    } catch (IOException ex) {
-        throw new Error(ex); // Cannot happen.
-    }
+    public final StringBuffer format(Object obj, final StringBuffer toAppendTo, FieldPosition pos) {
+        if (!(obj instanceof Unit<?>))
+            throw new IllegalArgumentException("obj: Not an instance of Unit"); //$NON-NLS-1$
+        if ((toAppendTo == null) || (pos == null))
+            throw new NullPointerException(); // Format contract.
+        try {
+            return (StringBuffer) format((Unit<?>) obj, (Appendable) toAppendTo);
+        } catch (IOException ex) {
+            throw new AssertionError(ex); // Cannot happen.
+        }
     }
 
     @Override
     public final Unit<?> parseObject(String source, ParsePosition pos) {
-    try {
-        return parse(source, pos);
-    } catch (IllegalArgumentException e) {
-        return null; // Unfortunately the message why the parsing failed
-    } // is lost; but we have to follow the Format spec.
-
+        try {
+            return parse(source, pos);
+        } catch (IllegalArgumentException e) {
+            return null;
+            // Unfortunately the message why the parsing failed
+            // is lost; but we have to follow the Format spec.
+        }
     }
-
 }

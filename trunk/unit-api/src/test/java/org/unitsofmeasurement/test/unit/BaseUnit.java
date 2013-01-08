@@ -10,23 +10,23 @@ package org.unitsofmeasurement.test.unit;
 import org.unitsofmeasurement.quantity.Quantity;
 import org.unitsofmeasurement.unit.Unit;
 
+
 /**
- * <p> This class represents the building blocks on top of which all others
- *     units are created. Base units are always unscaled metric units.</p>
+ * Building blocks on top of which all others units are created.
+ * Base units are always unscaled metric units.
  *
- * <p> When using the {@linkplain Dimensional.Model#STANDARD standard} model
- *     (default), all seven base units are dimensionally independent.</p>
+ * <p>When using the {@linkplain Dimensional.Model#STANDARD standard} model
+ * (default), all seven base units are dimensionally independent.</p>
  *
  * @param <Q> The type of the quantity measured by this unit.
  *
- * @author  <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
- * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.8 ($Revision: 105 $), $Date: 2010-08-05 21:44:23 +0100 (Do, 05 Aug 2010) $
- * @see <a href="http://en.wikipedia.org/wiki/SI_base_unit">
- *       Wikipedia: SI base unit</a>
+ * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
+ * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
+ * @version 1.8
+ *
+ * @see <a href="http://en.wikipedia.org/wiki/SI_base_unit">Wikipedia: SI base unit</a>
  */
 public class BaseUnit<Q extends Quantity<Q>> extends TestUnit<Q> {
-
     /**
      * Creates a base unit having the specified symbol.
      *
