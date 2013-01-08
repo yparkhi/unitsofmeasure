@@ -9,12 +9,16 @@ package org.unitsofmeasurement.quantity;
 
 
 /**
- * This interface represents the rate of change of angular displacement with
- * respect to time. The system unit for this quantity is "rad/s" (radian per
- * second).
+ * Rate of change of angular displacement with respect to time.
+ * The system unit for this quantity is "rad/s" (radian per second).
  *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
- * @version 1.1, $Date$
+ * @version 1.1
+ *
+ * @see Angle
+ * @see Time
+ * @see AngularAcceleration
+ * @see Velocity
  */
 public interface AngularVelocity extends Quantity<AngularVelocity> {
 }

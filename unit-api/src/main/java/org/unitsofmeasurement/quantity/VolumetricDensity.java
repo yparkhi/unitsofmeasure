@@ -9,12 +9,15 @@ package org.unitsofmeasurement.quantity;
 
 
 /**
- * This interface represents a mass per unit volume of a substance under
- * specified conditions of pressure and temperature. The system unit for this
- * quantity is "kg/m3" (kilogram per cubic metre).
+ * Mass per unit volume of a substance under specified conditions
+ * of pressure and temperature.
+ * The system unit for this quantity is "kg/m³" (kilogram per cubic metre).
  *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
- * @version 1.2.1, $Date$
+ * @version 1.2.1
+ *
+ * @see Mass
+ * @see Volume
  */
 public interface VolumetricDensity extends Quantity<VolumetricDensity> {
 }

@@ -9,11 +9,10 @@ package org.unitsofmeasurement.quantity;
 
 
 /**
- * Represents a dimensionless quantity.
+ * Dimensionless quantity.
  *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
- * @version 1.0, April 15, 2009
+ * @version 1.0
  */
 public interface Dimensionless extends Quantity<Dimensionless> {
-
 }

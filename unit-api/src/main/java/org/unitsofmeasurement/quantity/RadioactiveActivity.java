@@ -9,15 +9,12 @@ package org.unitsofmeasurement.quantity;
 
 
 /**
- * Represents a radioactive activity. The metric system unit for this quantity
- * is "Bq" (Becquerel).
+ * Radioactive activity.
+ * The metric system unit for this quantity is "Bq" (Becquerel).
  *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.1 ($Revision$), $Date$
- *
- * TODO rename to RadioActivity ?!
+ * @version 1.1
  */
 public interface RadioactiveActivity extends Quantity<RadioactiveActivity> {
-
 }

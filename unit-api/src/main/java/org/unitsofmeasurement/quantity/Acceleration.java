@@ -9,12 +9,16 @@ package org.unitsofmeasurement.quantity;
 
 
 /**
- * Represents the rate of change of velocity with respect to time. The metric
- * system unit for this quantity is "m/s²" (metre per square second).
+ * Rate of change of velocity with respect to time.
+ * The metric system unit for this quantity is "m/s²" (metre per square second).
  *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
- * @version 1.0, April 15, 2009
+ * @version 1.0
+ *
+ * @see Length
+ * @see Velocity
+ * @see Time
+ * @see AngularAcceleration
  */
 public interface Acceleration extends Quantity<Acceleration> {
-
 }

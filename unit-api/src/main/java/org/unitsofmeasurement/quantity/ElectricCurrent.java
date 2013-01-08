@@ -9,13 +9,14 @@ package org.unitsofmeasurement.quantity;
 
 
 /**
- * Represents the amount of electric charge flowing past a specified circuit
- * point per unit time. The metric system unit for this quantity is "A"
- * (Ampere).
+ * Amount of electric charge flowing past a specified circuit point per unit time.
+ * The metric system unit for this quantity is "A" (Ampere).
  *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
- * @version 1.0, April 15, 2009
+ * @version 1.0
+ *
+ * @see ElectricCharge
+ * @see Time
  */
 public interface ElectricCurrent extends Quantity<ElectricCurrent> {
-
 }

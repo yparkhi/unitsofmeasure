@@ -9,12 +9,14 @@ package org.unitsofmeasurement.quantity;
 
 
 /**
- * Represents a force applied uniformly over a surface. The metric system unit
- * for this quantity is "Pa" (Pascal).
+ * Force applied uniformly over a surface.
+ * The metric system unit for this quantity is "Pa" (Pascal).
  *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
- * @version 1.0, April 15, 2009
+ * @version 1.0
+ *
+ * @see Force
+ * @see Area
  */
 public interface Pressure extends Quantity<Pressure> {
-
 }

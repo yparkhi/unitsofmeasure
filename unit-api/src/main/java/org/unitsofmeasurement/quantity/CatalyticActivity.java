@@ -9,12 +9,11 @@ package org.unitsofmeasurement.quantity;
 
 
 /**
- * Represents a catalytic activity. The metric system unit for this quantity is
- * "kat" (katal).
+ * Catalytic activity.
+ * The metric system unit for this quantity is "kat" (katal).
  *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
- * @version 1.0, April 15, 2009
+ * @version 1.0
  */
 public interface CatalyticActivity extends Quantity<CatalyticActivity> {
-
 }

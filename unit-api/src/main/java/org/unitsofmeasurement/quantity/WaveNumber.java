@@ -14,10 +14,10 @@ package org.unitsofmeasurement.quantity;
  *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.8.1 ($Revision$), $Date$
- * @see <a href="http://en.wikipedia.org/wiki/Wavenumber">Wikipedia's
- *      Wavenumber</a>
+ * @version 1.8.1
  *
+ * @see Length
+ * @see <a href="http://en.wikipedia.org/wiki/Wavenumber">Wikipedia: Wavenumber</a>
  */
 public interface WaveNumber extends Quantity<WaveNumber> {
 }
