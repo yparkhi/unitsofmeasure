@@ -10,19 +10,19 @@ package org.unitsofmeasurement.unit;
 import java.util.Set;
 import org.unitsofmeasurement.quantity.Quantity;
 
+
 /**
- * <p> This interface represents a system of units, it groups units together for
- *     historical or cultural reasons. Nothing prevents a unit from belonging to
- *     several systems of units at the same time (for example an
- *     <code>Imperial</code> system would have many of the units held by
- *     <code>USCustomary</code>).</p>
+ * A system of units grouped together for historical or cultural reasons.
+ * Nothing prevents a unit from belonging to several systems of units at the same time (for example
+ * an {@code Imperial} system would have many of the units held by {@code USCustomary}).
  *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.2.1 ($Revision: 111 $), $Date: 2010-09-13 18:42:10 +0200 (Mo, 13 Sep 2010) $
+ * @version 1.2.1
+ *
+ * @since 0.6.0
  */
 public interface SystemOfUnits {
-
     /**
      * Returns the name of the system of unit.
      *
@@ -33,7 +33,8 @@ public interface SystemOfUnits {
     /**
      * Returns the default unit for the specified quantity.
      *
-     * @param quantityType the quantity type.
+     * @param  <Q> the compile-time quantity type.
+     * @param  quantityType the quantity type.
      * @return the unit for the specified quantity.
      */
     <Q extends Quantity<Q>> Unit<Q> getUnit(Class<Q> quantityType);
@@ -49,9 +50,8 @@ public interface SystemOfUnits {
      * Returns the units defined in this system having the specified dimension
      * (convenience method).
      *
-     * @param dimension the dimension of the units to be returned.
+     * @param  dimension the dimension of the units to be returned.
      * @return the collection of units of specified dimension.
      */
     Set<? extends Unit<?>> getUnits(Dimension dimension);
-
 }

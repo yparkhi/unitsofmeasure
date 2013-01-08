@@ -7,6 +7,7 @@
  */
 package org.unitsofmeasurement.unit;
 
+
 /**
  * Signals that a problem of some sort has occurred due to incommensurable of
  * some quantities/units. Only commensurable quantity (quantities with the same
@@ -15,24 +16,23 @@ package org.unitsofmeasurement.unit;
  *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @see <a href="http://en.wikipedia.org/wiki/Unit_commensurability#Commensurability">
- *      Wikipedia: Unit Commensurability</a>
- * @version 1.2 ($Revision$), $Date$
+ * @version 1.2
+ *
+ * @see <a href="http://en.wikipedia.org/wiki/Unit_commensurability#Commensurability">Unit Commensurability on Wikipedia</a>
+ * @since 0.6.0
  */
 public class IncommensurableException extends Exception {
-
     /**
      * For cross-version compatibility.
      */
     private static final long serialVersionUID = -3676414292638136515L;
 
     /**
-     * Constructs a <code>IncommensurableException</code> with the specified
-     * detail message.
+     * Constructs a {@code IncommensurableException} with the given message.
      *
-     * @param message the detail message.
+     * @param message the detail message, or {@code null} if none.
      */
-    public IncommensurableException(String message) {
+    public IncommensurableException(final String message) {
         super(message);
     }
 }

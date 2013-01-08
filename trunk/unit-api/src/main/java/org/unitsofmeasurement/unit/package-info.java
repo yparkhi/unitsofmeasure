@@ -5,10 +5,18 @@
  *
  * See LICENSE.txt for details.
  */
+
+
 /**
- * Declares units and related types
+ * Specifies Java packages for the programmatic, type safe handling
+ * of quantities and their expression as numbers of units.
+ *
+ * <p>The core interface of this package is {@link org.unitsofmeasurement.unit.Unit}.</p>
+ *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
- * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.0, $Date$
+ * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
+ * @version 1.0
+ *
+ * @since 0.6.0
  */
 package org.unitsofmeasurement.unit;
