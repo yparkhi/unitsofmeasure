@@ -16,7 +16,7 @@ package org.unitsofmeasurement.unit;
  *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.1.2
+ * @version 1.2
  *
  * @since 0.6.0
  */
@@ -42,5 +42,17 @@ public class UnconvertibleException extends RuntimeException {
      */
     public UnconvertibleException(final Throwable cause) {
         super(cause);
+    }
+
+    /**
+     * Constructs a {@code UnconvertibleException} with the given message and cause.
+     *
+     * @param message the detail message, or {@code null} if none.
+     * @param cause the cause of this exception, or {@code null} if none.
+     *
+     * @since 0.6.2
+     */
+    public UnconvertibleException(final String message, final Throwable cause) {
+        super(message, cause);
     }
 }
