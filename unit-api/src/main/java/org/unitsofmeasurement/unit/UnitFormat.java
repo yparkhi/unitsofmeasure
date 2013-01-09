@@ -9,6 +9,7 @@ package org.unitsofmeasurement.unit;
 
 import java.io.IOException;
 import java.text.ParsePosition;
+import java.text.ParseException;
 
 
 /**
@@ -31,8 +32,7 @@ public interface UnitFormat {
      * @return the appendable destination passed in with formatted text appended.
      * @throws IOException if an error occurs while writing to the destination.
      */
-    Appendable format(Unit<?> unit, Appendable appendable)
-            throws IOException;
+    Appendable format(Unit<?> unit, Appendable appendable) throws IOException;
 
     /**
      * Parses a portion of the specified {@code CharSequence} from the
@@ -43,9 +43,8 @@ public interface UnitFormat {
      * @param  cursor the cursor holding the current parsing index, or {@code null}
      *         to parse the whole character sequence.
      * @return the unit parsed from the specified character sub-sequence.
-     * @throws IllegalArgumentException if any problem occurs while parsing the
+     * @throws ParseException if any problem occurs while parsing the
      *         specified character sequence (e.g. illegal syntax).
      */
-    Unit<?> parse(CharSequence csq, ParsePosition cursor)
-            throws IllegalArgumentException;
+    Unit<?> parse(CharSequence csq, ParsePosition cursor) throws ParseException;
 }

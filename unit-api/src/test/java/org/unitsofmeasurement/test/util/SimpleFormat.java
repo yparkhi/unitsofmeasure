@@ -9,6 +9,7 @@ package org.unitsofmeasurement.test.util;
 
 import java.io.IOException;
 import java.text.ParsePosition;
+import java.text.ParseException;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
@@ -148,7 +149,7 @@ public class SimpleFormat extends BaseFormat {
         }
     }
 
-    public Unit<?> parse(CharSequence csq, ParsePosition cursor) throws IllegalArgumentException {
+    public Unit<?> parse(CharSequence csq, ParsePosition cursor) throws ParseException {
         return TestUnit.ONE;
     }
 
