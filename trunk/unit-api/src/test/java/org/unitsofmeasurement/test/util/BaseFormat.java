@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.text.FieldPosition;
 import java.text.Format;
 import java.text.ParsePosition;
+import java.text.ParseException;
 import java.util.Locale;
 
 import org.unitsofmeasurement.unit.Unit;
@@ -109,12 +110,12 @@ abstract class BaseFormat extends Format implements UnitFormat {
      *        null</code>
      *            to parse the whole character sequence.
      * @return the unit parsed from the specified character sub-sequence.
-     * @throws IllegalArgumentException
+     * @throws ParseException
      *             if any problem occurs while parsing the specified character
      *             sequence (e.g. illegal syntax).
      */
     public abstract Unit<?> parse(CharSequence csq, ParsePosition cursor)
-            throws IllegalArgumentException;
+            throws ParseException;
 
     /**
      * Parses the specified character sequence to produce a unit (convenience
@@ -124,11 +125,11 @@ abstract class BaseFormat extends Format implements UnitFormat {
      * @param csq
      *            the <code>CharSequence</code> to parse.
      * @return the unit parsed from the specified character sub-sequence.
-     * @throws IllegalArgumentException
+     * @throws ParseException
      *             if any problem occurs while parsing the specified character
      *             sequence (e.g. illegal syntax).
      */
-    public final Unit<?> parse(CharSequence csq) throws IllegalArgumentException {
+    public final Unit<?> parse(CharSequence csq) throws ParseException {
         return parse(csq, null);
     }
 
@@ -149,7 +150,7 @@ abstract class BaseFormat extends Format implements UnitFormat {
     public final Unit<?> parseObject(String source, ParsePosition pos) {
         try {
             return parse(source, pos);
-        } catch (IllegalArgumentException e) {
+        } catch (ParseException e) {
             return null;
             // Unfortunately the message why the parsing failed
             // is lost; but we have to follow the Format spec.
