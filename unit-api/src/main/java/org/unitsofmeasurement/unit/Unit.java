@@ -190,7 +190,7 @@ public interface Unit<Q extends Quantity<Q>> {
      * @throws IllegalArgumentException if the specified symbol is already
      *         associated to a different unit.
      */
-    Unit<?> alternate(String symbol);
+    Unit<Q> alternate(String symbol);
 
     /**
      * Returns the unit derived from this unit using the specified converter.

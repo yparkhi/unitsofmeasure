@@ -49,7 +49,7 @@ public abstract class TestUnit<Q extends Quantity<Q>> implements Unit<Q> {
         return null;
     }
 
-    public Unit<?> alternate(String symbol) {
+    public Unit<Q> alternate(String symbol) {
         // TODO Auto-generated method stub
         return null;
     }
