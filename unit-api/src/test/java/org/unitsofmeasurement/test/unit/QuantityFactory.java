@@ -211,7 +211,7 @@ abstract class QuantityFactory<Q extends Quantity<Q>> {
             // CLASS_TO_METRIC_UNIT.put(ElectricInductance.class, HENRY);
             // CLASS_TO_METRIC_UNIT.put(LuminousFlux.class, LUMEN);
             // CLASS_TO_METRIC_UNIT.put(Illuminance.class, LUX);
-            // CLASS_TO_METRIC_UNIT.put(RadioactiveActivity.class, BECQUEREL);
+            // CLASS_TO_METRIC_UNIT.put(Radioactivity.class, BECQUEREL);
             // CLASS_TO_METRIC_UNIT.put(RadiationDoseAbsorbed.class, GRAY);
             // CLASS_TO_METRIC_UNIT.put(RadiationDoseEffective.class, SIEVERT);
             // CLASS_TO_METRIC_UNIT.put(CatalyticActivity.class, KATAL);
