@@ -7,6 +7,7 @@
  */
 package org.unitsofmeasurement.service;
 
+import java.util.Set;
 import org.unitsofmeasurement.unit.SystemOfUnits;
 
 
@@ -17,7 +18,7 @@ import org.unitsofmeasurement.unit.SystemOfUnits;
  *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.2.2
+ * @version 1.3
  *
  * @since 0.6.0
  */
@@ -34,9 +35,20 @@ public interface SystemOfUnitsService {
      * Returns the system of units having the specified name, or {@code null} if none.
      * Common system of units are {@code "SI"} (System International), {@code "Imperial"}
      * (British) and {@code "USCustomary"}.
+     * The list of known names can be obtained by {@link #getSystemOfUnitNames()}.
      *
      * @param  name the system of unit name.
-     * @return the system of units.
+     * @return the system of units for the given name, or {@code null} if none.
      */
     SystemOfUnits getSystemOfUnits(String name);
+
+    /**
+     * Returns the names of all {@linkplain SystemOfUnits systems of units} known to this service.
+     * The returned set typically contains at least the {@code "SI"} name.
+     *
+     * @return All systems of units known to this service.
+     *
+     * @since 0.6.2
+     */
+    Set<String> getSystemOfUnitNames();
 }
