@@ -26,8 +26,8 @@ import org.unitsofmeasurement.quantity.Quantity;
  * an unit of gradient, which is common in atmospheric and oceanographic research.</p>
  *
  * <p>Units raised at non-integral powers are not supported. For example,
- * <code>LITRE.root(2)</code> raises an <code>ArithmeticException</code>; but
- * <code>LITRE.getSystemUnit().root(2)</code> returns <code>METRE</code>.</p>
+ * {@code LITRE.root(2)} raises an {@code ArithmeticException}, but
+ * {@code HECTARE.root(2)} returns {@code HECTOMETRE} (100 metres).</p>
  *
  * <p>Unit instances shall be immutable.</p>
  *
