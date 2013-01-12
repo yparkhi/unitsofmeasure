@@ -100,12 +100,10 @@ abstract class TestQuantity<Q extends Quantity<Q>> implements Quantity<Q> {
         return str + exp  + ' ' + u.getName();
     }
 
-    @Override
     public Number value() {
         return Double.valueOf(units);
     }
 
-    @Override
     public Unit<Q> unit() {
         return unit;
     }
