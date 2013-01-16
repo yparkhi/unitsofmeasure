@@ -34,7 +34,7 @@ public interface SystemOfUnitsService<V> {
 	 * 
 	 * @return <code>getSystemOfUnits("SI")</code>
 	 */
-	SystemOfUnits<V> getSystemOfUnits();
+	SystemOfUnits getSystemOfUnits();
 
     /**
      * Returns the system of units having the specified name or
@@ -43,6 +43,6 @@ public interface SystemOfUnitsService<V> {
      * @param name the system of unit name.
      * @return the system of units.
      */
-	SystemOfUnits<V> getSystemOfUnits(String name);
+	SystemOfUnits getSystemOfUnits(String name);
 
 }

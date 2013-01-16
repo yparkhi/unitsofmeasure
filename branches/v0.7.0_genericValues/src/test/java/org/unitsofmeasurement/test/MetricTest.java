@@ -17,16 +17,15 @@ import org.unitsofmeasurement.service.SystemOfUnitsService;
 @Ignore
 public class MetricTest {
 
-	private SystemOfUnitsService metric;
+    private SystemOfUnitsService metric;
 
-	@Before
-	public void setUp() {
-		// metric = Metric.getInstance();
-	}
+    @Before
+    public void setUp() {
+//      metric = Metric.getInstance();
+    }
 
-	@Test
-	public void testGetUnits() {
-		assertNull(metric);
-	}
-
+    @Test
+    public void testGetUnits() {
+        assertNull(metric);
+    }
 }

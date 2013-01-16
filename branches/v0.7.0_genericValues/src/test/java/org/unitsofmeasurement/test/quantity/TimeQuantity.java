@@ -7,25 +7,24 @@
  */
 package org.unitsofmeasurement.test.quantity;
 
-
+import org.unitsofmeasurement.quantity.Time;
 import org.unitsofmeasurement.test.unit.DistanceUnit;
 import org.unitsofmeasurement.test.unit.TimeUnit;
 
+
 /**
  * @author Werner Keil
- * @version 1.0 ($Revision$), $Date$
+ * @version 1.0
  */
-public class TimeQuantity extends TestNumericQuantity {
+public class TimeQuantity extends TestQuantity<Time> {
 
-	public TimeQuantity(double val, TimeUnit un) {
-
-    units = val;
-    unit = un;
-    scalar = val * unit.getMultFactor();
+    public TimeQuantity(double val, TimeUnit un) {
+        units = val;
+        unit = un;
+        scalar = val * unit.getMultFactor();
     }
 
-	public TimeQuantity() {
-
+    public TimeQuantity(){
     }
 
     /*
@@ -34,68 +33,64 @@ public class TimeQuantity extends TestNumericQuantity {
      * units = val; unit = m; // reference Unit scalar = val;
      *
      * }
-     * */
-
-
-	public TimeQuantity add(TimeQuantity d1) {
-		TimeQuantity dn = new TimeQuantity();
-		Object o = super.add(dn, this, d1, TimeUnit.REF_UNIT);
-		return (TimeQuantity) o;
+     */
+    public TimeQuantity add(TimeQuantity d1) {
+        TimeQuantity dn = new TimeQuantity();
+        Object o = super.add(dn, this, d1, TimeUnit.REF_UNIT);
+        return (TimeQuantity) o;
     }
 
-
-	public TimeQuantity subtract(TimeQuantity d1) {
-		TimeQuantity dn = new TimeQuantity();
-		Object o = super.subtract(dn, this, d1, TimeUnit.REF_UNIT);
-		return (TimeQuantity) o;
+    public TimeQuantity subtract(TimeQuantity d1) {
+        TimeQuantity dn = new TimeQuantity();
+        Object o = super.subtract(dn, this, d1, TimeUnit.REF_UNIT);
+        return (TimeQuantity) o;
     }
 
-
-	public boolean eq(TimeQuantity d1) {
-    return super.eq(d1);
+    public boolean eq(TimeQuantity d1) {
+        return super.eq(d1);
     }
 
-	public boolean ne(TimeQuantity d1) {
+    public boolean ne(TimeQuantity d1) {
         return super.ne(d1);
     }
 
-	public boolean gt(TimeQuantity d1) {
+    public boolean gt(TimeQuantity d1) {
         return super.gt(d1);
     }
 
-	public boolean lt(TimeQuantity d1) {
+    public boolean lt(TimeQuantity d1) {
         return super.lt(d1);
     }
 
-	public boolean ge(TimeQuantity d1) {
+    public boolean ge(TimeQuantity d1) {
         return super.ge(d1);
     }
 
-	public boolean le(TimeQuantity d1) {
+    public boolean le(TimeQuantity d1) {
         return super.le(d1);
     }
 
-	public TimeQuantity multiply(double v) {
-		return new TimeQuantity(units * v, (TimeUnit) unit);
+    public TimeQuantity multiply(double v) {
+        return new TimeQuantity(units * v, (TimeUnit) unit);
     }
 
-	public TimeQuantity divide(double v) {
-		return new TimeQuantity(units / v, (TimeUnit) unit);
+    public TimeQuantity divide(double v) {
+        return new TimeQuantity(units / v, (TimeUnit) unit);
     }
 
 
 
     // mixed type operations
-	// public AreaNumericQuantity multiply(TimeQuantity d1) {
+	// public AreaQuantity multiply(TimeQuantity d1) {
 	// TimeQuantity dq0 = convert(DistanceUnit.m);
 	// TimeQuantity dq1 = d1.convert(DistanceUnit.m);
-	// return new AreaNumericQuantity(dq0.units * dq1.units, AreaUnit.sqmetre);
+	// return new AreaQuantity(dq0.units * dq1.units, AreaUnit.sqmetre);
 	// }
 
-	// public VolumeNumericQuantity multiply(AreaNumericQuantity a1) {
+	// public VolumeQuantity multiply(AreaQuantity a1) {
 	// TimeQuantity dq = convert(DistanceUnit.m);
-	// AreaNumericQuantity aq = a1.convert(AreaUnit.sqmetre);
-	// return new VolumeNumericQuantity(dq.units * aq.units, VolumeUnit.cumetre);
+	// AreaQuantity aq = a1.convert(AreaUnit.sqmetre);
+	// return new VolumeQuantity(dq.units * aq.units, VolumeUnit.cumetre);
 	// }
     // public Speed divide(TimeInterval t1) {
     // return new Speed(scalar /
@@ -105,9 +100,10 @@ public class TimeQuantity extends TestNumericQuantity {
     // return new TimeInterval(scalar /
     // s1.scalar, TimeInterval.refUnit);
     // }
-	public TimeQuantity convert(TimeUnit newUnit) {
-		return new TimeQuantity(scalar / newUnit.getMultFactor(), newUnit);
-        }
+    public TimeQuantity convert(TimeUnit newUnit) {
+        return new TimeQuantity(scalar / newUnit.getMultFactor(), newUnit);
+    }
+
     public String showInUnits(DistanceUnit u, int precision) {
         return super.showInUnits(u, precision);
     }

@@ -12,9 +12,6 @@ import org.unitsofmeasurement.test.unit.DistanceUnit;
 
 public class Conversions {
 
-    /**
-     * @param args
-     */
     public static void main(String[] args) {
         DistanceQuantity length = new DistanceQuantity(30, DistanceUnit.cm);
         System.out.println("Length = " + length);

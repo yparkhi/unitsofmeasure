@@ -1,6 +1,6 @@
 /**
  * Unit-API - Units of Measurement API for Java (http://unitsofmeasurement.org)
- * Copyright (c) 2005-2012, Unit-API contributors, JScience and others
+ * Copyright (c) 2005-2010, Unit-API contributors, JScience and others
  * All rights reserved.
  *
  * See LICENSE.txt for details.
@@ -8,7 +8,6 @@
 package org.unitsofmeasurement.test;
 
 import java.util.LinkedList;
-import java.util.List;
 
 import org.unitsofmeasurement.test.quantity.DistanceQuantity;
 import org.unitsofmeasurement.test.unit.DistanceUnit;
@@ -17,24 +16,20 @@ import org.unitsofmeasurement.test.unit.DistanceUnit;
 /**
  * @author paul.morrison
  */
-
 public class CalcTripLength {
 
     public static void main(String[] argv)  {
 
-        final DistanceUnit klik = new DistanceUnit("kilometre", DistanceUnit.km,
-                1.0);
+        final DistanceUnit klik = new DistanceUnit("kilometre", DistanceUnit.km, 1.0);
 
-		List<TripLeg> trip = new LinkedList<TripLeg>();
-
+        LinkedList<TripLeg> trip = new LinkedList<TripLeg>();
         trip.add(new TripLeg("YKK", "NYC", new DistanceQuantity(1200.0, klik)));
-
         trip.add(new TripLeg("NYC", "LAX", new DistanceQuantity(5000.0, DistanceUnit.km)));
 
         DistanceQuantity totDist = new DistanceQuantity(0, klik);
 
         for (TripLeg t : trip) {
-				totDist = (DistanceQuantity) totDist.add(t.getDist());
+            totDist = totDist.add(t.getDist());
         }
 
         boolean b = totDist.eq(new DistanceQuantity(6200,klik));

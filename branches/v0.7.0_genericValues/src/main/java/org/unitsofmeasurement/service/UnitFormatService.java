@@ -30,7 +30,7 @@ public interface UnitFormatService<V> {
      *
      * @return <code>getUnitFormat("UCUM")</code>
      */
-	UnitFormat<V> getUnitFormat();
+	UnitFormat getUnitFormat();
 
     /**
      * Returns the unit format having the specified name or
@@ -39,7 +39,7 @@ public interface UnitFormatService<V> {
      * @param name the name of the format.
      * @return the corresponding unit format.
      */
-	UnitFormat<V> getUnitFormat(String name);
+	UnitFormat getUnitFormat(String name);
 
     /**
      * Returns the unit format for the specified locale or
@@ -48,6 +48,6 @@ public interface UnitFormatService<V> {
      * @param locale the locale for the format.
      * @return the corresponding unit format.
      */
-	UnitFormat<V> getUnitFormat(Locale locale);
+	UnitFormat getUnitFormat(Locale locale);
 
 }

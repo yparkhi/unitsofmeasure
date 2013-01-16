@@ -10,14 +10,14 @@ package org.unitsofmeasurement.quantity;
 
 /**
  * This interface represents a wave property inversely related to wavelength.
- * The system unit for this NumericQuantity is "1/m" (reciprocal meters).
+ * The system unit for this quantity is "1/m" (reciprocal meters).
  *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.8.1 ($Revision$), $Date$
- * @see <a href="http://en.wikipedia.org/wiki/Wavenumber">Wikipedia's
- *      Wavenumber</a>
+ * @version 1.8.1
  *
+ * @see Length
+ * @see <a href="http://en.wikipedia.org/wiki/Wavenumber">Wikipedia: Wavenumber</a>
  */
-public interface WaveNumber extends NumericQuantity<WaveNumber> {
+public interface WaveNumber extends Quantity<WaveNumber> {
 }

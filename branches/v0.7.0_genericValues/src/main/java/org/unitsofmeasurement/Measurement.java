@@ -9,6 +9,7 @@ package org.unitsofmeasurement;
 
 import org.unitsofmeasurement.quantity.Quantity;
 import org.unitsofmeasurement.unit.Unit;
+import org.unitsofmeasurement.unit.UnitProvider;
 
 /**
  * Represents a value with a unit.
@@ -34,10 +35,18 @@ import org.unitsofmeasurement.unit.Unit;
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @see <a href="http://en.wikipedia.org/wiki/Units_of_measurement"> Wikipedia:
  *      Units of measurement</a>
- * @version 1.5 ($Revision$), $Date$
+ * @version 1.5 ($Revision$), $Date: 2012-11-07 00:57:14 +0100 (Mi, 07 Nov
+ *          2012) $
+ * @param <V>
  */
-public interface Measurement<Q extends Quantity<Q, V>, V> extends
-		Quantity<Q, V> {
+public interface Measurement<Q extends Quantity<Q>, V> extends UnitProvider<Q> {
+
+	/**
+	 * Returns the value of this measurement as a V.
+	 * 
+	 * @return the value of this measurement (can not be {@code null}).
+	 */
+	V value();
 
 	/**
 	 * Returns the sum of this amount with the one specified.
@@ -92,7 +101,7 @@ public interface Measurement<Q extends Quantity<Q, V>, V> extends
 	 * @param unit
 	 * @return the converted result.
 	 */
-	Measurement<Q, V> to(Unit<Q, V> unit);
+	Measurement<Q, V> to(Unit<Q> unit);
 
 	/**
 	 * Returns the value of this quantity as <code>double</code> stated in the
@@ -103,7 +112,7 @@ public interface Measurement<Q extends Quantity<Q, V>, V> extends
 	 *            the unit in which the returned value is stated.
 	 * @return the value of this quantity when stated in the specified unit.
 	 */
-	public double doubleValue(Unit<Q, V> unit);
+	public double doubleValue(Unit<Q> unit);
 
 	/**
 	 * Returns the value of this quantity as <code>long</code> stated in the
@@ -114,5 +123,5 @@ public interface Measurement<Q extends Quantity<Q, V>, V> extends
 	 *            the unit in which the returned value is stated.
 	 * @return the value of this quantity when stated in the specified unit.
 	 */
-	public long longValue(Unit<Q, V> unit);
+	public long longValue(Unit<Q> unit);
 }
