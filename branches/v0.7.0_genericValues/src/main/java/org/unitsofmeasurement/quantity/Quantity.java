@@ -38,19 +38,19 @@ import org.unitsofmeasurement.unit.Unit;
  * @version 1.5 ($Revision$), $Date: 2012-04-30 01:07:51 +0200 (Mo, 30 Apr
  *          2012) $
  */
-public interface Quantity<Q extends Quantity<Q, V>, V> {
+public interface Quantity<Q extends Quantity<Q>> {
 
     /**
 	 * Returns the value of this quantity {@linkplain #unit() unit}.
 	 * 
 	 * @return the value of this quantity (can not be {@code null}).
 	 */
-	V value();
+	// V value();
 
     /**
      * Returns the unit of this quantity {@linkplain #value() value}.
      *
      * @return the unit of this quantity (can not be {@code null}).
      */
-	Unit<Q, V> unit();
+	Unit<Q> unit();
 }
