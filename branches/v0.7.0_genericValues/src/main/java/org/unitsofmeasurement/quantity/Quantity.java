@@ -33,8 +33,7 @@ import org.unitsofmeasurement.unit.UnitProvider;
  *         Desruisseaux</a>
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @see <a href="http://en.wikipedia.org/wiki/Quantity">Wikipedia: Quantity</a>
- * @version 1.6 ($Revision$), $Date: 2012-04-30 01:07:51 +0200 (Mo, 30 Apr
- *          2012) $
+ * @version 1.6 ($Revision$), Date: 2013-01-17
  */
 public interface Quantity<Q extends Quantity<Q>> extends UnitProvider<Q> {
 
