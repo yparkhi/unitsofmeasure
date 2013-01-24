@@ -11,7 +11,8 @@ import org.unitsofmeasurement.quantity.Quantity;
 
 /**
  * @author Werner Keil
- * 
+ * @version 1.1 ($Revision$), 2013-01-24
+ * @since 0.7
  */
 public interface UnitProvider<Q extends Quantity<Q>> {
 	/**
