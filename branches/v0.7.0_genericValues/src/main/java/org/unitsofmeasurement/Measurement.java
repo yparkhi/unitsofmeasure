@@ -36,7 +36,6 @@ import org.unitsofmeasurement.unit.UnitProvider;
  * @see <a href="http://en.wikipedia.org/wiki/Units_of_measurement"> Wikipedia:
  *      Units of measurement</a>
  * @version 1.6 ($Revision$), 2013-01-24
- * @param <V>
  * @since 0.7
  */
 public interface Measurement<Q extends Quantity<Q>, V> extends UnitProvider<Q> {
