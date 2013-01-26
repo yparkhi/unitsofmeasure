@@ -16,7 +16,7 @@ import org.unitsofmeasurement.unit.UnitProvider;
  * 
  * A Measurement object is used for maintaining the tuple of value and unit.
  * 
- * Mathematic methods are provided. At least a runtime error (for some
+ * Arithmetic methods are provided. At least a runtime error (for some
  * operations already at compile time) will occur when two measurements are used
  * in an incompatible way. E.g., when a speed (m/s) is added to a distance (m).
  * The measurement class will correctly track changes in unit during
@@ -35,7 +35,7 @@ import org.unitsofmeasurement.unit.UnitProvider;
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @see <a href="http://en.wikipedia.org/wiki/Units_of_measurement"> Wikipedia:
  *      Units of measurement</a>
- * @version 1.6 ($Revision$), 2013-01-24
+ * @version 1.7 ($Revision$), 2013-01-27
  * @since 0.7
  */
 public interface Measurement<Q extends Quantity<Q>, V> extends UnitProvider<Q> {

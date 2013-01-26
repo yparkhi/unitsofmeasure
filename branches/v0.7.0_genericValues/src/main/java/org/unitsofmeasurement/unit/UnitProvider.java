@@ -10,8 +10,13 @@ package org.unitsofmeasurement.unit;
 import org.unitsofmeasurement.quantity.Quantity;
 
 /**
+ * This interface returns a {@link Unit}
+ * 
  * @author Werner Keil
- * @version 1.1 ($Revision$), 2013-01-24
+ * @version 1.2 ($Revision$), 2013-01-27
+ * @param <Q>
+ *            The type of the quantity.
+ * @see Unit
  * @since 0.7
  */
 public interface UnitProvider<Q extends Quantity<Q>> {
