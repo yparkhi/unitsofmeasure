@@ -7,7 +7,7 @@
  */
 package org.unitsofmeasurement.quantity;
 
-import org.unitsofmeasurement.unit.UnitProvider;
+import org.unitsofmeasurement.Measurement;
 
 /**
  * <p>
@@ -33,14 +33,7 @@ import org.unitsofmeasurement.unit.UnitProvider;
  *         Desruisseaux</a>
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @see <a href="http://en.wikipedia.org/wiki/Quantity">Wikipedia: Quantity</a>
- * @version 1.6 ($Revision$), Date: 2013-01-17
+ * @version 1.7 ($Revision$), Date: 2013-01-26
  */
-public interface Quantity<Q extends Quantity<Q>> extends UnitProvider<Q> {
-
-    /**
-	 * Returns the value of this quantity {@linkplain #unit() unit}.
-	 * 
-	 * @return the value of this quantity (can not be {@code null}).
-	 */
-	// V value();
+public interface Quantity<Q extends Quantity<Q>> extends Measurement<Q, Number> {
 }

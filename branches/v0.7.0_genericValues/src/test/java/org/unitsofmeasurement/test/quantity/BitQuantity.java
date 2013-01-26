@@ -8,9 +8,11 @@
 package org.unitsofmeasurement.test.quantity;
 
 
+import org.unitsofmeasurement.Measurement;
 import org.unitsofmeasurement.quantity.Information;
 import org.unitsofmeasurement.test.unit.BitRateUnit;
 import org.unitsofmeasurement.test.unit.BitUnit;
+import org.unitsofmeasurement.unit.Unit;
 
 /**
  * @author Werner Keil
@@ -114,4 +116,60 @@ public class BitQuantity extends TestQuantity<Information> {
     public String showInUnits(BitUnit u, int precision) {
         return super.showInUnits(u, precision);
     }
+
+	@Override
+	public Measurement<Information, Number> add(
+			Measurement<Information, Number> that) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Measurement<Information, Number> substract(
+			Measurement<Information, Number> that) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Measurement<?, Number> multiply(Measurement<?, Number> that) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Measurement<?, Number> multiply(Number that) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Measurement<?, Number> divide(Measurement<?, Number> that) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Measurement<? extends Measurement<Information, Number>, Number> inverse() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Measurement<Information, Number> to(Unit<Information> unit) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public double doubleValue(Unit<Information> unit) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public long longValue(Unit<Information> unit) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }

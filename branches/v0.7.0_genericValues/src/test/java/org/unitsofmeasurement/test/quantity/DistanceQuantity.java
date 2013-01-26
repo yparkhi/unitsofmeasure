@@ -7,10 +7,12 @@
  */
 package org.unitsofmeasurement.test.quantity;
 
+import org.unitsofmeasurement.Measurement;
 import org.unitsofmeasurement.quantity.Length;
 import org.unitsofmeasurement.test.unit.AreaUnit;
 import org.unitsofmeasurement.test.unit.DistanceUnit;
 import org.unitsofmeasurement.test.unit.VolumeUnit;
+import org.unitsofmeasurement.unit.Unit;
 
 
 /**
@@ -109,4 +111,59 @@ public class DistanceQuantity extends TestQuantity<Length> {
     public String showInUnits(DistanceUnit u, int precision) {
         return super.showInUnits(u, precision);
     }
+
+	@Override
+	public Measurement<Length, Number> add(Measurement<Length, Number> that) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Measurement<Length, Number> substract(
+			Measurement<Length, Number> that) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Measurement<?, Number> multiply(Measurement<?, Number> that) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Measurement<?, Number> multiply(Number that) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Measurement<?, Number> divide(Measurement<?, Number> that) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Measurement<? extends Measurement<Length, Number>, Number> inverse() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Measurement<Length, Number> to(Unit<Length> unit) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public double doubleValue(Unit<Length> unit) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public long longValue(Unit<Length> unit) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }

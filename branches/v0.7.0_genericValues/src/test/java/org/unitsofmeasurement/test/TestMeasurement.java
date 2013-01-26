@@ -16,43 +16,55 @@ import org.unitsofmeasurement.unit.Unit;
 public class TestMeasurement<Q extends Quantity<Q>> implements
 		Measurement<Q, BigDecimal> {
 
+	@Override
+	public Unit<Q> unit() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
+	@Override
+	public BigDecimal value() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
 	public Measurement<Q, BigDecimal> add(Measurement<Q, BigDecimal> that) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-
+	@Override
 	public Measurement<Q, BigDecimal> substract(Measurement<Q, BigDecimal> that) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-
+	@Override
 	public Measurement<?, BigDecimal> multiply(Measurement<?, BigDecimal> that) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-
+	@Override
 	public Measurement<?, BigDecimal> multiply(BigDecimal that) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-
+	@Override
 	public Measurement<?, BigDecimal> divide(Measurement<?, BigDecimal> that) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-
+	@Override
 	public Measurement<? extends Measurement<Q, BigDecimal>, BigDecimal> inverse() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-
+	@Override
 	public Measurement<Q, BigDecimal> to(Unit<Q> unit) {
 		// TODO Auto-generated method stub
 		return null;
@@ -68,18 +80,6 @@ public class TestMeasurement<Q extends Quantity<Q>> implements
 	public long longValue(Unit<Q> unit) {
 		// TODO Auto-generated method stub
 		return 0;
-	}
-
-	@Override
-	public Unit<Q> unit() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public BigDecimal value() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 }
