@@ -15,8 +15,7 @@ import org.unitsofmeasurement.unit.UnitProvider;
  * Represents a value with a unit.
  * 
  * A Measurement object is used for maintaining the tuple of value and unit.
- * 
- * Arithmetic methods are provided. At least a runtime error (for some
+ * </br> Arithmetic methods are provided. At least a runtime error (for some
  * operations already at compile time) will occur when two measurements are used
  * in an incompatible way. E.g., when a speed (m/s) is added to a distance (m).
  * The measurement class will correctly track changes in unit during
