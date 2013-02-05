@@ -21,7 +21,7 @@ package org.unitsofmeasurement.quantity;
  * @see Volume
  * @see Angle
  * @see SolidAngle
- * @see Velocity
+ * @see Speed
  */
 public interface Length extends Quantity<Length> {
 }

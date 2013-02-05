@@ -17,7 +17,7 @@ package org.unitsofmeasurement.quantity;
  *
  * @see SolidAngle
  * @see Length
- * @see AngularVelocity
+ * @see AngularSpeed
  */
 public interface Angle extends Quantity<Angle> {
 }
