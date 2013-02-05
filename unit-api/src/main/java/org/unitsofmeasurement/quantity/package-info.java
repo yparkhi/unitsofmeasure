@@ -34,9 +34,9 @@
  *    Sensor<Temperature> sensor ...;
  *    Temperature temp = sensor.getValue();
  *
- *    // A vector of velocity in a three-dimensional space.
- *    Unit<Velocity> = metrePerSecond = METRE.divide(SECOND);
- *    Vector3D<Velocity> aircraftSpeed = new Vector3D(200.0, 50.0, -0.5, metrePerSecond);
+ *    // Velocity vector (a vector of speeds) in a three-dimensional space.
+ *    Unit<Speed> = metrePerSecond = METRE.divide(SECOND);
+ *    Vector3D<Speed> aircraftSpeed = new Vector3D(200.0, 50.0, -0.5, metrePerSecond);
  * [/code]
  *
  * <b>Definition of terms</b><br>

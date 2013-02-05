@@ -9,14 +9,14 @@ package org.unitsofmeasurement.quantity;
 
 
 /**
- * Rate of change of velocity with respect to time.
+ * Rate of change of speed with respect to time.
  * The metric system unit for this quantity is "m/s²" (metre per square second).
  *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @version 1.0
  *
  * @see Length
- * @see Velocity
+ * @see Speed
  * @see Time
  * @see AngularAcceleration
  */

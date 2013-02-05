@@ -12,6 +12,9 @@ package org.unitsofmeasurement.quantity;
  * Rate of change of angular displacement with respect to time.
  * The system unit for this quantity is "rad/s" (radian per second).
  *
+ * <p><cite>Angular speed</cite> is a scalar value, while <cite>angular velocity</cite> is a
+ * pseudo-vector. The angular speed is the magnitude of the angular velocity pseudo-vector.</p>
+ *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @version 1.1
  *
@@ -19,8 +22,7 @@ package org.unitsofmeasurement.quantity;
  * @see Time
  * @see AngularAcceleration
  * @see Velocity
- *
- * @deprecated Renamed {@link AngularSpeed}, because speed is a scalar value while velocity is a vector.
+ * @see <a href="http://en.wikipedia.org/wiki/Speed">Wikipedia: Angular Speed</a>
  */
-public interface AngularVelocity extends Quantity<AngularVelocity> {
+public interface AngularSpeed extends Quantity<AngularSpeed> {
 }

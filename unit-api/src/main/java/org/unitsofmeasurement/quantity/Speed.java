@@ -12,16 +12,17 @@ package org.unitsofmeasurement.quantity;
  * Distance traveled divided by the time of travel.
  * The metric system unit for this quantity is "m/s" (metre per second).
  *
+ * <p><cite>Speed</cite> is a scalar value, while <cite>velocity</cite> is a vector.
+ * Speed is the magnitude of the velocity vector.</p>
+ *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @version 1.0
  *
  * @see Length
  * @see Time
  * @see Acceleration
- * @see AngularVelocity
- *
- * @deprecated Renamed {@link Speed}, because speed is a scalar value while velocity is a vector.
+ * @see AngularSpeed
+ * @see <a href="http://en.wikipedia.org/wiki/Speed">Wikipedia: Speed</a>
  */
-@Deprecated
-public interface Velocity extends Quantity<Velocity> {
+public interface Speed extends Quantity<Speed> {
 }

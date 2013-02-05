@@ -215,7 +215,7 @@ abstract class QuantityFactory<Q extends Quantity<Q>> {
             // CLASS_TO_METRIC_UNIT.put(RadiationDoseAbsorbed.class, GRAY);
             // CLASS_TO_METRIC_UNIT.put(RadiationDoseEffective.class, SIEVERT);
             // CLASS_TO_METRIC_UNIT.put(CatalyticActivity.class, KATAL);
-            // CLASS_TO_METRIC_UNIT.put(Velocity.class, METRES_PER_SECOND);
+            // CLASS_TO_METRIC_UNIT.put(Speed.class, METRES_PER_SECOND);
             // CLASS_TO_METRIC_UNIT.put(Acceleration.class,
             // METRES_PER_SQUARE_SECOND);
             CLASS_TO_METRIC_UNIT.put(Area.class, AreaUnit.REF_UNIT);

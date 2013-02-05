@@ -80,10 +80,10 @@ public interface Unit<Q extends Quantity<Q>> {
      * be used to identify the quantity given the unit. For example:</p>
      *
      * [code]
-     *     static boolean isAngularVelocity(Unit<?> unit) {
+     *     static boolean isAngularSpeed(Unit<?> unit) {
      *         return unit.getSystemUnit().equals(RADIAN.divide(SECOND));
      *     }
-     *     assert isAngularVelocity(REVOLUTION.divide(MINUTE)); // Returns true.
+     *     assert isAngularSpeed(REVOLUTION.divide(MINUTE)); // Returns true.
      * [/code]
      *
      * @return the system unit this unit is derived from,
@@ -122,7 +122,7 @@ public interface Unit<Q extends Quantity<Q>> {
      * and this unit's dimension do not match. For example:
      *
      * [code]
-     *      Unit<Velocity> C = METRE.times(299792458).divide(SECOND).asType(Velocity.class);
+     *      Unit<Speed> C = METRE.times(299792458).divide(SECOND).asType(Speed.class);
      * [/code]
      *
      * @param  <T> The type of the quantity measured by the unit.

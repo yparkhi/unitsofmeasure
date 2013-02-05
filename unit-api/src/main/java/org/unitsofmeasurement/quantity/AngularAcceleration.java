@@ -9,14 +9,14 @@ package org.unitsofmeasurement.quantity;
 
 
 /**
- * Rate of change of angular velocity with respect to time.
+ * Rate of change of angular speed with respect to time.
  * The system unit for this quantity is "rad/s²" (radian per square second).
  *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @version 1.1
  *
  * @see Angle
- * @see AngularVelocity
+ * @see AngularSpeed
  * @see Time
  * @see Acceleration
  */

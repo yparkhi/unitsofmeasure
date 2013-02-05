@@ -16,8 +16,8 @@ package org.unitsofmeasurement.quantity;
  * @version 1.2
  *
  * @see Frequency
- * @see Velocity
- * @see AngularVelocity
+ * @see Speed
+ * @see AngularSpeed
  * @see Acceleration
  * @see AngularAcceleration
  * @see ElectricCurrent

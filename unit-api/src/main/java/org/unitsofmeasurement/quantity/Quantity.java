@@ -27,7 +27,7 @@ import org.unitsofmeasurement.unit.Unit;
  * Unit<Mass> pound = ...
  * Quantity<Length> size = ...
  * Sensor<Temperature> thermometer = ...
- * Vector3D<Velocity> aircraftSpeed = ...
+ * Vector3D<Speed> aircraftVelocity = ...
  * [/code]
  *
  * @param <Q> The type of the quantity.
@@ -37,8 +37,8 @@ import org.unitsofmeasurement.unit.Unit;
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @version 1.3
  *
- * @see <a href="http://en.wikipedia.org/wiki/Physical_quantity">Wikipedia: Physical quantity</a>
- * @see <a href="http://www.bipm.org/utils/common/documents/jcgm/JCGM_200_2012.pdf">International vocabulary of metrology (VIM)</a>
+ * @see <a href="http://en.wikipedia.org/wiki/Physical_quantity">Wikipedia: Physical Quantity</a>
+ * @see <a href="http://www.bipm.org/utils/common/documents/jcgm/JCGM_200_2012.pdf">International Vocabulary of Metrology (VIM)</a>
  */
 public interface Quantity<Q extends Quantity<Q>> {
     /**
