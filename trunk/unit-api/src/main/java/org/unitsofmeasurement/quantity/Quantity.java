@@ -11,11 +11,15 @@ import org.unitsofmeasurement.unit.Unit;
 
 
 /**
- * Quantitative properties or attributes of thing.
- * Mass, time, distance, heat, and angular separation
- * are among the familiar examples of quantitative properties.
+ * <cite>Property of a phenomenon, body, or substance, where the property has a magnitude
+ * that can be expressed as a number and a unit</cite> <font size="-2">(adapted from
+ * <a href="http://www.bipm.org/utils/common/documents/jcgm/JCGM_200_2012.pdf">VIM</a>)</font>.
+ * Mass, time, distance, heat, and angular separation are among the familiar examples
+ * of quantitative properties.
  *
- * <p>This interface is used to specify the quantitative property associated to
+ * <p><cite>Kind of quantity</cite>, represented by sub-types, are <cite>aspect common
+ * to mutually comparable quantities</cite> (<font size="-2">source: VIM</font>).
+ * Sub-types are used to specify the quantitative property associated to
  * a class through class parameterization and to provide limited compile time
  * dimension consistency.</p>
  *
@@ -33,7 +37,8 @@ import org.unitsofmeasurement.unit.Unit;
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @version 1.3
  *
- * @see <a href="http://en.wikipedia.org/wiki/Quantity">Wikipedia: Quantity</a>
+ * @see <a href="http://en.wikipedia.org/wiki/Physical_quantity">Wikipedia: Physical quantity</a>
+ * @see <a href="http://www.bipm.org/utils/common/documents/jcgm/JCGM_200_2012.pdf">International vocabulary of metrology (VIM)</a>
  */
 public interface Quantity<Q extends Quantity<Q>> {
     /**
