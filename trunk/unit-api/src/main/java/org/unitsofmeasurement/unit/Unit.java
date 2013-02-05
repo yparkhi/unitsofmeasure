@@ -208,13 +208,34 @@ public interface Unit<Q extends Quantity<Q>> {
     Unit<Q> transform(UnitConverter operation);
 
     /**
+     * Returns the result of setting the origin of the scale of measurement to the given value.
+     * The returned unit is convertible with all units that are convertible with this unit.
+     * For example the following code:
+     *
+     * [code]
+     *    CELSIUS = KELVIN.shift(273.15);
+     * [/code]
+     *
+     * creates a new unit where 0°C (the origin of the new unit) is equals to 273.15 K.
+     * Converting from the old unit to the new one is equivalent to <em>subtracting</em>
+     * the offset to the value in the old unit.
+     *
+     * @param  offset the offset added (expressed in this unit).
+     * @return this unit offset by the specified value.
+     */
+    Unit<Q> shift(double offset);
+
+    /**
      * Returns the result of adding an offset to this unit. The returned unit is
      * convertible with all units that are convertible with this unit.
      *
      * @param  offset the offset added (expressed in this unit,
-     *         e.g. {@code CELSIUS = KELVIN.add(273.15)}).
+     *         e.g. {@code CELSIUS = KELVIN.shift(273.15)}).
      * @return this unit offset by the specified value.
+     *
+     * @deprecated Renamed {@link #shift(double)}.
      */
+    @Deprecated
     Unit<Q> add(double offset);
 
     /**

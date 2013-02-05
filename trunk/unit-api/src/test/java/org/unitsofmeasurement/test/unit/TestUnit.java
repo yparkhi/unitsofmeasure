@@ -44,6 +44,11 @@ public abstract class TestUnit<Q extends Quantity<Q>> implements Unit<Q> {
         this(name, 0);
     }
 
+    public Unit<Q> shift(double offset) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
     public Unit<Q> add(double offset) {
         // TODO Auto-generated method stub
         return null;
