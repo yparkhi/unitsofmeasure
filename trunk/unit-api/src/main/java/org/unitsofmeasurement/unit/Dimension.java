@@ -11,12 +11,13 @@ import java.util.Map;
 
 
 /**
- * Represents the dimension of a unit.
+ * Dependence of a unit on the base units of a system of units. The dependency is expresses as a
+ * {@linkplain #getProductDimensions() product of powers} of dimensions corresponding to the base
+ * units, omitting any numerical factor.
  *
- * <p>Concrete dimensions are obtained through the {@link Unit#getDimension()} method.</p>
- *
- * <p>Two units {@code u1} and {@code u2} are {@linkplain Unit#isCompatible(Unit) compatible}
- * if and only if {@code u1.getDimension().equals(u2.getDimension())}.</p>
+ * <p>Concrete dimensions are obtained through the {@link Unit#getDimension()} method.
+ * Two units {@code u1} and {@code u2} are {@linkplain Unit#isCompatible(Unit) compatible} if
+ * and only if <code>u1.getDimension().{@linkplain #equals equals}(u2.getDimension())</code>.</p>
  *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
@@ -60,10 +61,37 @@ public interface Dimension {
     Dimension root(int n);
 
     /**
-     * Returns the fundamental dimensions and their exponent whose product is
-     * this dimension, or {@code null} if this dimension is a fundamental dimension.
+     * Returns the base dimensions and their exponent whose product is this dimension.
+     * Bases dimensions are dimensions corresponding to base units in the
+     * {@linkplain SystemOfUnits system of units} in use.
+     * The exponent of any dimension not included in the map is assumed to be zero.
      *
-     * @return the mapping between the fundamental dimensions and their exponent.
+     * <p>Special cases, ignoring all dimensions associated to power 0 (if any):</p>
+     * <ul>
+     *   <li>If this {@code Dimension} instance corresponds to the
+     *       {@linkplain org.unitsofmeasurement.quantity.Dimensionless dimensionless quantity},
+     *       then this method returns an empty map.</li>
+     *   <li>If this {@code Dimension} is itself a base dimension, then this method returns
+     *       a singleton map containing this dimension associated to power 1.</li>
+     * </ul>
+     *
+     * @return the mapping between the base dimensions and their exponent (never {@code null}).
+     *
+     * @see Unit#getProductUnits()
      */
     Map<? extends Dimension, Integer> getProductDimensions();
+
+    /**
+     * Returns {@code true} if the given object is also a dimension, and both dimensions
+     * have equal {@linkplain #getProductDimensions() product of powers} of base dimensions.
+     *
+     * <p>Implementations shall take special care against infinite recursivity if this
+     * {@code Dimension} instance is itself contained in the set of keys.</p>
+     *
+     * @param  object the other object to compare with this dimension, or {@code null}.
+     * @return {@code true} if the other object is also a dimension, and both dimensions
+     *         have equal product of powers.
+     */
+    @Override
+    boolean equals(Object object);
 }

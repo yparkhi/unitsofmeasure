@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>API Overview</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+  <body>
+    Specifies Java packages for the programmatic, type safe handling of quantities
+    and their expression as numbers of units. The core interfaces of this API are
+    {@link org.unitsofmeasurement.unit.Unit} and {@link org.unitsofmeasurement.quantity.Quantity}.
+
+    <h3>Definition of terms</h3>
+    <p>This API adopts the definitions provided by the
+    <a href="http://www.bipm.org/utils/common/documents/jcgm/JCGM_200_2012.pdf">International
+    Vocabulary of Metrology</a> (VIM), with some adaptations:</p>
+    <ul>
+      <li><p><b>{@linkplain org.unitsofmeasurement.quantity.Quantity}:</b>
+        property of a phenomenon, body, or substance, where the property has a magnitude
+        that can be expressed as a {@linkplain java.lang.Number number} and a
+        {@linkplain org.unitsofmeasurement.unit.Unit unit}.<br>
+        <font size="-2">(Change compared to VIM: the term "reference" has been restricted to "unit")</font></p></li>
+
+      <li><p><b>Kind of quantity:</b> aspect common to mutually comparable quantities.</p></li>
+
+      <li><p><b>{@linkplain org.unitsofmeasurement.unit.Dimension}:</b>
+        expression of the dependence of a {@linkplain org.unitsofmeasurement.unit.Unit unit} on the
+        base units of a {@linkplain org.unitsofmeasurement.unit.SystemOfUnits system of units} as a
+        {@linkplain org.unitsofmeasurement.unit.Dimension#getProductDimensions() product of powers
+        of dimensions} corresponding to the base units, omitting any numerical factor.<br>
+        <font size="-2">(Change compared to VIM: replaced "quantity" terms by "unit",
+        because dimensions are associated to units in this API)</font></p></li>
+
+      <li><p><b>{@linkplain org.unitsofmeasurement.quantity.Dimensionless}:</b>
+        {@linkplain org.unitsofmeasurement.quantity.Quantity quantity} for which all exponents of
+        the dimensions corresponding to the base units are zero.<br>
+        <font size="-2">(Change compared to VIM: replaced "factors" terms by "dimensions")</font></p></li>
+
+      <li><p><b>{@linkplain org.unitsofmeasurement.unit.Unit}:</b>
+        real scalar {@linkplain org.unitsofmeasurement.quantity.Quantity quantity}, defined and adopted
+        by convention, with which any other quantity of the same kind can be compared to express the
+        ratio of the two quantities as a number.</p></li>
+
+      <li><p><b>Base unit:</b>
+        {@linkplain org.unitsofmeasurement.unit.Unit unit} in a conventionally chosen subset of a
+        given {@linkplain org.unitsofmeasurement.unit.SystemOfUnits system of units}, where no
+        subset unit can be expressed in terms of the others.<br>
+        <font size="-2">(Change compared to VIM: replaced "quantity" terms by "unit",
+        because dimensions are associated to units in this API)</font></p></li>
+
+      <li><p><b>{@linkplain org.unitsofmeasurement.unit.SystemOfUnits System of units}:</b>
+        set of base units and derived units, together with their multiples and submultiples,
+        defined in accordance with given rules.<br>
+        <font size="-2">(Change compared to VIM: omitted the reference to the
+        <cite>system of quantities</cite>)</font></p></li>
+    </ul>
+
+    <h3>Links</h3>
+    <ul>
+      <li><a href="http://www.unitsofmeasurement.org">Units of Measurement</a> project home page</li>
+      <li><a href="http://www.bipm.org/utils/common/documents/jcgm/JCGM_200_2012.pdf">International Vocabulary of Metrology</a> (VIM)</li>
+    </ul>
+  </body>
+</html>
