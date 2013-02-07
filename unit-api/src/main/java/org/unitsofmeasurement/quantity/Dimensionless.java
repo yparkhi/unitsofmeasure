@@ -9,7 +9,7 @@ package org.unitsofmeasurement.quantity;
 
 
 /**
- * Dimensionless quantity.
+ * Quantity for which all exponents of the dimensions corresponding to the base units are zero.
  *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @version 1.0

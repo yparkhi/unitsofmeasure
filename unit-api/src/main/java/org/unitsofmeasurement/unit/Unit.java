@@ -92,10 +92,24 @@ public interface Unit<Q extends Quantity<Q>> {
     Unit<Q> getSystemUnit();
 
     /**
-     * Returns the base units and their exponent whose product is this unit,
-     * or {@code null} if this unit is a base unit (not a product of existing units).
+     * Returns the units and their exponent whose product is this unit.
+     * The exponent of any unit not included in the map is assumed to be zero.
      *
-     * @return the base units and their exponent making up this unit.
+     * <p>This <i>product of powers of units</i> provides different information than the
+     * {@linkplain #getProductDimensions() product of powers of dimensions} in a number
+     * of ways:</p>
+     *
+     * <ul>
+     *   <li>Dimensionless units have (by definition) and empty map of powers of dimensions, but
+     *       may have a non-empty map of powers of units. Example: concentration is <b>g/kg</b>.</li>
+     *   <li>Two {@linkplain #isCompatible(Unit) compatible} units have (by definition) equal
+     *       product of powers of dimensions, but may have different product of powers of units.
+     *       Example: <b>m/s</b> and <b>cm/s</b>.</li>
+     * </ul>
+     *
+     * @return the units and their exponent making up this unit (never {@code null}).
+     *
+     * @see Dimension#getProductDimensions()
      */
     Map<? extends Unit<?>, Integer> getProductUnits();
 
