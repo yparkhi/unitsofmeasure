@@ -101,7 +101,7 @@ public interface Unit<Q extends Quantity<Q>> {
      *
      * <ul>
      *   <li>Dimensionless units have (by definition) and empty map of powers of dimensions, but
-     *       may have a non-empty map of powers of units. Example: concentration in g/kg.</li>
+     *       may have a non-empty map of powers of units. Example: concentration in mg/kg.</li>
      *   <li>Two {@linkplain #isCompatible(Unit) compatible} units have (by definition) equal
      *       product of powers of dimensions, but may have different product of powers of units.
      *       Example: m/s and cm/s.</li>
