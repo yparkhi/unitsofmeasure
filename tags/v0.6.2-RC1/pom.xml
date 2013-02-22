@@ -440,8 +440,9 @@ This API specifies Java packages for the programmatic, type safe handling
   <!-- Deployment to public servers -->
   <distributionManagement>
     <repository>
-      <id>java.net-maven2-repository</id>
-      <url>java-net:/maven2-repository/trunk/repository/</url>
+      <id>geotoolkit</id>
+      <name>Geotoolkit.org binaries</name>
+      <url>file:///var/www/maven.geotoolkit.org</url>
     </repository>
     <site>
       <id>unitsofmeasurement</id>
