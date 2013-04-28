@@ -15,7 +15,6 @@ import javax.measure.unit.SystemOfUnits;
 import javax.measure.unit.Unit;
 
 import org.jscience.economics.money.Currency;
-import org.jscience.economics.money.Money;
 
 /**
  * @author Werner Keil
