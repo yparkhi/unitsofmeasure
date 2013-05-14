@@ -52,7 +52,7 @@ public class MoneyDemo {
         Currency.setReferenceCurrency(EUR);
         //EUR.setExchangeRate(1.4); // 1.0 € = 1.4 $
         USD.setExchangeRate(0.75d);
-        GBP.setExchangeRate(2); // 1.0 £ = 2.0 $
+        GBP.setExchangeRate(1.2); // 1.0 £ = 1.2 €
         INR.setExchangeRate(0.022); // 1.0Rp = ~0.022 $
         
         //java.util.Currency utilCurr = java.util.Currency.getInstance("USD");
@@ -70,7 +70,7 @@ public class MoneyDemo {
         Amount<?> gazPrice          = Amount.valueOf(1.2, EUR.divide(LITRE)); // 1.2 €/L
         Amount<Length> tripDistance = Amount.valueOf(400, KILO(METRE)); // 400 km
         Amount<?>  tripCost     = tripDistance.divide(carMileage).times(gazPrice);
-        Amount<Money> tripCostUSD = tripCost.to(USD);
+        final Amount<Money> tripCostUSD = tripCost.to(USD);
         Amount<Money> tripCostEUR = tripCost.to(EUR);
         
 		// Display trip.
