@@ -12,10 +12,15 @@ import org.unitsofmeasurement.unit.Unit;
  * @version 1.1
  */
 @SuppressWarnings("hiding")
-public class StringMeasurement<Q extends Quantity<Q>, String> implements
+public final class StringMeasurement<Q extends Quantity<Q>, String> implements
 		Measurement<Q, String> {
 	private String v;
 	private Unit<Q> u;
+
+	public StringMeasurement(String value, Unit<Q> unit) {
+		this.v = value;
+		this.u = unit;
+	}
 
 	public Measurement<Q, String> add(Measurement<Q, String> that) {
 		// TODO Auto-generated method stub
