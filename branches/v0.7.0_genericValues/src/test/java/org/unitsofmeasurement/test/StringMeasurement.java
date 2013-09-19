@@ -9,9 +9,10 @@ import org.unitsofmeasurement.unit.Unit;
 
 /**
  * @author Werner Keil
- * @version 1.0
+ * @version 1.1
  */
-public class StringMeasurement<Q extends Quantity<Q>> implements
+@SuppressWarnings("hiding")
+public class StringMeasurement<Q extends Quantity<Q>, String> implements
 		Measurement<Q, String> {
 	private String v;
 	private Unit<Q> u;

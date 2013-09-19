@@ -20,9 +20,9 @@ import org.unitsofmeasurement.unit.UnitFormat;
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @see <a href="http://aurora.regenstrief.org/~ucum/ucum.html">UCUM Full
  *      Specification</a>
- * @version 1.1
+ * @version 1.2, $Date$
  */
-public interface UnitFormatService<V> {
+public interface UnitFormatService {
 
     /**
      * Returns the default <a href="http://www.unitsofmeasure.org/">UCUM</a>

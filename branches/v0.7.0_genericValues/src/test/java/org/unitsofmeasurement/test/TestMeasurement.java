@@ -3,17 +3,15 @@
  */
 package org.unitsofmeasurement.test;
 
-import java.math.BigDecimal;
-
 import org.unitsofmeasurement.Measurement;
 import org.unitsofmeasurement.quantity.Quantity;
 import org.unitsofmeasurement.unit.Unit;
 
 /**
  * @author Werner Keil
- * 
+ * @version 1.1
  */
-public class TestMeasurement<Q extends Quantity<Q>> implements
+public class TestMeasurement<Q extends Quantity<Q>, BigDecimal> implements
 		Measurement<Q, BigDecimal> {
 
 	@Override

@@ -22,10 +22,10 @@ import org.unitsofmeasurement.unit.SystemOfUnits;
  * 
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.3 ($Revision$), $Date: 2010-09-28 16:16:43 +0200 (Di, 28 Sep
- *          2010) $
+ * @version 1.3.1 ($Revision$), $Date: 2010-09-28 16:16:43 +0200 (Di, 28
+ *          Sep 2010) $
  */
-public interface SystemOfUnitsService<V> {
+public interface SystemOfUnitsService {
 
 	/**
 	 * Returns the default <a
