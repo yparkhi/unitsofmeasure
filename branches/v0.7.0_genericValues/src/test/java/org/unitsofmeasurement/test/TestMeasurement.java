@@ -71,12 +71,6 @@ public final class TestMeasurement<Q extends Quantity<Q>, Number> implements
 	}
 
 	@Override
-	public Measurement<? extends Measurement<Q, BigDecimal>, BigDecimal> inverse() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public Measurement<Q, BigDecimal> to(Unit<Q> unit) {
 		// TODO Auto-generated method stub
 		return null;
@@ -92,6 +86,12 @@ public final class TestMeasurement<Q extends Quantity<Q>, Number> implements
 	public long longValue(Unit<Q> unit) {
 		// TODO Auto-generated method stub
 		return 0;
+	}
+
+	@Override
+	public Measurement<? extends Measurement<Q, BigDecimal>, BigDecimal> inverse() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
