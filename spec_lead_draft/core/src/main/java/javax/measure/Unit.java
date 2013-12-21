@@ -13,6 +13,7 @@ import javax.measure.exception.IncommensurableException;
 import javax.measure.exception.UnconvertibleException;
 import javax.measure.function.UnitConverter;
 import javax.measure.function.UnitFormat;
+import javax.measure.function.UnitTransformer;
 
 
 /**
@@ -41,12 +42,11 @@ import javax.measure.function.UnitFormat;
  * @author <a href="mailto:steve@unidata.ucar.edu">Steve Emmerson</a>
  * @author <a href="mailto:desruisseaux@users.sourceforge.net">Martin Desruisseaux</a>
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.1.1
+ * @version 1.2
  *
  * @see <a href="http://en.wikipedia.org/wiki/Units_of_measurement">Wikipedia: Units of measurement</a>
- * @since 0.6.0
  */
-public interface Unit<Q extends Quantity<Q>> {
+public interface Unit<Q extends Quantity<Q>> extends UnitTransformer<Q> {
 
     /*******************/
     /** Units Queries **/
