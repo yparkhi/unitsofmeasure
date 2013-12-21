@@ -1,0 +1,87 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>javax.measure</groupId>
+	<artifactId>unit-api-parent</artifactId>
+	<version>0.1-SNAPSHOT</version>
+	<name>Units of Measurement</name>
+	<description>Units of Measurement Standard</description>
+	<packaging>pom</packaging>
+	
+	<!-- ======================================================= -->
+    <!--     Build Settings                                      -->
+    <!-- ======================================================= -->
+    <properties>
+        <sourceEncoding>UTF-8</sourceEncoding> <!-- in Maven 3. -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>${sourceEncoding}</project.reporting.outputEncoding>
+        <project.build.javaVersion>1.7</project.build.javaVersion>
+		<jsr.version>0.1-SNAPSHOT</jsr.version>
+		<jdkVersion>1.7</jdkVersion>
+		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
+		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
+	</properties>
+	<modules>
+		<module>core</module>
+		<module>quantity</module>
+		<module>service</module>
+	</modules>
+	
+	<build>
+		<plugins>
+	        <!-- ======================================================= -->
+            <!--     Compilation                                         -->
+            <!-- ======================================================= -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>${project.build.javaVersion}</source>
+                    <target>${project.build.javaVersion}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+
+            <!-- ======================================================= -->
+            <!--     Resources                                           -->
+            <!-- ======================================================= -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.5</version>
+                <configuration>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+
+            <!-- ======================================================= -->
+            <!--     JAR packaging                                       -->
+            <!-- ======================================================= -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                  <archive>
+                    <manifest>
+                      <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                    </manifest>
+                    <manifestEntries>
+                      <Specification-Title>${project.name}</Specification-Title>
+                      <Specification-Version>${project.version}</Specification-Version>
+                      <Specification-Vendor>${project.organization.name}</Specification-Vendor>
+                      <Implementation-Vendor>Unit-API contributors</Implementation-Vendor>
+                      <Implementation-URL>http://www.unitsofmeasurement.org</Implementation-URL>
+                    </manifestEntries>
+                  </archive>
+                </configuration>
+            </plugin>
+
+    	</plugins>
+	</build>
+	<organization>
+		<name>Java Community Process</name>
+		<url>http://jcp.org</url>
+	</organization>
+</project>
