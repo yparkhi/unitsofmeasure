@@ -88,7 +88,7 @@ public interface Measurement<Q extends Quantity<Q>, V> extends UnitSupplier<Q> {
 	 */
 	Measurement<?, V> divide(Measurement<?, V> that);
 
-	Measurement<? extends Measurement<Q, V>, V> inverse();
+	Measurement<Q, V> inverse();
 
 	/**
 	 * Returns this measurement converted into another unit.
