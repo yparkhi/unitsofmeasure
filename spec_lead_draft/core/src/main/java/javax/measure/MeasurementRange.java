@@ -1,6 +1,5 @@
 /**
- * Unit-API - Units of Measurement API for Java (http://unitsofmeasurement.org)
- * Copyright (c) 2005-2013, Unit-API contributors and others
+ * Copyright (c) 2013 Werner Keil and others.
  * All rights reserved.
  *
  * See LICENSE.txt for details.
@@ -8,16 +7,19 @@
 package javax.measure;
 
 /**
- * A Range is a pair of <code>T</code> values that represent a range of values.<p>
+ * A Measurement Range is a pair of <code>T</code> values that represent a range of values.<p>
  * Range limits MUST be presented in the same scale and have the same unit as measured data values. The MeasurementRange MUST be immutable.
  * 
  * @param <T>
  *            The value of the measurement range.
  * 
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 0.3 ($Revision$)
+ * @version 0.5 ($Revision$)
+ * @see <a href="http://www.botts-inc.com/SensorML_1.0.1/schemaBrowser/SensorML_QuantityRange.html"> SensorML:
+ *      QuantityRange</a>
  */
 public class MeasurementRange<T> {
+	// TODO do we allow null for min and max to represent infinity?
     private final T min;
     private final T max;
     private T res;
@@ -98,6 +100,10 @@ public class MeasurementRange<T> {
         return res;
     }
 
+	/*
+	 * (non-Javadoc)
+	 * @see java.lang.Object#equals()
+	 */
     @Override
     public boolean equals(Object object) {
         if(object instanceof MeasurementRange<?>)  {
@@ -111,11 +117,19 @@ public class MeasurementRange<T> {
         return false;
     }
 
+	/*
+	 * (non-Javadoc)
+	 * @see java.lang.Object#hashCode()
+	 */
     @Override
     public int hashCode() {
         return min.hashCode() + max.hashCode() + (res!=null ? res.hashCode() : 0);
     }
 
+	/*
+	 * (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder()

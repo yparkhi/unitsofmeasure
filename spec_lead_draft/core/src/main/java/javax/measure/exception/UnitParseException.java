@@ -1,6 +1,5 @@
 /**
- * Unit-API - Units of Measurement API for Java (http://unitsofmeasurement.org)
- * Copyright (c) 2005-2013, Unit-API contributors and others
+ * Copyright (c) 2013 Werner Keil and others.
  * All rights reserved.
  *
  * See LICENSE.txt for details.
