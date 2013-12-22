@@ -1,6 +1,6 @@
 /**
  * Unit-API - Units of Measurement API for Java (http://unitsofmeasurement.org)
- * Copyright (c) 2005-2010, Unit-API contributors, JScience and others
+ * Copyright (c) 2005-2013, Unit-API contributors and others
  * All rights reserved.
  *
  * See LICENSE.txt for details.
@@ -19,9 +19,8 @@ import javax.measure.Unit;
  *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.2
+ * @version 1.3
  *
- * @since 0.6.0
  */
 public class UnconvertibleException extends RuntimeException {
     /**

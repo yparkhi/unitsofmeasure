@@ -1,6 +1,6 @@
 /**
  * Unit-API - Units of Measurement API for Java (http://unitsofmeasurement.org)
- * Copyright (c) 2005-2011, Unit-API contributors, JScience and others
+ * Copyright (c) 2005-2013, Unit-API contributors and others
  * All rights reserved.
  *
  * See LICENSE.txt for details.
@@ -16,10 +16,9 @@ package javax.measure.exception;
  *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.3
+ * @version 1.4
  *
  * @see <a href="http://en.wikipedia.org/wiki/Unit_commensurability#Commensurability">Wikipedia: Unit Commensurability</a>
- * @since 0.6.0
  */
 public class IncommensurableException extends Exception {
     /**
@@ -41,7 +40,6 @@ public class IncommensurableException extends Exception {
      *
      * @param cause the cause of this exception, or {@code null} if none.
      *
-     * @since 0.6.2
      */
     public IncommensurableException(final Throwable cause) {
         super(cause);
@@ -53,7 +51,6 @@ public class IncommensurableException extends Exception {
      * @param message the detail message, or {@code null} if none.
      * @param cause the cause of this exception, or {@code null} if none.
      *
-     * @since 0.6.2
      */
     public IncommensurableException(final String message, final Throwable cause) {
         super(message, cause);
