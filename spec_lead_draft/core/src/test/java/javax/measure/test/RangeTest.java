@@ -43,7 +43,7 @@ public class RangeTest {
 
 	@Test
 	public void testToString() {
-		assertEquals("", range.toString());
+		assertEquals("min= 1.0 TEST, max= 10.0 TEST, res= 2.0 TEST", range.toString());
 	}
 
 }

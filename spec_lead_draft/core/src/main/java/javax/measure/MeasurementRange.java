@@ -15,7 +15,7 @@ package javax.measure;
  *            The value of the measurement range.
  * 
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 0.2
+ * @version 0.3 ($Revision$)
  */
 public class MeasurementRange<T> {
     private final T min;
