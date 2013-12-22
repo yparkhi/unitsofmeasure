@@ -1,6 +1,6 @@
 /**
  * Unit-API - Units of Measurement API for Java (http://unitsofmeasurement.org)
- * Copyright (c) 2005-2012, Unit-API contributors, JScience and others
+ * Copyright (c) 2005-2013, Unit-API contributors and others
  * All rights reserved.
  *
  * See LICENSE.txt for details.
@@ -32,7 +32,7 @@ import javax.measure.function.UnitSupplier;
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @see <a href="http://en.wikipedia.org/wiki/Units_of_measurement"> Wikipedia:
  *      Units of measurement</a>
- * @version 1.8 ($Revision: 238 $), 2013-01-27
+ * @version 1.9 ($Revision$), 2013-12-22
  */
 public interface Measurement<Q extends Quantity<Q>, V> extends UnitSupplier<Q> {
 
@@ -41,6 +41,7 @@ public interface Measurement<Q extends Quantity<Q>, V> extends UnitSupplier<Q> {
 	 * 
 	 * @return the value of this measurement (can not be {@code null}).
 	 */
+	// TODO why shouldn't it be null?
 	V getValue();
 
 	/**

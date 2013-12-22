@@ -81,6 +81,11 @@ public final class TestMeasurement<Q extends Quantity<Q>, Number> implements
 		return null;
 	}
 
+	@Override
+	public String toString() {
+		return val + " " + unit;
+	}
+
 
 //	@Override
 //	public double doubleValue(Unit<Q> unit) {
@@ -93,5 +98,7 @@ public final class TestMeasurement<Q extends Quantity<Q>, Number> implements
 //		// TODO Auto-generated method stub
 //		return 0;
 //	}
+	
+	
 
 }
