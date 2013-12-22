@@ -1,5 +1,8 @@
 /**
- * 
+ * Copyright (c) 2013 Werner Keil and others.
+ * All rights reserved.
+ *
+ * See LICENSE.txt for details.
  */
 package javax.measure.test;
 
@@ -13,7 +16,7 @@ import javax.measure.Unit;
  * @version 1.1
  */
 @SuppressWarnings("hiding")
-public final class TestMeasurement<Q extends Quantity<Q>, Number> implements
+final class TestMeasurement<Q extends Quantity<Q>, Number> implements
 		Measurement<Q, Double> {
 
 	private final Double val;

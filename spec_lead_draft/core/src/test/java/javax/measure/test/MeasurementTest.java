@@ -1,13 +1,17 @@
 package javax.measure.test;
 
 import static org.junit.Assert.*;
-import static javax.measure.test.TestUnit.*;
+import static javax.measure.test.TestUnit.TEST;
 
 import javax.measure.Measurement;
 
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * @author Werner Keil
+ *
+ */
 public class MeasurementTest {
 	
 	private Measurement<?, Double> sut;

@@ -3,11 +3,15 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>javax.measure</groupId>
 	<artifactId>unit-api-parent</artifactId>
-	<version>0.1-SNAPSHOT</version>
+	<version>0.2-SNAPSHOT</version>
 	<name>Units of Measurement</name>
 	<description>Units of Measurement Standard</description>
 	<packaging>pom</packaging>
-
+	<organization>
+		<name>Java Community Process</name>
+		<url>http://jcp.org</url>
+	</organization>
+	
 	<!-- ======================================================= -->
 	<!-- Build Settings -->
 	<!-- ======================================================= -->
@@ -16,11 +20,15 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>${sourceEncoding}</project.reporting.outputEncoding>
 		<project.build.javaVersion>1.7</project.build.javaVersion>
-		<jsr.version>0.1-SNAPSHOT</jsr.version>
+		<jsr.version>0.2-SNAPSHOT</jsr.version>
 		<jdkVersion>1.7</jdkVersion>
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
 	</properties>
+	
+	<!-- ======================================================= -->
+	<!-- Modules -->
+	<!-- ======================================================= -->
 	<modules>
 		<module>core</module>
 		<module>quantity</module>
@@ -89,8 +97,4 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-	<organization>
-		<name>Java Community Process</name>
-		<url>http://jcp.org</url>
-	</organization>
 </project>

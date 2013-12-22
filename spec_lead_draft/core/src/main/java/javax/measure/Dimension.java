@@ -23,7 +23,6 @@ import java.util.Map;
  * @version 1.2
  *
  * @see <a href="http://en.wikipedia.org/wiki/Dimensional_analysis">Wikipedia: Dimensional Analysis</a>
- * @since 0.6.0
  */
 public interface Dimension {
     /**

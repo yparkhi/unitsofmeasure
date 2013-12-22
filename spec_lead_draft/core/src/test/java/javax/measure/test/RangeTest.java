@@ -1,3 +1,9 @@
+/**
+ * Copyright (c) 2013 Werner Keil and others.
+ * All rights reserved.
+ *
+ * See LICENSE.txt for details.
+ */
 package javax.measure.test;
 
 import static javax.measure.test.TestUnit.TEST;
