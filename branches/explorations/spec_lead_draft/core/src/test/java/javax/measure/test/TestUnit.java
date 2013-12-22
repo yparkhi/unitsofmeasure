@@ -1,5 +1,8 @@
 /**
- * 
+ * Copyright (c) 2013 Werner Keil and others.
+ * All rights reserved.
+ *
+ * See LICENSE.txt for details.
  */
 package javax.measure.test;
 
@@ -12,27 +15,35 @@ import javax.measure.exception.UnconvertibleException;
 import javax.measure.function.UnitConverter;
 
 /**
- * @author Werner
+ * @author Werner Keil
  *
  */
-public enum TestUnit implements Unit {
-	TEST;
+@SuppressWarnings("rawtypes")
+enum TestUnit implements Unit {
+	TEST("t", 1);
 
+    private final String symbol;
+    @SuppressWarnings("unused")
+	private final double factor;
+
+    private TestUnit(String symbol, double factor) {
+    	this.symbol  = symbol;
+    	this.factor  = factor;
+    }
+    
 	@Override
 	public String getSymbol() {
-		return name().substring(0, 1);
+		return symbol;
 	}
 
 	@Override
 	public Dimension getDimension() {
-		// TODO Auto-generated method stub
-		return null;
+		return TestDimension.getInstance();
 	}
 
 	@Override
 	public Unit getSystemUnit() {
-		// TODO Auto-generated method stub
-		return null;
+		return this;
 	}
 
 	@Override
@@ -43,8 +54,7 @@ public enum TestUnit implements Unit {
 
 	@Override
 	public boolean isCompatible(Unit that) {
-		// TODO Auto-generated method stub
-		return false;
+		return (this.equals(that));
 	}
 
 	@Override
@@ -69,8 +79,7 @@ public enum TestUnit implements Unit {
 
 	@Override
 	public Unit alternate(String symbol) {
-		// TODO Auto-generated method stub
-		return null;
+		return this;
 	}
 
 	@Override
@@ -81,50 +90,48 @@ public enum TestUnit implements Unit {
 
 	@Override
 	public Unit add(double offset) {
-		// TODO Auto-generated method stub
-		return null;
+		return this;
 	}
 
 	@Override
 	public Unit multiply(double factor) {
-		// TODO Auto-generated method stub
-		return null;
+		return this;
 	}
 
 	@Override
 	public Unit multiply(Unit that) {
-		// TODO Auto-generated method stub
-		return null;
+    	if (!(that instanceof TestUnit)) {
+    		throw new UnconvertibleException("Incompatible unit");
+    	}
+    	return this;
 	}
 
 	@Override
 	public Unit inverse() {
-		// TODO Auto-generated method stub
-		return null;
+		return this;
 	}
 
 	@Override
 	public Unit divide(double divisor) {
-		// TODO Auto-generated method stub
-		return null;
+		return this;
 	}
 
 	@Override
 	public Unit divide(Unit that) {
-		// TODO Auto-generated method stub
-		return null;
+    	if (!(that instanceof TestUnit)) {
+    		throw new UnconvertibleException("Incompatible unit");
+    	}
+    	return this;
 	}
 
 	@Override
 	public Unit root(int n) {
-		// TODO Auto-generated method stub
-		return null;
+		return this;
 	}
 
 	@Override
 	public Unit pow(int n) {
-		// TODO Auto-generated method stub
-		return null;
+		return this;
 	}
 
 }
