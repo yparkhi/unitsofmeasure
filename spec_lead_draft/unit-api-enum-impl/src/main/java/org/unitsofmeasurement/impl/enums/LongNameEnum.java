@@ -1,4 +1,4 @@
-package org.unitsofmeasurement.impl;
+package org.unitsofmeasurement.impl.enums;
 
 /**
  * This interface is used to provide a <code>longName()</code> method to enums.

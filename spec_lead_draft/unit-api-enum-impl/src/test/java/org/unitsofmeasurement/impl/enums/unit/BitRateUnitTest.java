@@ -1,7 +1,9 @@
-package org.unitsofmeasurement.impl.unit;
+package org.unitsofmeasurement.impl.enums.unit;
 
 import org.hamcrest.Matchers;
 import org.junit.Test;
+import org.unitsofmeasurement.impl.enums.unit.BitRateUnit;
+
 import static org.junit.Assert.assertThat;
 
 /**

@@ -1,7 +1,7 @@
-package org.unitsofmeasurement.impl.quantity;
+package org.unitsofmeasurement.impl.enums.quantity;
 
-import org.unitsofmeasurement.impl.unit.SimpleFormat;
-import org.unitsofmeasurement.impl.unit.TimeUnit;
+import org.unitsofmeasurement.impl.enums.unit.SimpleFormat;
+import org.unitsofmeasurement.impl.enums.unit.TimeUnit;
 
 import java.math.BigDecimal;
 

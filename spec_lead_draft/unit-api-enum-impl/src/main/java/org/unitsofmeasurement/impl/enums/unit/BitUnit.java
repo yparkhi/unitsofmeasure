@@ -1,13 +1,7 @@
 /**
  *
  */
-package org.unitsofmeasurement.impl.unit;
-
-import static org.unitsofmeasurement.impl.unit.QuantityFactory.BYTE_FACTOR;
-import static org.unitsofmeasurement.impl.unit.SimpleFormat.*;
-
-import org.unitsofmeasurement.impl.LongNameEnum;
-import org.unitsofmeasurement.impl.Multiplier;
+package org.unitsofmeasurement.impl.enums.unit;
 
 
 
@@ -16,6 +10,14 @@ import org.unitsofmeasurement.impl.Multiplier;
 
 
 
+
+
+
+import static org.unitsofmeasurement.impl.enums.unit.QuantityFactory.BYTE_FACTOR;
+import static org.unitsofmeasurement.impl.enums.unit.SimpleFormat.*;
+
+import org.unitsofmeasurement.impl.enums.LongNameEnum;
+import org.unitsofmeasurement.impl.util.Multiplier;
 
 import java.util.HashMap;
 import java.util.Map;

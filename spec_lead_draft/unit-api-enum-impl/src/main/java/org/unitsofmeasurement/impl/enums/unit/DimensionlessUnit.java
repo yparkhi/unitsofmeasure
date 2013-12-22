@@ -1,6 +1,9 @@
-package org.unitsofmeasurement.impl.unit;
+/**
+ *
+ */
+package org.unitsofmeasurement.impl.enums.unit;
 
-import org.unitsofmeasurement.impl.Multiplier;
+import org.unitsofmeasurement.impl.util.Multiplier;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -11,23 +14,20 @@ import javax.measure.Unit;
 import javax.measure.exception.IncommensurableException;
 import javax.measure.exception.UnconvertibleException;
 import javax.measure.function.UnitConverter;
-import javax.measure.quantity.Time;
+import javax.measure.quantity.Dimensionless;
 
 /**
  * @author Werner Keil
- * @version 1.0 ($Revision: 133 $), $Date: 2010-10-29 17:17:07 +0100 (Fr, 29 Okt 2010) $
+ * @version 1.0 ($Revision: 1 $), $Date: 2011-07-16 17:07:12 +0530 (Sat, 16 Jul 2011) $
  */
-public enum TimeUnit implements Unit<Time>, Multiplier {
-
-    s("s", 1.0), // reference Unit
-	m("m", 60),
-    h("h", 60 * 60);
+public enum DimensionlessUnit implements Unit<Dimensionless>, Multiplier {
+    ONE("m", 1.0); // reference Unit
 
     private final String description;
     private final double multFactor;
 
-    private TimeUnit(String d, double multF) {
-        this.description = d;
+    private DimensionlessUnit(String name, double multF) {
+        this.description = name;
         this.multFactor = multF;
     }
 
@@ -40,28 +40,22 @@ public enum TimeUnit implements Unit<Time>, Multiplier {
     }
 
     @Override
-	public Unit<Time> getSystemUnit() {
-		return m;
+	public Unit<Dimensionless> getSystemUnit() {
+		return ONE;
     }
 
     @Override
     public Map<? extends Unit<?>, Integer> getProductUnits() {
-        Map<Unit<Time>, Integer> prodUnits = new HashMap<Unit<Time>, Integer>();
-        prodUnits.put(h, Integer.valueOf(2));
+        Map<Unit<Dimensionless>, Integer> prodUnits = new HashMap<Unit<Dimensionless>, Integer>();
+        prodUnits.put(ONE, Integer.valueOf(1));
         return prodUnits;
     }
 
-    public static TimeUnit getBySymbol(String symbol) {
-        if (h.name().equals(symbol)) {
-            return h;
-        }
-        if (m.name().equals(symbol)) {
-            return m;
-        }
-        return s;
+    public static DimensionlessUnit getByName(String symbol) {
+        return ONE;
     }
 
-    public UnitConverter getConverterTo(Unit<Time> that)
+    public UnitConverter getConverterTo(Unit<Dimensionless> that)
             throws UnconvertibleException {
         // currently unused
         return null;
@@ -74,8 +68,8 @@ public enum TimeUnit implements Unit<Time>, Multiplier {
     }
 
     @Override
-    public Unit<Time> alternate(String s) {
-        return this;
+    public Unit<Dimensionless> alternate(String s) {
+        return null;  //To change body of implemented methods use File | Settings | File TemplateBuilder.
     }
 
     public Dimension getDimension() {
@@ -87,7 +81,7 @@ public enum TimeUnit implements Unit<Time>, Multiplier {
     }
 
     @Override
-    public Unit<Time> divide(double v) {
+    public Unit<Dimensionless> divide(double v) {
         return null;  //To change body of implemented methods use File | Settings | File TemplateBuilder.
     }
 
@@ -97,7 +91,7 @@ public enum TimeUnit implements Unit<Time>, Multiplier {
     }
 
     public boolean isCompatible(Unit<?> that) {
-        if (that instanceof TimeUnit) return true;
+        if (that instanceof DimensionlessUnit) return true;
         return false;
     }
 
@@ -111,7 +105,7 @@ public enum TimeUnit implements Unit<Time>, Multiplier {
                + " is not of parameterized type " + tClass); //$NON-NLS-1$
     }
 
-    public Unit<Time> multiply(double factor) {
+    public Unit<Dimensionless> multiply(double factor) {
         return this;
     }
 
@@ -127,12 +121,12 @@ public enum TimeUnit implements Unit<Time>, Multiplier {
         return this;
     }
 
-    public Unit<Time> transform(UnitConverter operation) {
+    public Unit<Dimensionless> transform(UnitConverter operation) {
         return this;
     }
 
     @Override
-    public Unit<Time> add(double v) {
+    public Unit<Dimensionless> add(double v) {
         return this;
     }
 }
