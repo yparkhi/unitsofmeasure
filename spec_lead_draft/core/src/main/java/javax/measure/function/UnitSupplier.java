@@ -10,15 +10,21 @@ import javax.measure.Quantity;
 import javax.measure.Unit;
 
 /**
- * This interface returns a {@link Unit}
+ * Represents a supplier of {@link Unit}-valued results.
+ * 
+ * <p>There is no requirement that a distinct result be returned each
+ * time the supplier is invoked.
+ * 
+ * <p>This is a <a href="http://download.java.net/jdk8/docs/api/java/util/function/package-summary.html">functional interface</a>
+ * whose functional method is {@link #getUnit()}.
  * 
  * @author Werner Keil
- * @version 1.2 ($Revision: 237 $), 2013-01-27
+ * @version 1.3 ($Revision$), 2013-12-22
  * @param <Q>
  *            The type of the quantity.
  * @see Unit
  */
-//@FunctionalInterface
+// equivalent to @FunctionalInterface
 public interface UnitSupplier<Q extends Quantity<Q>> {
 	/**
 	 * Returns the unit of this UnitProvider {@linkplain #getValue() value}.
