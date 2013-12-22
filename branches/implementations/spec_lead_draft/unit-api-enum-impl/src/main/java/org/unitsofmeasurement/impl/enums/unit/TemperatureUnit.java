@@ -1,6 +1,6 @@
-package org.unitsofmeasurement.impl.unit;
+package org.unitsofmeasurement.impl.enums.unit;
 
-import org.unitsofmeasurement.impl.Multiplier;
+import org.unitsofmeasurement.impl.util.Multiplier;
 
 import java.math.BigDecimal;
 import java.util.HashMap;

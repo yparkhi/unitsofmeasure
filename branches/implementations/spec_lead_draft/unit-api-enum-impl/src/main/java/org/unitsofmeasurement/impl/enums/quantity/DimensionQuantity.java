@@ -1,11 +1,11 @@
 /**
  *
  */
-package org.unitsofmeasurement.impl.quantity;
+package org.unitsofmeasurement.impl.enums.quantity;
 
-import org.unitsofmeasurement.impl.Multiplier;
-import org.unitsofmeasurement.impl.Nameable;
-import org.unitsofmeasurement.impl.unit.SimpleFormat;
+import org.unitsofmeasurement.impl.enums.unit.SimpleFormat;
+import org.unitsofmeasurement.impl.util.Multiplier;
+import org.unitsofmeasurement.impl.util.Nameable;
 
 import java.io.Serializable;
 import java.math.BigDecimal;

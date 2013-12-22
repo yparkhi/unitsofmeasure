@@ -1,4 +1,4 @@
-package org.unitsofmeasurement.impl;
+package org.unitsofmeasurement.impl.util;
 
 /**
  * @author Werner Keil

@@ -112,7 +112,7 @@ Lightweight approach based on Java enums.</description>
 				<extensions>true</extensions>
 				<configuration>
 					<instructions>
-						<Export-Package>org.unitsofmeasurement.*</Export-Package>
+						<Export-Package>org.unitsofmeasurement.impl.enums.*</Export-Package>
 						<Private-Package>!*</Private-Package>
 					</instructions>
 				</configuration>

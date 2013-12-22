@@ -1,9 +1,6 @@
-/**
- *
- */
-package org.unitsofmeasurement.impl.unit;
+package org.unitsofmeasurement.impl.enums.unit;
 
-import org.unitsofmeasurement.impl.Multiplier;
+import org.unitsofmeasurement.impl.util.Multiplier;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -14,20 +11,23 @@ import javax.measure.Unit;
 import javax.measure.exception.IncommensurableException;
 import javax.measure.exception.UnconvertibleException;
 import javax.measure.function.UnitConverter;
-import javax.measure.quantity.Dimensionless;
+import javax.measure.quantity.Time;
 
 /**
  * @author Werner Keil
- * @version 1.0 ($Revision: 1 $), $Date: 2011-07-16 17:07:12 +0530 (Sat, 16 Jul 2011) $
+ * @version 1.0 ($Revision: 133 $), $Date: 2010-10-29 17:17:07 +0100 (Fr, 29 Okt 2010) $
  */
-public enum DimensionlessUnit implements Unit<Dimensionless>, Multiplier {
-    ONE("m", 1.0); // reference Unit
+public enum TimeUnit implements Unit<Time>, Multiplier {
+
+    s("s", 1.0), // reference Unit
+	m("m", 60),
+    h("h", 60 * 60);
 
     private final String description;
     private final double multFactor;
 
-    private DimensionlessUnit(String name, double multF) {
-        this.description = name;
+    private TimeUnit(String d, double multF) {
+        this.description = d;
         this.multFactor = multF;
     }
 
@@ -40,22 +40,28 @@ public enum DimensionlessUnit implements Unit<Dimensionless>, Multiplier {
     }
 
     @Override
-	public Unit<Dimensionless> getSystemUnit() {
-		return ONE;
+	public Unit<Time> getSystemUnit() {
+		return m;
     }
 
     @Override
     public Map<? extends Unit<?>, Integer> getProductUnits() {
-        Map<Unit<Dimensionless>, Integer> prodUnits = new HashMap<Unit<Dimensionless>, Integer>();
-        prodUnits.put(ONE, Integer.valueOf(1));
+        Map<Unit<Time>, Integer> prodUnits = new HashMap<Unit<Time>, Integer>();
+        prodUnits.put(h, Integer.valueOf(2));
         return prodUnits;
     }
 
-    public static DimensionlessUnit getByName(String symbol) {
-        return ONE;
+    public static TimeUnit getBySymbol(String symbol) {
+        if (h.name().equals(symbol)) {
+            return h;
+        }
+        if (m.name().equals(symbol)) {
+            return m;
+        }
+        return s;
     }
 
-    public UnitConverter getConverterTo(Unit<Dimensionless> that)
+    public UnitConverter getConverterTo(Unit<Time> that)
             throws UnconvertibleException {
         // currently unused
         return null;
@@ -68,8 +74,8 @@ public enum DimensionlessUnit implements Unit<Dimensionless>, Multiplier {
     }
 
     @Override
-    public Unit<Dimensionless> alternate(String s) {
-        return null;  //To change body of implemented methods use File | Settings | File TemplateBuilder.
+    public Unit<Time> alternate(String s) {
+        return this;
     }
 
     public Dimension getDimension() {
@@ -81,7 +87,7 @@ public enum DimensionlessUnit implements Unit<Dimensionless>, Multiplier {
     }
 
     @Override
-    public Unit<Dimensionless> divide(double v) {
+    public Unit<Time> divide(double v) {
         return null;  //To change body of implemented methods use File | Settings | File TemplateBuilder.
     }
 
@@ -91,7 +97,7 @@ public enum DimensionlessUnit implements Unit<Dimensionless>, Multiplier {
     }
 
     public boolean isCompatible(Unit<?> that) {
-        if (that instanceof DimensionlessUnit) return true;
+        if (that instanceof TimeUnit) return true;
         return false;
     }
 
@@ -105,7 +111,7 @@ public enum DimensionlessUnit implements Unit<Dimensionless>, Multiplier {
                + " is not of parameterized type " + tClass); //$NON-NLS-1$
     }
 
-    public Unit<Dimensionless> multiply(double factor) {
+    public Unit<Time> multiply(double factor) {
         return this;
     }
 
@@ -121,12 +127,12 @@ public enum DimensionlessUnit implements Unit<Dimensionless>, Multiplier {
         return this;
     }
 
-    public Unit<Dimensionless> transform(UnitConverter operation) {
+    public Unit<Time> transform(UnitConverter operation) {
         return this;
     }
 
     @Override
-    public Unit<Dimensionless> add(double v) {
+    public Unit<Time> add(double v) {
         return this;
     }
 }

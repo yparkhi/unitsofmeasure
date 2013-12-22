@@ -1,4 +1,4 @@
-package org.unitsofmeasurement.impl.quantity;
+package org.unitsofmeasurement.impl.enums.quantity;
 
 
 import java.text.FieldPosition;

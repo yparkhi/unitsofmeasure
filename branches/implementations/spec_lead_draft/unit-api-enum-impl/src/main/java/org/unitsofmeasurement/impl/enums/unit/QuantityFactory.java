@@ -1,7 +1,7 @@
 /**
  *
  */
-package org.unitsofmeasurement.impl.unit;
+package org.unitsofmeasurement.impl.enums.unit;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -160,7 +160,7 @@ public abstract class QuantityFactory<Q extends Quantity<Q>> {
 
 	/**
 	 * The default factory implementation. This factory uses reflection for
-	 * providing a default implementation for every {@link org.unitsofmeasurement.impl.quantity.DimensionQuantity}
+	 * providing a default implementation for every {@link org.unitsofmeasurement.impl.enums.quantity.DimensionQuantity}
 	 * sub-types.
 	 * 
 	 * @param <Q>

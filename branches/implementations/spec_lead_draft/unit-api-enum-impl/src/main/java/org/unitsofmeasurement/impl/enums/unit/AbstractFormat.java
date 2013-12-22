@@ -1,7 +1,7 @@
 /**
  *
  */
-package org.unitsofmeasurement.impl.unit;
+package org.unitsofmeasurement.impl.enums.unit;
 
 import java.io.IOException;
 import java.text.FieldPosition;
