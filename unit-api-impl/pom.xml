@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.unitsofmeasurement</groupId>
 	<artifactId>unit-api-impl</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.1-SNAPSHOT</version>
 	<packaging>bundle</packaging>
 	<dependencies>
 		<dependency>
@@ -92,4 +92,5 @@
 		<url>http://code.google.com/p/unitsofmeasure/</url>
 	</organization>
 	<url>http://code.google.com/p/unitsofmeasure/</url>
+	<description>A lightweight implementation based on Java enums.</description>
 </project>
