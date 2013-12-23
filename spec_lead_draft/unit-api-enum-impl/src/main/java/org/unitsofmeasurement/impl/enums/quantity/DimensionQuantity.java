@@ -16,7 +16,7 @@ import javax.measure.Unit;
 
 /**
  * @author Werner Keil
- * @version 1.8 ($Revision: 19369 $), $Date: 2011-08-11 18:21:29 +0530 (Thu, 11 Aug 2011) $
+ * @version 1.8 ($Revision$), $Date$
  */
 public abstract class DimensionQuantity<Q extends Quantity<Q>> implements Quantity<Q>,Serializable {
 
