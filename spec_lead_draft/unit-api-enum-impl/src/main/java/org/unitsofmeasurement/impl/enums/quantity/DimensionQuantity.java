@@ -65,7 +65,7 @@ public abstract class DimensionQuantity<Q extends Quantity<Q>> implements Quanti
 
     public abstract String showInUnit(Unit<?> u, int precision, SimpleFormat.Show show);
 
-    protected String showInUnit(Unit<?> u, BigDecimal s, int precision, SimpleFormat.Show show, boolean withSpace) {
+    protected String showInUnit(Unit<?> u, Number s, int precision, SimpleFormat.Show show, boolean withSpace) {
         if (u == null) {
             throw new IllegalArgumentException("Null unit not allowed!");  //$NON-NLS-1$
         }

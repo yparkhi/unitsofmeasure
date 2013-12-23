@@ -1,5 +1,6 @@
 package org.unitsofmeasurement.impl.enums.unit;
 
+import org.unitsofmeasurement.impl.enums.quantity.QuantityFactory;
 import org.unitsofmeasurement.impl.util.Multiplier;
 
 import java.util.HashMap;
@@ -15,13 +16,13 @@ import javax.measure.quantity.Time;
 
 /**
  * @author Werner Keil
- * @version 1.0 ($Revision: 133 $), $Date: 2010-10-29 17:17:07 +0100 (Fr, 29 Okt 2010) $
+ * @version 1.1 ($Revision$), $Date$
  */
 public enum TimeUnit implements Unit<Time>, Multiplier {
 
-    s("s", 1.0), // reference Unit
-	m("m", 60),
-    h("h", 60 * 60);
+    SECOND("s", 1.0), // reference Unit
+	MINUTE("m", 60),
+    HOUR("h", 60 * 60);
 
     private final String description;
     private final double multFactor;
@@ -41,24 +42,24 @@ public enum TimeUnit implements Unit<Time>, Multiplier {
 
     @Override
 	public Unit<Time> getSystemUnit() {
-		return m;
+		return SECOND;
     }
 
     @Override
     public Map<? extends Unit<?>, Integer> getProductUnits() {
         Map<Unit<Time>, Integer> prodUnits = new HashMap<Unit<Time>, Integer>();
-        prodUnits.put(h, Integer.valueOf(2));
+        prodUnits.put(HOUR, Integer.valueOf(2));
         return prodUnits;
     }
 
     public static TimeUnit getBySymbol(String symbol) {
-        if (h.name().equals(symbol)) {
-            return h;
+        if (HOUR.name().equals(symbol)) {
+            return HOUR;
         }
-        if (m.name().equals(symbol)) {
-            return m;
+        if (MINUTE.name().equals(symbol)) {
+            return MINUTE;
         }
-        return s;
+        return SECOND;
     }
 
     public UnitConverter getConverterTo(Unit<Time> that)

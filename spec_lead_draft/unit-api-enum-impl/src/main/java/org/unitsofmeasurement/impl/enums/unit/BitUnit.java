@@ -3,20 +3,9 @@
  */
 package org.unitsofmeasurement.impl.enums.unit;
 
-
-
-
-
-
-
-
-
-
-
-import static org.unitsofmeasurement.impl.enums.unit.QuantityFactory.BYTE_FACTOR;
 import static org.unitsofmeasurement.impl.enums.unit.SimpleFormat.*;
-
 import org.unitsofmeasurement.impl.enums.LongNameEnum;
+import org.unitsofmeasurement.impl.enums.quantity.QuantityFactory;
 import org.unitsofmeasurement.impl.util.Multiplier;
 
 import java.util.HashMap;
@@ -33,9 +22,10 @@ import javax.measure.quantity.Information;
 /**
  * Implements a measure of information. The metric system unit for this quantity is "bit".
  * @author Werner Keil
- * @version 1.5 ($Revision: 18019 $), $Date: 2011-07-23 18:25:49 +0530 (Sat, 23 Jul 2011) $
+ * @version 1.6 ($Revision$), $Date$
  */
 public enum BitUnit implements Unit<Information>, Multiplier, LongNameEnum<BitUnit> {
+	
     BIT(BIT_NAME, 1.0), // reference Unit
     Byte(BYTE_NAME, BYTE_FACTOR),
 	kb(KB_NAME, 1.0e3),

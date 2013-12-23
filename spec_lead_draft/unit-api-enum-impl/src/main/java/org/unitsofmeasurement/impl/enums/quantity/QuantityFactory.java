@@ -1,7 +1,7 @@
 /**
  *
  */
-package org.unitsofmeasurement.impl.enums.unit;
+package org.unitsofmeasurement.impl.enums.quantity;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -20,6 +20,13 @@ import javax.measure.quantity.InformationRate;
 import javax.measure.quantity.Length;
 import javax.measure.quantity.Temperature;
 import javax.measure.quantity.Time;
+
+import org.unitsofmeasurement.impl.enums.unit.BitRateUnit;
+import org.unitsofmeasurement.impl.enums.unit.BitUnit;
+import org.unitsofmeasurement.impl.enums.unit.DimensionlessUnit;
+import org.unitsofmeasurement.impl.enums.unit.DistanceUnit;
+import org.unitsofmeasurement.impl.enums.unit.TemperatureUnit;
+import org.unitsofmeasurement.impl.enums.unit.TimeUnit;
 
 
 /**
@@ -41,7 +48,7 @@ import javax.measure.quantity.Time;
  * TODO Introduce Interface (either that was QuantityFactory and this an *Impl or Abstract*, or e.g. QuantityProvider)
  */
 public abstract class QuantityFactory<Q extends Quantity<Q>> {
-    static final double BYTE_FACTOR = 8.0;
+    
 
 	/**
 	 * Holds the current instances.
@@ -196,7 +203,7 @@ public abstract class QuantityFactory<Q extends Quantity<Q>> {
 		static {
 			CLASS_TO_METRIC_UNIT.put(Dimensionless.class, DimensionlessUnit.ONE);
 			CLASS_TO_METRIC_UNIT.put(Length.class, DistanceUnit.METRE);
-			CLASS_TO_METRIC_UNIT.put(Time.class, TimeUnit.s);
+			CLASS_TO_METRIC_UNIT.put(Time.class, TimeUnit.SECOND);
 			CLASS_TO_METRIC_UNIT.put(Information.class, BitUnit.BIT);
             CLASS_TO_METRIC_UNIT.put(InformationRate.class, BitRateUnit.bps);
             CLASS_TO_METRIC_UNIT.put(Temperature.class, TemperatureUnit.KELVIN);
