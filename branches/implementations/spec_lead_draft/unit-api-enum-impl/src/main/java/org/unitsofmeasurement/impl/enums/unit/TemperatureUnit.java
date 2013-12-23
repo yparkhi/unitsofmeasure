@@ -1,5 +1,12 @@
+/**
+ * Copyright (c) 2013 Werner Keil and others.
+ * All rights reserved.
+ *
+ * See LICENSE.txt for details.
+ */
 package org.unitsofmeasurement.impl.enums.unit;
 
+import org.unitsofmeasurement.impl.enums.quantity.QuantityFactory;
 import org.unitsofmeasurement.impl.util.Multiplier;
 
 import java.math.BigDecimal;
@@ -16,7 +23,7 @@ import javax.measure.quantity.Temperature;
 
 /**
  * @author Werner Keil
- * @version 1.0 ($Revision: 1 $), $Date: 2010-10-29 17:17:07 +0100 (Fr, 29 Okt 2010) $
+ * @version 1.1 ($Revision$), $Date$
  */
 public enum TemperatureUnit implements Unit<Temperature>, Multiplier {
    /** Celsius, used by most of the world's population. */
@@ -38,10 +45,10 @@ public enum TemperatureUnit implements Unit<Temperature>, Multiplier {
     
     private final double multFactor;
     /** Freezing point of water for each temperature scale. */
-    private final BigDecimal freezingPoint;
+//    private final BigDecimal freezingPoint;
 
     /** Boiling point of water for each temperature scale. */
-    private final BigDecimal boilingPoint;
+//    private final BigDecimal boilingPoint;
 
     /** Name of person that this temperature scale is named for. */
     private final String namedFor;
@@ -72,8 +79,8 @@ public enum TemperatureUnit implements Unit<Temperature>, Multiplier {
        final String newSymbol,
        final String newNamedFor)
     {
-       this.freezingPoint = newFreezingPoint;
-       this.boilingPoint = newBoilingPoint;
+//       this.freezingPoint = newFreezingPoint;
+//       this.boilingPoint = newBoilingPoint;
        this.description = newSymbol;
        this.namedFor = newNamedFor;
        this.multFactor = 1;
