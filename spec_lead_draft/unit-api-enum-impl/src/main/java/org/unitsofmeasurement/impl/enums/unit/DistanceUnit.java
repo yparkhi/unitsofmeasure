@@ -20,7 +20,7 @@ import javax.measure.quantity.Length;
 
 /**
  * @author Werner Keil
- * @version 1.3 ($Revision: 17458 $), $Date: 2011-07-16 17:07:12 +0530 (Sat, 16 Jul 2011) $
+ * @version 1.3 ($Revision$), $Date$
  */
 public enum DistanceUnit implements Unit<Length>, Multiplier, LongNameEnum<DistanceUnit> {
     METRE("m", "m", 1.0), // reference Unit
