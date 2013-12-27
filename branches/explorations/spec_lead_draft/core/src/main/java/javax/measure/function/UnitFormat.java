@@ -9,7 +9,7 @@ package javax.measure.function;
 
 import java.io.IOException;
 import javax.measure.Unit;
-import javax.measure.exception.UnitParseException;
+import javax.measure.exception.ParserException;
 
 
 /**
@@ -54,8 +54,8 @@ public interface UnitFormat extends Parser<CharSequence, Unit<?>> {
      *
      * @param  csq the {@code CharSequence} to parse.
      * @return the unit parsed from the specified character sub-sequence.
-     * @throws UnitParseException if any problem occurs while parsing the
+     * @throws ParserException if any problem occurs while parsing the
      *         specified character sequence (e.g. illegal syntax).
      */
-    Unit<?> parse(CharSequence csq) throws UnitParseException;
+    Unit<?> parse(CharSequence csq) throws ParserException;
 }

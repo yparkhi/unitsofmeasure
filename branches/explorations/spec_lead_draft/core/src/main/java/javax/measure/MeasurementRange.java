@@ -14,7 +14,7 @@ package javax.measure;
  *            The value of the measurement range.
  * 
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 0.5 ($Revision$)
+ * @version 0.6 ($Revision$)
  * @see <a href="http://www.botts-inc.com/SensorML_1.0.1/schemaBrowser/SensorML_QuantityRange.html"> SensorML:
  *      QuantityRange</a>
  */
@@ -25,13 +25,13 @@ public class MeasurementRange<T> {
     private T res;
 
     /**
-     * Construct an instance of Range with a min and max value.
+     * Construct an instance of Range with a min, max and res value.
      *
      * @param min The minimum value for the measurement range.
      * @param max The maximum value for the measurement range.
      * @param res The  resolution of the measurement range.
      */
-    private MeasurementRange(T min, T max, T res) {
+    protected MeasurementRange(T min, T max, T res) {
     	this.min = min;
         this.max = max;
         this.res = res;
@@ -43,7 +43,7 @@ public class MeasurementRange<T> {
      * @param min The minimum value for the measurement range.
      * @param max The maximum value for the measurement range.
      */
-    private MeasurementRange(T min, T max) {
+    protected MeasurementRange(T min, T max) {
     	this.min = min;
         this.max = max;
     }
