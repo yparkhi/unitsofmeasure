@@ -23,7 +23,7 @@ import javax.measure.quantity.Temperature;
 
 /**
  * @author Werner Keil
- * @version 1.1 ($Revision$), $Date$
+ * @version 1.2 ($Revision$), $Date$
  */
 public enum TemperatureUnit implements Unit<Temperature>, Multiplier {
    /** Celsius, used by most of the world's population. */
@@ -36,9 +36,6 @@ public enum TemperatureUnit implements Unit<Temperature>, Multiplier {
 	KELVIN(new BigDecimal("273.15"), new BigDecimal("373.15"), "K", "William Thomson, 1st Baron Kelvin"),
 
 	RANKINE(new BigDecimal("491.67"), new BigDecimal("671.641"), '\u00B0' + "R", "William John Macquorn Rankine");
-//    s("s", 1.0), // reference Unit
-//	m("m", 60),
-//    h("h", 60 * 60);
 
     /** Units by which this temperature scale is expressed. */
     private final String description;
@@ -52,11 +49,6 @@ public enum TemperatureUnit implements Unit<Temperature>, Multiplier {
 
     /** Name of person that this temperature scale is named for. */
     private final String namedFor;
-    
-//    private TemperatureUnit(String d, double multF) {
-//        this.description = d;
-//        this.multFactor = multF;
-//    }
 
 //	private static final BigDecimal FIVE = new BigDecimal("5");
 //    private static final BigDecimal NINE = new BigDecimal("9");
@@ -94,10 +86,11 @@ public enum TemperatureUnit implements Unit<Temperature>, Multiplier {
         return multFactor;
     }
     
-    public String getDescriptiveName() {
+	@Override
+	public String getName() {
 		return namedFor;
 	}
-
+    
     @Override
 	public Unit<Temperature> getSystemUnit() {
 		return KELVIN;

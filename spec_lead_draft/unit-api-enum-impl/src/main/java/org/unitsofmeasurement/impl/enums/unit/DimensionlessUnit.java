@@ -19,7 +19,7 @@ import javax.measure.quantity.Dimensionless;
 
 /**
  * @author Werner Keil
- * @version 1.0 ($Revision: 1 $), $Date: 2011-07-16 17:07:12 +0530 (Sat, 16 Jul 2011) $
+ * @version 1.1 ($Revision: 1 $), $Date: 2013-12-25 $
  */
 public enum DimensionlessUnit implements Unit<Dimensionless>, Multiplier {
     ONE("m", 1.0); // reference Unit
@@ -73,6 +73,11 @@ public enum DimensionlessUnit implements Unit<Dimensionless>, Multiplier {
         return null;  //To change body of implemented methods use File | Settings | File TemplateBuilder.
     }
 
+	@Override
+	public String getName() {
+		return name();
+	}
+    
     public Dimension getDimension() {
         return SimpleDimension.INSTANCE;
     }

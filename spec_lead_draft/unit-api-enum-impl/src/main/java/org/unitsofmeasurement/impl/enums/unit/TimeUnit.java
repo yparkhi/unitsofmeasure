@@ -16,7 +16,7 @@ import javax.measure.quantity.Time;
 
 /**
  * @author Werner Keil
- * @version 1.1 ($Revision$), $Date$
+ * @version 1.2 ($Revision$), $Date$
  */
 public enum TimeUnit implements Unit<Time>, Multiplier {
 
@@ -24,18 +24,24 @@ public enum TimeUnit implements Unit<Time>, Multiplier {
 	MINUTE("m", 60),
     HOUR("h", 60 * 60);
 
-    private final String description;
+    private final String symbol;
     private final double multFactor;
 
-    private TimeUnit(String d, double multF) {
-        this.description = d;
+    private TimeUnit(String s, double multF) {
+        this.symbol = s;
         this.multFactor = multF;
     }
 
+    @Override
     public String getSymbol() {
-        return description;
+        return symbol;
     }
 
+	@Override
+	public String getName() {
+		return name();
+	}
+    
     public double getMultFactor() {
         return multFactor;
     }

@@ -23,7 +23,7 @@ public class QuantityFactoryTest {
 
 	@Test
 	public void testLength() {
-		Length l =  QuantityFactory.getInstance(Length.class).create(23.5, KILOMETRE); // 23.0 km
+		Length l =  QuantityFactory.getInstance(Length.class).apply(23.5, KILOMETRE); // 23.0 km
 		assertEquals(Double.valueOf(23.5d), l.getValue());
 		assertEquals(KILOMETRE, l.getUnit());
 		assertEquals("km", l.getUnit().getSymbol());
@@ -32,7 +32,7 @@ public class QuantityFactoryTest {
 	
 	@Test
 	public void testTime() {
-		Quantity<Time> t = QuantityFactory.getInstance(Time.class).create(40, MINUTE); // 40 min
+		Quantity<Time> t = QuantityFactory.getInstance(Time.class).apply(40, MINUTE); // 40 min
 		assertEquals(Integer.valueOf(40), t.getValue());
 		assertEquals(MINUTE, t.getUnit());
 		assertEquals("m", t.getUnit().getSymbol());
