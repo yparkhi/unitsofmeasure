@@ -20,7 +20,7 @@ import javax.measure.quantity.Length;
 
 /**
  * @author Werner Keil
- * @version 1.3 ($Revision$), $Date$
+ * @version 1.3.1 ($Revision$), $Date$
  */
 public enum DistanceUnit implements Unit<Length>, Multiplier, LongNameEnum<DistanceUnit> {
     METRE("m", "m", 1.0), // reference Unit
@@ -49,6 +49,11 @@ public enum DistanceUnit implements Unit<Length>, Multiplier, LongNameEnum<Dista
 		return METRE;
     }
 
+	@Override
+	public String getName() {
+		return name();
+	}
+    
     @Override
     public Map<? extends Unit<Length>, Integer> getProductUnits() {
         Map<Unit<Length>, Integer> prodUnits = new HashMap<Unit<Length>, Integer>();

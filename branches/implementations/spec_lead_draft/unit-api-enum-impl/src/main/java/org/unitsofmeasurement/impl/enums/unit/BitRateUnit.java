@@ -23,9 +23,7 @@ import javax.measure.quantity.InformationRate;
 /**
  * Implements the speed of data-transmission. The system unit for this quantity is "bit/s" (bit per second).
  * @author Werner Keil
- * Date: 4/13/11
- * Time: 7:10 PM
- * @version 1.7 ($Revision: 18019 $), $Date: 2011-07-23 18:25:49 +0530 (Sat, 23 Jul 2011) $
+ * @version 1.7.1 ($Revision: 18019 $), $Date: 2013-12-25 $
  */
 public enum BitRateUnit implements Unit<InformationRate>, Multiplier, LongNameEnum<BitRateUnit> {
 	bps("bps", BPS_NAME, 1.0), Kbps("Kbps", KBPS_NAME, 1.0e3), Mbps("Mbps", MBPS_NAME, 1.0e6),
@@ -44,6 +42,7 @@ public enum BitRateUnit implements Unit<InformationRate>, Multiplier, LongNameEn
         this.multFactor = multF;
     }
 
+    @Override
     public String getSymbol() {
         return symbol;
     }
@@ -57,6 +56,11 @@ public enum BitRateUnit implements Unit<InformationRate>, Multiplier, LongNameEn
 		return bps;
     }
 
+	@Override
+	public String getName() {
+		return name();
+	}
+	
     public static BitRateUnit getBySymbol(String symbol) {
         for (BitRateUnit b : values()) {
             if (b.getSymbol().equalsIgnoreCase(symbol)) return b;

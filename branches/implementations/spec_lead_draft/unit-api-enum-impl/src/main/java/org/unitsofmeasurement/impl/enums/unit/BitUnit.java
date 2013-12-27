@@ -4,6 +4,7 @@
 package org.unitsofmeasurement.impl.enums.unit;
 
 import static org.unitsofmeasurement.impl.enums.unit.SimpleFormat.*;
+
 import org.unitsofmeasurement.impl.enums.LongNameEnum;
 import org.unitsofmeasurement.impl.enums.quantity.QuantityFactory;
 import org.unitsofmeasurement.impl.util.Multiplier;
@@ -22,7 +23,7 @@ import javax.measure.quantity.Information;
 /**
  * Implements a measure of information. The metric system unit for this quantity is "bit".
  * @author Werner Keil
- * @version 1.6 ($Revision$), $Date$
+ * @version 1.6.1 ($Revision$), $Date$
  */
 public enum BitUnit implements Unit<Information>, Multiplier, LongNameEnum<BitUnit> {
 	
@@ -69,6 +70,11 @@ public enum BitUnit implements Unit<Information>, Multiplier, LongNameEnum<BitUn
 		return BIT;
     }
 
+	@Override
+	public String getName() {
+		return name();
+	}
+	
     public static BitUnit getByName(String symbol) {
         if (kb.name().equals(symbol)) {
             return kb;

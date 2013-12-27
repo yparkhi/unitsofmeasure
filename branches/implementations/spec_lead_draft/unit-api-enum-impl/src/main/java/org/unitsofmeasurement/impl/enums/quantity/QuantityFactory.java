@@ -1,5 +1,8 @@
 /**
+ * Copyright (c) 2013 Werner Keil and others.
+ * All rights reserved.
  *
+ * See LICENSE.txt for details.
  */
 package org.unitsofmeasurement.impl.enums.quantity;
 
@@ -9,6 +12,7 @@ import java.lang.reflect.Proxy;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.function.BiFunction;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -42,12 +46,10 @@ import org.unitsofmeasurement.impl.enums.unit.TimeUnit;
  *            The type of the quantity.
  * 
  * @author <a href="mailto:werner.keil@gmail.com">Werner Keil</a>
- * @version 1.1.2 ($Revision: 17458 $), $Date: 2011-07-16 17:07:12 +0530 (Sat, 16 Jul 2011) $
+ * @version 1.2 ($Revision: 17458 $), $Date: 2011-07-16 17:07:12 +0530 (Sat, 16 Jul 2011) $
  * 
- * TODO probably move this to "quantity" package
- * TODO Introduce Interface (either that was QuantityFactory and this an *Impl or Abstract*, or e.g. QuantityProvider)
  */
-public abstract class QuantityFactory<Q extends Quantity<Q>> {
+public abstract class QuantityFactory<Q extends Quantity<Q>> implements BiFunction<Number, Unit<Q>, Q> {
     
 
 	/**
@@ -155,7 +157,7 @@ public abstract class QuantityFactory<Q extends Quantity<Q>> {
 	 *            the unit
 	 * @return the corresponding quantity
 	 */
-	public abstract Q create(Number value, Unit<Q> unit);
+	public abstract Q apply(Number value, Unit<Q> unit);
 
 	/**
 	 * Returns the metric unit for quantities produced by this factory or
@@ -211,7 +213,7 @@ public abstract class QuantityFactory<Q extends Quantity<Q>> {
 
 		@Override
 		@SuppressWarnings("unchecked")
-		public Q create(final Number value, final Unit<Q> unit) {
+		public Q apply(final Number value, final Unit<Q> unit) {
 			return (Q) Proxy
 					.newProxyInstance(type.getClassLoader(),
 							new Class<?>[] { type }, new GenericHandler<Q>(
