@@ -1,19 +1,20 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>org.unitsofmeasurement</groupId>
-  <artifactId>unit-api-full-impl</artifactId>
-  <version>0.1-SNAPSHOT</version>
-  
-  	<packaging>bundle</packaging>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.unitsofmeasurement</groupId>
+	<artifactId>unit-api-full-impl</artifactId>
+	<version>0.1-SNAPSHOT</version>
+
+	<packaging>bundle</packaging>
 	<name>Units of Measurement API Implementation</name>
+	<url>http://code.google.com/p/unitsofmeasure/</url>
 	<organization>
 		<name>Units of Measurement project</name>
-		<url>http://code.google.com/p/unitsofmeasure/</url>
+		<url>http://www.unitsofmeasurement.org</url>
 	</organization>
-	<url>http://code.google.com/p/unitsofmeasure/</url>
 	<description>An intial (Spec Lead) draft of a Unit Standard Implementation. 
 Full Scale approach.</description>
-	
+
 	<!-- ======================================================= -->
 	<!-- Build Settings -->
 	<!-- ======================================================= -->
@@ -27,8 +28,8 @@ Full Scale approach.</description>
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
 	</properties>
-	
-	
+
+
 	<dependencies>
 		<dependency>
 			<groupId>javax.measure</groupId>
@@ -90,31 +91,31 @@ Full Scale approach.</description>
 					<encoding>${project.build.sourceEncoding}</encoding>
 				</configuration>
 			</plugin>
-			
-		    <!-- ======================================================= -->
-            <!--     JAR packaging                                       -->
-            <!-- ======================================================= -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>2.3.2</version>
-                <configuration>
-                  <archive>
-                    <manifest>
-                      <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-                    </manifest>
-                    <manifestEntries>
-                      <Specification-Title>Units of Measurement API</Specification-Title>
-                      <Specification-Version>${project.version}</Specification-Version>
-                      <Specification-Vendor>${project.organization.name}</Specification-Vendor>
-                      <Implementation-Vendor>Unit-API contributors</Implementation-Vendor>
-                      <Implementation-URL>http://www.unitsofmeasurement.org</Implementation-URL>
-                    </manifestEntries>
-                  </archive>
-                </configuration>
-            </plugin>
-		
-		
+
+			<!-- ======================================================= -->
+			<!-- JAR packaging -->
+			<!-- ======================================================= -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+						</manifest>
+						<manifestEntries>
+							<Specification-Title>Units of Measurement API</Specification-Title>
+							<Specification-Version>${project.version}</Specification-Version>
+							<Specification-Vendor>${project.organization.name}</Specification-Vendor>
+							<Implementation-Vendor>Unit-API contributors</Implementation-Vendor>
+							<Implementation-URL>${project.organization.url}</Implementation-URL>
+						</manifestEntries>
+					</archive>
+				</configuration>
+			</plugin>
+
+
 			<!-- ======================================================= -->
 			<!-- Packaging (OSGi bundle) -->
 			<!-- ======================================================= -->
