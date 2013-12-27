@@ -11,7 +11,7 @@ import javax.measure.quantity.Time;
 
 /**
  * @author Werner Keil
- * @version 1.1
+ * @version 1.2
  */
 public class TimeQuantity extends DimensionQuantity<Time> {
     /**
@@ -19,20 +19,20 @@ public class TimeQuantity extends DimensionQuantity<Time> {
 	 */
 	private static final long serialVersionUID = -421330065304945228L;
 
-	private final BigDecimal scalar; // value in reference unit
+	private final Double scalar; // value in reference unit
 
-    private final BigDecimal value; // value in unit (Unit unit)
+    private final Double value; // value in unit (Unit unit)
 
     private final TimeUnit unit;
 
 //    TimeQuantity(){
 //    }
 
-    public TimeQuantity(BigDecimal val, TimeUnit un) {
+    public TimeQuantity(Double val, TimeUnit un) {
         value = val;
         unit = un;
         if (val!= null && un != null) {
-        	scalar = val.multiply(BigDecimal.valueOf(un.getMultFactor()));
+        	scalar = val.doubleValue() * un.getMultFactor();
         } 
         else scalar = null;        
     }
@@ -43,12 +43,13 @@ public class TimeQuantity extends DimensionQuantity<Time> {
     }
 
     public TimeQuantity add(TimeQuantity d1) {
-        final TimeQuantity dn = new TimeQuantity(this.value.add(d1.value), this.unit);
+        final TimeQuantity dn = new TimeQuantity(Double.valueOf(this.value.doubleValue() + d1.value.doubleValue()),
+        		this.unit);
         return dn;
     }
 
     public TimeQuantity subtract(TimeQuantity d1) {
-    	final TimeQuantity dn = new TimeQuantity(this.value.subtract(d1.value), this.unit);
+    	final TimeQuantity dn = new TimeQuantity(this.value.doubleValue() - d1.value.doubleValue(), this.unit);
         return dn;
     }
 
@@ -77,12 +78,12 @@ public class TimeQuantity extends DimensionQuantity<Time> {
         return le((TimeQuantity) d1);
     }
 
-    public TimeQuantity divide(BigDecimal v) {
-        return new TimeQuantity(value.divide(v), unit);
+    public TimeQuantity divide(Double v) {
+        return new TimeQuantity(value.doubleValue() / v.doubleValue(), unit);
     }
 
     public TimeQuantity convert(TimeUnit newUnit) {
-        return new TimeQuantity(value.divide(BigDecimal.valueOf(newUnit.getMultFactor())), newUnit);
+        return new TimeQuantity(value.doubleValue() /  newUnit.getMultFactor(), newUnit);
     }
 
     @Override
@@ -130,7 +131,7 @@ public class TimeQuantity extends DimensionQuantity<Time> {
 
 	@Override
 	public Measurement<?, Number> multiply(Number that) {
-		return new TimeQuantity(value.multiply((BigDecimal)that), unit);
+		return new TimeQuantity(value.doubleValue() * that.doubleValue(), unit);
 	}
 
 	@Override

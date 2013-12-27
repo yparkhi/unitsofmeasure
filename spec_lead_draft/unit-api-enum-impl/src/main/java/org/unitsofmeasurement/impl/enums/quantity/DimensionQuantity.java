@@ -16,7 +16,7 @@ import javax.measure.Unit;
 
 /**
  * @author Werner Keil
- * @version 1.8 ($Revision$), $Date$
+ * @version 1.9 ($Revision$), $Date$
  */
 public abstract class DimensionQuantity<Q extends Quantity<Q>> implements Quantity<Q>,Serializable {
 
@@ -91,6 +91,10 @@ public abstract class DimensionQuantity<Q extends Quantity<Q>> implements Quanti
                 if (withSpace) sb.append(' ');
                 return sb.append(u.getSymbol()).toString();
         }
+    }
+    
+    protected String showInUnit(Unit<?> u, Double s, int precision, SimpleFormat.Show showItem) {
+        return showInUnit(u, s, precision, showItem, true);
     }
 
     protected String showInUnit(Unit<?> u, BigDecimal s, int precision, SimpleFormat.Show showItem) {
