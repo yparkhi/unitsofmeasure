@@ -7,8 +7,6 @@
  */
 package javax.measure.function;
 
-import java.math.BigDecimal;
-import java.math.MathContext;
 import java.util.List;
 
 import javax.measure.Unit;
@@ -21,9 +19,8 @@ import javax.measure.Unit;
  *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.1
+ * @version 1.2, $Date$
  *
- * @since 0.6.0
  */
 public interface UnitConverter {
     /**
@@ -89,7 +86,7 @@ public interface UnitConverter {
      *         or the {@linkplain MathContext#getPrecision() precision} is 0 and the quotient has a
      *         non-terminating decimal expansion.
      */
-    BigDecimal convert(BigDecimal value, MathContext ctx) throws ArithmeticException;
+    //BigDecimal convert(BigDecimal value, MathContext ctx) throws ArithmeticException;
 
     /**
      * Concatenates this converter with another converter. The resulting

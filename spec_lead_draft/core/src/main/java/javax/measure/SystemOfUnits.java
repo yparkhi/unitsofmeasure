@@ -9,6 +9,8 @@ package javax.measure;
 
 import java.util.Set;
 
+import javax.measure.function.Nameable;
+
 
 /**
  * A system of units grouped together for historical or cultural reasons.
@@ -17,17 +19,10 @@ import java.util.Set;
  *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.2.1
+ * @version 1.2.2
  *
- * @since 0.6.0
  */
-public interface SystemOfUnits {
-    /**
-     * Returns the name of the system of unit.
-     *
-     * @return the system of unit name.
-     */
-    String getName();
+public interface SystemOfUnits extends Nameable {
 
     /**
      * Returns the default unit for the specified quantity.

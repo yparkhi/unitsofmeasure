@@ -134,4 +134,9 @@ enum TestUnit implements Unit {
 		return this;
 	}
 
+	@Override
+	public String getName() {
+		return name();
+	}
+
 }

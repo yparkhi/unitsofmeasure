@@ -10,8 +10,9 @@ package javax.measure.exception;
  * Signals that an error has been reached unexpectedly while parsing.
  * 
  * @author Werner Keil
+ * @version 0.2
  */
-public class UnitParseException extends Exception {
+public class ParserException extends Exception {
 
 	/**
 	 * 
@@ -19,18 +20,18 @@ public class UnitParseException extends Exception {
 	private static final long serialVersionUID = -3179553925611520368L;
 
 	/**
-	 * The zero-based character offset into the string being parsed at which the
-	 * error was found during parsing.
+	 * The zero-based character position in the string being parsed at which the
+	 * error was found while parsing.
 	 * 
 	 * @serial
 	 */
-	private int errorIndex;
+	private int position;
 
 	/** The original input data. */
 	private CharSequence data;
 
 	/**
-	 * Constructs a MonetaryParseException with the specified detail message,
+	 * Constructs a ParserException with the specified detail message,
 	 * parsed text and index. A detail message is a String that describes this
 	 * particular exception.
 	 * 
@@ -38,18 +39,18 @@ public class UnitParseException extends Exception {
 	 *            the detail message
 	 * @param parsedData
 	 *            the parsed text, should not be null
-	 * @param errorIndex
-	 *            the position where the error is found while parsing.
+	 * @param position
+	 *            the position where the error was found while parsing.
 	 */
-	public UnitParseException(String message, CharSequence parsedData,
-			int errorIndex) {
+	public ParserException(String message, CharSequence parsedData,
+			int position) {
 		super(message);
 		this.data = parsedData;
-		this.errorIndex = errorIndex;
+		this.position = position;
 	}
 
 	/**
-	 * Constructs a MonetaryParseException with the parsed text and offset. A
+	 * Constructs a ParserException with the parsed text and offset. A
 	 * detail message is a String that describes this particular exception.
 	 * 
 	 * @param parsedData
@@ -57,20 +58,30 @@ public class UnitParseException extends Exception {
 	 * @param errorIndex
 	 *            the position where the error is found while parsing.
 	 */
-	public UnitParseException(CharSequence parsedData,
+	public ParserException(CharSequence parsedData,
 			int errorIndex) {
 		super("Parse Error");
 		this.data = parsedData;
-		this.errorIndex = errorIndex;
+		this.position = errorIndex;
+	}
+	
+	/**
+	 * Constructs a ParserException with the specified cause.
+	 * 
+	 * @param cause
+	 *            the root cause
+	 */
+	public ParserException(Throwable cause) {
+		super(cause);
 	}
 
 	/**
-	 * Returns the index where the error was found.
+	 * Returns the position where the error was found.
 	 * 
-	 * @return the index where the error was found
+	 * @return the position of the error
 	 */
-	public int getErrorIndex() {
-		return errorIndex;
+	public int getPosition() {
+		return position;
 	}
 
 	/**

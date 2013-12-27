@@ -41,7 +41,8 @@ public interface Measurement<Q extends Quantity<Q>, V> extends UnitSupplier<Q> {
 	 * 
 	 * @return the value of this measurement (can not be {@code null}).
 	 */
-	// TODO why shouldn't it be null?
+	// TODO why shouldn't it be null? 
+	// TODO If we used compatible signature with Java 8 Supplier it would extend Supplier<V> as V get()
 	V getValue();
 
 	/**
