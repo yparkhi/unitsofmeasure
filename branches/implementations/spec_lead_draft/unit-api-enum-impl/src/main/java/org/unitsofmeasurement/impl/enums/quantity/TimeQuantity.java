@@ -1,7 +1,7 @@
 package org.unitsofmeasurement.impl.enums.quantity;
 
-import org.unitsofmeasurement.impl.enums.unit.SimpleFormat;
 import org.unitsofmeasurement.impl.enums.unit.TimeUnit;
+import org.unitsofmeasurement.impl.function.SimpleFormat;
 
 import java.math.BigDecimal;
 
@@ -13,7 +13,7 @@ import javax.measure.quantity.Time;
  * @author Werner Keil
  * @version 1.2
  */
-public class TimeQuantity extends DimensionQuantity<Time> {
+public class TimeQuantity extends AbstractQuantity<Time> {
     /**
 	 * 
 	 */
@@ -153,7 +153,7 @@ public class TimeQuantity extends DimensionQuantity<Time> {
 	}
 
 	@Override
-	public boolean eq(DimensionQuantity<Time> dq) {
+	public boolean eq(AbstractQuantity<Time> dq) {
 		 return eq((TimeQuantity) dq);
 	}
 }

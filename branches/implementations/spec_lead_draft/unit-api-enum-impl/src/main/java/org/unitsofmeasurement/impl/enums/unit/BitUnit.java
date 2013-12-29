@@ -1,13 +1,16 @@
 /**
+ * Copyright (c) 2013 Werner Keil and others.
+ * All rights reserved.
  *
+ * See LICENSE.txt for details.
  */
 package org.unitsofmeasurement.impl.enums.unit;
 
-import static org.unitsofmeasurement.impl.enums.unit.SimpleFormat.*;
+import static org.unitsofmeasurement.impl.enums.unit.Constants.*;
 
-import org.unitsofmeasurement.impl.enums.LongNameEnum;
+import org.unitsofmeasurement.impl.enums.DescriptiveEnum;
 import org.unitsofmeasurement.impl.enums.quantity.QuantityFactory;
-import org.unitsofmeasurement.impl.util.Multiplier;
+import org.unitsofmeasurement.impl.function.Multiplier;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -23,9 +26,9 @@ import javax.measure.quantity.Information;
 /**
  * Implements a measure of information. The metric system unit for this quantity is "bit".
  * @author Werner Keil
- * @version 1.6.1 ($Revision$), $Date$
+ * @version 1.7 ($Revision$), $Date$
  */
-public enum BitUnit implements Unit<Information>, Multiplier, LongNameEnum<BitUnit> {
+public enum BitUnit implements Unit<Information>, Multiplier, DescriptiveEnum<BitUnit> {
 	
     BIT(BIT_NAME, 1.0), // reference Unit
     Byte(BYTE_NAME, BYTE_FACTOR),
@@ -56,7 +59,7 @@ public enum BitUnit implements Unit<Information>, Multiplier, LongNameEnum<BitUn
     }
 
     @Override
-    public String longName() {
+    public String getDescription() {
         return description;
     }
 
@@ -195,7 +198,7 @@ public enum BitUnit implements Unit<Information>, Multiplier, LongNameEnum<BitUn
     }
 
     @Override
-    public LongNameEnum<BitUnit>[] iValues() {
+    public DescriptiveEnum<BitUnit>[] iValues() {
 		return BitUnit.values();
 	}
 }

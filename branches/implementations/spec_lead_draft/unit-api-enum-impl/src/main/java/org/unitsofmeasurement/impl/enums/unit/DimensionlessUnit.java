@@ -4,7 +4,7 @@
 package org.unitsofmeasurement.impl.enums.unit;
 
 import org.unitsofmeasurement.impl.enums.quantity.QuantityFactory;
-import org.unitsofmeasurement.impl.util.Multiplier;
+import org.unitsofmeasurement.impl.function.Multiplier;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -19,7 +19,7 @@ import javax.measure.quantity.Dimensionless;
 
 /**
  * @author Werner Keil
- * @version 1.1 ($Revision: 1 $), $Date: 2013-12-25 $
+ * @version 1.1 ($Revision$), $Date$
  */
 public enum DimensionlessUnit implements Unit<Dimensionless>, Multiplier {
     ONE("m", 1.0); // reference Unit

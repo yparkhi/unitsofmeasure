@@ -46,11 +46,11 @@ import org.unitsofmeasurement.impl.enums.unit.TimeUnit;
  *            The type of the quantity.
  * 
  * @author <a href="mailto:werner.keil@gmail.com">Werner Keil</a>
- * @version 1.2 ($Revision: 17458 $), $Date: 2011-07-16 17:07:12 +0530 (Sat, 16 Jul 2011) $
+ * @version 1.3 ($Revision$), $Date$
  * 
  */
 public abstract class QuantityFactory<Q extends Quantity<Q>> implements BiFunction<Number, Unit<Q>, Q> {
-    
+// TODO for #JavaME BiFunction reference should be disabled
 
 	/**
 	 * Holds the current instances.
@@ -169,7 +169,7 @@ public abstract class QuantityFactory<Q extends Quantity<Q>> implements BiFuncti
 
 	/**
 	 * The default factory implementation. This factory uses reflection for
-	 * providing a default implementation for every {@link org.unitsofmeasurement.impl.enums.quantity.DimensionQuantity}
+	 * providing a default implementation for every {@link org.unitsofmeasurement.impl.enums.quantity.AbstractQuantity}
 	 * sub-types.
 	 * 
 	 * @param <Q>

@@ -1,7 +1,7 @@
 package org.unitsofmeasurement.impl.enums.unit;
 
 import org.unitsofmeasurement.impl.enums.quantity.QuantityFactory;
-import org.unitsofmeasurement.impl.util.Multiplier;
+import org.unitsofmeasurement.impl.function.Multiplier;
 
 import java.util.HashMap;
 import java.util.Map;

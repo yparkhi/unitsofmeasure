@@ -1,11 +1,13 @@
 /**
+ * Copyright (c) 2013 Werner Keil and others.
+ * All rights reserved.
  *
+ * See LICENSE.txt for details.
  */
 package org.unitsofmeasurement.impl.enums.quantity;
 
-import org.unitsofmeasurement.impl.enums.unit.SimpleFormat;
-import org.unitsofmeasurement.impl.util.Multiplier;
-import org.unitsofmeasurement.impl.util.Nameable;
+import org.unitsofmeasurement.impl.function.Multiplier;
+import org.unitsofmeasurement.impl.function.SimpleFormat;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -13,12 +15,13 @@ import java.math.RoundingMode;
 
 import javax.measure.Quantity;
 import javax.measure.Unit;
+import javax.measure.function.Nameable;
 
 /**
  * @author Werner Keil
- * @version 1.9 ($Revision$), $Date$
+ * @version 1.10 ($Revision$), $Date$
  */
-public abstract class DimensionQuantity<Q extends Quantity<Q>> implements Quantity<Q>,Serializable {
+public abstract class AbstractQuantity<Q extends Quantity<Q>> implements Quantity<Q>,Serializable {
 
     /**
 	 * 
@@ -31,15 +34,15 @@ public abstract class DimensionQuantity<Q extends Quantity<Q>> implements Quanti
 //
 //    public abstract Unit<Q> getUnit();
 
-    public abstract boolean eq(DimensionQuantity<Q> dq);
+    public abstract boolean eq(AbstractQuantity<Q> dq);
 
     public abstract boolean isZero();
 
     @SuppressWarnings("unchecked")
 	@Override
     public boolean equals(Object o) {
-        if (o instanceof DimensionQuantity) {
-            return eq((DimensionQuantity<Q>) o);
+        if (o instanceof AbstractQuantity) {
+            return eq((AbstractQuantity<Q>) o);
         }
         return false;
     }
@@ -76,7 +79,7 @@ public abstract class DimensionQuantity<Q extends Quantity<Q>> implements Quanti
             result = s.doubleValue();
         }
 
-        String str = getStr(BigDecimal.valueOf(result), precision);
+        String str = getStr(Double.valueOf(result), precision);
 
         switch (show) {
             case NAME:
@@ -111,9 +114,11 @@ public abstract class DimensionQuantity<Q extends Quantity<Q>> implements Quanti
         return showInUnit(u, precision, SimpleFormat.Show.SYMBOL);
     }
 
-    protected String getStr(BigDecimal val, int precision) {
-        BigDecimal bd2 = val.setScale(precision, RoundingMode.HALF_UP);
-        String str = bd2.toString();
-        return str;
+    protected String getStr(Number val, int precision) {
+    	if (val instanceof BigDecimal) { //TODO for #JavaME disable that part
+    		BigDecimal num = ((BigDecimal)val).setScale(precision, RoundingMode.HALF_UP);
+    		String str = num.toString();
+    		return str;
+    	} return String.valueOf(val);
     }
 }

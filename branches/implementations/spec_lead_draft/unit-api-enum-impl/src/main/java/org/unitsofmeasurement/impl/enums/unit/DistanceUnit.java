@@ -3,9 +3,9 @@
  */
 package org.unitsofmeasurement.impl.enums.unit;
 
-import org.unitsofmeasurement.impl.enums.LongNameEnum;
+import org.unitsofmeasurement.impl.enums.DescriptiveEnum;
 import org.unitsofmeasurement.impl.enums.quantity.QuantityFactory;
-import org.unitsofmeasurement.impl.util.Multiplier;
+import org.unitsofmeasurement.impl.function.Multiplier;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -22,7 +22,7 @@ import javax.measure.quantity.Length;
  * @author Werner Keil
  * @version 1.3.1 ($Revision$), $Date$
  */
-public enum DistanceUnit implements Unit<Length>, Multiplier, LongNameEnum<DistanceUnit> {
+public enum DistanceUnit implements Unit<Length>, Multiplier, DescriptiveEnum<DistanceUnit> {
     METRE("m", "m", 1.0), // reference Unit
 	KILOMETRE("km", "km", 1.0e3);
 
@@ -144,12 +144,12 @@ public enum DistanceUnit implements Unit<Length>, Multiplier, LongNameEnum<Dista
     }
 
 	@Override
-	public String longName() {
+	public String getDescription() {
 		return description;
 	}
 
 	@Override
-	public LongNameEnum<DistanceUnit>[] iValues() {
+	public DescriptiveEnum<DistanceUnit>[] iValues() {
 		return DistanceUnit.values();
 	}
 }

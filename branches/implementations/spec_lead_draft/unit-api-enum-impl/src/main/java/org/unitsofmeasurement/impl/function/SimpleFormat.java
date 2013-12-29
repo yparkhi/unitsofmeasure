@@ -1,8 +1,7 @@
-package org.unitsofmeasurement.impl.enums.unit;
+package org.unitsofmeasurement.impl.function;
 
 
 import java.io.IOException;
-import java.text.ParsePosition;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
@@ -17,7 +16,7 @@ import javax.measure.function.UnitFormat;
  * </p>
  *
  * @author <a href="mailto:werner.keil@gmail.com">Werner Keil</a>
- * @version 1.6 ($Revision: 18019 $), $Date: 2011-07-23 18:25:49 +0530 (Sat, 23 Jul 2011) $
+ * @version 1.7 ($Revision$), $Date$
  */
 public class SimpleFormat extends AbstractFormat {
     /**
@@ -32,29 +31,6 @@ public class SimpleFormat extends AbstractFormat {
     public static enum Show {
         SYMBOL, NAME;
     }
-
-    static final String BIT_NAME = "bit"; //$NON-NLS-1$
-    static final String BYTE_NAME = "Byte"; //$NON-NLS-1$
-	static final String KB_NAME = "kb"; //$NON-NLS-1$
-    static final String MB_NAME = "Mb"; //$NON-NLS-1$
-    static final String GB_NAME = "Gb"; //$NON-NLS-1$
-    static final String TB_NAME = "Tb"; //$NON-NLS-1$
-    static final String PB_NAME = "Pb"; //$NON-NLS-1$
-    static final String EB_NAME = "Eb"; //$NON-NLS-1$
-    static final String KBYTE_NAME = "kByte"; //$NON-NLS-1$
-    static final String MBYTE_NAME = "MByte"; //$NON-NLS-1$
-    static final String GBYTE_NAME = "GByte"; //$NON-NLS-1$
-    static final String TBYTE_NAME = "TByte"; //$NON-NLS-1$
-    static final String PBYTE_NAME = "PByte"; //$NON-NLS-1$
-    static final String EBYTE_NAME = "EByte"; //$NON-NLS-1$
-
-    static final String BPS_NAME = "Bit per Second"; //$NON-NLS-1$
-    static final String KBPS_NAME = "Kilobit per Second"; //$NON-NLS-1$
-    static final String MBPS_NAME = "Megabit per Second"; //$NON-NLS-1$
-    static final String GBPS_NAME = "Gigabit per Second"; //$NON-NLS-1$
-    static final String TBPS_NAME = "Terabit per Second"; //$NON-NLS-1$
-    static final String PBPS_NAME = "Petabit per Second"; //$NON-NLS-1$
-    static final String EBPS_NAME = "Exabit per Second"; //$NON-NLS-1$
 
     // /////////////////
     // Class methods //
@@ -107,12 +83,7 @@ public class SimpleFormat extends AbstractFormat {
 
         return appendable;
     }
-
-    public Unit<?> parse(CharSequence csq, ParsePosition cursor)
-            throws IllegalArgumentException {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
+    
     public Locale getLocale() {
         return Locale.getDefault();
     }
