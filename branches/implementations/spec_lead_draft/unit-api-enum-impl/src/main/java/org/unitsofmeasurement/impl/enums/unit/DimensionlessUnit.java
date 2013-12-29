@@ -22,7 +22,7 @@ import javax.measure.quantity.Dimensionless;
  * @version 1.1 ($Revision$), $Date$
  */
 public enum DimensionlessUnit implements Unit<Dimensionless>, Multiplier {
-    ONE("m", 1.0); // reference Unit
+    ONE("", 1.0); // reference Unit
 
     private final String description;
     private final double multFactor;
