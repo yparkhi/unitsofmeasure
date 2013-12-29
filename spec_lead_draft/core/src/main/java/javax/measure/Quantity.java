@@ -19,9 +19,9 @@ package javax.measure;
  * This interface is used to specify the quantitative property associated to a
  * class through class parameterization and to provide limited compile time
  * dimension consistency.
- * 
- * [code] Unit<Mass> pound = ... Quantity<Length> size = ... Sensor<Temperature>
- * thermometer = ... Vector3D<Velocity> aircraftSpeed = ... [/code]
+ * <br/><br/>
+ * <code> Unit<Mass> pound = ... Quantity<Length> size = ... Sensor<Temperature><br/>
+ * thermometer = ... Vector3D<Velocity> aircraftSpeed = ... </code>
  * </p>
  * 
  * @param <Q>
@@ -32,7 +32,7 @@ package javax.measure;
  *         Desruisseaux</a>
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @see <a href="http://en.wikipedia.org/wiki/Quantity">Wikipedia: Quantity</a>
- * @version 1.7 ($Revision: 236 $), Date: 2013-01-26
+ * @version 1.8 ($Revision: 236 $), Date: 2013-12-29
  */
 public interface Quantity<Q extends Quantity<Q>> extends Measurement<Q, Number> {
 }

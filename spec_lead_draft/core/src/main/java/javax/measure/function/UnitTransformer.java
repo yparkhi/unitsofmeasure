@@ -12,13 +12,16 @@ import javax.measure.Unit;
 /**
  * This interface transforms a {@link Unit}
  * 
+ * <p>This is a <a href="http://download.java.net/jdk8/docs/api/java/util/function/package-summary.html">functional interface</a>
+ * whose functional method is {@link #transform()}.
+ * 
  * @author Werner Keil
- * @version 0.2 ($Revision: 237 $), 2013-01-27
+ * @version 0.3 ($Revision: 237 $), 2013-12-29
  * @param <Q>
  *            The type of the quantity.
  * @see Unit
  */
-//@FunctionalInterface
+//equivalent to @FunctionalInterface
 public interface UnitTransformer<Q extends Quantity<Q>> {
 	/**
 	 * Returns the unit of this UnitProvider {@linkplain #getValue() value}.
