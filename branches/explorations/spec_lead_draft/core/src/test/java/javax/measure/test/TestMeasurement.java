@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2013 Werner Keil and others.
+ * Copyright (c) 2013-2014 Werner Keil and others.
  * All rights reserved.
  *
  * See LICENSE.txt for details.
@@ -13,7 +13,7 @@ import javax.measure.Unit;
 
 /**
  * @author Werner Keil
- * @version 1.1
+ * @version 1.2, $Date$
  */
 @SuppressWarnings("hiding")
 final class TestMeasurement<Q extends Quantity<Q>, Number> implements
@@ -27,11 +27,6 @@ final class TestMeasurement<Q extends Quantity<Q>, Number> implements
 		this.unit = unit;
 	}
 	
-	// @SuppressWarnings({ "rawtypes", "unchecked" })
-	// public static final TestMeasurement of(Double value, Unit<Q> unit) {
-	// return new TestMeasurement(value, unit);
-	// }
-	
 	@Override
 	public Unit<Q> getUnit() {
 		return unit;
@@ -44,8 +39,9 @@ final class TestMeasurement<Q extends Quantity<Q>, Number> implements
 
 	@Override
 	public Measurement<Q, Double> add(Measurement<Q, Double> that) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		//TODO use shift on units?
+		return new TestMeasurement<>(this.val + that.getValue().doubleValue(), this.unit);
 	}
 
 	@Override
@@ -89,19 +85,9 @@ final class TestMeasurement<Q extends Quantity<Q>, Number> implements
 		return val + " " + unit;
 	}
 
-
-//	@Override
-//	public double doubleValue(Unit<Q> unit) {
-//		// TODO Auto-generated method stub
-//		return 0;
-//	}
-//
-//	@Override
-//	public long longValue(Unit<Q> unit) {
-//		// TODO Auto-generated method stub
-//		return 0;
-//	}
-	
-	
-
+	@Override
+	public Measurement<?, Double> divide(Double that) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
