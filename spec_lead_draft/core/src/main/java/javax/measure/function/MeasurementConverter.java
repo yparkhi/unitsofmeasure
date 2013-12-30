@@ -11,11 +11,7 @@ import javax.measure.Quantity;
 import javax.measure.Unit;
 
 /**
- *  A converter of measurements.
- * 
- * <p>
- * There is no requirement that a new or distinct result be returned each time
- * the supplier is invoked.
+ *  Represents a function that accepts a unit and produces a measurement.
  * 
  * <p>
  * This is a <a href=
@@ -23,7 +19,7 @@ import javax.measure.Unit;
  * >functional interface</a> whose functional method is {@link #getValue()}.
  * 
  * @author Werner Keil
- * @version 0.1 ($Revision: 283 $), $Date$
+ * @version 0.2 ($Revision$), $Date$
  * @param <Q>
  *            The type of the quantity measured.
  * @param <V>
