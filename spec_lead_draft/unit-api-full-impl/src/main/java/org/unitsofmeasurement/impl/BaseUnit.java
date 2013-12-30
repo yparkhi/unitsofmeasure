@@ -29,11 +29,17 @@ import org.unitsofmeasurement.impl.model.QuantityDimension;
  *       Wikipedia: SI base unit</a>
  *
  * @author  <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
- * @version 5.0, October 12, 2010
+ * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
+ * @version 5.1, December 30, 2013
  */
 public class BaseUnit<Q extends Quantity<Q>> extends AbstractUnit<Q> {
 
     /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1721629233768215930L;
+
+	/**
      * Holds the symbol.
      */
     private final String symbol;
@@ -51,6 +57,29 @@ public class BaseUnit<Q extends Quantity<Q>> extends AbstractUnit<Q> {
     public BaseUnit(String symbol, QuantityDimension dimension) {
         this.symbol = symbol;
         this.dimension = dimension;
+    }
+    
+    /**
+     * Creates a base unit having the specified symbol and dimension.
+     *
+     * @param symbol the symbol of this base unit.
+     */
+    public BaseUnit(String symbol) {
+        this.symbol = symbol;
+        this.dimension = QuantityDimension.NONE;
+    }
+    
+    /**
+     * Creates a base unit having the specified symbol and name.
+     *
+     * @param symbol the symbol of this base unit.
+     * @param name the name of this base unit.
+     * @throws IllegalArgumentException if the specified symbol is
+     *         associated to a different unit.
+     */
+    public BaseUnit(String symbol, String name) {
+        this(symbol);
+        this.name = name;
     }
 
     @Override
@@ -77,7 +106,7 @@ public class BaseUnit<Q extends Quantity<Q>> extends AbstractUnit<Q> {
     public final boolean equals(Object that) {
         if (this == that) return true;
         if (!(that instanceof BaseUnit)) return false;
-        BaseUnit thatUnit = (BaseUnit) that;
+        BaseUnit<?> thatUnit = (BaseUnit<?>) that;
         return this.symbol.equals(thatUnit.symbol) 
                 && this.dimension.equals(thatUnit.dimension);
     }
