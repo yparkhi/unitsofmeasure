@@ -37,7 +37,7 @@ import org.unitsofmeasurement.impl.system.SI;
  * 
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.1, December 25, 2013
+ * @version 1.2, $Date$
  */
 @SuppressWarnings("rawtypes")
 public abstract class MeasureFormat extends Format implements Parser<CharSequence, Measurement> {
@@ -234,11 +234,10 @@ public abstract class MeasureFormat extends Format implements Parser<CharSequenc
 			_unitFormat = unitFormat;
 		}
 
-		@SuppressWarnings("unchecked")
 		@Override
 		public Appendable format(AbstractMeasurement<?> measure, Appendable dest)
 				throws IOException {
-			Unit unit = measure.getUnit();
+//			Unit unit = measure.getUnit();
 //			if (unit instanceof CompoundUnit)
 //				return formatCompound(measure.doubleValue(unit),
 //						(CompoundUnit) unit, dest);
@@ -271,7 +270,6 @@ public abstract class MeasureFormat extends Format implements Parser<CharSequenc
 						+ number.getClass() + " are not supported");
 		}
 		
-		@SuppressWarnings("unchecked")
 		public AbstractMeasurement<?> parse(CharSequence csq) throws IllegalArgumentException, ParserException {
 			return parse(csq, new ParsePosition(0));
 		}
