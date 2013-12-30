@@ -20,7 +20,7 @@ import javax.measure.exception.ParserException;
 import javax.measure.quantity.Dimensionless;
 
 import org.unitsofmeasurement.impl.function.AbstractConverter;
-import org.unitsofmeasurement.impl.function.MeasureFormat;
+import org.unitsofmeasurement.impl.function.MeasurementFormat;
 import org.unitsofmeasurement.impl.system.SI;
 
 /**
@@ -258,7 +258,7 @@ public abstract class AbstractMeasurement<Q extends Quantity<Q>> implements Meas
      * affected by locale. This means that it can be used as a canonical string
      * representation for exchanging measure, or as a key for a Hashtable, etc.
      * Locale-sensitive measure formatting and parsing is handled by the
-     * {@link MeasureFormat} class and its subclasses.
+     * {@link MeasurementFormat} class and its subclasses.
      *
      * @return <code>UnitFormat.getInternational().format(this)</code>
      */
@@ -333,7 +333,7 @@ public abstract class AbstractMeasurement<Q extends Quantity<Q>> implements Meas
      * <p> Note: This method handles only
      * {@link javax.measure.unit.UnitFormat#getStandard standard} unit format
      * (<a href="http://unitsofmeasure.org/">UCUM</a> based). Locale-sensitive
-     * measure formatting and parsing are handled by the {@link MeasureFormat}
+     * measure formatting and parsing are handled by the {@link MeasurementFormat}
      * class and its subclasses.</p>
      *
      * @param csq the decimal value and its unit (if any) separated by space(s).
@@ -341,7 +341,7 @@ public abstract class AbstractMeasurement<Q extends Quantity<Q>> implements Meas
      */
     public static AbstractMeasurement<?> of(CharSequence csq) {
         try {
-			return MeasureFormat.getStandard().parse(csq, new ParsePosition(0));
+			return MeasurementFormat.getStandardInstance().parse(csq, new ParsePosition(0));
 		} catch (IllegalArgumentException | ParserException e) {
 			throw new IllegalArgumentException(e); // TODO could we handle this differently?
 		}

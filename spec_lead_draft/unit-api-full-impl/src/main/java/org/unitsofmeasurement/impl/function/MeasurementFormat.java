@@ -40,7 +40,7 @@ import org.unitsofmeasurement.impl.system.SI;
  * @version 1.2, $Date$
  */
 @SuppressWarnings("rawtypes")
-public abstract class MeasureFormat extends Format implements Parser<CharSequence, Measurement> {
+public abstract class MeasurementFormat extends Format implements Parser<CharSequence, Measurement> {
 
 	/**
 	 * 
@@ -65,7 +65,7 @@ public abstract class MeasureFormat extends Format implements Parser<CharSequenc
 	 * 
 	 * @return <code>MeasureFormat.getInstance(NumberFormat.getInstance(), UnitFormat.getInstance())</code>
 	 */
-	public static MeasureFormat getInstance() {
+	public static MeasurementFormat getInstance() {
 		return DEFAULT;
 	}
 
@@ -77,14 +77,14 @@ public abstract class MeasureFormat extends Format implements Parser<CharSequenc
 	 * @param unitFormat the unit format.
 	 * @return the corresponding format.
 	 */
-	public static MeasureFormat getInstance(NumberFormat numberFormat,
+	public static MeasurementFormat getInstance(NumberFormat numberFormat,
 			UnitFormat unitFormat) {
 		return new NumberSpaceUnit(numberFormat, unitFormat);
 	}
 
 	/**
 	 * Returns the culture invariant format based upon {@link BigDecimal}
-	 * canonical format and the {@link UnitFormat#getStandard() standard} unit
+	 * canonical format and the {@link UnitFormat#getStandardInstance() standard} unit
 	 * format. This format <b>is not</b> locale-sensitive and can be used for
 	 * unambiguous electronic communication of quantities together with their
 	 * units without loss of information. For example:
@@ -93,7 +93,7 @@ public abstract class MeasureFormat extends Format implements Parser<CharSequenc
 	 * 
 	 * @return the standard measure format.
 	 */
-	public static MeasureFormat getStandard() {
+	public static MeasurementFormat getStandardInstance() {
 		return STANDARD;
 	}
 
@@ -223,7 +223,7 @@ public abstract class MeasureFormat extends Format implements Parser<CharSequenc
 	}
 
 	// Holds default implementation.
-	private static final class NumberSpaceUnit extends MeasureFormat {
+	private static final class NumberSpaceUnit extends MeasurementFormat {
 
 		private final NumberFormat _numberFormat;
 
@@ -279,7 +279,7 @@ public abstract class MeasureFormat extends Format implements Parser<CharSequenc
 	}
 
 	// Holds standard implementation.
-	private static final class Standard extends MeasureFormat {
+	private static final class Standard extends MeasurementFormat {
 
 		/**
 		 * 
