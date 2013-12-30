@@ -3,15 +3,13 @@ package org.unitsofmeasurement.impl.enums.quantity;
 import org.unitsofmeasurement.impl.enums.unit.TimeUnit;
 import org.unitsofmeasurement.impl.function.SimpleFormat;
 
-import java.math.BigDecimal;
-
 import javax.measure.Measurement;
 import javax.measure.Unit;
 import javax.measure.quantity.Time;
 
 /**
  * @author Werner Keil
- * @version 1.2
+ * @version 1.3, $Date$
  */
 public class TimeQuantity extends AbstractQuantity<Time> {
     /**
@@ -39,7 +37,7 @@ public class TimeQuantity extends AbstractQuantity<Time> {
 
     @Override
     public boolean isZero() {
-        return (value != null) && BigDecimal.ZERO.doubleValue()==(value.doubleValue());
+        return (value != null) && 0d==(value.doubleValue());
     }
 
     public TimeQuantity add(TimeQuantity d1) {

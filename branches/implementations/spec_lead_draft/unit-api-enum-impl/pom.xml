@@ -77,7 +77,20 @@ Lightweight approach based on Java enums.</description>
 	</dependencyManagement>
 	<build>
 		<plugins>
-		
+			<!-- ======================================================= -->
+			<!-- Compilation -->
+			<!-- ======================================================= -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>${project.build.javaVersion}</source>
+					<target>${project.build.javaVersion}</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+			
 		    <!-- ======================================================= -->
             <!--     JAR packaging                                       -->
             <!-- ======================================================= -->
@@ -112,7 +125,7 @@ Lightweight approach based on Java enums.</description>
 				<extensions>true</extensions>
 				<configuration>
 					<instructions>
-						<Export-Package>org.unitsofmeasurement.impl.enums.*</Export-Package>
+						<Export-Package>org.unitsofmeasurement.impl.*</Export-Package>
 						<Private-Package>!*</Private-Package>
 					</instructions>
 				</configuration>
