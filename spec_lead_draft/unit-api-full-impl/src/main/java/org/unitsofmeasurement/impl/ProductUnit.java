@@ -309,8 +309,10 @@ public final class ProductUnit<Q extends Quantity<Q>> extends AbstractUnit<Q> {
     	QuantityDimension dimension = QuantityDimension.NONE;
         for (int i = 0; i < this.getUnitCount(); i++) {
             AbstractUnit<?> unit = this.getUnit(i);
-            QuantityDimension d = unit.getDimension().pow(this.getUnitPow(i)).root(this.getUnitRoot(i));
-            dimension = dimension.multiply(d);
+            if (this.elements != null && unit.getDimension() != null) {
+            	QuantityDimension d = unit.getDimension().pow(this.getUnitPow(i)).root(this.getUnitRoot(i));
+            	dimension = dimension.multiply(d);
+            }
         }
         return dimension;
     }
