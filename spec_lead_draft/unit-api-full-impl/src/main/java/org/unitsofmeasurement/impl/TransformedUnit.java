@@ -35,10 +35,15 @@ import org.unitsofmeasurement.impl.model.QuantityDimension;
  * @param <Q> The type of the quantity measured by this unit.
  *
  * @author  <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
- * @version 5.1, December 25, 2013
+ * @version 5.2, December 30, 2013
  */
 public final class TransformedUnit<Q extends Quantity<Q>> extends AbstractUnit<Q> {
   
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	/**
      * Holds the parent unit (always a system unit).
      */
