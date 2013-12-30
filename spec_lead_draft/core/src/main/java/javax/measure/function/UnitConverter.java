@@ -1,6 +1,5 @@
 /**
- * Unit-API - Units of Measurement API for Java (http://unitsofmeasurement.org)
- * Copyright (c) 2005-2010, Unit-API contributors and others
+ * Copyright (c) 2005-2014 Werner Keil and others.
  * All rights reserved.
  *
  * See LICENSE.txt for details.
@@ -9,9 +8,6 @@ package javax.measure.function;
 
 import java.util.List;
 
-import javax.measure.Unit;
-
-
 /**
  * A converter of numeric values.
  *
@@ -19,8 +15,10 @@ import javax.measure.Unit;
  *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.2, $Date$
+ * @version 1.3, $Date$
  *
+ * @see <a href="http://en.wikipedia.org/wiki/Conversion_of_units"> Wikipedia:
+ *      Conversion of units</a>
  */
 public interface UnitConverter {
     /**

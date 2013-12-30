@@ -1,13 +1,15 @@
 /**
  * Unit-API - Units of Measurement API for Java (http://unitsofmeasurement.org)
- * Copyright (c) 2005-2013, Unit-API contributors and others
+ * Copyright (c) 2005-2014, Unit-API contributors and others
  * All rights reserved.
  *
  * See LICENSE.txt for details.
  */
 package javax.measure;
 
+import javax.measure.function.MeasurementConverter;
 import javax.measure.function.UnitSupplier;
+import javax.measure.function.ValueSupplier;
 
 /**
  * Represents a value with a unit.
@@ -32,9 +34,10 @@ import javax.measure.function.UnitSupplier;
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @see <a href="http://en.wikipedia.org/wiki/Units_of_measurement"> Wikipedia:
  *      Units of measurement</a>
- * @version 1.9 ($Revision$), 2013-12-22
+ * @version 1.10 ($Revision$), $Date$
  */
-public interface Measurement<Q extends Quantity<Q>, V> extends UnitSupplier<Q> {
+public interface Measurement<Q extends Quantity<Q>, V> extends UnitSupplier<Q>,
+	ValueSupplier<V>, MeasurementConverter<Q, V> {
 
 	/**
 	 * Returns the value of this measurement as a V.
@@ -91,34 +94,4 @@ public interface Measurement<Q extends Quantity<Q>, V> extends UnitSupplier<Q> {
 	Measurement<?, V> divide(Measurement<?, V> that);
 
 	Measurement<Q, V> inverse();
-
-	/**
-	 * Returns this measurement converted into another unit.
-	 * 
-	 * @param unit
-	 * @return the converted result.
-	 */
-	Measurement<Q, V> to(Unit<Q> unit);
-
-	/**
-	 * Returns the value of this quantity as <code>double</code> stated in the
-	 * specified unit. This method is recommended over <code>
-	 * q.getUnit().getConverterTo(unit).convert(q.getValue()).doubleValue()</code>
-	 * 
-	 * @param unit
-	 *            the unit in which the returned value is stated.
-	 * @return the value of this quantity when stated in the specified unit.
-	 */
-	//public double doubleValue(Unit<Q> unit);
-
-	/**
-	 * Returns the value of this quantity as <code>long</code> stated in the
-	 * specified unit. This method is recommended over <code>
-	 * q.getUnit().getConverterTo(unit).convert(q.getValue()).longValue()</code>
-	 * 
-	 * @param unit
-	 *            the unit in which the returned value is stated.
-	 * @return the value of this quantity when stated in the specified unit.
-	 */
-	//public long longValue(Unit<Q> unit);
 }
