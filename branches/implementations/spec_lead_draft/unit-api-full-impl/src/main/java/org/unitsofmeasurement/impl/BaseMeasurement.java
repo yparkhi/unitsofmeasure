@@ -27,10 +27,10 @@ import org.unitsofmeasurement.impl.function.AbstractConverter;
  * 
  * @see java.lang.Number
  * @see MeasureUnit
- * @author <a href="mailto:uomo@catmedia.us">Werner Keil</a>
+ * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @param <Q>
  *            The type of the quantity.
- * @version 1.4 ($Revision: 212 $), $Date: 2013-12-25 $
+ * @version 1.4.1 ($Revision: 212 $), $Date: 2013-12-25 $
  *          FIXME Bug 338334 overwrite equals()
  */
 public class BaseMeasurement<Q extends Quantity<Q>> extends AbstractMeasurement<Q>
