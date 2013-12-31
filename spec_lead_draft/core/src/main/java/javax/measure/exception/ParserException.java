@@ -10,9 +10,9 @@ package javax.measure.exception;
  * Signals that an error has been reached unexpectedly while parsing.
  * 
  * @author Werner Keil
- * @version 0.2
+ * @version 0.3, $Date$
  */
-public class ParserException extends Exception {
+public class ParserException extends MeasurementException {
 
 	/**
 	 * 

@@ -19,10 +19,10 @@ import javax.measure.Unit;
  *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.3
+ * @version 1.4, $Date$
  *
  */
-public class UnconvertibleException extends RuntimeException {
+public class UnconvertibleException extends MeasurementException {
     /**
      * For cross-version compatibility.
      */
@@ -52,7 +52,6 @@ public class UnconvertibleException extends RuntimeException {
      * @param message the detail message, or {@code null} if none.
      * @param cause the cause of this exception, or {@code null} if none.
      *
-     * @since 0.6.2
      */
     public UnconvertibleException(final String message, final Throwable cause) {
         super(message, cause);
