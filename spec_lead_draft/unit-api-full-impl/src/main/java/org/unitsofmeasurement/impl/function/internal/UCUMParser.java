@@ -21,7 +21,7 @@ import org.unitsofmeasurement.impl.system.SIPrefix;
  * Uniform Code for Units of Measure</a>.
  * 
  * @author <a href="mailto:eric-r@northwestern.edu">Eric Russell</a>
- * @see <a href="http://aurora.regenstrief.org/UCUM/ucum.html">UCUM</a>
+ * @see <a href="http://unitsofmeasure.org">UCUM</a>
  * @version 5.0, October 12, 2010
  */
 public class UCUMParser implements UCUMParserConstants {

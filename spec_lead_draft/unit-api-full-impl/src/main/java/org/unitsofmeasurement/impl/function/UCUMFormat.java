@@ -20,6 +20,7 @@ import java.util.ResourceBundle;
 
 import javax.measure.Quantity;
 import javax.measure.Unit;
+import javax.measure.exception.ParserException;
 import javax.measure.function.UnitConverter;
 import javax.measure.function.UnitFormat;
 
@@ -50,9 +51,9 @@ import org.unitsofmeasurement.impl.system.SIPrefix;
  *
  * @author <a href="mailto:eric-r@northwestern.edu">Eric Russell</a>
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 5.2, December 25, 2013
+ * @version 5.3, December 31, 2013
  */
-public abstract class UCUMFormat implements UnitFormat, Serializable { // TODO do we need Serializable here?
+public abstract class UCUMFormat implements UnitFormat, Serializable {
 
     /**
 	 * 
@@ -111,7 +112,7 @@ public abstract class UCUMFormat implements UnitFormat, Serializable { // TODO d
      * {@link AbstractUnit Unit}s and
      * <code>String</code>s.
      */
-    final SymbolMap _symbolMap;
+    final SymbolMap symbolMap;
 
     // ////////////////
     // Constructors //
@@ -120,17 +121,17 @@ public abstract class UCUMFormat implements UnitFormat, Serializable { // TODO d
 	 * Base constructor.
 	 */
     UCUMFormat(SymbolMap symbolMap) {
-        _symbolMap = symbolMap;
+        this.symbolMap = symbolMap;
     }
 
     /////////////
     // Parsing //
     /////////////
     public abstract AbstractUnit<? extends Quantity> parse(CharSequence csq,
-            ParsePosition cursor) throws IllegalArgumentException;
+            ParsePosition cursor) throws ParserException;
     
     @Override
-    public abstract AbstractUnit<? extends Quantity> parse(CharSequence csq) throws IllegalArgumentException;
+    public abstract AbstractUnit<? extends Quantity> parse(CharSequence csq) throws ParserException;
 
     ////////////////
     // Formatting //
@@ -147,7 +148,7 @@ public abstract class UCUMFormat implements UnitFormat, Serializable { // TODO d
             unit = annotatedUnit.getActualUnit();
             annotation = annotatedUnit.getAnnotation();
         }
-        String mapSymbol = _symbolMap.getSymbol(unit);
+        String mapSymbol = symbolMap.getSymbol(unit);
         if (mapSymbol != null) {
             symbol = mapSymbol;
         } else if (unit.getProductUnits() != null) {
@@ -251,9 +252,9 @@ public abstract class UCUMFormat implements UnitFormat, Serializable { // TODO d
     void formatConverter(UnitConverter converter, boolean continued,
             StringBuilder buffer) {
         boolean unitIsExpression = ((buffer.indexOf(".") >= 0) || (buffer.indexOf("/") >= 0));
-        SIPrefix prefix = _symbolMap.getPrefix(converter);
+        SIPrefix prefix = symbolMap.getPrefix(converter);
         if ((prefix != null) && (!unitIsExpression)) {
-            buffer.insert(0, _symbolMap.getSymbol(prefix));
+            buffer.insert(0, symbolMap.getSymbol(prefix));
         } else if (converter == AbstractConverter.IDENTITY) {
             // do nothing
         } else if (converter instanceof MultiplyConverter) {
@@ -425,8 +426,8 @@ public abstract class UCUMFormat implements UnitFormat, Serializable { // TODO d
         }
 
         @Override
-        public AbstractUnit<? extends Quantity> parse(CharSequence csq,
-                ParsePosition cursor) throws IllegalArgumentException {
+        public AbstractUnit<? extends Quantity<?>> parse(CharSequence csq,
+                ParsePosition cursor) throws ParserException {
             // Parsing reads the whole character sequence from the parse
             // position.
             int start = cursor.getIndex();
@@ -441,7 +442,7 @@ public abstract class UCUMFormat implements UnitFormat, Serializable { // TODO d
             if (!caseSensitive) {
                 source = source.toUpperCase();
             }
-            UCUMParser parser = new UCUMParser(_symbolMap,
+            UCUMParser parser = new UCUMParser(symbolMap,
                     new ByteArrayInputStream(source.getBytes()));
             try {
                 AbstractUnit<?> result = parser.parseUnit();
@@ -453,7 +454,7 @@ public abstract class UCUMFormat implements UnitFormat, Serializable { // TODO d
                 } else {
                     cursor.setErrorIndex(start);
                 }
-                throw new IllegalArgumentException(e.getMessage());
+                throw new ParserException(e);
             } catch (TokenMgrError e) {
                 cursor.setErrorIndex(start);
                 throw new IllegalArgumentException(e.getMessage());
@@ -462,7 +463,7 @@ public abstract class UCUMFormat implements UnitFormat, Serializable { // TODO d
         
         @SuppressWarnings("rawtypes")
 		@Override
-        public AbstractUnit<? extends Quantity> parse(CharSequence csq) throws IllegalArgumentException {
+        public AbstractUnit<? extends Quantity> parse(CharSequence csq) throws ParserException {
         	return parse(csq, new ParsePosition(0));
         }
     }

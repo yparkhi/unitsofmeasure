@@ -30,7 +30,7 @@ import org.unitsofmeasurement.impl.function.AbstractConverter;
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @param <Q>
  *            The type of the quantity.
- * @version 1.4.1 ($Revision: 212 $), $Date: 2013-12-25 $
+ * @version 1.4.2 ($Revision: 212 $), $Date: 2013-12-25 $
  *          FIXME Bug 338334 overwrite equals()
  */
 public class BaseMeasurement<Q extends Quantity<Q>> extends AbstractMeasurement<Q>
@@ -255,10 +255,19 @@ public class BaseMeasurement<Q extends Quantity<Q>> extends AbstractMeasurement<
 
 	@Override
 	public Measurement<?, Number> divide(Measurement<?, Number> that) {
-		Unit<?> unit = getUnit().divide(that.getUnit());
+		final Unit<?> unit = getUnit().divide(that.getUnit());
 		return of((getValue().doubleValue() / that.getValue()
-				.doubleValue()), unit);	}
+				.doubleValue()), unit);	
+	}
 
+	@Override
+	public Measurement<?, Number> divide(Number that) {
+		if (value instanceof BigDecimal && that instanceof BigDecimal) {
+			return of(((BigDecimal)value).divide((BigDecimal)that), getUnit());
+		}
+		return of(getValue().doubleValue() / that.doubleValue(), getUnit());	
+	}
+	
 	@Override
 	public Measurement<Q, Number> inverse() {
 		@SuppressWarnings({ "rawtypes", "unchecked" })

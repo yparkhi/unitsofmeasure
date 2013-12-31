@@ -77,7 +77,7 @@ import org.unitsofmeasurement.impl.system.SI;
  * 
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.0.1 ($Revision$), $Date$
+ * @version 1.0.2 ($Revision$), $Date$
  */
 public abstract class AbstractMeasurement<Q extends Quantity<Q>> implements Measurement<Q, Number>,
         Serializable {
@@ -366,6 +366,7 @@ public abstract class AbstractMeasurement<Q extends Quantity<Q>> implements Meas
 		 * 
 		 */
 		private static final long serialVersionUID = 5355395476874521709L;
+		
 		final int value;
 
         public IntegerMeasurement(int value, Unit<T> unit) {
@@ -390,7 +391,6 @@ public abstract class AbstractMeasurement<Q extends Quantity<Q>> implements Meas
             return (super.unit.equals(unit)) ? decimal : ((AbstractConverter)super.unit.getConverterTo(unit)).convert(decimal, ctx);
         }
 
-
 		@Override
 		public long longValue(Unit<T> unit) {
 	        double result = doubleValue(unit);
@@ -407,7 +407,7 @@ public abstract class AbstractMeasurement<Q extends Quantity<Q>> implements Meas
 		}
 
 		@Override
-		public Measurement<T, Number> substract(Measurement<T, Number> that) {
+		public IntegerMeasurement<T> substract(Measurement<T, Number> that) {
 			// TODO Auto-generated method stub
 			return null;
 		}
@@ -429,14 +429,21 @@ public abstract class AbstractMeasurement<Q extends Quantity<Q>> implements Meas
 			return of((double)value / that.getValue().doubleValue(), getUnit().divide(that.getUnit()));
 		}
 
+		@SuppressWarnings("unchecked")
 		@Override
-		public Measurement<T, Number> inverse() {
-			return of(-value, getUnit());
+		public AbstractMeasurement<T> inverse() {
+			return (AbstractMeasurement<T>) of(value, getUnit().inverse());
 		}
 
 		@Override
 		public boolean isBig() {
 			return false;
+		}
+
+		@Override
+		public Measurement<?, Number> divide(Number that) {
+			// TODO Auto-generated method stub
+			return null;
 		}
 
     }
@@ -456,7 +463,12 @@ public abstract class AbstractMeasurement<Q extends Quantity<Q>> implements Meas
 
     private static final class FloatMeasurement<T extends Quantity<T>> extends AbstractMeasurement<T> {
 
-        final float value;
+        /**
+		 * 
+		 */
+		private static final long serialVersionUID = 7857472738562215118L;
+		
+		final float value;
 
         public FloatMeasurement(float value, Unit<T> unit) {
         	super(unit);
@@ -465,7 +477,7 @@ public abstract class AbstractMeasurement<Q extends Quantity<Q>> implements Meas
 
         @Override
         public Float getValue() {
-            return value;
+            return Float.valueOf(value);
         }
 
         // Implements AbstractMeasurement
@@ -479,8 +491,6 @@ public abstract class AbstractMeasurement<Q extends Quantity<Q>> implements Meas
             BigDecimal decimal = BigDecimal.valueOf(value); // TODO check value if it is a BD, otherwise use different converter
             return (super.unit.equals(unit)) ? decimal : ((AbstractConverter)super.unit.getConverterTo(unit)).convert(decimal, ctx);
         }
-        private static final long serialVersionUID = 1L;
-
 
 		public long longValue(Unit<T> unit) {
 	        double result = doubleValue(unit);
@@ -491,27 +501,26 @@ public abstract class AbstractMeasurement<Q extends Quantity<Q>> implements Meas
 		}
 
 		@Override
-		public Measurement<T, Number> add(Measurement<T, Number> that) {
-			// TODO Auto-generated method stub
-			return null;
+		public AbstractMeasurement<T> add(Measurement<T, Number> that) {
+			return of(value + that.getValue().floatValue(), getUnit()); // TODO use shift of the unit?
 		}
 
 		@Override
-		public Measurement<T, Number> substract(Measurement<T, Number> that) {
-			// TODO Auto-generated method stub
-			return null;
+		public AbstractMeasurement<T> substract(Measurement<T, Number> that) {
+			return of(value - that.getValue().floatValue(), getUnit()); // TODO use shift of the unit?
 		}
 
+		@SuppressWarnings("unchecked")
 		@Override
-		public Measurement<?, Number> multiply(Measurement<?, Number> that) {
-			// TODO Auto-generated method stub
-			return null;
+		public AbstractMeasurement<T> multiply(Measurement<?, Number> that) {
+			return (AbstractMeasurement<T>) of(value * that.getValue().floatValue(), 
+					getUnit().multiply(that.getUnit()));
 		}
 
 		@Override
 		public Measurement<?, Number> multiply(Number that) {
-			// TODO Auto-generated method stub
-			return null;
+			return of(value * that.floatValue(), 
+					getUnit().multiply(that.doubleValue()));
 		}
 
 		@Override
@@ -520,15 +529,20 @@ public abstract class AbstractMeasurement<Q extends Quantity<Q>> implements Meas
 			return null;
 		}
 
+		@SuppressWarnings("unchecked")
 		@Override
-		public Measurement<T, Number> inverse() {
-			// TODO Auto-generated method stub
-			return null;
+		public AbstractMeasurement<T> inverse() {
+			return (AbstractMeasurement<T>) of(value, getUnit().inverse());
 		}
 
 		@Override
 		public boolean isBig() {
 			return false;
+		}
+
+		@Override
+		public Measurement<?, Number> divide(Number that) {
+			return of(value / that.floatValue(), getUnit());
 		}
     }
 
@@ -606,10 +620,16 @@ public abstract class AbstractMeasurement<Q extends Quantity<Q>> implements Meas
 		public Measurement<?, Number> divide(Measurement<?, Number> that) {
 			return of(value / that.getValue().doubleValue(), getUnit().divide(that.getUnit()));
 		}
-
+		
 		@Override
-		public Measurement<T, Number> inverse() {
-			return of(-value, getUnit());
+		public Measurement<?, Number> divide(Number that) {
+			return of(value / that.doubleValue(), getUnit());
+		}
+
+		@SuppressWarnings("unchecked")
+		@Override
+		public AbstractMeasurement<T> inverse() {
+			return (AbstractMeasurement<T>) of(value, getUnit().inverse());
 		}
 
 		@Override
@@ -684,12 +704,19 @@ public abstract class AbstractMeasurement<Q extends Quantity<Q>> implements Meas
 
 		@Override
 		public Measurement<?, Number> divide(Measurement<?, Number> that) {
-			return of(value.divide((BigDecimal)that), getUnit());
+			return of(value.divide((BigDecimal)that.getValue()), getUnit());
 		}
 
 		@Override
+		public Measurement<?, Number> divide(Number that) {
+			return of(value.divide((BigDecimal)that), getUnit());
+		}
+		
+		@SuppressWarnings("unchecked")
+		@Override
 		public AbstractMeasurement<T> inverse() {
-			return of(value.negate(), getUnit());
+			//return of(value.negate(), getUnit());
+			return (AbstractMeasurement<T>) of(value, getUnit().inverse());
 		}
 
 		protected long longValue(Unit<T> unit) {
