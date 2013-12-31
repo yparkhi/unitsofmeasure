@@ -141,7 +141,7 @@ public abstract class AbstractUnit<Q extends Quantity<Q>> implements Unit<Q>, Se
      *
      * @param charSequence the character sequence to parse.
      * @return <code>UCUMFormat.getCaseSensitiveInstance().parse(csq, new ParsePosition(0))</code>
-     * @throws IllegalArgumentException if the specified character sequence
+     * @throws ParserException if the specified character sequence
      *         cannot be correctly parsed (e.g. not UCUM compliant).
      */
     public static AbstractUnit<?> of(CharSequence charSequence) {
