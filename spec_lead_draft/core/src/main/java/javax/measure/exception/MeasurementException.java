@@ -10,7 +10,7 @@ package javax.measure.exception;
  * Exception thrown when errors occur during measurement operations.
  *
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 0.1, $Date$
+ * @version 0.2, $Date$
  *
  */
 public class MeasurementException extends RuntimeException {
