@@ -8,6 +8,7 @@ package javax.measure.service;
 
 import javax.measure.Dimension;
 
+
 /**
  * <p>
  * This interface represent the service to obtain {@link javax.measure.Dimension} instances.
