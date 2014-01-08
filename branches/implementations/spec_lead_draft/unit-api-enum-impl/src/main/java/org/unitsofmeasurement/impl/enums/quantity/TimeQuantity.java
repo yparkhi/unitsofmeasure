@@ -154,4 +154,10 @@ public class TimeQuantity extends AbstractQuantity<Time> {
 	public boolean eq(AbstractQuantity<Time> dq) {
 		 return eq((TimeQuantity) dq);
 	}
+
+	@Override
+	public Measurement<?, Number> divide(Number that) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
