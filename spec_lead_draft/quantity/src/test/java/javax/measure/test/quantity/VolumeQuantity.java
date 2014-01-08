@@ -18,7 +18,7 @@ import javax.measure.test.unit.VolumeUnit;
 
 
 /**
- * @author paul.morrison
+ * @author Werner Keil
  */
 public class VolumeQuantity extends TestQuantity<Volume> {
     public VolumeQuantity() {
@@ -142,6 +142,12 @@ public class VolumeQuantity extends TestQuantity<Volume> {
 
 	@Override
 	public Measurement<Volume, Number> inverse() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Measurement<?, Number> divide(Number that) {
 		// TODO Auto-generated method stub
 		return null;
 	}

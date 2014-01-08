@@ -16,7 +16,7 @@ import javax.measure.test.unit.BitUnit;
 
 /**
  * @author Werner Keil
- * @version 1.0
+ * @version 1.1
  */
 public class BitQuantity extends TestQuantity<Information> {
 
@@ -157,6 +157,12 @@ public class BitQuantity extends TestQuantity<Information> {
 
 	@Override
 	public Measurement<Information, Number> inverse() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Measurement<?, Number> divide(Number that) {
 		// TODO Auto-generated method stub
 		return null;
 	}

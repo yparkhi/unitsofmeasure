@@ -15,7 +15,7 @@ import javax.measure.test.unit.TimeUnit;
 
 /**
  * @author Werner Keil
- * @version 1.0
+ * @version 1.1
  */
 public class TimeQuantity extends TestQuantity<Time> {
 
@@ -147,6 +147,12 @@ public class TimeQuantity extends TestQuantity<Time> {
 
 	@Override
 	public Measurement<Time, Number> inverse() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Measurement<?, Number> divide(Number that) {
 		// TODO Auto-generated method stub
 		return null;
 	}

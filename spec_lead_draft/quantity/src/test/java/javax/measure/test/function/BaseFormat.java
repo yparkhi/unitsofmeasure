@@ -15,7 +15,7 @@ import java.text.ParseException;
 import java.util.Locale;
 
 import javax.measure.Unit;
-import javax.measure.exception.UnitParseException;
+import javax.measure.function.ParserException;
 import javax.measure.function.UnitFormat;
 
 
@@ -116,7 +116,7 @@ abstract class BaseFormat extends Format implements UnitFormat {
      *             sequence (e.g. illegal syntax).
      */
     public abstract Unit<?> parse(CharSequence csq, ParsePosition cursor)
-            throws UnitParseException;
+            throws ParserException;
 
     /**
      * Parses the specified character sequence to produce a unit (convenience
@@ -130,7 +130,7 @@ abstract class BaseFormat extends Format implements UnitFormat {
      *             if any problem occurs while parsing the specified character
      *             sequence (e.g. illegal syntax).
      */
-    public final Unit<?> parse(CharSequence csq) throws UnitParseException {
+    public final Unit<?> parse(CharSequence csq) throws ParserException {
         return parse(csq, null);
     }
 
@@ -151,7 +151,7 @@ abstract class BaseFormat extends Format implements UnitFormat {
     public final Unit<?> parseObject(String source, ParsePosition pos) {
         try {
             return parse(source, pos);
-        } catch (UnitParseException e) {
+        } catch (ParserException e) {
             return null;
             // Unfortunately the message why the parsing failed
             // is lost; but we have to follow the Format spec.

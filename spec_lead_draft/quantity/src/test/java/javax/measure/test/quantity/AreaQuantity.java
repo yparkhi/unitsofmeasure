@@ -134,6 +134,12 @@ public class AreaQuantity extends TestQuantity<Area> {
 		return null;
 	}
 
+	@Override
+	public Measurement<?, Number> divide(Number that) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 //	@Override
 //	public double doubleValue(Unit<Area> unit) {
 //		// TODO Auto-generated method stub

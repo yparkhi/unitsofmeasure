@@ -14,7 +14,7 @@ import javax.measure.test.unit.BitRateUnit;
 
 /**
  * @author Werner Keil
- * @version 1.0
+ * @version 1.1
  */
 public class BitRateQuantity extends TestQuantity<InformationRate> {
     public BitRateQuantity() {
@@ -131,6 +131,12 @@ public class BitRateQuantity extends TestQuantity<InformationRate> {
 
 	@Override
 	public Measurement<InformationRate, Number> inverse() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Measurement<?, Number> divide(Number that) {
 		// TODO Auto-generated method stub
 		return null;
 	}

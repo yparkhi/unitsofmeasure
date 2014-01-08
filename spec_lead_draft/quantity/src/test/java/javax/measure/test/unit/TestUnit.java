@@ -12,8 +12,8 @@ import java.util.Map;
 import javax.measure.Dimension;
 import javax.measure.Quantity;
 import javax.measure.Unit;
-import javax.measure.exception.IncommensurableException;
-import javax.measure.exception.UnconvertibleException;
+import javax.measure.IncommensurableException;
+import javax.measure.UnconvertibleException;
 import javax.measure.function.UnitConverter;
 import javax.measure.quantity.Dimensionless;
 

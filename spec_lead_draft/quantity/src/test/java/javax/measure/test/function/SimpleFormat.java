@@ -14,7 +14,7 @@ import java.util.Locale;
 import java.util.Map;
 
 import javax.measure.Unit;
-import javax.measure.exception.UnitParseException;
+import javax.measure.function.ParserException;
 import javax.measure.function.UnitConverter;
 import javax.measure.function.UnitFormat;
 import javax.measure.test.unit.TestUnit;
@@ -149,7 +149,7 @@ public class SimpleFormat extends BaseFormat {
         }
     }
 
-    public Unit<?> parse(CharSequence csq, ParsePosition cursor) throws UnitParseException {
+    public Unit<?> parse(CharSequence csq, ParsePosition cursor) throws ParserException {
         return TestUnit.ONE;
     }
 
