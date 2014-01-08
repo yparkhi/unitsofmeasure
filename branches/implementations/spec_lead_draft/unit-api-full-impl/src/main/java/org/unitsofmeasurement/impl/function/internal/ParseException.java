@@ -10,7 +10,7 @@
 /* JavaCCOptions:KEEP_LINE_COL=null */
 package org.unitsofmeasurement.impl.function.internal;
 
-import javax.measure.exception.MeasurementException;
+import javax.measure.MeasurementException;
 
 /**
  * This exception is thrown when parse errors are encountered.

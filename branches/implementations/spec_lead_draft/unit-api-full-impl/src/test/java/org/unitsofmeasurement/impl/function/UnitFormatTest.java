@@ -15,7 +15,7 @@ import static org.unitsofmeasurement.impl.system.SI.KILOGRAM;
 import java.io.IOException;
 
 import javax.measure.Unit;
-import javax.measure.exception.ParserException;
+import javax.measure.function.ParserException;
 import javax.measure.function.UnitFormat;
 import javax.measure.quantity.Length;
 import javax.measure.quantity.Velocity;
@@ -23,7 +23,6 @@ import javax.measure.quantity.Velocity;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 import org.unitsofmeasurement.impl.model.quantity.LengthAmount;
 
 public class UnitFormatTest {
