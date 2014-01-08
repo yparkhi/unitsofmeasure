@@ -6,7 +6,7 @@
  */
 
 /**
- * Provides quantitative properties or attributes of thing such as
+ * [OPTIONAL] Provides quantitative properties or attributes of thing such as
  * mass, time, distance, heat, and angular separation.
  * Quantities of different kinds are represented by sub-types of the
  * {@link javax.measure.Quantity} interface.

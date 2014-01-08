@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>javax.measure</groupId>
 	<artifactId>unit-api-parent</artifactId>
-	<version>0.3-SNAPSHOT</version>
+	<version>0.4-SNAPSHOT</version>
 	<name>Units of Measurement</name>
 	<description>Units of Measurement Standard</description>
 	<packaging>pom</packaging>
@@ -11,7 +11,13 @@
 		<name>Java Community Process</name>
 		<url>http://jcp.org</url>
 	</organization>
-	
+	<licenses>
+		<license>
+			<name>Specification License</name>
+			<url>LICENSE.txt</url>
+		</license>
+	</licenses>
+
 	<!-- ======================================================= -->
 	<!-- Build Settings -->
 	<!-- ======================================================= -->
@@ -25,7 +31,7 @@
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
 	</properties>
-	
+
 	<!-- ======================================================= -->
 	<!-- Modules -->
 	<!-- ======================================================= -->
@@ -97,4 +103,5 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
+	<inceptionYear>2014</inceptionYear>
 </project>
