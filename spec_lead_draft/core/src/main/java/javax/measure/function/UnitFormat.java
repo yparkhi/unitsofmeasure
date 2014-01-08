@@ -8,8 +8,8 @@
 package javax.measure.function;
 
 import java.io.IOException;
+
 import javax.measure.Unit;
-import javax.measure.exception.ParserException;
 
 
 /**

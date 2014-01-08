@@ -9,8 +9,6 @@ package javax.measure;
 
 import java.util.Map;
 
-import javax.measure.exception.IncommensurableException;
-import javax.measure.exception.UnconvertibleException;
 import javax.measure.function.Nameable;
 import javax.measure.function.UnitConverter;
 import javax.measure.function.UnitFormat;

@@ -6,7 +6,6 @@
  */
 package javax.measure.function;
 
-import javax.measure.exception.ParserException;
 
 /**
  * Represents a function that parses an input value and produces an output.
