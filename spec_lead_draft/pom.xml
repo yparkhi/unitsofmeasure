@@ -83,7 +83,6 @@
 					<!-- <excludePackageNames>javax.measure.unit.format:javax.measure.unit.converter:javax.measure.util</excludePackageNames> -->
 					<!-- Creates links to existing javadoc-generated -->
 
-
 					<!-- documentation of external referenced classes. -->
 					<links>
 						<link>http://docs.oracle.com/javase/7/docs/api/</link>
