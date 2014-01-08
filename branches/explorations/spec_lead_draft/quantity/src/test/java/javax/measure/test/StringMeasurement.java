@@ -85,4 +85,10 @@ public final class StringMeasurement<Q extends Quantity<Q>, String> implements
 		return null;
 	}
 
+	@Override
+	public Measurement<?, String> divide(String that) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

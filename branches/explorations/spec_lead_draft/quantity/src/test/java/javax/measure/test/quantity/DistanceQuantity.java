@@ -17,7 +17,7 @@ import javax.measure.test.unit.VolumeUnit;
 
 
 /**
- * @author paul.morrison
+ * @author Werner Keil
  */
 public class DistanceQuantity extends TestQuantity<Length> {
 
@@ -152,6 +152,12 @@ public class DistanceQuantity extends TestQuantity<Length> {
 
 	@Override
 	public Measurement<Length, Number> inverse() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Measurement<?, Number> divide(Number that) {
 		// TODO Auto-generated method stub
 		return null;
 	}
