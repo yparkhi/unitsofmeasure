@@ -152,8 +152,4 @@ public class SimpleFormat extends BaseFormat {
     public Unit<?> parse(CharSequence csq, ParsePosition cursor) throws ParserException {
         return TestUnit.ONE;
     }
-
-    public Locale getLocale() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
 }
