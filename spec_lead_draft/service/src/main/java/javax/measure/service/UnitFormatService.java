@@ -9,6 +9,8 @@ package javax.measure.service;
 
 import java.util.Locale;
 
+import javax.measure.function.UnitFormat;
+
 /**
  * <p>
  * This interface represent the service to obtain {@link UnitFormat} instances.
