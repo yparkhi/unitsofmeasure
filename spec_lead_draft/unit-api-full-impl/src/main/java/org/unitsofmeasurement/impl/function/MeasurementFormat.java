@@ -18,8 +18,8 @@ import java.math.MathContext;
 
 import javax.measure.Measurement;
 import javax.measure.Unit;
-import javax.measure.exception.ParserException;
 import javax.measure.function.Parser;
+import javax.measure.function.ParserException;
 import javax.measure.function.UnitFormat;
 
 import org.unitsofmeasurement.impl.AbstractMeasurement;

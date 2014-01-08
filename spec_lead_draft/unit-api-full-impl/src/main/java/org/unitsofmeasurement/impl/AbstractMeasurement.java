@@ -16,7 +16,7 @@ import java.text.ParsePosition;
 import javax.measure.Measurement;
 import javax.measure.Quantity;
 import javax.measure.Unit;
-import javax.measure.exception.ParserException;
+import javax.measure.function.ParserException;
 import javax.measure.quantity.Dimensionless;
 
 import org.unitsofmeasurement.impl.function.AbstractConverter;

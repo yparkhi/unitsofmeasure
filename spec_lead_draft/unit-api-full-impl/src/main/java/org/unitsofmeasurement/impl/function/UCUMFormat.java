@@ -20,7 +20,7 @@ import java.util.ResourceBundle;
 
 import javax.measure.Quantity;
 import javax.measure.Unit;
-import javax.measure.exception.ParserException;
+import javax.measure.function.ParserException;
 import javax.measure.function.UnitConverter;
 import javax.measure.function.UnitFormat;
 
