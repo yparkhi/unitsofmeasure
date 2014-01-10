@@ -9,7 +9,7 @@ package javax.measure.service;
 
 import java.util.Locale;
 
-import javax.measure.function.UnitFormat;
+import javax.measure.format.UnitFormat;
 
 /**
  * <p>
@@ -20,7 +20,7 @@ import javax.measure.function.UnitFormat;
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @see <a href="http://aurora.regenstrief.org/~ucum/ucum.html">UCUM Full
  *      Specification</a>
- * @version 1.2, $Date: 2013-09-20 01:04:46 +0200 (Fr, 20 Sep 2013) $
+ * @version 1.3, $Date: 2013-09-20 01:04:46 +0200 (Fr, 20 Sep 2013) $
  */
 public interface UnitFormatService {
 

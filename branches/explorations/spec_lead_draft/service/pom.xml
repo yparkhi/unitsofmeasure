@@ -14,6 +14,11 @@
   		<version>${jsr.version}</version>
   	</dependency>
   	<dependency>
+  		<groupId>javax.measure</groupId>
+  		<artifactId>unit-api-format</artifactId>
+  		<version>${jsr.version}</version>
+  	</dependency>
+  	<dependency>
   		<groupId>junit</groupId>
   		<artifactId>junit</artifactId>
   		<scope>test</scope>

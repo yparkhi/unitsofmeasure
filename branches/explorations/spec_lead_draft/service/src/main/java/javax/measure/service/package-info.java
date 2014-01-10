@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2013 Werner Keil and others.
+ * Copyright (c) 2013-2014 Jean-Marie Dautelle, Werner Keil, V2COM.
  * All rights reserved.
  *
  * See LICENSE.txt for details.

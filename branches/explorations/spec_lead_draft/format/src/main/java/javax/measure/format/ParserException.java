@@ -4,7 +4,7 @@
  *
  * See LICENSE.txt for details.
  */
-package javax.measure.function;
+package javax.measure.format;
 
 import javax.measure.MeasurementException;
 
@@ -12,7 +12,7 @@ import javax.measure.MeasurementException;
  * Signals that an error has been reached unexpectedly while parsing.
  * 
  * @author Werner Keil
- * @version 0.3, $Date$
+ * @version 0.3, $Date: 2014-01-08 22:42:36 +0100 (Mi, 08 Jän 2014) $
  */
 public class ParserException extends MeasurementException {
 

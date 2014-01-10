@@ -38,6 +38,7 @@
 	<!-- ======================================================= -->
 	<modules>
 		<module>core</module>
+		<module>format</module>
 		<module>quantity</module>
 		<module>service</module>
 	</modules>
@@ -89,7 +90,6 @@
 					</links>
 				</configuration>
 			</plugin>
-
 
 			<!-- ======================================================= -->
 			<!-- Compilation -->
