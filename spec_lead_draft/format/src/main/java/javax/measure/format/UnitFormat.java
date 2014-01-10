@@ -5,7 +5,7 @@
  *
  * See LICENSE.txt for details.
  */
-package javax.measure.function;
+package javax.measure.format;
 
 import java.io.IOException;
 
