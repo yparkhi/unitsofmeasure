@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.unitsofmeasurement</groupId>
 	<artifactId>unit-api-enum-impl</artifactId>
-	<version>0.3-SNAPSHOT</version>
+	<version>0.4-SNAPSHOT</version>
 	<packaging>bundle</packaging>
 	<name>Units of Measurement API Implementation</name>
 	<organization>
@@ -35,6 +35,14 @@ Lightweight approach based on Java enums.</description>
 			<artifactId>unit-api-core</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>javax.measure</groupId>
+			<artifactId>unit-api-format</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.measure</groupId>
+			<artifactId>unit-api-quantity</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>org.hamcrest</groupId>
 			<artifactId>hamcrest-all</artifactId>
 			<scope>test</scope>
@@ -43,10 +51,6 @@ Lightweight approach based on Java enums.</description>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>javax.measure</groupId>
-			<artifactId>unit-api-quantity</artifactId>
 		</dependency>
 	</dependencies>
 	<dependencyManagement>
@@ -66,6 +70,11 @@ Lightweight approach based on Java enums.</description>
 			<dependency>
 				<groupId>javax.measure</groupId>
 				<artifactId>unit-api-core</artifactId>
+				<version>${jsr.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>javax.measure</groupId>
+				<artifactId>unit-api-format</artifactId>
 				<version>${jsr.version}</version>
 			</dependency>
 			<dependency>
