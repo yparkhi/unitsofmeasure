@@ -1,7 +1,7 @@
 package org.unitsofmeasurement.impl.enums.quantity;
 
 import org.unitsofmeasurement.impl.enums.unit.TimeUnit;
-import org.unitsofmeasurement.impl.function.SimpleFormat;
+import org.unitsofmeasurement.impl.format.SimpleFormat;
 
 import javax.measure.Measurement;
 import javax.measure.Unit;

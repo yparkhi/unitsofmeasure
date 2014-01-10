@@ -4,7 +4,7 @@
  *
  * See LICENSE.txt for details.
  */
-package org.unitsofmeasurement.impl.function;
+package org.unitsofmeasurement.impl.format;
 
 import java.io.IOException;
 import java.text.FieldPosition;
@@ -13,7 +13,7 @@ import java.text.ParsePosition;
 import java.util.Locale;
 
 import javax.measure.Unit;
-import javax.measure.function.UnitFormat;
+import javax.measure.format.UnitFormat;
 
 /**
  * <p>
@@ -35,7 +35,7 @@ import javax.measure.function.UnitFormat;
  * </p>
  * 
  * <p>
- * OSGi bundles should use {@link javax.measure.function.UnitFormat} to
+ * OSGi bundles should use {@link javax.measure.format.UnitFormat} to
  * parse/format {@linkplain #getStandardInstance() standard} (UCUM) units.
  * </p>
  * 
@@ -51,7 +51,7 @@ abstract class AbstractFormat extends Format implements UnitFormat {
 
 	/**
 	 * Returns the standard unit format (UCUM). OSGi bundles should use
-	 * {@link javax.measure.function.UnitFormat} to parse/format standard (UCUM)
+	 * {@link javax.measure.format.UnitFormat} to parse/format standard (UCUM)
 	 * units.
 	 * 
 	 * @return the standard format.

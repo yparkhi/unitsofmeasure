@@ -1,4 +1,4 @@
-package org.unitsofmeasurement.impl.function;
+package org.unitsofmeasurement.impl.format;
 
 
 import java.io.IOException;
@@ -7,7 +7,7 @@ import java.util.Locale;
 import java.util.Map;
 
 import javax.measure.Unit;
-import javax.measure.function.UnitFormat;
+import javax.measure.format.UnitFormat;
 
 /**
  * <p>

@@ -6,8 +6,8 @@
  */
 package org.unitsofmeasurement.impl.enums.quantity;
 
+import org.unitsofmeasurement.impl.format.SimpleFormat;
 import org.unitsofmeasurement.impl.function.Multiplier;
-import org.unitsofmeasurement.impl.function.SimpleFormat;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
