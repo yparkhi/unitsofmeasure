@@ -1,6 +1,5 @@
 /**
- * Unit-API - Units of Measurement API for Java (http://unitsofmeasurement.org)
- * Copyright (c) 2005-2013, Unit-API contributors and others
+ * Copyright (c) 2013-2014 Jean-Marie Dautelle, Werner Keil, V2COM.
  * All rights reserved.
  *
  * See LICENSE.txt for details.
@@ -11,16 +10,14 @@ import java.io.IOException;
 
 import javax.measure.Unit;
 
-
 /**
  * Formatting and parsing of {@code Unit} instances.
  *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @author Eric Russell
- * @version 1.1
+ * @version 1.2
  *
- * @see <a href="http://unitsofmeasure.org">UCUM Specification</a>
+ * @see Unit
  */
 public interface UnitFormat extends Parser<CharSequence, Unit<?>> {
     /**
@@ -45,7 +42,7 @@ public interface UnitFormat extends Parser<CharSequence, Unit<?>> {
      * @throws UnitParseException if any problem occurs while parsing the
      *         specified character sequence (e.g. illegal syntax).
      */
-    //Unit<?> parse(CharSequence csq, ParsePosition cursor) throws UnitParseException;
+    //Unit<?> parse(CharSequence csq, ParsePosition cursor) throws ParserException;
     
     /**
      * Parses a portion of the specified {@code CharSequence} from the

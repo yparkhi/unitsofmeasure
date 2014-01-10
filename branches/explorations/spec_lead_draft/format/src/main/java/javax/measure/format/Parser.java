@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2013-2014 Werner Keil and others.
+ * Copyright (c) 2013-2014 Jean-Marie Dautelle, Werner Keil, V2COM.
  * All rights reserved.
  *
  * See LICENSE.txt for details.
@@ -16,7 +16,7 @@ package javax.measure.format;
  * >functional interface</a> whose functional method is {@link #parse()}.
  * 
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 0.2, $Date$
+ * @version 0.3, $Date$
  * @param <I>
  *            the input
  * @param <O>

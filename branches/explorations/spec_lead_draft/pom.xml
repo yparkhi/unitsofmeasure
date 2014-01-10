@@ -18,15 +18,16 @@
 			<url>LICENSE.txt</url>
 		</license>
 	</licenses>
+
 	<issueManagement>
 		<system>Google Code</system>
 		<url>http://code.google.com/p/unitsofmeasure/issues/list</url>
 	</issueManagement>
 	<ciManagement>
-		<system>Hudson</system>
-		<url>http://hudson.geomatys.com/job/Unit-API/</url>
+		<system>Jenkins</system>
+		<url>http://jenkins.geotoolkit.org/job/Unit-API/</url>
 	</ciManagement>
-	
+
 	<mailingLists>
 		<mailingList>
 			<name>Units-Dev</name>
@@ -39,7 +40,7 @@
 			<post>units-users@googlegroups.com</post>
 		</mailingList>
 	</mailingLists>
-	
+
 	<!-- ======================================================= -->
 	<!-- Build Settings -->
 	<!-- ======================================================= -->
@@ -64,9 +65,8 @@
 		<module>service</module>
 	</modules>
 
-		<build>
+	<build>
 		<plugins>
-
 			<!-- ======================================================= -->
 			<!-- Compilation -->
 			<!-- ======================================================= -->
@@ -119,7 +119,7 @@
 			<!-- ======================================================= -->
 			<!-- Custom Javadoc plugin -->
 			<!-- ======================================================= -->
-			<plugin>
+			<!--  plugin>
 				<groupId>javolution</groupId>
 				<artifactId>colapi</artifactId>
 				<version>1.0.0</version>
@@ -130,7 +130,7 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin>
+			</plugin -->
 
 			<!-- ======================================================= -->
 			<!-- Maven web site -->
@@ -264,7 +264,7 @@
 			</extension>
 		</extensions>
 	</build>
-	
+
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
