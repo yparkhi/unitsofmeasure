@@ -16,7 +16,7 @@ import java.text.ParsePosition;
 import javax.measure.Measurement;
 import javax.measure.Quantity;
 import javax.measure.Unit;
-import javax.measure.function.ParserException;
+import javax.measure.format.ParserException;
 import javax.measure.quantity.Dimensionless;
 
 import org.unitsofmeasurement.impl.function.AbstractConverter;
@@ -77,7 +77,7 @@ import org.unitsofmeasurement.impl.system.SI;
  * 
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.0.2 ($Revision$), $Date$
+ * @version 1.0.3 ($Revision$), $Date$
  */
 public abstract class AbstractMeasurement<Q extends Quantity<Q>> implements Measurement<Q, Number>,
         Serializable {

@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.unitsofmeasurement</groupId>
 	<artifactId>unit-api-full-impl</artifactId>
-	<version>0.3-SNAPSHOT</version>
+	<version>0.4-SNAPSHOT</version>
 
 	<packaging>bundle</packaging>
 	<name>Units of Measurement API Implementation</name>
@@ -36,6 +36,14 @@ Full Scale approach.</description>
 			<artifactId>unit-api-core</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>javax.measure</groupId>
+			<artifactId>unit-api-format</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.measure</groupId>
+			<artifactId>unit-api-quantity</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>org.hamcrest</groupId>
 			<artifactId>hamcrest-all</artifactId>
 			<scope>test</scope>
@@ -44,10 +52,6 @@ Full Scale approach.</description>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>javax.measure</groupId>
-			<artifactId>unit-api-quantity</artifactId>
 		</dependency>
 	</dependencies>
 	<dependencyManagement>
@@ -67,6 +71,11 @@ Full Scale approach.</description>
 			<dependency>
 				<groupId>javax.measure</groupId>
 				<artifactId>unit-api-core</artifactId>
+				<version>${jsr.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>javax.measure</groupId>
+				<artifactId>unit-api-format</artifactId>
 				<version>${jsr.version}</version>
 			</dependency>
 			<dependency>

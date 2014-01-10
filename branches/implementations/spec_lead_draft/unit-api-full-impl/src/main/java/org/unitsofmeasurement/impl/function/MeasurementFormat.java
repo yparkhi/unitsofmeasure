@@ -18,9 +18,9 @@ import java.math.MathContext;
 
 import javax.measure.Measurement;
 import javax.measure.Unit;
-import javax.measure.function.Parser;
-import javax.measure.function.ParserException;
-import javax.measure.function.UnitFormat;
+import javax.measure.format.Parser;
+import javax.measure.format.ParserException;
+import javax.measure.format.UnitFormat;
 
 import org.unitsofmeasurement.impl.AbstractMeasurement;
 import org.unitsofmeasurement.impl.system.SI;
@@ -37,7 +37,7 @@ import org.unitsofmeasurement.impl.system.SI;
  * 
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.2, $Date$
+ * @version 1.3, $Date$
  */
 @SuppressWarnings("rawtypes")
 public abstract class MeasurementFormat extends Format implements Parser<CharSequence, Measurement> {
