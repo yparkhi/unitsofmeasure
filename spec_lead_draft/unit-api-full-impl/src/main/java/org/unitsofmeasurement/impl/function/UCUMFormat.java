@@ -20,9 +20,9 @@ import java.util.ResourceBundle;
 
 import javax.measure.Quantity;
 import javax.measure.Unit;
-import javax.measure.function.ParserException;
+import javax.measure.format.ParserException;
+import javax.measure.format.UnitFormat;
 import javax.measure.function.UnitConverter;
-import javax.measure.function.UnitFormat;
 
 import org.unitsofmeasurement.impl.AbstractUnit;
 import org.unitsofmeasurement.impl.AnnotatedUnit;
@@ -51,7 +51,7 @@ import org.unitsofmeasurement.impl.system.SIPrefix;
  *
  * @author <a href="mailto:eric-r@northwestern.edu">Eric Russell</a>
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 5.3, December 31, 2013
+ * @version 5.4, $Date$
  */
 public abstract class UCUMFormat implements UnitFormat, Serializable {
 

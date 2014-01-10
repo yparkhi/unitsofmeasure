@@ -4,7 +4,7 @@
  *
  * See LICENSE.txt for details.
  */
-package org.unitsofmeasurement.impl.function;
+package org.unitsofmeasurement.impl.format;
 
 import static org.junit.Assert.*;
 import static org.unitsofmeasurement.impl.system.SI.METRE;
@@ -15,16 +15,22 @@ import static org.unitsofmeasurement.impl.system.SI.KILOGRAM;
 import java.io.IOException;
 
 import javax.measure.Unit;
-import javax.measure.function.ParserException;
-import javax.measure.function.UnitFormat;
+import javax.measure.format.ParserException;
+import javax.measure.format.UnitFormat;
 import javax.measure.quantity.Length;
 import javax.measure.quantity.Velocity;
 
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
+import org.unitsofmeasurement.impl.function.LocalUnitFormat;
+import org.unitsofmeasurement.impl.function.UCUMFormat;
 import org.unitsofmeasurement.impl.model.quantity.LengthAmount;
 
+/**
+ * @author Werner Keil
+ *
+ */
 public class UnitFormatTest {
 	private Length sut;
 
