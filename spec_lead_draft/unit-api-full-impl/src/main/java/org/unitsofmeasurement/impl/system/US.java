@@ -26,7 +26,7 @@ import javax.measure.quantity.Mass;
 import javax.measure.quantity.Power;
 import javax.measure.quantity.Temperature;
 import javax.measure.quantity.Time;
-import javax.measure.quantity.Velocity;
+import javax.measure.quantity.Speed;
 import javax.measure.quantity.Volume;
 
 /**
@@ -38,8 +38,8 @@ import javax.measure.quantity.Volume;
  * @noextend This class is not intended to be extended by clients.
  * 
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
- * @author <a href="mailto:uomo@catmedia.us">Werner Keil</a>
- * @version 1.15 ($Revision: 332 $), $Date: 2011-09-11 14:52:11 +0200 $
+ * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
+ * @version 1.16 ($Revision$), $Date$
  * @see <a
  *      href="http://en.wikipedia.org/wiki/United_States_customary_units">Wikipedia:
  *      United State Customary Units</a>
@@ -222,28 +222,28 @@ public final class US extends AbstractSystemOfUnits {
 	public static final Unit<Time> HOUR = addUnit(MINUTE.multiply(60));
 
 	// ////////////
-	// Velocity //
+	// Speed //
 	// ////////////
 	/**
 	 * A unit of velocity expressing the number of {@link #FOOT feet} per
 	 * {@link SI#SECOND second}.
 	 */
-	public static final Unit<Velocity> FEET_PER_SECOND = addUnit(
-			FOOT.divide(SECOND)).asType(Velocity.class);
+	public static final Unit<Speed> FEET_PER_SECOND = addUnit(
+			FOOT.divide(SECOND)).asType(Speed.class);
 
 	/**
 	 * A unit of velocity expressing the number of international {@link #MILE
 	 * miles} per {@link #HOUR hour} (abbreviation <code>mph</code>).
 	 */
-	public static final Unit<Velocity> MILES_PER_HOUR = addUnit(
-			MILE.divide(HOUR)).asType(Velocity.class);
+	public static final Unit<Speed> MILES_PER_HOUR = addUnit(
+			MILE.divide(HOUR)).asType(Speed.class);
 
 	/**
 	 * A unit of velocity expressing the number of {@link #NAUTICAL_MILE
 	 * nautical miles} per {@link #HOUR hour} (abbreviation <code>kn</code>).
 	 */
-	public static final Unit<Velocity> KNOT = addUnit(
-			NAUTICAL_MILE.divide(HOUR)).asType(Velocity.class);
+	public static final Unit<Speed> KNOT = addUnit(
+			NAUTICAL_MILE.divide(HOUR)).asType(Speed.class);
 
 	// ////////
 	// Area //

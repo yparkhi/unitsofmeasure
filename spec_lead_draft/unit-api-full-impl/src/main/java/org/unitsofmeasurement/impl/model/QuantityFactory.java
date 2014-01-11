@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2013 Werner Keil and others.
+ * Copyright (c) 2013-2014 Werner Keil and others.
  * All rights reserved.
  *
  * See LICENSE.txt for details.
@@ -38,7 +38,7 @@ import org.unitsofmeasurement.impl.system.SI;
  * @author  <a href="mailto:desruisseaux@users.sourceforge.net">Martin Desruisseaux</a>
  * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @author  <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
- * @version 5.1 ($Revision: 213 $), $Date: 2013-12-25 $
+ * @version 5.2 ($Revision: 213 $), $Date$
  */
 public abstract class QuantityFactory<Q extends Quantity<Q>> implements BiFunction<Number, Unit<Q>, Q> {
 // TODO BiFunction for SE 8, may need to factor back for ME but keep method signature
@@ -196,7 +196,7 @@ public abstract class QuantityFactory<Q extends Quantity<Q>> implements BiFuncti
             CLASS_TO_METRIC_UNIT.put(RadiationDoseAbsorbed.class, GRAY);
             CLASS_TO_METRIC_UNIT.put(RadiationDoseEffective.class, SIEVERT);
             CLASS_TO_METRIC_UNIT.put(CatalyticActivity.class, KATAL);
-            CLASS_TO_METRIC_UNIT.put(Velocity.class, METRES_PER_SECOND);
+            CLASS_TO_METRIC_UNIT.put(Speed.class, METRES_PER_SECOND);
             CLASS_TO_METRIC_UNIT.put(Acceleration.class, METRES_PER_SQUARE_SECOND);
             CLASS_TO_METRIC_UNIT.put(Area.class, SQUARE_METRE);
             CLASS_TO_METRIC_UNIT.put(Volume.class, CUBIC_METRE);
