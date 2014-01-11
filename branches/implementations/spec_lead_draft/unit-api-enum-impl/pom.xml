@@ -13,6 +13,12 @@
 	<url>http://code.google.com/p/unitsofmeasure/</url>
 	<description>An intial (Spec Lead) draft of a Unit Standard Implementation. 
 Lightweight approach based on Java enums.</description>
+	<licenses>
+		<license>
+			<name>BSD</name>
+			<url>LICENSE.txt</url>
+		</license>
+	</licenses>
 	
 	<!-- ======================================================= -->
 	<!-- Build Settings -->
