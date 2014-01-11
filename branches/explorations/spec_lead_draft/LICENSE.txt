@@ -1,4 +1,4 @@
-JEAN-MARIE DAUTELLE, WERNER KEIL, V2COM ARE  WILLING TO LICENSE THIS SPECIFICATION TO YOU ONLY UPON THE CONDITION THAT YOU ACCEPT ALL OF THE TERMS CONTAINED IN THIS 
+JEAN-MARIE DAUTELLE, WERNER KEIL, V2COM ARE WILLING TO LICENSE THIS SPECIFICATION TO YOU ONLY UPON THE CONDITION THAT YOU ACCEPT ALL OF THE TERMS CONTAINED IN THIS 
 LICENSE AGREEMENT ("AGREEMENT"). PLEASE READ THE TERMS AND CONDITIONS OF THIS AGREEMENT CAREFULLY. 
 BY DOWNLOADING THIS SPECIFICATION, YOU ACCEPT THE TERMS AND CONDITIONS OF THIS AGREEMENT. 
 IF YOU ARE NOT WILLING TO BE BOUND BY THEM, SELECT THE "DECLINE" BUTTON AT THE BOTTOM OF THIS PAGE AND THE DOWNLOADING PROCESS WILL NOT CONTINUE.
@@ -57,51 +57,52 @@ This license will expire on the earlier of:
 (a) two (2) years from the date of Release listed above; 
 (b) the date on which the final version of the Specification is publicly released; or 
 (c) the date on which the Java Specification Request (JSR) to which the Specification corresponds is withdrawn.  
-In addition, this license will terminate immediately without notice from Jean-Marie Dautelle, Werner Keil, V2COM if you fail to comply with any provision of this license.  
-Upon termination, you must cease use of or destroy the Specification.
+In addition, this license will terminate immediately without notice from Jean-Marie Dautelle, Werner Keil, V2COM if you fail to comply with any provision 
+of this license. Upon termination, you must cease use of or destroy the Specification.
 
 "Licensor Name Space" means the public class or interface declarations whose names begin with "java", "javax", "com.oracle" or their equivalents in any subsequent 
 naming convention adopted through the Java Community Process, or any recognized successors or replacements thereof
 
 TRADEMARKS
 
-No right, title, or interest in or to any trademarks, service marks, or trade names of <Jean-Marie Dautelle, Werner Keil, V2COM> or Jean-Marie Dautelle, Werner Keil, V2COM's 
-licensors is granted hereunder. Java and Java-related logos, marks and names are trademarks or registered trademarks of Oracle America, Inc. in the U.S. and other countries.
+No right, title, or interest in or to any trademarks, service marks, or trade names of Jean-Marie Dautelle, Werner Keil, V2COM or Jean-Marie Dautelle, 
+Werner Keil, V2COM's licensors is granted hereunder. Java and Java-related logos, marks and names are trademarks or registered trademarks of Oracle America, Inc. 
+in the U.S. and other countries.
 
 
 DISCLAIMER OF WARRANTIES
 
-THE SPECIFICATION IS PROVIDED "AS IS" AND IS EXPERIMENTAL AND MAY CONTAIN DEFECTS OR DEFICIENCIES WHICH CANNOT OR WILL NOT BE CORRECTED BY Jean-Marie Dautelle, Werner Keil, V2COM. 
-Jean-Marie Dautelle, Werner Keil, V2COM MAKE NO REPRESENTATIONS OR WARRANTIES, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, WARRANTIES OF MERCHANTABILITY, 
-FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT THAT THE CONTENTS OF THE SPECIFICATION ARE SUITABLE FOR ANY PURPOSE OR THAT ANY PRACTICE OR IMPLEMENTATION OF SUCH CONTENTS 
-WILL NOT INFRINGE ANY THIRD PARTY PATENTS, COPYRIGHTS, TRADE SECRETS OR OTHER RIGHTS. This document does not represent any commitment to release or implement any portion of 
-the Specification in any product.
+THE SPECIFICATION IS PROVIDED "AS IS" AND IS EXPERIMENTAL AND MAY CONTAIN DEFECTS OR DEFICIENCIES WHICH CANNOT OR WILL NOT BE CORRECTED BY JEAN-MARIE DAUTELLE, 
+WERNER KEIL, V2COM. JEAN-MARIE DAUTELLE, WERNER KEIL, V2COM MAKE NO REPRESENTATIONS OR WARRANTIES, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, 
+WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT THAT THE CONTENTS OF THE SPECIFICATION ARE SUITABLE FOR ANY PURPOSE OR 
+THAT ANY PRACTICE OR IMPLEMENTATION OF SUCH CONTENTS WILL NOT INFRINGE ANY THIRD PARTY PATENTS, COPYRIGHTS, TRADE SECRETS OR OTHER RIGHTS. 
+This document does not represent any commitment to release or implement any portion of the Specification in any product.
 
 
 THE SPECIFICATION COULD INCLUDE TECHNICAL INACCURACIES OR TYPOGRAPHICAL ERRORS. CHANGES ARE PERIODICALLY ADDED TO THE INFORMATION THEREIN; 
-THESE CHANGES WILL BE INCORPORATED INTO NEW VERSIONS OF THE SPECIFICATION, IF ANY. Jean-Marie Dautelle, Werner Keil, V2COM MAY MAKE IMPROVEMENTS AND/OR CHANGES TO THE PRODUCT(S) 
-AND/OR THE PROGRAM(S) DESCRIBED IN THE SPECIFICATION AT ANY TIME. Any use of such changes in the Specification will be governed by the then-current license for the applicable 
-version of the Specification.
+THESE CHANGES WILL BE INCORPORATED INTO NEW VERSIONS OF THE SPECIFICATION, IF ANY. JEAN-MARIE DAUTELLE, WERNER KEIL, V2COM MAY MAKE IMPROVEMENTS AND/OR CHANGES TO 
+THE PRODUCT(S) AND/OR THE PROGRAM(S) DESCRIBED IN THE SPECIFICATION AT ANY TIME. 
+Any use of such changes in the Specification will be governed by the then-current license for the applicable version of the Specification.
 
 
 LIMITATION OF LIABILITY
 
-TO THE EXTENT NOT PROHIBITED BY LAW, IN NO EVENT WILL <Jean-Marie Dautelle, Werner Keil, V2COM> OR ITS LICENSORS BE LIABLE FOR ANY DAMAGES, INCLUDING WITHOUT LIMITATION, 
-LOST REVENUE, PROFITS OR DATA, OR FOR SPECIAL, INDIRECT, CONSEQUENTIAL, INCIDENTAL OR PUNITIVE DAMAGES, HOWEVER CAUSED AND REGARDLESS OF THE THEORY OF LIABILITY, 
-ARISING OUT OF OR RELATED TO ANY FURNISHING, PRACTICING, MODIFYING OR ANY USE OF THE SPECIFICATION, EVEN IF <Jean-Marie Dautelle, Werner Keil, V2COM> AND/OR 
-ITS LICENSORS HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+TO THE EXTENT NOT PROHIBITED BY LAW, IN NO EVENT WILL JEAN-MARIE DAUTELLE, WERNER KEIL, V2COM OR THEIR LICENSORS BE LIABLE FOR ANY DAMAGES, INCLUDING 
+WITHOUT LIMITATION, LOST REVENUE, PROFITS OR DATA, OR FOR SPECIAL, INDIRECT, CONSEQUENTIAL, INCIDENTAL OR PUNITIVE DAMAGES, HOWEVER CAUSED AND 
+REGARDLESS OF THE THEORY OF LIABILITY, ARISING OUT OF OR RELATED TO ANY FURNISHING, PRACTICING, MODIFYING OR ANY USE OF THE SPECIFICATION, EVEN IF 
+Jean-Marie Dautelle, Werner Keil, V2COM AND/OR THEIR LICENSORS HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
 
 
-You will hold <Jean-Marie Dautelle, Werner Keil, V2COM> (and its licensors) harmless from any claims based on your use of the Specification for any purposes other than 
-the limited right of evaluation as described above, and from any claims that later versions or releases of any Specification furnished to you are incompatible with 
-the Specification provided to you under this license.
+You will hold Jean-Marie Dautelle, Werner Keil, V2COM (and their licensors) harmless from any claims based on your use of the Specification for any purposes other 
+than the limited right of evaluation as described above, and from any claims that later versions or releases of any Specification furnished to you are incompatible 
+with the Specification provided to you under this license.
 
 
 RESTRICTED RIGHTS LEGEND
 
-If this Software is being acquired by or on behalf of the U.S. Government or by a U.S. Government prime contractor or subcontractor (at any tier), then the Government's 
-rights in the Software and accompanying documentation shall be only as set forth in this license; this is in accordance with 48 C.F.R. 227.7201 through 227.7202-4 
-(for Department of Defense (DoD) acquisitions) and with 48 C.F.R. 2.101 and 12.212 (for non-DoD acquisitions).
+If this Software is being acquired by or on behalf of the U.S. Government or by a U.S. Government prime contractor or subcontractor (at any tier), then the 
+Government's rights in the Software and accompanying documentation shall be only as set forth in this license; this is in accordance with 48 C.F.R. 227.7201 
+through 227.7202-4 (for Department of Defense (DoD) acquisitions) and with 48 C.F.R. 2.101 and 12.212 (for non-DoD acquisitions).
 
 
 REPORT
