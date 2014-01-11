@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2013, Werner Keil and others.
+ * Copyright (c) 2013-2014, Werner Keil and others.
  * All rights reserved.
  *
  * See LICENSE.txt for details.
@@ -18,7 +18,7 @@ import javax.measure.Unit;
 import javax.measure.format.ParserException;
 import javax.measure.format.UnitFormat;
 import javax.measure.quantity.Length;
-import javax.measure.quantity.Velocity;
+import javax.measure.quantity.Speed;
 
 import org.junit.Before;
 import org.junit.Ignore;
@@ -53,7 +53,7 @@ public class UnitFormatTest {
 
 		final Appendable a2 = new StringBuilder();
 		@SuppressWarnings("unchecked")
-		Unit<Velocity> v = (Unit<Velocity>) sut.getUnit().divide(SECOND);
+		Unit<Speed> v = (Unit<Speed>) sut.getUnit().divide(SECOND);
 		try {
 			format.format(v, a2);
 		} catch (IOException e) {
@@ -76,7 +76,7 @@ public class UnitFormatTest {
 
 		final Appendable a2 = new StringBuilder();
 		@SuppressWarnings("unchecked")
-		Unit<Velocity> v = (Unit<Velocity>) sut.getUnit().divide(SECOND);
+		Unit<Speed> v = (Unit<Speed>) sut.getUnit().divide(SECOND);
 		try {
 			format.format(v, a2);
 		} catch (IOException e) {
@@ -99,7 +99,7 @@ public class UnitFormatTest {
 
 		final Appendable a2 = new StringBuilder();
 		@SuppressWarnings("unchecked")
-		Unit<Velocity> v = (Unit<Velocity>) sut.getUnit().divide(SECOND);
+		Unit<Speed> v = (Unit<Speed>) sut.getUnit().divide(SECOND);
 		try {
 			format.format(v, a2);
 		} catch (IOException e) {

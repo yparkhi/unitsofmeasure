@@ -27,7 +27,7 @@ import static org.unitsofmeasurement.impl.system.SIPrefix.*;
  * @author  <a href="mailto:eric-r@northwestern.edu">Eric Russell</a>
  * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @see <a href="http://www.unitsofmeasure.org">UCUM</a>
- * @version 2.1, December 25, 2013
+ * @version 2.2, $Date$
  */
 public final class UCUM extends AbstractSystemOfUnits {
 
@@ -220,7 +220,7 @@ public final class UCUM extends AbstractSystemOfUnits {
     // NATURAL UNITS: UCUM 4.3 §29 //
     /////////////////////////////////
     /** As per <a href="http://unitsofmeasure.org/">UCUM</a> standard. */
-    public static final AbstractUnit<Velocity> C = addUnit(SI.METRES_PER_SECOND.multiply(299792458));
+    public static final AbstractUnit<Speed> C = addUnit(SI.METRES_PER_SECOND.multiply(299792458));
     /** As per <a href="http://unitsofmeasure.org/">UCUM</a> standard. */
     public static final AbstractUnit<Action> PLANCK = addUnit(SI.JOULE_SECOND.multiply(6.6260755E-24));
     /** As per <a href="http://unitsofmeasure.org/">UCUM</a> standard. */
@@ -302,7 +302,7 @@ public final class UCUM extends AbstractSystemOfUnits {
     /** As per <a href="http://unitsofmeasure.org/">UCUM</a> standard. */
     public static final AbstractUnit<Length> NAUTICAL_MILE_INTERNATIONAL = addUnit(METER.multiply(1852));
     /** As per <a href="http://unitsofmeasure.org/">UCUM</a> standard. */
-    public static final AbstractUnit<Velocity> KNOT_INTERNATIONAL = addUnit(NAUTICAL_MILE_INTERNATIONAL.divide(HOUR).asType(Velocity.class));
+    public static final AbstractUnit<Speed> KNOT_INTERNATIONAL = addUnit(NAUTICAL_MILE_INTERNATIONAL.divide(HOUR).asType(Speed.class));
     /** As per <a href="http://unitsofmeasure.org/">UCUM</a> standard. */
     public static final AbstractUnit<Area> SQUARE_INCH_INTERNATIONAL = addUnit(INCH_INTERNATIONAL.pow(2).asType(Area.class));
     /** As per <a href="http://unitsofmeasure.org/">UCUM</a> standard. */
@@ -386,7 +386,7 @@ public final class UCUM extends AbstractSystemOfUnits {
     /** As per <a href="http://unitsofmeasure.org/">UCUM</a> standard. */
     public static final AbstractUnit<Length> NAUTICAL_MILE_BRITISH = addUnit(FOOT_BRITISH.multiply(6080));
     /** As per <a href="http://unitsofmeasure.org/">UCUM</a> standard. */
-    public static final AbstractUnit<Velocity> KNOT_BRITISH = addUnit(NAUTICAL_MILE_BRITISH.divide(HOUR).asType(Velocity.class));
+    public static final AbstractUnit<Speed> KNOT_BRITISH = addUnit(NAUTICAL_MILE_BRITISH.divide(HOUR).asType(Speed.class));
     /** As per <a href="http://unitsofmeasure.org/">UCUM</a> standard. */
     public static final AbstractUnit<Area> ACRE_BRITISH = addUnit(YARD_BRITISH.pow(2).multiply(4840).asType(Area.class));
     ///////////////////////////////////

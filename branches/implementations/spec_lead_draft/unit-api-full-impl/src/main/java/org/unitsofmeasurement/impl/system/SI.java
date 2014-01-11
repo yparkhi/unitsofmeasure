@@ -381,9 +381,9 @@ public final class SI extends AbstractSystemOfUnits {
     /**
      * The SI unit for velocity quantities (standard name <code>m/s</code>).
      */
-    public static final ProductUnit<Velocity> METRES_PER_SECOND
-            = addUnit(new ProductUnit<Velocity>(
-            METRE.divide(SECOND)), Velocity.class);
+    public static final ProductUnit<Speed> METRES_PER_SECOND
+            = addUnit(new ProductUnit<Speed>(
+            METRE.divide(SECOND)), Speed.class);
 
     /**
      * The SI unit for acceleration quantities (standard name <code>m/s2</code>).

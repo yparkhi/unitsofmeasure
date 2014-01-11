@@ -10,7 +10,7 @@ import static org.unitsofmeasurement.impl.system.SI.METRES_PER_SECOND;
 
 import javax.measure.SystemOfUnits;
 import javax.measure.Unit;
-import javax.measure.quantity.Velocity;
+import javax.measure.quantity.Speed;
 
 import org.unitsofmeasurement.impl.AbstractUnit;
 
@@ -31,8 +31,8 @@ public class CommonUnits extends AbstractSystemOfUnits {
 	 * A unit of velocity expressing the number of international {@link #KILOMETRE
 	 * kilometres} per {@link #HOUR hour} (abbreviation <code>kph</code>).
 	 */
-	public static final Unit<Velocity> KILOMETRES_PER_HOUR = addUnit(
-			METRES_PER_SECOND.multiply(0.277778d)).asType(Velocity.class);
+	public static final Unit<Speed> KILOMETRES_PER_HOUR = addUnit(
+			METRES_PER_SECOND.multiply(0.277778d)).asType(Speed.class);
 	
 	/**
 	 * Returns the unique instance of this class.
