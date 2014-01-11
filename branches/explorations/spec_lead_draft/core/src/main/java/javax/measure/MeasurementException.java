@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2013-2014 Werner Keil and others.
+ * Copyright (c) 2013-2014 Jean-Marie Dautelle, Werner Keil, V2COM.
  * All rights reserved.
  *
  * See LICENSE.txt for details.
@@ -10,7 +10,7 @@ package javax.measure;
  * Exception thrown when errors occur during measurement operations.
  *
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 0.3, $Date$
+ * @version 0.4, $Date$
  *
  */
 public class MeasurementException extends RuntimeException {
