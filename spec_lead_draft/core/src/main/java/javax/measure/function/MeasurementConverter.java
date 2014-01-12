@@ -16,7 +16,7 @@ import javax.measure.Unit;
  * <p>
  * This is a <a href=
  * "http://download.java.net/jdk8/docs/api/java/util/function/package-summary.html"
- * >functional interface</a> whose functional method is {@link #getValue()}.
+ * >functional interface</a> whose functional method is {@link #to()}.
  * 
  * @author Werner Keil
  * @version 0.2 ($Revision$), $Date$

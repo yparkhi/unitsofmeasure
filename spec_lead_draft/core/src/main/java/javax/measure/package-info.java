@@ -14,7 +14,8 @@
  *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.1 ($Revision$), $Date$
+ * @author <a href="mailto:llima@v2com.mobi">Leonardo de Moura Rocha Lima</a>
+ * @version 1.2 ($Revision$), $Date$
  *
  */
 package javax.measure;

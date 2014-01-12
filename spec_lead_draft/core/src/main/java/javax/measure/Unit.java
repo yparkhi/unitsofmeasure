@@ -1,6 +1,5 @@
 /**
- * Unit-API - Units of Measurement API for Java (http://unitsofmeasurement.org)
- * Copyright (c) 2005-2012, Unit-API contributors, JScience and others
+ * Copyright (c) 2005-2014 Jean-Marie Dautelle, Werner Keil, V2COM.
  * All rights reserved.
  *
  * See LICENSE.txt for details.
@@ -40,7 +39,7 @@ import javax.measure.function.UnitTransformer;
  * @author <a href="mailto:steve@unidata.ucar.edu">Steve Emmerson</a>
  * @author <a href="mailto:desruisseaux@users.sourceforge.net">Martin Desruisseaux</a>
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.3.1
+ * @version 1.4
  *
  * @see <a href="http://en.wikipedia.org/wiki/Units_of_measurement">Wikipedia: Units of measurement</a>
  */
@@ -195,29 +194,22 @@ public interface Unit<Q extends Quantity<Q>> extends UnitTransformer<Q>, Nameabl
     Unit<Q> alternate(String symbol);
 
     /**
-     * Returns the unit derived from this unit using the specified converter.
-     * The converter does not need to be linear. For example:
+     * Returns the result of setting the origin of the scale of measurement to the given value.
+     * The returned unit is convertible with all units that are convertible with this unit.
+     * For example the following code:
      *
      * [code]
-     *     Unit<Dimensionless> DECIBEL = Unit.ONE.transform(
-     *         new LogConverter(10).inverse().concatenate(
-     *             new RationalConverter(1, 10)));
+     *    CELSIUS = KELVIN.shift(273.15);
      * [/code]
      *
-     * @param  operation the converter from the transformed unit to this unit.
-     * @return the unit after the specified transformation.
-     */
-    Unit<Q> transform(UnitConverter operation);
-
-    /**
-     * Returns the result of adding an offset to this unit. The returned unit is
-     * convertible with all units that are convertible with this unit.
+     * creates a new unit where 0°C (the origin of the new unit) is equals to 273.15 K.
+     * Converting from the old unit to the new one is equivalent to <em>subtracting</em>
+     * the offset to the value in the old unit.
      *
-     * @param  offset the offset added (expressed in this unit,
-     *         e.g. {@code CELSIUS = KELVIN.add(273.15)}).
+     * @param  offset the offset added (expressed in this unit).
      * @return this unit offset by the specified value.
      */
-    Unit<Q> add(double offset);
+    Unit<Q> shift(double offset);
 
     /**
      * Returns the result of multiplying this unit by the specified factor.
@@ -298,7 +290,6 @@ public interface Unit<Q extends Quantity<Q>> extends UnitTransformer<Q>, Nameabl
      * @return the (eventually localized) string representation of this unit.
      *
      * @see #getSymbol()
-     * @see UnitFormat
      */
     @Override
     String toString();

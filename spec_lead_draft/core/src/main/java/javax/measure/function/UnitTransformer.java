@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2013 Werner Keil and others.
+ * Copyright (c) 2013-2014 Jean-Marie Dautelle, Werner Keil, V2COM.
  * All rights reserved.
  *
  * See LICENSE.txt for details.
@@ -15,18 +15,26 @@ import javax.measure.Unit;
  * <p>This is a <a href="http://download.java.net/jdk8/docs/api/java/util/function/package-summary.html">functional interface</a>
  * whose functional method is {@link #transform()}.
  * 
- * @author Werner Keil
- * @version 0.3 ($Revision: 237 $), 2013-12-29
+ * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
+ * @version 0.4 ($Revision$), $Date$
  * @param <Q>
  *            The type of the quantity.
  * @see Unit
  */
 //equivalent to @FunctionalInterface
 public interface UnitTransformer<Q extends Quantity<Q>> {
-	/**
-	 * Returns the unit of this UnitProvider {@linkplain #getValue() value}.
-	 * 
-	 * @return the unit (can not be {@code null}).
-	 */
+    /**
+     * Returns the unit derived from this unit using the specified converter.
+     * The converter does not need to be linear. For example:
+     *
+     * [code]
+     *     Unit<Dimensionless> DECIBEL = Unit.ONE.transform(
+     *         new LogConverter(10).inverse().concatenate(
+     *             new RationalConverter(1, 10)));
+     * [/code]
+     *
+     * @param  operation the converter from the transformed unit to this unit.
+     * @return the unit after the specified transformation.
+     */
 	Unit<Q> transform(UnitConverter converter);
 }
