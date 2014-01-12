@@ -132,7 +132,7 @@ public enum DimensionlessUnit implements Unit<Dimensionless>, Multiplier {
     }
 
     @Override
-    public Unit<Dimensionless> add(double v) {
+    public Unit<Dimensionless> shift(double v) {
         return this;
     }
 }

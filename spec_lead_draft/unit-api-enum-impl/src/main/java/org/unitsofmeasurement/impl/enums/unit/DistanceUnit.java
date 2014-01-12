@@ -139,7 +139,7 @@ public enum DistanceUnit implements Unit<Length>, Multiplier, DescriptiveEnum<Di
     }
 
     @Override
-    public Unit<Length> add(double v) {
+    public Unit<Length> shift(double v) {
         return this;
     }
 

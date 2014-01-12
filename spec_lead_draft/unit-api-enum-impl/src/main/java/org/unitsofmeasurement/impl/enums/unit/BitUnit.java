@@ -107,7 +107,7 @@ public enum BitUnit implements Unit<Information>, Multiplier, DescriptiveEnum<Bi
     }
 
     @Override
-    public Unit<Information> add(double offset) {
+    public Unit<Information> shift(double offset) {
         return this;
     }
 

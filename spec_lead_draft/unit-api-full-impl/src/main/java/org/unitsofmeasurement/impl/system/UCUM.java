@@ -519,7 +519,7 @@ public final class UCUM extends AbstractSystemOfUnits {
     // OTHER LEGACY UNITS: UCUM 4.5 §40 //
     //////////////////////////////////////
     /** As per <a href="http://unitsofmeasure.org/">UCUM</a> standard. */
-    public static final AbstractUnit<Temperature> FAHRENHEIT = addUnit(KELVIN.multiply(5).divide(9).add(459.67));
+    public static final AbstractUnit<Temperature> FAHRENHEIT = addUnit(KELVIN.multiply(5).divide(9).shift(459.67));
     /** As per <a href="http://unitsofmeasure.org/">UCUM</a> standard. */
     public static final AbstractUnit<Energy> CALORIE_AT_15C = addUnit(JOULE.multiply(41858).divide(10000));
     /** As per <a href="http://unitsofmeasure.org/">UCUM</a> standard. */

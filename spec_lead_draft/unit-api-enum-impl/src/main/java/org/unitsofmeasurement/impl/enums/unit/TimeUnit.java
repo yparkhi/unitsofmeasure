@@ -139,7 +139,7 @@ public enum TimeUnit implements Unit<Time>, Multiplier {
     }
 
     @Override
-    public Unit<Time> add(double v) {
+    public Unit<Time> shift(double v) {
         return this;
     }
 }

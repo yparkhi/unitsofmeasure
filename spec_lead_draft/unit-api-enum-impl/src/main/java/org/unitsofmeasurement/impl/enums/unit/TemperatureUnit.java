@@ -184,7 +184,7 @@ public enum TemperatureUnit implements Unit<Temperature>, Multiplier {
     }
 
     @Override
-    public Unit<Temperature> add(double v) {
+    public Unit<Temperature> shift(double v) {
         return this;
     }
 }

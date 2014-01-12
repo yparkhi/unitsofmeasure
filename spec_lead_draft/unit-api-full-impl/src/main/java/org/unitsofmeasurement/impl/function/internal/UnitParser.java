@@ -81,14 +81,14 @@ public final class UnitParser implements UnitParserConstants {
             if (sign1.image.equals("-")) {
                 result = result.multiply(-1);
             }
-            result = result.add(n1.doubleValue());
+            result = result.shift(n1.doubleValue());
         }
         if (n2 != null) {
             double offset = n2.doubleValue();
             if (sign2.image.equals("-")) {
                 offset = -offset;
             }
-            result = result.add(offset);
+            result = result.shift(offset);
         }
         {
             if (true)
