@@ -38,66 +38,66 @@ import javax.measure.function.ValueSupplier;
  *          Dez 2013) $
  */
 public interface Measurement<Q extends Quantity<Q>, V> extends UnitSupplier<Q>,
-		ValueSupplier<V>, MeasurementConverter<Q, V> {
+        ValueSupplier<V>, MeasurementConverter<Q, V> {
 
-	/**
-	 * Returns the sum of this {@code Measurement} with the one specified.
-	 * 
-	 * @param that
-	 *            the {@code Measurement} to be added.
-	 * @return <code>this + that</code>.
-	 */
-	Measurement<Q, V> add(Measurement<Q, V> that);
+    /**
+     * Returns the sum of this {@code Measurement} with the one specified.
+     * 
+     * @param that
+     *            the {@code Measurement} to be added.
+     * @return <code>this + that</code>.
+     */
+    Measurement<Q, V> add(Measurement<Q, V> that);
 
-	/**
-	 * Returns the difference between this {@code Measurement} and the one specified.
-	 * 
-	 * @param that
-	 *            the {@code Measurement} to be subtracted.
-	 * @return <code>this - that</code>.
-	 */
-	Measurement<Q, V> substract(Measurement<Q, V> that);
+    /**
+     * Returns the difference between this {@code Measurement} and the one specified.
+     * 
+     * @param that
+     *            the {@code Measurement} to be subtracted.
+     * @return <code>this - that</code>.
+     */
+    Measurement<Q, V> substract(Measurement<Q, V> that);
 
-	/**
-	 * Returns the product of this {@code Measurement} with the one specified.
-	 * 
-	 * @param that
-	 *            the {@code Measurement} multiplier.
-	 * @return <code>this · that</code>.
-	 */
-	Measurement<?, V> multiply(Measurement<?, V> that);
+    /**
+     * Returns the product of this {@code Measurement} with the one specified.
+     * 
+     * @param that
+     *            the {@code Measurement} multiplier.
+     * @return <code>this · that</code>.
+     */
+    Measurement<?, V> multiply(Measurement<?, V> that);
 
-	/**
-	 * Returns the product of this {@code Measurement} with the {@code V} value specified.
-	 * 
-	 * @param that
-	 *            the {@code V} multiplier.
-	 * @return <code>this · that</code>.
-	 */
-	Measurement<?, V> multiply(V that);
+    /**
+     * Returns the product of this {@code Measurement} with the {@code V} value specified.
+     * 
+     * @param that
+     *            the {@code V} multiplier.
+     * @return <code>this · that</code>.
+     */
+    Measurement<?, V> multiply(V that);
 
-	/**
-	 * Returns this {@code Measurement} divided by the one specified.
-	 * 
-	 * @param that
-	 *            the {@code Measurement} divisor.
-	 * @return <code>this / that</code>.
-	 */
-	Measurement<?, V> divide(Measurement<?, V> that);
-	
-	/**
-	 * Returns the product of this {@code Measurement} divided by the {@code V} value specified.
-	 * 
-	 * @param that
-	 *            the {@code V} divisor.
-	 * @return <code>this / that</code>.
-	 */
-	Measurement<?, V> divide(V that);
+    /**
+     * Returns this {@code Measurement} divided by the one specified.
+     * 
+     * @param that
+     *            the {@code Measurement} divisor.
+     * @return <code>this / that</code>.
+     */
+    Measurement<?, V> divide(Measurement<?, V> that);
+    
+    /**
+     * Returns the product of this {@code Measurement} divided by the {@code V} value specified.
+     * 
+     * @param that
+     *            the {@code V} divisor.
+     * @return <code>this / that</code>.
+     */
+    Measurement<?, V> divide(V that);
 
-	/**
-	 * Returns a {@code Measurement} whose unit is {@code unit.inverse()}.
-	 * 
-	 * @return {@code Measurement with this.getUnit().inverse()}.
-	 */
-	Measurement<Q, V> inverse();
+    /**
+     * Returns a {@code Measurement} whose unit is {@code unit.inverse()}.
+     * 
+     * @return {@code Measurement with this.getUnit().inverse()}.
+     */
+    Measurement<Q, V> inverse();
 }
