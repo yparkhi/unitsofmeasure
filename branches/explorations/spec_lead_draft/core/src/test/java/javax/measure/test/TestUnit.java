@@ -89,7 +89,7 @@ enum TestUnit implements Unit {
 	}
 
 	@Override
-	public Unit add(double offset) {
+	public Unit shift(double offset) {
 		return this;
 	}
 
