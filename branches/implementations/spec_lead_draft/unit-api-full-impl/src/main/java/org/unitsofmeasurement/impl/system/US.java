@@ -160,7 +160,7 @@ public final class US extends AbstractSystemOfUnits {
 	 * @see #RANKINE
 	 */
 	public static final Unit<Temperature> FAHRENHEIT = addUnit(RANKINE
-			.add(459.67));
+			.shift(459.67));
 
 	// /////////
 	// Angle //

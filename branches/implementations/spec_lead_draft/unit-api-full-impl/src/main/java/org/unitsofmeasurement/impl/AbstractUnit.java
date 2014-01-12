@@ -296,7 +296,7 @@ public abstract class AbstractUnit<Q extends Quantity<Q>> implements Unit<Q>, Se
     }
 
     @Override
-    public final AbstractUnit<Q> add(double offset) {
+    public final AbstractUnit<Q> shift(double offset) {
         if (offset == 0)
             return this;
         return transform(new AddConverter(offset));

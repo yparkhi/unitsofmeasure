@@ -84,7 +84,7 @@ public enum BitRateUnit implements Unit<InformationRate>, Multiplier, Descriptiv
     }
 
     @Override
-    public Unit<InformationRate> add(double offset) {
+    public Unit<InformationRate> shift(double offset) {
         return this;
     }
 
