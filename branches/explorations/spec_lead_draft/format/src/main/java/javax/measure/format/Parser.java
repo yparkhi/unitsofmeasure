@@ -16,7 +16,7 @@ package javax.measure.format;
  * >functional interface</a> whose functional method is {@link #parse()}.
  * 
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 0.3, $Date$
+ * @version 0.4, $Date$
  * @param <I>
  *            the input
  * @param <O>
@@ -28,5 +28,5 @@ public interface Parser<I, O> {
 	/**
 	 * Parses the specified {@code I} to produce a {@code O}.
 	 */
-	public O parse(I input) throws ParserException;
+	O parse(I input) throws ParserException;
 }

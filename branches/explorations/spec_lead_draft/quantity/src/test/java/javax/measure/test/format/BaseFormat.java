@@ -32,7 +32,7 @@ import javax.measure.format.UnitFormat;
  *     UnitFormat.getInstance(Locale.USA).valueOf("ft").equals(METRE.multiply(3048).divide(10000))
  * [/code]
  *
- * <p>OSGi bundles should use {@link org.unitsofmeasurement.UnitFormat} to
+ * <p>OSGi bundles should use {@link javax.measure.format.UnitFormat} to
  * parse/format {@linkplain #getStandard() standard} (UCUM) units.</p>
  *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
@@ -49,7 +49,7 @@ abstract class BaseFormat extends Format implements UnitFormat {
 
     /**
      * Returns the standard unit format (UCUM). OSGi bundles should use
-     * {@link org.unitsofmeasurement.unit.UnitFormat} to parse/format standard
+     * {@link javax.measure.format.UnitFormat} to parse/format standard
      * (UCUM) units.
      *
      * @return the standard format.
