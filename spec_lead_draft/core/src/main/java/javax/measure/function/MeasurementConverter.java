@@ -19,7 +19,7 @@ import javax.measure.Unit;
  * >functional interface</a> whose functional method is {@link #to()}.
  * 
  * @author Werner Keil
- * @version 0.2 ($Revision$), $Date$
+ * @version 0.3 ($Revision$), $Date$
  * @param <Q>
  *            The type of the quantity measured.
  * @param <V>
@@ -34,11 +34,11 @@ import javax.measure.Unit;
 // equivalent to @FunctionalInterface
 public interface MeasurementConverter<Q extends Quantity<Q>, V> {
 
-	/**
-	 * Returns a measurement converted into another unit.
-	 * 
-	 * @param unit
-	 * @return the converted result.
-	 */
-	Measurement<Q, V> to(Unit<Q> unit);
+    /**
+     * Returns a measurement converted into another unit.
+     * 
+     * @param unit
+     * @return the converted result.
+     */
+    Measurement<Q, V> to(Unit<Q> unit);
 }
