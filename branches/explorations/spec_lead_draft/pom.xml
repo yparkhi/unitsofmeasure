@@ -45,7 +45,7 @@
 	<!-- Build Settings -->
 	<!-- ======================================================= -->
 	<properties>
-	    <basedir>.</basedir>
+		<basedir>.</basedir>
 		<sourceEncoding>UTF-8</sourceEncoding> <!-- in Maven 3. -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>${sourceEncoding}</project.reporting.outputEncoding>
@@ -65,6 +65,142 @@
 		<module>quantity</module>
 		<module>service</module>
 	</modules>
+
+	<!-- Developers and Contributors -->
+	<developers>
+		<developer>
+			<id>dautelle</id>
+			<name>Jean-Marie Dautelle</name>
+			<email>jean-marie@dautelle.com</email>
+			<organization>Airbus</organization>
+			<organizationUrl>http://www.airbus.com</organizationUrl>
+			<timezone>+1</timezone>
+			<roles>
+				<role>Architect</role>
+				<role>Java Developer</role>
+				<role>Spec Lead (proposed)</role>
+			</roles>
+		</developer>
+		<developer>
+			<id>werner.keil</id>
+			<name>Werner Keil</name>
+			<email>units@catmedia.us</email>
+			<organization>Creative Arts &amp; Technologies</organization>
+			<organizationUrl>http://www.catmedia.us</organizationUrl>
+			<timezone>+1</timezone>
+			<roles>
+				<role>Architect</role>
+				<role>Java Developer</role>
+				<role>Spec Lead (proposed)</role>
+			</roles>
+		</developer>
+		<developer>
+            <name>Leonardo de Moura Rocha Lima</name>
+            <email>llima@v2com.mobi</email>
+            <organization>V2COM</organization>
+            <organizationUrl>http://www.v2com.mobi/</organizationUrl>
+            <timezone>-5</timezone>
+            <roles>
+                <role>Architect</role>
+                <role>Java Developer</role>
+                <role>Spec Lead (proposed)</role>
+            </roles>
+        </developer>
+        <developer>
+            <id>dan.leuck</id>
+            <name>Daniel Leuck</name>
+            <email>dan@ikayzo.com</email>
+            <organization>Ikayzo</organization>
+            <timezone>-9</timezone>
+            <roles>
+                <role>Expert</role>
+                <role>Globalization Support</role>
+            </roles>
+        </developer>
+		<developer>
+			<id>christopher.senior</id>
+			<name>Chris Senior</name>
+			<email>christopher.senior@gmail.com</email>
+			<organization>Snap-on Inc.</organization>
+			<roles>
+			    <role>Expert</role>
+				<role>Java Developer</role>
+			</roles>
+		</developer>
+		<developer>
+			<id>desruisseaux</id>
+			<name>Martin Desruisseaux</name>
+			<email>desruisseaux@users.sourceforge.net</email>
+			<organization>Geomatys</organization>
+			<organizationUrl>http://www.geomatys.com</organizationUrl>
+			<timezone>+1</timezone>
+			<roles>
+			    <role>Expert</role>
+				<role>Java Developer</role>
+				<role>Jenkins Admin</role>
+			</roles>
+		</developer>
+	</developers>
+	<contributors>
+	   <contributor>
+            <!-- id>eric-r</id -->
+            <name>Eric Russell</name>
+            <email>eric-r@northwestern.edu</email>
+            <timezone>-5</timezone>
+            <roles>
+                <role>Supporter</role>
+            </roles>
+        </contributor>
+	    <contributor>
+	        <!--  id>paul.morrison</id -->
+            <name>John Paul Morrison</name>
+            <organization>J.P. Morrison Enterprises, Ltd.</organization>
+            <timezone>-5</timezone>
+            <roles>
+                <role>Supporter</role>
+                <role>Test Analyst</role>
+            </roles>
+	   </contributor>
+	   <contributor>
+            <!-- id>karen_legrand</id -->
+            <name>Karen Legrand</name>
+            <email>karen.legrand@iem.com</email>
+            <organization>Innovation Emergency Management (IEM)</organization>
+            <organizationUrl>http://www.iem.com</organizationUrl>
+            <timezone>-5</timezone>
+            <roles>
+                <role>Supporter</role>
+            </roles>
+        </contributor>
+	   <contributor>
+			<name>Scott Murphy</name>
+			<email>scott@ikayzo.com</email>
+			<organization>Ikayzo</organization>
+			<timezone>-9</timezone>
+			<roles>
+				<role>Japanese Translator</role>
+			</roles>
+	   </contributor>
+	   <contributor>
+			<name>Mika Terada</name>
+			<email>mika@ikayzo.com</email>
+			<organization>Ikayzo</organization>
+			<timezone>-9</timezone>
+			<roles>
+				<role>Japanese Translator</role>
+			</roles>
+		</contributor>
+		<contributor>
+			<name>Anatol Filin</name>
+			<email>anatol@gramant.ru</email>
+			<organization>Gramant</organization>
+			<timezone>+4</timezone>
+			<roles>
+				<role>Russian Translator</role>
+			</roles>
+		</contributor>
+	</contributors>
+
 
 	<build>
 		<plugins>
@@ -120,18 +256,9 @@
 			<!-- ======================================================= -->
 			<!-- Custom Javadoc plugin -->
 			<!-- ======================================================= -->
-			<!--  plugin>
-				<groupId>javolution</groupId>
-				<artifactId>colapi</artifactId>
-				<version>1.0.0</version>
-				<executions>
-					<execution>
-						<goals>
-							<goal>colorize</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin -->
+			<!-- plugin> <groupId>javolution</groupId> <artifactId>colapi</artifactId> 
+				<version>1.0.0</version> <executions> <execution> <goals> <goal>colorize</goal> 
+				</goals> </execution> </executions> </plugin -->
 
 			<!-- ======================================================= -->
 			<!-- Maven web site -->
