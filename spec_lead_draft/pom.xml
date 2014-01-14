@@ -19,6 +19,7 @@
 		</license>
 	</licenses>
 
+    <!-- Issue managements and mailing lists. -->
 	<issueManagement>
 		<system>Google Code</system>
 		<url>http://code.google.com/p/unitsofmeasure/issues/list</url>
@@ -40,6 +41,11 @@
 			<post>units-users@googlegroups.com</post>
 		</mailingList>
 	</mailingLists>
+	
+	<scm>
+        <url>http://unitsofmeasure.googlecode.com/svn/branches/explorations/spec_lead_draft/</url>
+    </scm>
+	
 
 	<!-- ======================================================= -->
 	<!-- Build Settings -->
@@ -84,7 +90,7 @@
 		<developer>
 			<id>werner.keil</id>
 			<name>Werner Keil</name>
-			<email>units@catmedia.us</email>
+			<email>werner@catmedia.us</email>
 			<organization>Creative Arts &amp; Technologies</organization>
 			<organizationUrl>http://www.catmedia.us</organizationUrl>
 			<timezone>+1</timezone>
@@ -104,6 +110,31 @@
                 <role>Architect</role>
                 <role>Java Developer</role>
                 <role>Spec Lead (proposed)</role>
+            </roles>
+        </developer>
+        <developer>
+            <id>desruisseaux</id>
+            <name>Martin Desruisseaux</name>
+            <email>desruisseaux@users.sourceforge.net</email>
+            <organization>Geomatys</organization>
+            <organizationUrl>http://www.geomatys.com</organizationUrl>
+            <timezone>+1</timezone>
+            <roles>
+                <role>Expert</role>
+                <role>Java Developer</role>
+                <role>Jenkins Admin</role>
+            </roles>
+        </developer>
+        <developer>
+            <id>karen_legrand</id>
+            <name>Karen Legrand</name>
+            <email>karen.legrand@iem.com</email>
+            <organization>Innovation Emergency Management (IEM)</organization>
+            <organizationUrl>http://www.iem.com</organizationUrl>
+            <timezone>-5</timezone>
+            <roles>
+                 <role>Expert</role>
+                <role>Java Developer</role>
             </roles>
         </developer>
         <developer>
@@ -127,19 +158,6 @@
 				<role>Java Developer</role>
 			</roles>
 		</developer>
-		<developer>
-			<id>desruisseaux</id>
-			<name>Martin Desruisseaux</name>
-			<email>desruisseaux@users.sourceforge.net</email>
-			<organization>Geomatys</organization>
-			<organizationUrl>http://www.geomatys.com</organizationUrl>
-			<timezone>+1</timezone>
-			<roles>
-			    <role>Expert</role>
-				<role>Java Developer</role>
-				<role>Jenkins Admin</role>
-			</roles>
-		</developer>
 	</developers>
 	<contributors>
 	   <contributor>
@@ -161,17 +179,6 @@
                 <role>Test Analyst</role>
             </roles>
 	   </contributor>
-	   <contributor>
-            <!-- id>karen_legrand</id -->
-            <name>Karen Legrand</name>
-            <email>karen.legrand@iem.com</email>
-            <organization>Innovation Emergency Management (IEM)</organization>
-            <organizationUrl>http://www.iem.com</organizationUrl>
-            <timezone>-5</timezone>
-            <roles>
-                <role>Supporter</role>
-            </roles>
-        </contributor>
 	   <contributor>
 			<name>Scott Murphy</name>
 			<email>scott@ikayzo.com</email>
@@ -199,8 +206,16 @@
 				<role>Russian Translator</role>
 			</roles>
 		</contributor>
+		<contributor>
+             <!--   id>mgruebsch</id -->
+            <name>Michael Gruebsch</name>
+            <email>michael@mkm-rabis.de</email>
+            <roles>
+                <role>Supporter</role>
+            </roles>
+             <timezone>+1</timezone>
+        </contributor>
 	</contributors>
-
 
 	<build>
 		<plugins>
