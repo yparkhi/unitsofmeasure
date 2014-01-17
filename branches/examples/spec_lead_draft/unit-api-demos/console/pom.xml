@@ -17,6 +17,10 @@
 			<artifactId>unit-api-core</artifactId>
 		</dependency>
 		<dependency>
+            <groupId>javax.measure</groupId>
+            <artifactId>unit-api-format</artifactId>
+        </dependency>
+		<dependency>
 			<groupId>javax.measure</groupId>
 			<artifactId>unit-api-quantity</artifactId>
 		</dependency>
