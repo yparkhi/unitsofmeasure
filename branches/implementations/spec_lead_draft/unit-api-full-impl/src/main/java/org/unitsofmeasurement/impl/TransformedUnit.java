@@ -27,7 +27,7 @@ import org.unitsofmeasurement.impl.model.QuantityDimension;
  *     [/code]</p>
  *
  * <p> Transformed units have no label. But like any other units,
- *     they may have labels attached to them (see {@link org.unitsofmeasurement.impl.function.jscience.physics.unit.SymbolMap
+ *     they may have labels attached to them (see {@link org.unitsofmeasurement.impl.format.jscience.physics.unit.SymbolMap
  *     SymbolMap}</p>
  *
  * <p> Instances of this class are created through the {@link AbstractUnit#transform} method.</p>

@@ -5,7 +5,7 @@
  * Permission to use, copy, modify, and distribute this software is freely
  * granted, provided that this notice is preserved.
  */
-package org.unitsofmeasurement.impl.function;
+package org.unitsofmeasurement.impl.format;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -26,9 +26,12 @@ import javax.measure.function.UnitConverter;
 
 import org.unitsofmeasurement.impl.AbstractUnit;
 import org.unitsofmeasurement.impl.AnnotatedUnit;
-import org.unitsofmeasurement.impl.function.internal.ParseException;
-import org.unitsofmeasurement.impl.function.internal.TokenMgrError;
-import org.unitsofmeasurement.impl.function.internal.UCUMParser;
+import org.unitsofmeasurement.impl.format.internal.ParseException;
+import org.unitsofmeasurement.impl.format.internal.TokenMgrError;
+import org.unitsofmeasurement.impl.format.internal.UCUMParser;
+import org.unitsofmeasurement.impl.function.AbstractConverter;
+import org.unitsofmeasurement.impl.function.MultiplyConverter;
+import org.unitsofmeasurement.impl.function.RationalConverter;
 import org.unitsofmeasurement.impl.system.SI;
 import org.unitsofmeasurement.impl.system.SIPrefix;
 

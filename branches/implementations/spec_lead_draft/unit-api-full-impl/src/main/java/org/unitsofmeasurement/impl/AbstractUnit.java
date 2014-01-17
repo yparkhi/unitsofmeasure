@@ -19,12 +19,12 @@ import javax.measure.IncommensurableException;
 import javax.measure.UnconvertibleException;
 import javax.measure.function.UnitConverter;
 
+import org.unitsofmeasurement.impl.format.LocalUnitFormat;
+import org.unitsofmeasurement.impl.format.UCUMFormat;
 import org.unitsofmeasurement.impl.function.AddConverter;
-import org.unitsofmeasurement.impl.function.LocalUnitFormat;
 import org.unitsofmeasurement.impl.function.MultiplyConverter;
 import org.unitsofmeasurement.impl.function.AbstractConverter;
 import org.unitsofmeasurement.impl.function.RationalConverter;
-import org.unitsofmeasurement.impl.function.UCUMFormat;
 import org.unitsofmeasurement.impl.model.QuantityDimension;
 import org.unitsofmeasurement.impl.model.DimensionalModel;
 import org.unitsofmeasurement.impl.system.SI;
@@ -133,7 +133,7 @@ public abstract class AbstractUnit<Q extends Quantity<Q>> implements Unit<Q>, Se
      * Locale-sensitive unit parsing should be handled using the OSGi
      * {@link org.unitsofmeasurement.service.UnitFormatService} or
      * for non-OSGi applications the
-     * {@link org.unitsofmeasurement.impl.function.jscience.physics.unit.format.LocalUnitFormat} utility class.
+     * {@link org.unitsofmeasurement.impl.format.jscience.physics.unit.format.LocalUnitFormat} utility class.
      *
      * <p>Note: The standard UCUM format supports dimensionless units.[code]
      *       AbstractUnit<Dimensionless> PERCENT = AbstractUnit.valueOf("100").inverse().asType(Dimensionless.class);
@@ -157,7 +157,7 @@ public abstract class AbstractUnit<Q extends Quantity<Q>> implements Unit<Q>, Se
      *
      * Locale-sensitive unit parsing should be handled using the OSGi
      * {@link org.unitsofmeasurement.service.UnitFormat} service (or
-     * the {@link org.unitsofmeasurement.impl.function.jscience.physics.unit.format.LocalUnitFormat} class
+     * the {@link org.unitsofmeasurement.impl.format.jscience.physics.unit.format.LocalUnitFormat} class
      * for non-OSGi applications).
      *
      * @return <code>UCUMFormat.getCaseSensitiveInstance().format(this)</code>

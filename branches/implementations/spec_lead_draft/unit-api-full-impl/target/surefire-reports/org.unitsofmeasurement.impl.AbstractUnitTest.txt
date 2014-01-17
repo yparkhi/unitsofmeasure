@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: org.unitsofmeasurement.impl.AbstractUnitTest
+-------------------------------------------------------------------------------
+Tests run: 27, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec - in org.unitsofmeasurement.impl.AbstractUnitTest
