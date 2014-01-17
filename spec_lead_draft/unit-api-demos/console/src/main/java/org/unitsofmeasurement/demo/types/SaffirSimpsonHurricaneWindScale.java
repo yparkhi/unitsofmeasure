@@ -6,7 +6,7 @@ import static org.unitsofmeasurement.demo.types.SaffirSimpsonHurricaneWindScale.
 import javax.measure.Measurement;
 import javax.measure.MeasurementRange;
 import javax.measure.function.Nameable;
-import javax.measure.quantity.Velocity;
+import javax.measure.quantity.Speed;
 
 import org.unitsofmeasurement.impl.AbstractMeasurement;
 
@@ -16,7 +16,7 @@ import org.unitsofmeasurement.impl.AbstractMeasurement;
  * @see <a href="http://en.wikipedia.org/wiki/Saffir%E2%80%93Simpson_hurricane_wind_scale"> Wikipedia:
  *      Saffir–Simpson hurricane wind scale</a>
  */
-public class SaffirSimpsonHurricaneWindScale extends MeasurementRange<Measurement<Velocity, Number>>
+public class SaffirSimpsonHurricaneWindScale extends MeasurementRange<Measurement<Speed, Number>>
 	implements Nameable {
 
 	public static enum Category {
@@ -35,8 +35,8 @@ public class SaffirSimpsonHurricaneWindScale extends MeasurementRange<Measuremen
 	 * @see
 	 * MeasurementRange
 	 */
-	protected SaffirSimpsonHurricaneWindScale(Measurement<Velocity, Number> min,
-			Measurement<Velocity, Number> max, Category level) {
+	protected SaffirSimpsonHurricaneWindScale(Measurement<Speed, Number> min,
+			Measurement<Speed, Number> max, Category level) {
 		super(min, max);
 		this.category = level;
 	}
@@ -47,8 +47,8 @@ public class SaffirSimpsonHurricaneWindScale extends MeasurementRange<Measuremen
 	 * @see
 	 * MeasurementRange
 	 */
-	protected SaffirSimpsonHurricaneWindScale(Measurement<Velocity, Number> min,
-			Measurement<Velocity, Number> max) {
+	protected SaffirSimpsonHurricaneWindScale(Measurement<Speed, Number> min,
+			Measurement<Speed, Number> max) {
 		this(min, max, UNKNOWN);
 	}
 	
@@ -59,8 +59,8 @@ public class SaffirSimpsonHurricaneWindScale extends MeasurementRange<Measuremen
      * @param max The maximum value for the wind scale.
      * @return an {@code SaffirSimpsonHurricaneWindScale} with the values present
      */
-	public static final SaffirSimpsonHurricaneWindScale of(AbstractMeasurement<Velocity> min, 
-			AbstractMeasurement<Velocity> max) {
+	public static final SaffirSimpsonHurricaneWindScale of(AbstractMeasurement<Speed> min, 
+			AbstractMeasurement<Speed> max) {
 		return new SaffirSimpsonHurricaneWindScale(min, max);
 	}
 	
@@ -72,8 +72,8 @@ public class SaffirSimpsonHurricaneWindScale extends MeasurementRange<Measuremen
      * @param cat The {@link Category} of the wind scale.
      * @return an {@code SaffirSimpsonHurricaneWindScale} with the values present
      */
-	public static final SaffirSimpsonHurricaneWindScale of(AbstractMeasurement<Velocity> min, 
-			AbstractMeasurement<Velocity> max, Category cat) {
+	public static final SaffirSimpsonHurricaneWindScale of(AbstractMeasurement<Speed> min, 
+			AbstractMeasurement<Speed> max, Category cat) {
 		return new SaffirSimpsonHurricaneWindScale(min, max, cat);
 	}
 	

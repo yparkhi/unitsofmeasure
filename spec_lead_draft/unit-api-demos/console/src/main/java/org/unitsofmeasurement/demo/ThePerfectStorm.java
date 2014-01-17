@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2013 Werner Keil and others.
+ * Copyright (c) 2013-2014 Werner Keil and others.
  * All rights reserved.
  *
  * See LICENSE.txt for details.
@@ -14,7 +14,7 @@ import static org.unitsofmeasurement.demo.types.SaffirSimpsonHurricaneWindScale.
 
 import javax.measure.quantity.Length;
 import javax.measure.quantity.Time;
-import javax.measure.quantity.Velocity;
+import javax.measure.quantity.Speed;
 
 import org.unitsofmeasurement.demo.types.SaffirSimpsonHurricaneWindScale;
 import org.unitsofmeasurement.impl.AbstractMeasurement;
@@ -64,9 +64,9 @@ public class ThePerfectStorm {
 		
 		final SaffirSimpsonHurricaneWindScale scale = s4;
 		
-		final AbstractMeasurement<Velocity> metricSpeed = scale.hasMaximum() ?
-				(AbstractMeasurement<Velocity>) scale.getMaximum().to(KILOMETRES_PER_HOUR) :
-					(AbstractMeasurement<Velocity>) scale.getMinimum().to(KILOMETRES_PER_HOUR);
+		final AbstractMeasurement<Speed> metricSpeed = scale.hasMaximum() ?
+				(AbstractMeasurement<Speed>) scale.getMaximum().to(KILOMETRES_PER_HOUR) :
+					(AbstractMeasurement<Speed>) scale.getMinimum().to(KILOMETRES_PER_HOUR);
 				
 		System.out.print(metricSpeed);
 		System.out.println(" (" + scale.getCategory() + ")");
