@@ -2,31 +2,15 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.unitsofmeasurement.demos</groupId>
-	<artifactId>unit-api-demos</artifactId>
-	<version>0.2-SNAPSHOT</version>
-
-	<packaging>pom</packaging>
-	<name>Units of Measurement API Demos</name>
-	<url>http://code.google.com/p/unitsofmeasure/</url>
-	<organization>
-		<name>Units of Measurement project</name>
-		<url>http://www.unitsofmeasurement.org</url>
-	</organization>
+	<artifactId>unit-api-console-demos</artifactId>
+	<packaging>bundle</packaging>
+	<name>Units of Measurement API Console Demos</name>
 	<description>An intial (Spec Lead) draft of a Unit Standard Demo.</description>
-
-	<!-- ======================================================= -->
-	<!-- Build Settings -->
-	<!-- ======================================================= -->
-	<properties>
-		<sourceEncoding>UTF-8</sourceEncoding> <!-- in Maven 3. -->
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>${sourceEncoding}</project.reporting.outputEncoding>
-		<project.build.javaVersion>1.7</project.build.javaVersion>
-		<jsr.version>0.4-SNAPSHOT</jsr.version>
-		<jdkVersion>1.7</jdkVersion>
-		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
-		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
-	</properties>
+	<parent>
+		<version>0.2-SNAPSHOT</version>
+		<groupId>org.unitsofmeasurement.demos</groupId>
+		<artifactId>unit-api-demos</artifactId>
+	</parent>
 
 	<dependencyManagement>
 		<dependencies>
@@ -49,7 +33,7 @@
 			<dependency>
 				<groupId>org.unitsofmeasurement</groupId>
 				<artifactId>unit-api-full-impl</artifactId>
-				<version>${project.version}</version>
+				<version>${jsr.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
@@ -111,10 +95,23 @@
 					</archive>
 				</configuration>
 			</plugin>
+
+
+			<!-- ======================================================= -->
+			<!-- Packaging (OSGi bundle) -->
+			<!-- ======================================================= -->
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<version>2.3.5</version>
+				<extensions>true</extensions>
+				<configuration>
+					<instructions>
+						<Export-Package>org.unitsofmeasurement.demo.*</Export-Package>
+						<Private-Package>!*</Private-Package>
+					</instructions>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
-	<modules>
-		<module>console</module>
-		<module>health</module>
-	</modules>
 </project>

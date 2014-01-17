@@ -1,9 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.unitsofmeasurement.demos</groupId>
 	<artifactId>unit-api-health-demos</artifactId>
-	<version>0.1-SNAPSHOT</version>
 	<name>Unit-API Health Demos</name>
 	<packaging>bundle</packaging>
 	<url>http://code.google.com/p/unitsofmeasure/</url>
@@ -11,19 +9,6 @@
 		<name>Units of Measurement project</name>
 		<url>http://www.unitsofmeasurement.org</url>
 	</organization>
-	<!-- ======================================================= -->
-	<!-- Build Settings -->
-	<!-- ======================================================= -->
-	<properties>
-		<sourceEncoding>UTF-8</sourceEncoding> <!-- in Maven 3. -->
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>${sourceEncoding}</project.reporting.outputEncoding>
-		<project.build.javaVersion>1.7</project.build.javaVersion>
-		<jsr.version>0.2-SNAPSHOT</jsr.version>
-		<jdkVersion>1.7</jdkVersion>
-		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
-		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
-	</properties>
 
 	<dependencyManagement>
 		<dependencies>
@@ -128,4 +113,9 @@
 		</plugins>
 	</build>
 
+	<parent>
+		<version>0.2-SNAPSHOT</version>
+		<groupId>org.unitsofmeasurement.demos</groupId>
+		<artifactId>unit-api-demos</artifactId>
+	</parent>
 </project>
