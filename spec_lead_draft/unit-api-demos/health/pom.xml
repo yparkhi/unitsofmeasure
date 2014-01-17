@@ -9,16 +9,20 @@
 		<name>Units of Measurement project</name>
 		<url>http://www.unitsofmeasurement.org</url>
 	</organization>
-    <parent>
-        <version>0.2-SNAPSHOT</version>
-        <groupId>org.unitsofmeasurement.demos</groupId>
-        <artifactId>unit-api-demos</artifactId>
-    </parent>
-    
+	<parent>
+		<version>0.2-SNAPSHOT</version>
+		<groupId>org.unitsofmeasurement.demos</groupId>
+		<artifactId>unit-api-demos</artifactId>
+	</parent>
+
 	<dependencies>
 		<dependency>
 			<groupId>javax.measure</groupId>
 			<artifactId>unit-api-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.measure</groupId>
+			<artifactId>unit-api-format</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>javax.measure</groupId>
