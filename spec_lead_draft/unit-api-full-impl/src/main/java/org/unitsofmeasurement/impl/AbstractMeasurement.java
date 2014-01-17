@@ -19,8 +19,8 @@ import javax.measure.Unit;
 import javax.measure.format.ParserException;
 import javax.measure.quantity.Dimensionless;
 
+import org.unitsofmeasurement.impl.format.MeasurementFormat;
 import org.unitsofmeasurement.impl.function.AbstractConverter;
-import org.unitsofmeasurement.impl.function.MeasurementFormat;
 import org.unitsofmeasurement.impl.system.SI;
 
 /**

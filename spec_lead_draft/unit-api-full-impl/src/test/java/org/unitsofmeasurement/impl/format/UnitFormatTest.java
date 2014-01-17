@@ -23,8 +23,6 @@ import javax.measure.quantity.Speed;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
-import org.unitsofmeasurement.impl.function.LocalUnitFormat;
-import org.unitsofmeasurement.impl.function.UCUMFormat;
 import org.unitsofmeasurement.impl.model.quantity.LengthAmount;
 
 /**

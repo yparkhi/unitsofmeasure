@@ -5,7 +5,7 @@
  * Permission to use, copy, modify, and distribute this software is freely
  * granted, provided that this notice is preserved.
  */
-package org.unitsofmeasurement.impl.function;
+package org.unitsofmeasurement.impl.format;
 
 import java.lang.reflect.Field;
 import java.util.Enumeration;
@@ -19,6 +19,7 @@ import java.util.logging.Logger;
 import javax.measure.function.UnitConverter;
 
 import org.unitsofmeasurement.impl.AbstractUnit;
+import org.unitsofmeasurement.impl.function.AbstractConverter;
 import org.unitsofmeasurement.impl.system.SIPrefix;
 
 /**

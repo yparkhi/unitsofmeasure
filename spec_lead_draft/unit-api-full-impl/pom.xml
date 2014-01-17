@@ -141,7 +141,7 @@ Full Scale approach.</description>
 				<configuration>
 					<instructions>
 						<Export-Package>org.unitsofmeasurement.impl.*</Export-Package>
-						<Private-Package>org.unitsofmeasurement.impl.function.internal.*</Private-Package>
+						<Private-Package>org.unitsofmeasurement.impl.format.internal.*</Private-Package>
 					</instructions>
 				</configuration>
 			</plugin>

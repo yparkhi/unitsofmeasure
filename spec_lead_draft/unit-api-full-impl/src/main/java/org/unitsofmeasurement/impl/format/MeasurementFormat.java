@@ -6,7 +6,7 @@
  * Permission to use, copy, modify, and distribute this software is
  * freely granted, provided that this notice is preserved.
  */
-package org.unitsofmeasurement.impl.function;
+package org.unitsofmeasurement.impl.format;
 
 import java.math.BigDecimal;
 import java.text.FieldPosition;
