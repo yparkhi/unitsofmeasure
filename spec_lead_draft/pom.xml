@@ -8,8 +8,8 @@
 	<description>Units of Measurement Standard</description>
 	<packaging>pom</packaging>
 	<organization>
-		<name>Java Community Process</name>
-		<url>http://jcp.org</url>
+		<name>Units of Measurement project</name>
+		<url>http://www.unitsofmeasurement.org</url>
 	</organization>
 	<inceptionYear>2014</inceptionYear>
 	<licenses>
