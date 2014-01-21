@@ -1,5 +1,0 @@
-org\unitsofmeasurement\impl\AbstractMeasurementTest.class
-org\unitsofmeasurement\impl\format\UnitFormatTest.class
-org\unitsofmeasurement\impl\AbstractUnitTest.class
-org\unitsofmeasurement\impl\model\QuantityFactoryTest.class
-org\unitsofmeasurement\impl\model\quantity\LengthTest.class
