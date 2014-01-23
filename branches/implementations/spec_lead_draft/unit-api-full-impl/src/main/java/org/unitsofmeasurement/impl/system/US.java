@@ -266,7 +266,17 @@ public final class US extends AbstractSystemOfUnits {
 	 * A unit of area equal to <code>100 {@link #ARE}</code> (standard name
 	 * <code>ha</code>).
 	 */
-	static final Unit<Area> HECTARE = addUnit(ARE.multiply(100)); // Exact.
+	public static final Unit<Area> HECTARE = addUnit(ARE.multiply(100)); // Exact.
+	
+	/**
+	 * The acre is a unit of area used in the imperial and U.S. customary systems.
+	 * It is equivalent to <code>43,560 square feet</code>. 
+	 * An acre is about 40% of a <code>HECTARE</code> – slightly smaller than an American football field. 
+	 * (standard name <code>ac</code>
+	 * ).
+	 * @see http://en.wikipedia.org/wiki/Acre
+	 */
+	public static final Unit<Area> ACRE = addUnit(SQUARE_FOOT.multiply(43560));
 	
 	// ///////////////
 	// Data Amount //
