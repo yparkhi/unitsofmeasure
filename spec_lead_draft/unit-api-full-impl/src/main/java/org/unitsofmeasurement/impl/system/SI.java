@@ -588,8 +588,8 @@ public final class SI extends AbstractSystemOfUnits {
     /**
      *  An angle unit accepted for use with SI units (standard name <code>ha</code>).
      */
-    public static final TransformedUnit<Area> HECTARE
-            = new TransformedUnit<Area>(SQUARE_METRE, new RationalConverter(10000, 1));
+//    public static final TransformedUnit<Area> HECTAR
+//            = new TransformedUnit<Area>(SQUARE_METRE, new RationalConverter(10000, 1));
 
     /////////////////////
     // Collection View //
