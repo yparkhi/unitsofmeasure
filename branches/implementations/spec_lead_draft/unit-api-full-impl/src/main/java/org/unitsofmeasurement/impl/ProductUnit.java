@@ -1,10 +1,8 @@
-/*
- * JScience - Java(TM) Tools and Libraries for the Advancement of Sciences.
- * Copyright (C) 2010 - JScience (http://jscience.org/)
+/**
+ * Copyright (c) 2010-2014 Jean-Marie Dautelle, Werner Keil and others.
  * All rights reserved.
  *
- * Permission to use, copy, modify, and distribute this software is
- * freely granted, provided that this notice is preserved.
+ * See LICENSE.txt for details.
  */
 package org.unitsofmeasurement.impl;
 
@@ -13,7 +11,6 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.measure.Dimension;
 import javax.measure.Quantity;
 import javax.measure.Unit;
 import javax.measure.function.UnitConverter;
@@ -34,9 +31,14 @@ import org.unitsofmeasurement.impl.system.SI;
  *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 5.1, December 25, 2013
+ * @version 5.2, January 23, 2014
  */
 public final class ProductUnit<Q extends Quantity<Q>> extends AbstractUnit<Q> {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 962983585531030093L;
 
 	/**
      * Holds the units composing this product unit.
@@ -271,7 +273,8 @@ public final class ProductUnit<Q extends Quantity<Q>> extends AbstractUnit<Q> {
         return code;
     }
 
-    @Override
+    @SuppressWarnings("unchecked")
+	@Override
     public AbstractUnit<Q> toSI() {
         Unit<?> systemUnit = SI.ONE;
         for (int i = 0; i < elements.length; i++) {
@@ -324,13 +327,14 @@ public final class ProductUnit<Q extends Quantity<Q>> extends AbstractUnit<Q> {
      * @param rightElems right multiplicand elements.
      * @return the corresponding unit.
      */
-    private static AbstractUnit<?> getInstance(Element[] leftElems, Element[] rightElems) {
+    @SuppressWarnings("rawtypes")
+	private static AbstractUnit<?> getInstance(Element[] leftElems, Element[] rightElems) {
 
         // Merges left elements with right elements.
         Element[] result = new Element[leftElems.length + rightElems.length];
         int resultIndex = 0;
         for (int i = 0; i < leftElems.length; i++) {
-            AbstractUnit unit = leftElems[i].unit;
+            AbstractUnit<?> unit = leftElems[i].unit;
             int p1 = leftElems[i].pow;
             int r1 = leftElems[i].root;
             int p2 = 0;
@@ -399,6 +403,11 @@ public final class ProductUnit<Q extends Quantity<Q>> extends AbstractUnit<Q> {
     private final static class Element implements Serializable {
 
         /**
+		 * 
+		 */
+		private static final long serialVersionUID = 452938412398890507L;
+
+		/**
          * Holds the single unit.
          */
         private final AbstractUnit<?> unit;
@@ -455,7 +464,6 @@ public final class ProductUnit<Q extends Quantity<Q>> extends AbstractUnit<Q> {
             return root;
         }
     }
-
 
 	@Override
 	public String getSymbol() {

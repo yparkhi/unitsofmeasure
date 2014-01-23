@@ -1,3 +1,9 @@
+/**
+ * Copyright (c) 2013-2014 Werner Keil and others.
+ * All rights reserved.
+ *
+ * See LICENSE.txt for details.
+ */
 package org.unitsofmeasurement.impl.enums.quantity;
 
 import org.unitsofmeasurement.impl.enums.unit.TimeUnit;
@@ -9,7 +15,7 @@ import javax.measure.quantity.Time;
 
 /**
  * @author Werner Keil
- * @version 1.3, $Date$
+ * @version 1.4, $Date$
  */
 public class TimeQuantity extends AbstractQuantity<Time> {
     /**
