@@ -285,7 +285,7 @@ public final class US extends AbstractSystemOfUnits {
 	 * A unit of data amount equal to <code>8 {@link SI#BIT}</code> (BinarY
 	 * TErm, standard name <code>byte</code>).
 	 */
-	public static final Unit<Information> BYTE = addUnit(BIT.multiply(8));
+	public static final AbstractUnit<Information> BYTE = addUnit(BIT.multiply(8));
 
 	/**
 	 * Equivalent {@link #BYTE}

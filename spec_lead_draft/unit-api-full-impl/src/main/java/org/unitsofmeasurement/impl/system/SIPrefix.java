@@ -11,6 +11,7 @@ package org.unitsofmeasurement.impl.system;
 import java.math.BigInteger;
 
 import javax.measure.Quantity;
+import javax.measure.Unit;
 
 import org.unitsofmeasurement.impl.AbstractUnit;
 import org.unitsofmeasurement.impl.function.RationalConverter;
@@ -30,7 +31,8 @@ import org.unitsofmeasurement.impl.function.RationalConverter;
  *
  * @see <a href="http://en.wikipedia.org/wiki/SI_prefix">Wikipedia: SI Prefix</a>
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
- * @version 5.0, October 12, 2010
+ * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
+ * @version 5.1, $Date$
  */
 public enum SIPrefix {
 
@@ -167,7 +169,7 @@ public enum SIPrefix {
      * @param unit any unit.
      * @return <code>unit.times(1e3)</code>.
      */
-    public static <Q extends Quantity<Q>> AbstractUnit<Q> KILO(AbstractUnit<Q> unit) {
+    public static <Q extends Quantity<Q>> Unit<Q> KILO(Unit<Q> unit) {
         return unit.transform(KILO.getConverter());
     }
 

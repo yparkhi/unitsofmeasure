@@ -27,7 +27,7 @@ import static org.unitsofmeasurement.impl.system.SIPrefix.*;
  * @author  <a href="mailto:eric-r@northwestern.edu">Eric Russell</a>
  * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @see <a href="http://www.unitsofmeasure.org">UCUM</a>
- * @version 2.2, $Date$
+ * @version 2.3, $Date$
  */
 public final class UCUM extends AbstractSystemOfUnits {
 
@@ -533,21 +533,21 @@ public final class UCUM extends AbstractSystemOfUnits {
     /** As per <a href="http://unitsofmeasure.org/">UCUM</a> standard. */
     public static final AbstractUnit<Energy> CALORIE = addUnit(CALORIE_THERMOCHEMICAL);
     /** As per <a href="http://unitsofmeasure.org/">UCUM</a> standard. */
-    public static final AbstractUnit<Energy> CALORIE_FOOD = addUnit(KILO(CALORIE_THERMOCHEMICAL));
+    public static final Unit<Energy> CALORIE_FOOD = addUnit(KILO(CALORIE_THERMOCHEMICAL));
     /** As per <a href="http://unitsofmeasure.org/">UCUM</a> standard. */
-    public static final AbstractUnit<Energy> BTU_AT_39F = addUnit(KILO(JOULE).multiply(105967).divide(100000));
+    public static final Unit<Energy> BTU_AT_39F = addUnit(KILO(JOULE).multiply(105967).divide(100000));
     /** As per <a href="http://unitsofmeasure.org/">UCUM</a> standard. */
-    public static final AbstractUnit<Energy> BTU_AT_59F = addUnit(KILO(JOULE).multiply(105480).divide(100000));
+    public static final Unit<Energy> BTU_AT_59F = addUnit(KILO(JOULE).multiply(105480).divide(100000));
     /** As per <a href="http://unitsofmeasure.org/">UCUM</a> standard. */
-    public static final AbstractUnit<Energy> BTU_AT_60F = addUnit(KILO(JOULE).multiply(105468).divide(100000));
+    public static final Unit<Energy> BTU_AT_60F = addUnit(KILO(JOULE).multiply(105468).divide(100000));
     /** As per <a href="http://unitsofmeasure.org/">UCUM</a> standard. */
-    public static final AbstractUnit<Energy> BTU_MEAN = addUnit(KILO(JOULE).multiply(105587).divide(100000));
+    public static final Unit<Energy> BTU_MEAN = addUnit(KILO(JOULE).multiply(105587).divide(100000));
     /** As per <a href="http://unitsofmeasure.org/">UCUM</a> standard. */
-    public static final AbstractUnit<Energy> BTU_INTERNATIONAL_TABLE = addUnit(KILO(JOULE).multiply(105505585262L).divide(100000000000L));
+    public static final Unit<Energy> BTU_INTERNATIONAL_TABLE = addUnit(KILO(JOULE).multiply(105505585262L).divide(100000000000L));
     /** As per <a href="http://unitsofmeasure.org/">UCUM</a> standard. */
-    public static final AbstractUnit<Energy> BTU_THERMOCHEMICAL = addUnit(KILO(JOULE).multiply(105735).divide(100000));
+    public static final Unit<Energy> BTU_THERMOCHEMICAL = addUnit(KILO(JOULE).multiply(105735).divide(100000));
     /** As per <a href="http://unitsofmeasure.org/">UCUM</a> standard. */
-    public static final AbstractUnit<Energy> BTU = addUnit(BTU_THERMOCHEMICAL);
+    public static final Unit<Energy> BTU = addUnit(BTU_THERMOCHEMICAL);
     /** As per <a href="http://unitsofmeasure.org/">UCUM</a> standard. */
     public static final AbstractUnit<Power> HORSEPOWER = addUnit(FOOT_INTERNATIONAL.multiply(POUND_FORCE).divide(SECOND).asType(Power.class));
     /////////////////////////////////////////////////////////
@@ -566,7 +566,7 @@ public final class UCUM extends AbstractSystemOfUnits {
     /** As per <a href="http://unitsofmeasure.org/">UCUM</a> standard. */
     public static final AbstractUnit<Area> BARN = addUnit(FEMTO(METER).pow(2).multiply(100).asType(Area.class));
     /** As per <a href="http://unitsofmeasure.org/">UCUM</a> standard. */
-    public static final AbstractUnit<Pressure> ATMOSPHERE_TECHNICAL = addUnit(KILO(GRAM_FORCE).divide(CENTI(METER).pow(2)).asType(Pressure.class));
+    public static final Unit<Pressure> ATMOSPHERE_TECHNICAL = addUnit(KILO(GRAM_FORCE).divide(CENTI(METER).pow(2)).asType(Pressure.class));
     /** As per <a href="http://unitsofmeasure.org/">UCUM</a> standard. */
     public static final Unit<ElectricConductance> MHO = addUnit(TMP_MHO.asType(ElectricConductance.class));
     /** As per <a href="http://unitsofmeasure.org/">UCUM</a> standard. */
