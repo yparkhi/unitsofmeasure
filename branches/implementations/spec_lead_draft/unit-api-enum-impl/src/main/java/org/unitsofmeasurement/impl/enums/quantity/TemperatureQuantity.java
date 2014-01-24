@@ -6,18 +6,18 @@
  */
 package org.unitsofmeasurement.impl.enums.quantity;
 
-import org.unitsofmeasurement.impl.enums.unit.TimeUnit;
+import org.unitsofmeasurement.impl.enums.unit.TemperatureUnit;
 import org.unitsofmeasurement.impl.format.SimpleFormat;
 
 import javax.measure.Measurement;
 import javax.measure.Unit;
-import javax.measure.quantity.Time;
+import javax.measure.quantity.Temperature;
 
 /**
  * @author Werner Keil
- * @version 1.4, $Date$
+ * @version 1.4, $Date: 2014-01-23 15:03:08 +0100 (Do, 23 Jän 2014) $
  */
-public class TimeQuantity extends AbstractQuantity<Time> {
+public final class TemperatureQuantity extends AbstractQuantity<Temperature> implements Temperature {
     /**
 	 * 
 	 */
@@ -27,12 +27,12 @@ public class TimeQuantity extends AbstractQuantity<Time> {
 
     private final Double value; // value in unit (Unit unit)
 
-    private final TimeUnit unit;
+    private final TemperatureUnit unit;
 
 //    TimeQuantity(){
 //    }
 
-    public TimeQuantity(Double val, TimeUnit un) {
+    public TemperatureQuantity(Double val, TemperatureUnit un) {
         value = val;
         unit = un;
         if (val!= null && un != null) {
@@ -46,48 +46,48 @@ public class TimeQuantity extends AbstractQuantity<Time> {
         return (value != null) && 0d==(value.doubleValue());
     }
 
-    public TimeQuantity add(TimeQuantity d1) {
-        final TimeQuantity dn = new TimeQuantity(Double.valueOf(this.value.doubleValue() + d1.value.doubleValue()),
+    public TemperatureQuantity add(TemperatureQuantity d1) {
+        final TemperatureQuantity dn = new TemperatureQuantity(Double.valueOf(this.value.doubleValue() + d1.value.doubleValue()),
         		this.unit);
         return dn;
     }
 
-    public TimeQuantity subtract(TimeQuantity d1) {
-    	final TimeQuantity dn = new TimeQuantity(this.value.doubleValue() - d1.value.doubleValue(), this.unit);
+    public TemperatureQuantity subtract(TemperatureQuantity d1) {
+    	final TemperatureQuantity dn = new TemperatureQuantity(this.value.doubleValue() - d1.value.doubleValue(), this.unit);
         return dn;
     }
 
-    public boolean eq(TimeQuantity dq) {
+    public boolean eq(TemperatureQuantity dq) {
          return dq!=null && dq.getValue().equals(getValue()) && dq.getUnit().equals(getUnit()) &&
                  dq.getScalar().equals(getScalar());
     }
 
-    public boolean ne(TimeQuantity d1) {
-        return ne((TimeQuantity) d1);
+    public boolean ne(TemperatureQuantity d1) {
+        return ne((TemperatureQuantity) d1);
     }
 
-    public boolean gt(TimeQuantity d1) {
-        return gt((TimeQuantity) d1);
+    public boolean gt(TemperatureQuantity d1) {
+        return gt((TemperatureQuantity) d1);
     }
 
-    public boolean lt(TimeQuantity d1) {
-        return lt((TimeQuantity) d1);
+    public boolean lt(TemperatureQuantity d1) {
+        return lt((TemperatureQuantity) d1);
     }
 
-    public boolean ge(TimeQuantity d1) {
-        return ge((TimeQuantity)d1);
+    public boolean ge(TemperatureQuantity d1) {
+        return ge((TemperatureQuantity)d1);
     }
 
-    public boolean le(TimeQuantity d1) {
-        return le((TimeQuantity) d1);
+    public boolean le(TemperatureQuantity d1) {
+        return le((TemperatureQuantity) d1);
     }
 
-    public TimeQuantity divide(Double v) {
-        return new TimeQuantity(value.doubleValue() / v.doubleValue(), unit);
+    public TemperatureQuantity divide(Double v) {
+        return new TemperatureQuantity(value.doubleValue() / v.doubleValue(), unit);
     }
 
-    public TimeQuantity convert(TimeUnit newUnit) {
-        return new TimeQuantity(value.doubleValue() /  newUnit.getMultFactor(), newUnit);
+    public TemperatureQuantity convert(TemperatureUnit newUnit) {
+        return new TemperatureQuantity(value.doubleValue() /  newUnit.getMultFactor(), newUnit);
     }
 
     @Override
@@ -98,9 +98,11 @@ public class TimeQuantity extends AbstractQuantity<Time> {
     @Override
     public String toString(boolean withUnit, boolean withSpace, int precision) {
         final StringBuilder sb = new StringBuilder();
-    	if(withUnit) sb.append(getUnit());
-    	if(withSpace) sb.append(" ");
     	sb.append(getValue());
+    	if(withUnit) {
+        	if(withSpace) sb.append(" ");
+    		sb.append(getUnit().getSymbol());
+    	}
     	return sb.toString();
     }
 
@@ -115,18 +117,18 @@ public class TimeQuantity extends AbstractQuantity<Time> {
 	}
 
 	@Override
-	public Unit<Time> getUnit() {
+	public Unit<Temperature> getUnit() {
 		 return unit;
 	}
 
 	@Override
-	public Measurement<Time, Number> add(Measurement<Time, Number> that) {
+	public Measurement<Temperature, Number> add(Measurement<Temperature, Number> that) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Measurement<Time, Number> substract(Measurement<Time, Number> that) {
+	public Measurement<Temperature, Number> substract(Measurement<Temperature, Number> that) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -139,7 +141,7 @@ public class TimeQuantity extends AbstractQuantity<Time> {
 
 	@Override
 	public Measurement<?, Number> multiply(Number that) {
-		return new TimeQuantity(value.doubleValue() * that.doubleValue(), unit);
+		return new TemperatureQuantity(value.doubleValue() * that.doubleValue(), unit);
 	}
 
 	@Override
@@ -149,20 +151,20 @@ public class TimeQuantity extends AbstractQuantity<Time> {
 	}
 
 	@Override
-	public Measurement<Time, Number> inverse() {
+	public Measurement<Temperature, Number> inverse() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Measurement<Time, Number> to(Unit<Time> unit) {
+	public Measurement<Temperature, Number> to(Unit<Temperature> unit) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public boolean eq(AbstractQuantity<Time> dq) {
-		 return eq((TimeQuantity) dq);
+	public boolean eq(AbstractQuantity<Temperature> dq) {
+		 return eq((TemperatureQuantity) dq);
 	}
 
 	@Override

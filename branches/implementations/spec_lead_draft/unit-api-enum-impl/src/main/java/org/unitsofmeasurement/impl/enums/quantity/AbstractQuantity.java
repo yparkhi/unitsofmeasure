@@ -9,10 +9,6 @@ package org.unitsofmeasurement.impl.enums.quantity;
 import org.unitsofmeasurement.impl.format.SimpleFormat;
 import org.unitsofmeasurement.impl.function.Multiplier;
 
-import java.io.Serializable;
-import java.math.BigDecimal;
-import java.math.RoundingMode;
-
 import javax.measure.Quantity;
 import javax.measure.Unit;
 import javax.measure.function.Nameable;
@@ -21,7 +17,7 @@ import javax.measure.function.Nameable;
  * @author Werner Keil
  * @version 1.10 ($Revision$), $Date$
  */
-public abstract class AbstractQuantity<Q extends Quantity<Q>> implements Quantity<Q>,Serializable {
+public abstract class AbstractQuantity<Q extends Quantity<Q>> implements Quantity<Q> {
 
     /**
 	 * 
@@ -100,9 +96,9 @@ public abstract class AbstractQuantity<Q extends Quantity<Q>> implements Quantit
         return showInUnit(u, s, precision, showItem, true);
     }
 
-    protected String showInUnit(Unit<?> u, BigDecimal s, int precision, SimpleFormat.Show showItem) {
-        return showInUnit(u, s, precision, showItem, true);
-    }
+//    protected String showInUnit(Unit<?> u, BigDecimal s, int precision, SimpleFormat.Show showItem) {
+//        return showInUnit(u, s, precision, showItem, true);
+//    }
 
     /**
      *
@@ -115,10 +111,11 @@ public abstract class AbstractQuantity<Q extends Quantity<Q>> implements Quantit
     }
 
     protected String getStr(Number val, int precision) {
-    	if (val instanceof BigDecimal) { //TODO for #JavaME disable that part
-    		BigDecimal num = ((BigDecimal)val).setScale(precision, RoundingMode.HALF_UP);
-    		String str = num.toString();
-    		return str;
-    	} return String.valueOf(val);
+//    	if (val instanceof BigDecimal) { //TODO for #JavaME disable that part
+//    		BigDecimal num = ((BigDecimal)val).setScale(precision, RoundingMode.HALF_UP);
+//    		String str = num.toString();
+//    		return str;
+//    	} 
+    	return String.valueOf(val);
     }
 }

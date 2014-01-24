@@ -9,7 +9,6 @@ package org.unitsofmeasurement.impl.enums.unit;
 import org.unitsofmeasurement.impl.enums.quantity.QuantityFactory;
 import org.unitsofmeasurement.impl.function.Multiplier;
 
-import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -27,34 +26,34 @@ import javax.measure.quantity.Temperature;
  */
 public enum TemperatureUnit implements Unit<Temperature>, Multiplier {
    /** Celsius, used by most of the world's population. */
-   CELSIUS(new BigDecimal("0"), new BigDecimal("100"), '\u00B0' + "C", "Anders Celsius"),
+   CELSIUS(new Double("0"), new Double("100"), '\u00B0' + "C", "Anders Celsius"),
 
 	/** Fahrenheit, commonly used in the United States. */
-	FAHRENHEIT(new BigDecimal("32"), new BigDecimal("212"), '\u00B0' + "F", "Daniel Gabriel Fahrenheit"),
+	FAHRENHEIT(new Double("32"), new Double("212"), '\u00B0' + "F", "Daniel Gabriel Fahrenheit"),
 
 	/** Kelvin, commonly used in scientific endeavors. */
-	KELVIN(new BigDecimal("273.15"), new BigDecimal("373.15"), "K", "William Thomson, 1st Baron Kelvin"),
+	KELVIN(new Double("273.15"), new Double("373.15"), "K", "William Thomson, 1st Baron Kelvin"),
 
-	RANKINE(new BigDecimal("491.67"), new BigDecimal("671.641"), '\u00B0' + "R", "William John Macquorn Rankine");
+	RANKINE(new Double("491.67"), new Double("671.641"), '\u00B0' + "R", "William John Macquorn Rankine");
 
     /** Units by which this temperature scale is expressed. */
     private final String description;
     
     private final double multFactor;
     /** Freezing point of water for each temperature scale. */
-//    private final BigDecimal freezingPoint;
+//    private final Double freezingPoint;
 
     /** Boiling point of water for each temperature scale. */
-//    private final BigDecimal boilingPoint;
+//    private final Double boilingPoint;
 
     /** Name of person that this temperature scale is named for. */
     private final String namedFor;
 
-//	private static final BigDecimal FIVE = new BigDecimal("5");
-//    private static final BigDecimal NINE = new BigDecimal("9");
-//    private static final BigDecimal THIRTY_TWO = new BigDecimal("32");
-//    private static final BigDecimal KELVIN_CELSIUS_DELTA = new BigDecimal("273");
-//    private static final BigDecimal RANKINE_FAHRENHEIT_DELTA = new BigDecimal("459.67");
+//	private static final Double FIVE = new Double("5");
+//    private static final Double NINE = new Double("9");
+//    private static final Double THIRTY_TWO = new Double("32");
+//    private static final Double KELVIN_CELSIUS_DELTA = new Double("273");
+//    private static final Double RANKINE_FAHRENHEIT_DELTA = new Double("459.67");
     
     /**
      * Constructor for TemperatureUnit that accepts key characteristics of each
@@ -66,8 +65,8 @@ public enum TemperatureUnit implements Unit<Temperature>, Multiplier {
      * @param newNamedFor Name of person after which temperature scale was named.
      */
     private TemperatureUnit(
-       final BigDecimal newFreezingPoint,
-       final BigDecimal newBoilingPoint,
+       final Double newFreezingPoint,
+       final Double newBoilingPoint,
        final String newSymbol,
        final String newNamedFor)
     {
