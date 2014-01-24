@@ -11,8 +11,6 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.function.BiFunction;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -49,14 +47,16 @@ import org.unitsofmeasurement.impl.enums.unit.TimeUnit;
  * @version 1.3 ($Revision$), $Date$
  * 
  */
-public abstract class QuantityFactory<Q extends Quantity<Q>> implements BiFunction<Number, Unit<Q>, Q> {
+public abstract class QuantityFactory<Q extends Quantity<Q>>
+	//implements BiFunction<Number, Unit<Q>, Q> 
+{
 // TODO for #JavaME BiFunction reference should be disabled
 
 	/**
 	 * Holds the current instances.
 	 */
 	@SuppressWarnings("rawtypes")
-	private static final Map<Class, QuantityFactory> INSTANCES = new ConcurrentHashMap<Class, QuantityFactory>();
+	private static final Map<Class, QuantityFactory> INSTANCES = new HashMap<Class, QuantityFactory>();
 
 	private static final Logger logger = Logger.getLogger(QuantityFactory.class
 			.getName());
