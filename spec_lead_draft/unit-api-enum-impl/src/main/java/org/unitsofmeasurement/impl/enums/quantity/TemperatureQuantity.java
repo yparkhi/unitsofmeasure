@@ -169,7 +169,6 @@ public final class TemperatureQuantity extends AbstractQuantity<Temperature> imp
 
 	@Override
 	public Measurement<?, Number> divide(Number that) {
-		// TODO Auto-generated method stub
-		return null;
+		return divide((Double)that);
 	}
 }

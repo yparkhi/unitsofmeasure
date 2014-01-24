@@ -1,5 +1,8 @@
 /**
- * 
+ * Copyright (c) 2014 Werner Keil and others.
+ * All rights reserved.
+ *
+ * See LICENSE.txt for details.
  */
 package org.unitsofmeasurement.impl.enums.unit;
 
@@ -18,15 +21,15 @@ public class TemperatureQuantityTest {
 
 	@Test
 	public void testInstanciate() {
-		Temperature t =  new TemperatureQuantity(23.5, CELSIUS); // 23.0 °C
-		assertEquals(Double.valueOf(23.5d), t.getValue());
+		Temperature t =  new TemperatureQuantity(23.0, CELSIUS); // 23.0 °C
+		assertEquals(Double.valueOf(23.0d), t.getValue());
 		assertEquals(CELSIUS, t.getUnit());
 		//assertEquals("km", l.getUnit().getSymbol());
 	}
 	
 	@Test
 	public void testToString() {
-		Temperature t =  new TemperatureQuantity(23.5, CELSIUS); // 23.0 °C
-		assertEquals("23.5°C", t.toString());
+		Temperature t =  new TemperatureQuantity(23.0d, CELSIUS); // 23.0 °C
+		assertEquals("23.0°C", t.toString());
 	}
 }
