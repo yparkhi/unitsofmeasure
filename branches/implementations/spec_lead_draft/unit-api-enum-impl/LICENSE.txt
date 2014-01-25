@@ -1,4 +1,4 @@
-Copyright 2013, 2014, Jean-Marie, Dautelle, Werner Keil, V2COM and others, see the @author tag
+Copyright 2013, 2014, Jean-Marie Dautelle, Werner Keil, V2COM and others, see the @author tag
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
