@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2013 Werner Keil and others.
+ * Copyright (c) 2013-2014 Werner Keil and others.
  * All rights reserved.
  *
  * See LICENSE.txt for details.
@@ -14,12 +14,13 @@ package javax.measure;
  *            The value of the measurement range.
  * 
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 0.6 ($Revision$)
+ * @version 0.7 ($Revision$)
  * @see <a href="http://www.botts-inc.com/SensorML_1.0.1/schemaBrowser/SensorML_QuantityRange.html"> SensorML:
  *      QuantityRange</a>
  */
 public class MeasurementRange<T> {
-	// TODO do we allow null for min and max to represent infinity?
+	// TODO do we keep null for min and max to represent infinity? 
+	// Java 8 Optional was evaluated, but caused conflict with the type-safe Quantity aspect of this API
     private final T min;
     private final T max;
     private T res;
