@@ -1,10 +1,10 @@
 /**
- * Copyright (c) 2013 Werner Keil and others.
+ * Unit-API - Units of Measurement API for Java
+ * Copyright (c) 2014 Jean-Marie Dautelle, Werner Keil, V2COM
  * All rights reserved.
  *
  * See LICENSE.txt for details.
  */
-
 /**
  * [OPTIONAL] Provides quantitative properties or attributes of thing such as
  * mass, time, distance, heat, and angular separation.

@@ -1,3 +1,10 @@
+/**
+ * Unit-API - Units of Measurement API for Java
+ * Copyright (c) 2014 Jean-Marie Dautelle, Werner Keil, V2COM
+ * All rights reserved.
+ *
+ * See LICENSE.txt for details.
+ */
 package javax.measure.test.quantity;
 
 import static org.junit.Assert.assertEquals;

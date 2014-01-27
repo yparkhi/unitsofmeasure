@@ -1,11 +1,10 @@
 /**
- * Copyright (c) 2013-2014 Jean-Marie Dautelle, Werner Keil, V2COM.
+ * Unit-API - Units of Measurement API for Java
+ * Copyright (c) 2014 Jean-Marie Dautelle, Werner Keil, V2COM
  * All rights reserved.
  *
  * See LICENSE.txt for details.
  */
-
-
 /**
  * Specifies Java packages for the programmatic, type safe handling
  * of quantities and their expression as values of units.
