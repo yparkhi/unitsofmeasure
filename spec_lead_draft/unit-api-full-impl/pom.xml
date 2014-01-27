@@ -183,6 +183,7 @@ Full Scale approach.</description>
 									<exclude>README.*</exclude>
 									<exclude>checkstyle*.*</exclude>
 									<exclude>*.css</exclude>
+									<exclude>*.launch</exclude>
 								</excludes>
 							</configuration>
 						</plugin>
