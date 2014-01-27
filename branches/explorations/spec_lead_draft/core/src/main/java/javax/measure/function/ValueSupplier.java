@@ -1,5 +1,6 @@
 /**
- * Copyright (c) 2013-2014 Werner Keil and others.
+ * Unit-API - Units of Measurement API for Java
+ * Copyright (c) 2014 Jean-Marie Dautelle, Werner Keil, V2COM
  * All rights reserved.
  *
  * See LICENSE.txt for details.
