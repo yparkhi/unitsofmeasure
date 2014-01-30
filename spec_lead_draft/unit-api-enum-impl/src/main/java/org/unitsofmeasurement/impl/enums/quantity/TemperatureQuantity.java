@@ -24,22 +24,20 @@ import javax.measure.quantity.Temperature;
 
 /**
  * @author Werner Keil
- * @version 1.4, $Date: 2014-01-23 15:03:08 +0100 (Do, 23 Jän 2014) $
+ * @version 1.5, $Date: 2014-01-23 15:03:08 +0100 (Do, 23 Jän 2014) $
  */
-public final class TemperatureQuantity extends AbstractQuantity<Temperature> implements Temperature {
+public final class TemperatureQuantity extends AbstractQuantity<Temperature> 
+  implements Temperature {
     /**
-	 * 
-	 */
-	private static final long serialVersionUID = -421330065304945228L;
+     * 
+     */
+    private static final long serialVersionUID = -421330065304945228L;
 
-	private final Double scalar; // value in reference unit
+    private final Double scalar; // value in reference unit
 
     private final Double value; // value in unit (Unit unit)
 
     private final TemperatureUnit unit;
-
-//    TimeQuantity(){
-//    }
 
     public TemperatureQuantity(Double val, TemperatureUnit un) {
         value = val;
@@ -56,18 +54,21 @@ public final class TemperatureQuantity extends AbstractQuantity<Temperature> imp
     }
 
     public TemperatureQuantity add(TemperatureQuantity d1) {
-        final TemperatureQuantity dn = new TemperatureQuantity(Double.valueOf(this.value.doubleValue() + d1.value.doubleValue()),
+        final TemperatureQuantity dn = new TemperatureQuantity(Double.valueOf(
+                this.value.doubleValue() + d1.value.doubleValue()),
         		this.unit);
         return dn;
     }
 
     public TemperatureQuantity subtract(TemperatureQuantity d1) {
-    	final TemperatureQuantity dn = new TemperatureQuantity(this.value.doubleValue() - d1.value.doubleValue(), this.unit);
+    	final TemperatureQuantity dn = new TemperatureQuantity(
+                this.value.doubleValue() - d1.value.doubleValue(), this.unit);
         return dn;
     }
 
     public boolean eq(TemperatureQuantity dq) {
-         return dq!=null && dq.getValue().equals(getValue()) && dq.getUnit().equals(getUnit()) &&
+         return dq!=null && dq.getValue().equals(getValue()) && 
+                 dq.getUnit().equals(getUnit()) &&
                  dq.getScalar().equals(getScalar());
     }
 
@@ -92,11 +93,13 @@ public final class TemperatureQuantity extends AbstractQuantity<Temperature> imp
     }
 
     public TemperatureQuantity divide(Double v) {
-        return new TemperatureQuantity(value.doubleValue() / v.doubleValue(), unit);
+        return new TemperatureQuantity(value.doubleValue() / v.doubleValue(), 
+                unit);
     }
 
     public TemperatureQuantity convert(TemperatureUnit newUnit) {
-        return new TemperatureQuantity(value.doubleValue() /  newUnit.getMultFactor(), newUnit);
+        return new TemperatureQuantity(value.doubleValue() /  
+                newUnit.getMultFactor(), newUnit);
     }
 
     @Override
@@ -116,7 +119,8 @@ public final class TemperatureQuantity extends AbstractQuantity<Temperature> imp
     }
 
     @Override
-    public String showInUnit(Unit<?> u, int precision, SimpleFormat.Show showWith) {
+    public String showInUnit(Unit<?> u, int precision, 
+            SimpleFormat.Show showWith) {
         return showInUnit(u, value, precision, showWith);
     }
 
@@ -131,13 +135,15 @@ public final class TemperatureQuantity extends AbstractQuantity<Temperature> imp
 	}
 
 	@Override
-	public Measurement<Temperature, Number> add(Measurement<Temperature, Number> that) {
+	public Measurement<Temperature, Number> add(
+                Measurement<Temperature, Number> that) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Measurement<Temperature, Number> substract(Measurement<Temperature, Number> that) {
+	public Measurement<Temperature, Number> substract(
+                Measurement<Temperature, Number> that) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -150,7 +156,8 @@ public final class TemperatureQuantity extends AbstractQuantity<Temperature> imp
 
 	@Override
 	public Measurement<?, Number> multiply(Number that) {
-		return new TemperatureQuantity(value.doubleValue() * that.doubleValue(), unit);
+		return new TemperatureQuantity(value.doubleValue() * 
+                        that.doubleValue(), unit);
 	}
 
 	@Override

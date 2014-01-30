@@ -15,6 +15,8 @@
  */
 package org.unitsofmeasurement.impl.enums.unit;
 
+import static org.unitsofmeasurement.impl.enums.unit.Constants.DEG;
+
 import org.unitsofmeasurement.impl.enums.quantity.QuantityFactory;
 import org.unitsofmeasurement.impl.function.Multiplier;
 
@@ -31,20 +33,24 @@ import javax.measure.quantity.Temperature;
 
 /**
  * @author Werner Keil
- * @version 1.2 ($Revision$), $Date$
+ * @version 1.3 ($Revision$), $Date$
  */
 public enum TemperatureUnit implements Unit<Temperature>, Multiplier {
    /** Celsius, used by most of the world's population. */
-   CELSIUS(new Double("0"), new Double("100"), '\u00B0' + "C", "Anders Celsius"),
+   CELSIUS(new Double("0"), new Double("100"), DEG + "C", "Anders Celsius"),
 
 	/** Fahrenheit, commonly used in the United States. */
-	FAHRENHEIT(new Double("32"), new Double("212"), '\u00B0' + "F", "Daniel Gabriel Fahrenheit"),
+	FAHRENHEIT(new Double("32"), new Double("212"), DEG + "F", 
+			"Daniel Gabriel Fahrenheit"),
 
 	/** Kelvin, commonly used in scientific endeavors. */
-	KELVIN(new Double("273.15"), new Double("373.15"), "K", "William Thomson, 1st Baron Kelvin"),
+	KELVIN(new Double("273.15"), new Double("373.15"), "K", 
+			"William Thomson, 1st Baron Kelvin"),
 
-	RANKINE(new Double("491.67"), new Double("671.641"), '\u00B0' + "R", "William John Macquorn Rankine");
-
+	/** Rankine, used in scientific endeavors. */
+	RANKINE(new Double("491.67"), new Double("671.641"), DEG + "R", 
+			"William John Macquorn Rankine");
+   
     /** Units by which this temperature scale is expressed. */
     private final String description;
     

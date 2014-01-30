@@ -16,6 +16,8 @@
 package org.unitsofmeasurement.impl.enums.unit;
 
 class Constants {
+	static final char DEG = '\u00B0';
+	
 	static final double BYTE_FACTOR = 8.0;
 	
     static final String BIT_NAME = "bit"; //$NON-NLS-1$

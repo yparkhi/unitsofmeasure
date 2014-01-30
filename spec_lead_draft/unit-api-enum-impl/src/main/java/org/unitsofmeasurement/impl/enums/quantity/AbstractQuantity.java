@@ -29,15 +29,11 @@ import javax.measure.function.Nameable;
 public abstract class AbstractQuantity<Q extends Quantity<Q>> implements Quantity<Q> {
 
     /**
-	 * 
-	 */
-	private static final long serialVersionUID = 859680039827023765L;
+     * 
+     */
+    private static final long serialVersionUID = 859680039827023765L;
 
-	public abstract Number getScalar();
-
-//    public abstract Number getValue();
-//
-//    public abstract Unit<Q> getUnit();
+    public abstract Number getScalar();
 
     public abstract boolean eq(AbstractQuantity<Q> dq);
 
@@ -52,7 +48,8 @@ public abstract class AbstractQuantity<Q extends Quantity<Q>> implements Quantit
         return false;
     }
 
-    public abstract String toString(boolean withUnit, boolean withSpace, int precision);
+    public abstract String toString(boolean withUnit, boolean withSpace, 
+            int precision);
 
     public String toString(boolean withUnit, boolean withSpace) {
         return toString(withUnit, withSpace, 0);
@@ -71,9 +68,11 @@ public abstract class AbstractQuantity<Q extends Quantity<Q>> implements Quantit
         return toString(false);
     }
 
-    public abstract String showInUnit(Unit<?> u, int precision, SimpleFormat.Show show);
+    public abstract String showInUnit(Unit<?> u, int precision, 
+            SimpleFormat.Show show);
 
-    protected String showInUnit(Unit<?> u, Number s, int precision, SimpleFormat.Show show, boolean withSpace) {
+    protected String showInUnit(Unit<?> u, Number s, int precision, 
+            SimpleFormat.Show show, boolean withSpace) {
         if (u == null) {
             throw new IllegalArgumentException("Null unit not allowed!");  //$NON-NLS-1$
         }
@@ -101,13 +100,10 @@ public abstract class AbstractQuantity<Q extends Quantity<Q>> implements Quantit
         }
     }
     
-    protected String showInUnit(Unit<?> u, Double s, int precision, SimpleFormat.Show showItem) {
+    protected String showInUnit(Unit<?> u, Double s, int precision, 
+            SimpleFormat.Show showItem) {
         return showInUnit(u, s, precision, showItem, true);
     }
-
-//    protected String showInUnit(Unit<?> u, BigDecimal s, int precision, SimpleFormat.Show showItem) {
-//        return showInUnit(u, s, precision, showItem, true);
-//    }
 
     /**
      *
