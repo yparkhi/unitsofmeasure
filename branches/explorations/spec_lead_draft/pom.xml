@@ -70,6 +70,7 @@
 		<module>format</module>
 		<module>quantity</module>
 		<module>service</module>
+		<module>util</module>
 	</modules>
 
 	<!-- Developers and Contributors -->
