@@ -25,7 +25,7 @@ import javax.measure.Quantity;
 
 import org.unitsofmeasurement.impl.AbstractUnit;
 import org.unitsofmeasurement.impl.BaseUnit;
-import org.unitsofmeasurement.impl.system.SI;
+import org.unitsofmeasurement.impl.util.SI;
 
 /**
 *  <p> This class represents a quantity dimension (dimension of a physical

@@ -28,7 +28,7 @@ import javax.measure.function.UnitConverter;
 
 import org.unitsofmeasurement.impl.AbstractUnit;
 import org.unitsofmeasurement.impl.function.AbstractConverter;
-import org.unitsofmeasurement.impl.system.SIPrefix;
+import org.unitsofmeasurement.impl.util.SIPrefix;
 
 /**
  * <p> This class provides a set of mappings between

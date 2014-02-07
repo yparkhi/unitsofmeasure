@@ -15,7 +15,7 @@
  */
 package org.unitsofmeasurement.impl.model;
 
-import static org.unitsofmeasurement.impl.system.SI.*;
+import static org.unitsofmeasurement.impl.util.SI.*;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -32,7 +32,7 @@ import javax.measure.quantity.*;
 
 import org.unitsofmeasurement.impl.AbstractMeasurement;
 import org.unitsofmeasurement.impl.AbstractUnit;
-import org.unitsofmeasurement.impl.system.SI;
+import org.unitsofmeasurement.impl.util.SI;
 
 
 /**

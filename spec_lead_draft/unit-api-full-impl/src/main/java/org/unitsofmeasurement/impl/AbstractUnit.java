@@ -34,7 +34,7 @@ import org.unitsofmeasurement.impl.function.AbstractConverter;
 import org.unitsofmeasurement.impl.function.RationalConverter;
 import org.unitsofmeasurement.impl.model.QuantityDimension;
 import org.unitsofmeasurement.impl.model.DimensionalModel;
-import org.unitsofmeasurement.impl.system.SI;
+import org.unitsofmeasurement.impl.util.SI;
 
 
 /**

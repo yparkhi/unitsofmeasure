@@ -30,7 +30,7 @@ import javax.measure.format.ParserException;
 import javax.measure.format.UnitFormat;
 
 import org.unitsofmeasurement.impl.AbstractMeasurement;
-import org.unitsofmeasurement.impl.system.SI;
+import org.unitsofmeasurement.impl.util.SI;
 
 
 

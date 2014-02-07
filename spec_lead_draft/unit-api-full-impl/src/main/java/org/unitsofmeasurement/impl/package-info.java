@@ -101,6 +101,6 @@
  * @version 5.0.0
  */
 package org.unitsofmeasurement.impl;
-import org.unitsofmeasurement.impl.system.SI;
-import org.unitsofmeasurement.impl.system.UCUM;
+import org.unitsofmeasurement.impl.util.SI;
+import org.unitsofmeasurement.impl.util.UCUM;
 

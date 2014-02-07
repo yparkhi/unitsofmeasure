@@ -28,7 +28,7 @@ import javax.measure.quantity.Dimensionless;
 
 import org.unitsofmeasurement.impl.format.MeasurementFormat;
 import org.unitsofmeasurement.impl.function.AbstractConverter;
-import org.unitsofmeasurement.impl.system.SI;
+import org.unitsofmeasurement.impl.util.SI;
 
 /**
  * <p> This class represents the immutable result of a scalar measurement stated

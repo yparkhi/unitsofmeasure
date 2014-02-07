@@ -40,8 +40,8 @@ import org.unitsofmeasurement.impl.format.internal.UCUMParser;
 import org.unitsofmeasurement.impl.function.AbstractConverter;
 import org.unitsofmeasurement.impl.function.MultiplyConverter;
 import org.unitsofmeasurement.impl.function.RationalConverter;
-import org.unitsofmeasurement.impl.system.SI;
-import org.unitsofmeasurement.impl.system.SIPrefix;
+import org.unitsofmeasurement.impl.util.SI;
+import org.unitsofmeasurement.impl.util.SIPrefix;
 
 
 /**

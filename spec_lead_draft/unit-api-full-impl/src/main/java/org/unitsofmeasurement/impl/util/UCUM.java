@@ -13,7 +13,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.unitsofmeasurement.impl.system;
+package org.unitsofmeasurement.impl.util;
 
 import org.unitsofmeasurement.impl.AbstractUnit;
 import org.unitsofmeasurement.impl.function.PiMultiplierConverter;
@@ -22,7 +22,7 @@ import javax.measure.Quantity;
 import javax.measure.Unit;
 import javax.measure.quantity.*;
 
-import static org.unitsofmeasurement.impl.system.SIPrefix.*;
+import static org.unitsofmeasurement.impl.util.SIPrefix.*;
 
 /**
  * <p> This class contains {@link SI} and Non-SI units as defined

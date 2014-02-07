@@ -16,7 +16,7 @@
 package org.unitsofmeasurement.impl.model.quantity;
 
 import static org.junit.Assert.*;
-import static org.unitsofmeasurement.impl.system.SI.METRE;
+import static org.unitsofmeasurement.impl.util.SI.METRE;
 
 import javax.measure.quantity.Length;
 

@@ -13,10 +13,10 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.unitsofmeasurement.impl.system;
+package org.unitsofmeasurement.impl.util;
 
-import static org.unitsofmeasurement.impl.system.SI.*;
-import static org.unitsofmeasurement.impl.system.SIPrefix.MICRO;
+import static org.unitsofmeasurement.impl.util.SI.*;
+import static org.unitsofmeasurement.impl.util.SIPrefix.MICRO;
 
 import org.unitsofmeasurement.impl.AbstractUnit;
 import org.unitsofmeasurement.impl.ProductUnit;
@@ -24,7 +24,6 @@ import org.unitsofmeasurement.impl.TransformedUnit;
 import org.unitsofmeasurement.impl.function.RationalConverter;
 
 import javax.measure.Quantity;
-import javax.measure.SystemOfUnits;
 import javax.measure.Unit;
 import javax.measure.quantity.Angle;
 import javax.measure.quantity.Area;
@@ -37,6 +36,7 @@ import javax.measure.quantity.Temperature;
 import javax.measure.quantity.Time;
 import javax.measure.quantity.Speed;
 import javax.measure.quantity.Volume;
+import javax.measure.util.SystemOfUnits;
 
 /**
  * <p>
