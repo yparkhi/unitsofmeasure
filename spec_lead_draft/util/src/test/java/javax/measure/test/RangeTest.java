@@ -11,7 +11,8 @@ import static javax.measure.test.TestUnit.TEST;
 import static org.junit.Assert.*;
 
 import javax.measure.Measurement;
-import javax.measure.MeasurementRange;
+import javax.measure.test.TestMeasurement;
+import javax.measure.util.Range;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -21,7 +22,7 @@ public class RangeTest {
 	private Measurement<?, Double> max;
 	private Measurement<?, Double> res;
 	@SuppressWarnings("rawtypes")
-	private MeasurementRange range;
+	private Range range;
 	
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@Before
@@ -30,7 +31,7 @@ public class RangeTest {
 		max = new TestMeasurement(Double.valueOf(10d), TEST);
 		res = new TestMeasurement(Double.valueOf(2d), TEST);
 		
-		range = MeasurementRange.of(min, max, res);
+		range = Range.of(min, max, res);
 	}
 	
 	@Test

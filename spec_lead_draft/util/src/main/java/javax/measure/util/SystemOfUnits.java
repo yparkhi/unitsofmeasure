@@ -5,10 +5,13 @@
  *
  * See LICENSE.txt for details.
  */
-package javax.measure;
+package javax.measure.util;
 
 import java.util.Set;
 
+import javax.measure.Dimension;
+import javax.measure.Quantity;
+import javax.measure.Unit;
 import javax.measure.function.Nameable;
 
 

@@ -7,7 +7,7 @@
  */
 package javax.measure.service;
 
-import javax.measure.SystemOfUnits;
+import javax.measure.util.SystemOfUnits;
 
 /**
  * <p>
@@ -22,7 +22,7 @@ import javax.measure.SystemOfUnits;
  * 
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.3.1 ($Revision: 257 $), $Date: 2013-09-20 01:05:19 +0200 (Fr, 20 Sep 2013) $
+ * @version 1.4 ($Revision: 257 $), $Date: 2013-09-20 01:05:19 +0200 (Fr, 20 Sep 2013) $
  */
 public interface SystemOfUnitsService {
 

@@ -5,21 +5,21 @@
  *
  * See LICENSE.txt for details.
  */
-package javax.measure;
+package javax.measure.util;
 
 /**
  * A Measurement Range is a pair of <code>T</code> values that represent a range of values.<p>
  * Range limits MUST be presented in the same scale and have the same unit as measured data values. The MeasurementRange MUST be immutable.
  * 
  * @param <T>
- *            The value of the measurement range.
+ *            The value of the range.
  * 
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 0.7 ($Revision$)
+ * @version 0.8 ($Revision: 395 $)
  * @see <a href="http://www.botts-inc.com/SensorML_1.0.1/schemaBrowser/SensorML_QuantityRange.html"> SensorML:
  *      QuantityRange</a>
  */
-public class MeasurementRange<T> {
+public class Range<T> {
 	// TODO do we keep null for min and max to represent infinity? 
 	// Java 8 Optional was evaluated, but caused conflict with the type-safe Quantity aspect of this API
     private final T min;
@@ -33,7 +33,7 @@ public class MeasurementRange<T> {
      * @param max The maximum value for the measurement range.
      * @param res The  resolution of the measurement range.
      */
-    protected MeasurementRange(T min, T max, T res) {
+    protected Range(T min, T max, T res) {
     	this.min = min;
         this.max = max;
         this.res = res;
@@ -45,7 +45,7 @@ public class MeasurementRange<T> {
      * @param min The minimum value for the measurement range.
      * @param max The maximum value for the measurement range.
      */
-    protected MeasurementRange(T min, T max) {
+    protected Range(T min, T max) {
     	this.min = min;
         this.max = max;
     }
@@ -60,8 +60,8 @@ public class MeasurementRange<T> {
      * @param resolution The resolution of the measurement range.
      * @return an {@code MeasurementRange} with the given values
      */
-    public static <T> MeasurementRange<T> of(T minimum, T maximum, T resolution) {
-        return new MeasurementRange<>(minimum, maximum, resolution);
+    public static <T> Range<T> of(T minimum, T maximum, T resolution) {
+        return new Range<>(minimum, maximum, resolution);
     }
     
     /**
@@ -72,8 +72,8 @@ public class MeasurementRange<T> {
      * @param maximum The maximum value for the measurement range.
      * @return an {@code MeasurementRange} with the given values
      */
-    public static <T> MeasurementRange<T> of(T minimum, T maximum) {
-        return new MeasurementRange<>(minimum, maximum);
+    public static <T> Range<T> of(T minimum, T maximum) {
+        return new Range<>(minimum, maximum);
     }
 
     /**
@@ -108,9 +108,9 @@ public class MeasurementRange<T> {
 	 */
     @Override
     public boolean equals(Object object) {
-        if(object instanceof MeasurementRange<?>)  {
+        if(object instanceof Range<?>)  {
             @SuppressWarnings("unchecked")
-            final MeasurementRange<T> that = (MeasurementRange<T>) object;
+            final Range<T> that = (Range<T>) object;
             return this == that || (
                     that.getMinimum() == getMinimum() &&
                     that.getMaximum() == getMaximum() &&
