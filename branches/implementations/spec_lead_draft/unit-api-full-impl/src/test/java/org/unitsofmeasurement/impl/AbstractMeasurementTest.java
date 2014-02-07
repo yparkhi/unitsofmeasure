@@ -23,7 +23,7 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import static org.unitsofmeasurement.impl.system.SI.*;
+import static org.unitsofmeasurement.impl.util.SI.*;
 import static org.junit.Assert.*;
 
 /**

@@ -13,13 +13,13 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.unitsofmeasurement.impl.system;
+package org.unitsofmeasurement.impl.util;
 
-import static org.unitsofmeasurement.impl.system.SI.METRES_PER_SECOND;
+import static org.unitsofmeasurement.impl.util.SI.METRES_PER_SECOND;
 
-import javax.measure.SystemOfUnits;
 import javax.measure.Unit;
 import javax.measure.quantity.Speed;
+import javax.measure.util.SystemOfUnits;
 
 import org.unitsofmeasurement.impl.AbstractUnit;
 

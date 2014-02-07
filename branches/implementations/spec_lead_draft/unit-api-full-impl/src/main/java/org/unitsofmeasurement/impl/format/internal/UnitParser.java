@@ -19,8 +19,8 @@ package org.unitsofmeasurement.impl.format.internal;
 import org.unitsofmeasurement.impl.AbstractUnit;
 import org.unitsofmeasurement.impl.format.SymbolMap;
 import org.unitsofmeasurement.impl.function.LogConverter;
-import org.unitsofmeasurement.impl.system.SI;
-import org.unitsofmeasurement.impl.system.SIPrefix;
+import org.unitsofmeasurement.impl.util.SI;
+import org.unitsofmeasurement.impl.util.SIPrefix;
 
 /** */
 public final class UnitParser implements UnitParserConstants {

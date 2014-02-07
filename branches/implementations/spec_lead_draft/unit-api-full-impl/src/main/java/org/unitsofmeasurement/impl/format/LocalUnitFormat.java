@@ -37,8 +37,8 @@ import org.unitsofmeasurement.impl.format.internal.UnitParser;
 import org.unitsofmeasurement.impl.function.AddConverter;
 import org.unitsofmeasurement.impl.function.MultiplyConverter;
 import org.unitsofmeasurement.impl.function.RationalConverter;
-import org.unitsofmeasurement.impl.system.SI;
-import org.unitsofmeasurement.impl.system.SIPrefix;
+import org.unitsofmeasurement.impl.util.SI;
+import org.unitsofmeasurement.impl.util.SIPrefix;
 
 /**
  * <p> This class represents the local sensitive format.</p>

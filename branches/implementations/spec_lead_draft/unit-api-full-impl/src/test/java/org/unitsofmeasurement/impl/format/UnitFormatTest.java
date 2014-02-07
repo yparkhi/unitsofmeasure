@@ -16,10 +16,10 @@
 package org.unitsofmeasurement.impl.format;
 
 import static org.junit.Assert.*;
-import static org.unitsofmeasurement.impl.system.SI.METRE;
-import static org.unitsofmeasurement.impl.system.SI.MINUTE;
-import static org.unitsofmeasurement.impl.system.SI.SECOND;
-import static org.unitsofmeasurement.impl.system.SI.KILOGRAM;
+import static org.unitsofmeasurement.impl.util.SI.KILOGRAM;
+import static org.unitsofmeasurement.impl.util.SI.METRE;
+import static org.unitsofmeasurement.impl.util.SI.MINUTE;
+import static org.unitsofmeasurement.impl.util.SI.SECOND;
 
 import java.io.IOException;
 

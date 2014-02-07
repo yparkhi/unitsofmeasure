@@ -45,6 +45,10 @@ Full Scale approach.</description>
 			<artifactId>unit-api-format</artifactId>
 		</dependency>
 		<dependency>
+            <groupId>javax.measure</groupId>
+            <artifactId>unit-api-util</artifactId>
+        </dependency>
+		<dependency>
 			<groupId>javax.measure</groupId>
 			<artifactId>unit-api-quantity</artifactId>
 		</dependency>
@@ -78,6 +82,11 @@ Full Scale approach.</description>
 				<artifactId>unit-api-core</artifactId>
 				<version>${jsr.version}</version>
 			</dependency>
+			<dependency>
+                <groupId>javax.measure</groupId>
+                <artifactId>unit-api-util</artifactId>
+                <version>${jsr.version}</version>
+            </dependency>
 			<dependency>
 				<groupId>javax.measure</groupId>
 				<artifactId>unit-api-format</artifactId>

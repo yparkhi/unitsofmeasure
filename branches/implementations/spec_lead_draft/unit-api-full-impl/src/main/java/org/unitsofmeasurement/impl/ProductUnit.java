@@ -26,7 +26,7 @@ import javax.measure.function.UnitConverter;
 
 import org.unitsofmeasurement.impl.function.AbstractConverter;
 import org.unitsofmeasurement.impl.model.QuantityDimension;
-import org.unitsofmeasurement.impl.system.SI;
+import org.unitsofmeasurement.impl.util.SI;
 
 /**
  * <p>  This class represents units formed by the product of rational powers of

@@ -13,7 +13,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.unitsofmeasurement.impl.system;
+package org.unitsofmeasurement.impl.util;
 
 import javax.measure.Quantity;
 import javax.measure.Unit;
