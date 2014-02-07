@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.unitsofmeasurement.impl</groupId>
 	<artifactId>unit-api-full-impl</artifactId>
-	<version>0.4-SNAPSHOT</version>
+	<version>0.5-SNAPSHOT</version>
 
 	<packaging>bundle</packaging>
 	<name>Units of Measurement API Implementation</name>
@@ -16,7 +16,7 @@
 Full Scale approach.</description>
 	<licenses>
 		<license>
-			<name>BSD</name>
+			<name>Apache 2.0</name>
 			<url>LICENSE.txt</url>
 		</license>
 	</licenses>
@@ -29,7 +29,7 @@ Full Scale approach.</description>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>${sourceEncoding}</project.reporting.outputEncoding>
 		<project.build.javaVersion>1.7</project.build.javaVersion>
-		<jsr.version>0.4-SNAPSHOT</jsr.version>
+		<jsr.version>0.5-SNAPSHOT</jsr.version>
 		<jdkVersion>1.7</jdkVersion>
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
