@@ -30,12 +30,12 @@
  * classes:</p>
  *
  * <code>
- *    // A general-purpose Sensor class used for temperature measurements:<br/>
- *    Sensor<Temperature> sensor ...;<br/>
- *    Temperature temp = sensor.getValue();<br/><br/>
+ *    // A general-purpose Sensor class used for temperature measurements:<br>
+ *    Sensor<Temperature> sensor ...;<br>
+ *    Temperature temp = sensor.getValue();<br><br>
  *
- *    // A vector of velocity in a three-dimensional space.<br/>
- *    Unit<Velocity> = metrePerSecond = METRE.divide(SECOND);<br/>
+ *    // A vector of velocity in a three-dimensional space.<br>
+ *    Unit<Velocity> = metrePerSecond = METRE.divide(SECOND);<br>
  *    Vector3D<Velocity> aircraftSpeed = new Vector3D(200.0, 50.0, -0.5, metrePerSecond);
  * </code>
  *
