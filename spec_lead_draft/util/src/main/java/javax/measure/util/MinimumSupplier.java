@@ -17,7 +17,7 @@ package javax.measure.util;
  * whose functional method is {@link #getMinimum()}.
  * 
  * @author Werner Keil
- * @version 0.1 ($Revision: 395 $), $Date: 2014-01-27 23:16:02 +0100 (Mo, 27 Jän 2014) $
+ * @version 0.2 ($Revision$), $Date$
  * @param <T> the type of values supplied by this supplier
  */
 @FunctionalInterface
