@@ -19,8 +19,8 @@ package javax.measure;
  * This interface is used to specify the quantitative property associated to a
  * class through class parameterization and to provide limited compile time
  * dimension consistency.
- * <br/><br/>
- * <code> Unit<Mass> pound = ... Quantity<Length> size = ... Sensor<Temperature><br/>
+ * <br><br>
+ * <code> Unit<Mass> pound = ... Quantity<Length> size = ... Sensor<Temperature><br>
  * thermometer = ... Vector3D<Velocity> aircraftSpeed = ... </code>
  * </p>
  * 
