@@ -18,9 +18,9 @@ import javax.measure.function.Nameable;
  *            The data value.
  * 
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 0.1 ($Revision: 395 $)
- * @see <a href="http://www.botts-inc.com/SensorML_1.0.1/schemaBrowser/SensorML_QuantityRange.html"> SensorML:
- *      QuantityRange</a>
+ * @version 0.2 ($Revision$)
+ * @see <a href="http://en.wikipedia.org/wiki/Time_series"> Wikipedia:
+ *      Time Series</a>
  */
 public class TimedData<T> implements Nameable, Supplier<T> {
 	// TODO do we keep null for min and max to represent infinity? 
@@ -32,12 +32,11 @@ public class TimedData<T> implements Nameable, Supplier<T> {
     /**
      * Construct an instance of Range with a min, max and res value.
      *
-     * @param min The minimum value for the measurement range.
-     * @param max The maximum value for the measurement range.
-     * @param res The  resolution of the measurement range.
+     * @param data The value for the measurement range.
+     * @param time The time value for the measurement range.
      */
-    protected TimedData(T dat, long time) {
-    	this.data = dat;
+    protected TimedData(T data, long time) {
+    	this.data = data;
         this.timestamp = time;
     }    
     
@@ -45,8 +44,8 @@ public class TimedData<T> implements Nameable, Supplier<T> {
      * Returns an {@code MeasurementRange} with the specified values.
      *
      * @param <T> the class of the value
-     * @param minimum The minimum value for the measurement range.
-     * @param maximum The maximum value for the measurement range.
+     * @param val The minimum value for the measurement range.
+     * @param time The maximum value for the measurement range.
      * @return an {@code MeasurementRange} with the given values
      */
     public static <T> TimedData<T> of(T val, long time) {
