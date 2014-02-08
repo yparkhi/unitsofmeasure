@@ -23,20 +23,19 @@ import javax.measure.function.Nameable;
  *      Time Series</a>
  */
 public class TimedData<T> implements Nameable, Supplier<T> {
-	// TODO do we keep null for min and max to represent infinity? 
-	// Java 8 Optional was evaluated, but caused conflict with the type-safe Quantity feature of this API
-    private final T data;
+	// TODO we could use ValueSupplier instead?
+    private final T value;
     private long timestamp;
     private String name;
     
     /**
-     * Construct an instance of Range with a min, max and res value.
+     * Construct an instance of TimedData with a value and timestamp.
      *
-     * @param data The value for the measurement range.
-     * @param time The time value for the measurement range.
+     * @param data The value of the TimedData.
+     * @param time The timestamp of the TimedData.
      */
-    protected TimedData(T data, long time) {
-    	this.data = data;
+    protected TimedData(T value, long time) {
+    	this.value = value;
         this.timestamp = time;
     }    
     
@@ -68,7 +67,7 @@ public class TimedData<T> implements Nameable, Supplier<T> {
 
 	@Override
 	public T get() {
-		return data;
+		return value;
 	}
 	/*
 	 * (non-Javadoc)
@@ -93,7 +92,7 @@ public class TimedData<T> implements Nameable, Supplier<T> {
 	 */
     @Override
     public int hashCode() {
-        return data.hashCode() + (name!=null ? name.hashCode() : 0);
+        return value.hashCode() + (name!=null ? name.hashCode() : 0);
     }
 
 	/*
