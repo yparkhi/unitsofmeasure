@@ -22,7 +22,11 @@ import javax.measure.function.Nameable;
  *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.2.2
+ * @version 1.3 ($Revision$), $Date$
+ * @see <a href="http://en.wikipedia.org/wiki/International_System_of_Units"> Wikipedia:
+ *      International System of Units</a>
+ * @see <a href="http://en.wikipedia.org/wiki/Systems_of_measurement"> Wikipedia:
+ *      System of measurement</a>
  *
  */
 public interface SystemOfUnits extends Nameable {

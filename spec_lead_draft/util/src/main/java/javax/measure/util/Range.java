@@ -9,19 +9,19 @@ package javax.measure.util;
 
 /**
  * A Measurement Range is a pair of <code>T</code> values that represent a range of values.<p>
- * Range limits MUST be presented in the same scale and have the same unit as measured data values. The MeasurementRange MUST be immutable.
+ * Range limits MUST be presented in the same scale and have the same unit as measured data values.<br/>The Range MUST be immutable.
  * 
  * @param <T>
  *            The value of the range.
  * 
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 0.8 ($Revision: 395 $)
+ * @version 0.8.1 ($Revision$)
  * @see <a href="http://www.botts-inc.com/SensorML_1.0.1/schemaBrowser/SensorML_QuantityRange.html"> SensorML:
  *      QuantityRange</a>
  */
 public class Range<T> {
 	// TODO do we keep null for min and max to represent infinity? 
-	// Java 8 Optional was evaluated, but caused conflict with the type-safe Quantity aspect of this API
+	// Java 8 Optional was evaluated, but caused conflict with the type-safe Quantity feature of this API
     private final T min;
     private final T max;
     private T res;
