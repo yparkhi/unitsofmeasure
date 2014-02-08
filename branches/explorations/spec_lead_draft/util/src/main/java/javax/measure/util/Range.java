@@ -19,7 +19,7 @@ package javax.measure.util;
  * @see <a href="http://www.botts-inc.com/SensorML_1.0.1/schemaBrowser/SensorML_QuantityRange.html"> SensorML:
  *      QuantityRange</a>
  */
-public class Range<T> {
+public class Range<T> implements MinimumSupplier<T>, MaximumSupplier<T> {
 	// TODO do we keep null for min and max to represent infinity? 
 	// Java 8 Optional was evaluated, but caused conflict with the type-safe Quantity feature of this API
     private final T min;
