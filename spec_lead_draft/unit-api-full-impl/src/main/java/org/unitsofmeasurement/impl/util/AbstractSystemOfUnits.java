@@ -28,12 +28,11 @@ import javax.measure.util.SystemOfUnits;
 
 import org.unitsofmeasurement.impl.AbstractUnit;
 
-
 /**
- * <p> An abstract base class for unit systems.</p>
+ * <p>An abstract base class for unit systems.</p>
  *
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 2.1, $Date: 2013-12-26 $
+ * @version 2.2, $Date: 2013-12-26 $
  */
 public abstract class AbstractSystemOfUnits implements SystemOfUnits {
     /**
@@ -48,7 +47,6 @@ public abstract class AbstractSystemOfUnits implements SystemOfUnits {
 	protected final Map<Class<? extends Quantity>, AbstractUnit>
             quantityToUnit = new HashMap<>(); // Diamond (Java 7+)
 
-    
     /**
      * The natural logarithm.
      **/
@@ -65,7 +63,7 @@ public abstract class AbstractSystemOfUnits implements SystemOfUnits {
 
     @Override
     public Set<? extends Unit<?>> getUnits(Dimension dimension) {
-        final Set<Unit<?>> set = new HashSet<Unit<?>>();
+        final Set<Unit<?>> set = new HashSet<>(); // Diamond, Java 7+
         for (Unit<?> unit : this.getUnits()) {
             if (dimension.equals(unit.getDimension())) {
                 set.add(unit);
@@ -84,7 +82,7 @@ public abstract class AbstractSystemOfUnits implements SystemOfUnits {
 		static Set<Unit<?>> getUnitsOfDimension(final Set<Unit<?>> units, 
 				Dimension dimension) {
 			if (dimension != null) {
-				Set<Unit<?>>dimSet = new HashSet<Unit<?>>();
+				Set<Unit<?>>dimSet = new HashSet<>(); // Diamond, Java 7+
 				for (Unit<?> u : units) {
 					if (dimension.equals(u.getDimension())) {
 						dimSet.add(u);
