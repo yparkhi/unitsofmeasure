@@ -32,7 +32,7 @@ import org.unitsofmeasurement.impl.AbstractUnit;
  * <p>An abstract base class for unit systems.</p>
  *
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 2.2, $Date: 2013-12-26 $
+ * @version 2.2, $Date$
  */
 public abstract class AbstractSystemOfUnits implements SystemOfUnits {
     /**
