@@ -15,8 +15,8 @@
  */
 package org.unitsofmeasurement.impl.enums.quantity;
 
+import org.unitsofmeasurement.impl.enums.format.SimpleFormat;
 import org.unitsofmeasurement.impl.enums.unit.TimeUnit;
-import org.unitsofmeasurement.impl.format.SimpleFormat;
 
 import javax.measure.Measurement;
 import javax.measure.Unit;
@@ -24,9 +24,9 @@ import javax.measure.quantity.Time;
 
 /**
  * @author Werner Keil
- * @version 1.4, $Date$
+ * @version 1.4.1, $Date$
  */
-public class TimeQuantity extends AbstractQuantity<Time> {
+public class TimeQuantity extends AbstractQuantity<Time> implements Time {
     /**
 	 * 
 	 */

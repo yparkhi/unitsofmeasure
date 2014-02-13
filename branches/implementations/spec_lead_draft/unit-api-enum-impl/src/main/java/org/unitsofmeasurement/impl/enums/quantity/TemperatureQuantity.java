@@ -15,8 +15,8 @@
  */
 package org.unitsofmeasurement.impl.enums.quantity;
 
+import org.unitsofmeasurement.impl.enums.format.SimpleFormat;
 import org.unitsofmeasurement.impl.enums.unit.TemperatureUnit;
-import org.unitsofmeasurement.impl.format.SimpleFormat;
 
 import javax.measure.Measurement;
 import javax.measure.Unit;

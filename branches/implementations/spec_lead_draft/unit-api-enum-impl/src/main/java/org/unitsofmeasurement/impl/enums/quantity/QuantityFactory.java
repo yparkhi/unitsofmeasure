@@ -52,20 +52,21 @@ import org.unitsofmeasurement.impl.enums.unit.TimeUnit;
  * @param <Q>
  *            The type of the quantity.
  * 
- * @author <a href="mailto:werner.keil@gmail.com">Werner Keil</a>
- * @version 1.3 ($Revision$), $Date$
+ * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
+ * @version 1.3.1 ($Revision$), $Date$
  * 
  */
 public abstract class QuantityFactory<Q extends Quantity<Q>>
-	//implements BiFunction<Number, Unit<Q>, Q> 
+	//implements BiFunction<Number, Unit<Q>, Q> // for #JavaME BiFunction reference must be disabled
 {
-// TODO for #JavaME BiFunction reference should be disabled
+
 
 	/**
 	 * Holds the current instances.
 	 */
 	@SuppressWarnings("rawtypes")
-	private static final Map<Class, QuantityFactory> INSTANCES = new HashMap<Class, QuantityFactory>();
+	private static final Map<Class, QuantityFactory> INSTANCES = 
+		new HashMap<>();
 
 	private static final Logger logger = Logger.getLogger(QuantityFactory.class
 			.getName());
@@ -178,7 +179,8 @@ public abstract class QuantityFactory<Q extends Quantity<Q>>
 
 	/**
 	 * The default factory implementation. This factory uses reflection for
-	 * providing a default implementation for every {@link org.unitsofmeasurement.impl.enums.quantity.AbstractQuantity}
+	 * providing a default implementation for every 
+	 * {@link org.unitsofmeasurement.impl.enums.quantity.AbstractQuantity}
 	 * sub-types.
 	 * 
 	 * @param <Q>
@@ -210,7 +212,7 @@ public abstract class QuantityFactory<Q extends Quantity<Q>>
 		}
 
 		@SuppressWarnings("rawtypes")
-		static final Map<Class, Unit> CLASS_TO_METRIC_UNIT = new HashMap<Class, Unit>();
+		static final Map<Class, Unit> CLASS_TO_METRIC_UNIT = new HashMap<>();
 		static {
 			CLASS_TO_METRIC_UNIT.put(Dimensionless.class, DimensionlessUnit.ONE);
 			CLASS_TO_METRIC_UNIT.put(Length.class, DistanceUnit.METRE);
@@ -258,7 +260,7 @@ public abstract class QuantityFactory<Q extends Quantity<Q>>
 				final Unit<Q> toUnit = (Unit<Q>) args[0];
 				if ((toUnit == unit) || (toUnit.equals(unit)))
 					return value.doubleValue(); // Returns value directly.
-				return unit.getConverterTo(toUnit).convert(value.doubleValue());
+			   return unit.getConverterTo(toUnit).convert(value.doubleValue());
 			} else if (name.equals("longValue")) {
 				final Unit<Q> toUnit = (Unit<Q>) args[0];
 				if ((toUnit == unit) || (toUnit.equals(unit)))
@@ -276,7 +278,7 @@ public abstract class QuantityFactory<Q extends Quantity<Q>>
 				return unit;
 			} else if (name.equals("toString")) {
 				final StringBuilder buffer = new StringBuilder();
-				return buffer.append(value).append(' ').append(unit).toString();
+			   return buffer.append(value).append(' ').append(unit).toString();
 			} else if (name.equals("hashCode")) {
 				return value.hashCode() * 31 + unit.hashCode();
 			} else if (name.equals("equals")) {

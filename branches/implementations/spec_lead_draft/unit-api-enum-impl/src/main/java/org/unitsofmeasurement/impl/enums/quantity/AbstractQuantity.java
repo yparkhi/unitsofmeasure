@@ -15,7 +15,7 @@
  */
 package org.unitsofmeasurement.impl.enums.quantity;
 
-import org.unitsofmeasurement.impl.format.SimpleFormat;
+import org.unitsofmeasurement.impl.enums.format.SimpleFormat;
 import org.unitsofmeasurement.impl.function.Multiplier;
 
 import javax.measure.Quantity;
