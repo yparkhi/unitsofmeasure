@@ -37,31 +37,23 @@ import org.unitsofmeasurement.impl.function.AbstractConverter;
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @param <Q>
  *            The type of the quantity.
- * @version 1.4.2 ($Revision: 212 $), $Date: 2013-12-25 $
- *          FIXME Bug 338334 overwrite equals()
+ * @version 1.4.3 ($Revision: 212 $), $Date: 2013-12-25 $
  */
 public class BaseMeasurement<Q extends Quantity<Q>> extends AbstractMeasurement<Q>
 		implements Measurement<Q, Number>, Comparable<BaseMeasurement<Q>> {
-
+//FIXME Bug 338334 overwrite equals()
+    
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1794798190459768561L;
 
-	
 	private final Number value;
-	
-	/**
-	 * Holds a dimensionless measure of one (exact).
-	 */
-//	public static final Quantity<Dimensionless> ONE =
-//			QuantityFactory.getInstance(Dimensionless.class).create(
-//					BigDecimal.ONE, AbstractUnit.ONE);
 	
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see com.ibm.icu.util.Measure#equals(java.lang.Object)
+	 * @see AbstractMeasurement#equals(java.lang.Object)
 	 */
 	@Override
 	public boolean equals(Object obj) {
@@ -102,19 +94,19 @@ public class BaseMeasurement<Q extends Quantity<Q>> extends AbstractMeasurement<
 	/**
 	 * Holds the exact value (when exact) stated in this measure unit.
 	 */
-	// private long _exactValue;
+	// private long exactValue;
 
 	/**
 	 * Holds the minimum value stated in this measure unit. For inexact
-	 * measures: _minimum < _maximum
+	 * measures: minimum < maximum
 	 */
-	// private double _minimum;
+	// private double minimum;
 
 	/**
 	 * Holds the maximum value stated in this measure unit. For inexact
-	 * measures: _maximum > _minimum
+	 * measures: maximum > minimum
 	 */
-	// private double _maximum;
+	// private double maximum;
 
 	protected BaseMeasurement(Number number, Unit<Q> unit) {
 		super(unit);
@@ -127,8 +119,7 @@ public class BaseMeasurement<Q extends Quantity<Q>> extends AbstractMeasurement<
 	 * (non-Javadoc)
 	 * 
 	 * @see
-	 * Measurement#doubleValue(org.unitsofmeasurement.unit
-	 * .Unit)
+	 * Measurement#doubleValue(javax.measure.Unit)
 	 */
 	public double doubleValue(Unit<Q> unit) {
 		Unit<Q> myUnit = getUnit();
@@ -146,7 +137,7 @@ public class BaseMeasurement<Q extends Quantity<Q>> extends AbstractMeasurement<
 	 * (non-Javadoc)
 	 * 
 	 * @see
-	 * org.eclipse.uomo.units.AbstractMeasurement#longValue(org.unitsofmeasurement.unit
+	 * org.eclipse.uomo.units.AbstractMeasurement#longValue(javax.measure
 	 * .Unit)
 	 */
 	public long longValue(Unit<Q> unit) {
@@ -209,37 +200,13 @@ public class BaseMeasurement<Q extends Quantity<Q>> extends AbstractMeasurement<
 	public BaseMeasurement<Q> add(AbstractMeasurement<Q> that) {
 		final AbstractMeasurement<Q> thatToUnit = that.to(getUnit());
 		return new BaseMeasurement(this.getValue().doubleValue()
-				+ thatToUnit.getValue().doubleValue(), getUnit());
+				+ thatToUnit.getValue().doubleValue(), 
+                                  getUnit());
 	}
-	
-	@Override
-	public BaseMeasurement<?> multiply(Number that) {
-		return (BaseMeasurement<Q>) of((getValue().doubleValue() * that
-				.doubleValue()), getUnit());	
-	}
-
-	// ////////////////////
-	// Factory Creation //
-	// ////////////////////
-	
-//	private static <Q extends Quantity<Q>> QuantityAmount<Q> create(Number value, Unit<Q> unit) {
-//		
-//	}
-	
-
-//	@SuppressWarnings("unchecked")
-//	protected static <Q extends Quantity<Q>> QuantityAmount<Q> newInstance(
-//			Number value, Unit<?> unit) {
-//		QuantityAmount<Q> measure = FACTORY.create(value, unit);
-//
-//		measure._unit = (Unit<Q>) unit;
-//
-//		return measure;
-//	}
-
 	
 	public String toString() {
-		return  String.valueOf(getValue()) + " " + String.valueOf(getUnit());
+		return  String.valueOf(getValue()) + " " 
+                        + String.valueOf(getUnit());
 	}
 
 	@Override
@@ -256,10 +223,17 @@ public class BaseMeasurement<Q extends Quantity<Q>> extends AbstractMeasurement<
 
 	@Override
 	public Measurement<?, Number> multiply(Measurement<?, Number> that) {
-		// TODO Auto-generated method stub
-		return null;
+		final Unit<?> unit = getUnit().multiply(that.getUnit());
+		return of((getValue().doubleValue() * that.getValue()
+				.doubleValue()), unit);	
 	}
-
+        
+        @Override
+	public BaseMeasurement<?> multiply(Number that) {
+		return (BaseMeasurement<Q>) of((getValue().doubleValue() * that
+				.doubleValue()), getUnit());	
+	}
+        
 	@Override
 	public Measurement<?, Number> divide(Measurement<?, Number> that) {
 		final Unit<?> unit = getUnit().divide(that.getUnit());
@@ -270,24 +244,31 @@ public class BaseMeasurement<Q extends Quantity<Q>> extends AbstractMeasurement<
 	@Override
 	public Measurement<?, Number> divide(Number that) {
 		if (value instanceof BigDecimal && that instanceof BigDecimal) {
-			return of(((BigDecimal)value).divide((BigDecimal)that), getUnit());
+			return of(((BigDecimal)value).divide((BigDecimal)that), 
+                                getUnit());
 		}
-		return of(getValue().doubleValue() / that.doubleValue(), getUnit());	
+		return of(getValue().doubleValue() / that.doubleValue(), 
+                        getUnit());	
 	}
 	
 	@Override
 	public Measurement<Q, Number> inverse() {
 		@SuppressWarnings({ "rawtypes", "unchecked" })
 		final Measurement<Q, Number> m = new BaseMeasurement(getValue(),
-				getUnit().inverse()); // TODO keep value the same?
+				getUnit().inverse()); // TODO keep value same?
 		return m;
 	}
 
 	@Override
 	public BigDecimal decimalValue(Unit<Q> unit, MathContext ctx)
 			throws ArithmeticException {
-		// TODO Auto-generated method stub
-		return null;
+		if (value instanceof BigDecimal) {
+                    return (BigDecimal)value;
+                }
+                if (value instanceof BigInteger) {
+                    return new BigDecimal((BigInteger)value);
+                }
+		return BigDecimal.valueOf(value.doubleValue());
 	}
 
 	@Override
