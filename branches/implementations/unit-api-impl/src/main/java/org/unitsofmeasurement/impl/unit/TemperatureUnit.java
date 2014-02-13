@@ -125,8 +125,8 @@ public enum TemperatureUnit implements Unit<Temperature>, Multiplier {
     }
 
     @Override
-    public Unit<?> alternate(String s) {
-        return null;  //To change body of implemented methods use File | Settings | File TemplateBuilder.
+    public Unit<Temperature> alternate(String s) {
+        return this;
     }
 
     public Dimension getDimension() {

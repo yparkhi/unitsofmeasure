@@ -74,7 +74,7 @@ public enum DistanceUnit implements Unit<Length>, Multiplier, LongNameEnum<Dista
     }
 
     @Override
-    public Unit<?> alternate(String s) {
+    public Unit<Length> alternate(String s) {
         return null;  //To change body of implemented methods use File | Settings | File TemplateBuilder.
     }
 

@@ -80,7 +80,7 @@ public enum BitRateUnit implements Unit<InformationRate>, Multiplier, LongNameEn
     }
 
     @Override
-    public Unit<?> alternate(String symbol) {
+    public Unit<InformationRate> alternate(String symbol) {
         if (Kbps.name().equals(symbol))
             return K;
         if (Mbps.name().equals(symbol))

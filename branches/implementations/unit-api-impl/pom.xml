@@ -5,6 +5,21 @@
 	<artifactId>unit-api-impl</artifactId>
 	<version>0.1-SNAPSHOT</version>
 	<packaging>bundle</packaging>
+	
+	<!-- ======================================================= -->
+    <!-- Build Settings -->
+    <!-- ======================================================= -->
+    <properties>
+        <sourceEncoding>UTF-8</sourceEncoding> <!-- in Maven 3. -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>${sourceEncoding}</project.reporting.outputEncoding>
+        <project.build.javaVersion>1.7</project.build.javaVersion>
+        <api.version>0.6-SNAPSHOT</api.version>
+        <jdkVersion>1.7</jdkVersion>
+        <maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
+        <maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
+    </properties>
+	
 	<dependencies>
 		<dependency>
 			<groupId>org.unitsofmeasurement</groupId>
@@ -38,13 +53,26 @@
 			<dependency>
 				<groupId>org.unitsofmeasurement</groupId>
 				<artifactId>unit-api</artifactId>
-				<version>0.6.1</version>
+				<version>${api.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
 	<build>
 		<plugins>
-		
+		    <!-- ======================================================= -->
+            <!-- Compilation -->
+            <!-- ======================================================= -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>${project.build.javaVersion}</source>
+                    <target>${project.build.javaVersion}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+            
 		    <!-- ======================================================= -->
             <!--     JAR packaging                                       -->
             <!-- ======================================================= -->

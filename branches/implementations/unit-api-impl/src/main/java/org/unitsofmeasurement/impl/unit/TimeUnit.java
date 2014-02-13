@@ -73,8 +73,8 @@ public enum TimeUnit implements Unit<Time>, Multiplier {
     }
 
     @Override
-    public Unit<?> alternate(String s) {
-        return null;  //To change body of implemented methods use File | Settings | File TemplateBuilder.
+    public Unit<Time> alternate(String s) {
+        return this;
     }
 
     public Dimension getDimension() {
