@@ -25,9 +25,10 @@ import org.unitsofmeasurement.impl.BaseMeasurement;
  *
  * @author  <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.6, $Date: 2013-12-26 $
+ * @version 1.6.1, $Date$
  */
-public final class AccelerationAmount extends BaseMeasurement<Acceleration> implements Acceleration {
+public final class AccelerationAmount extends BaseMeasurement<Acceleration> 
+   implements Acceleration {
 
 	/**
 	 * 

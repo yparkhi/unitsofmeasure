@@ -20,4 +20,4 @@
  * @author Werner
  *
  */
-package org.unitsofmeasurement.impl.format;
+package org.unitsofmeasurement.impl.enums.format;
