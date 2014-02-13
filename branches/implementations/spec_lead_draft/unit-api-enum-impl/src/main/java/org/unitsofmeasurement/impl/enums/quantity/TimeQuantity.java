@@ -27,16 +27,16 @@ import javax.measure.quantity.Time;
  * @version 1.4.1, $Date$
  */
 public class TimeQuantity extends AbstractQuantity<Time> implements Time {
-    /**
-	 * 
-	 */
-	private static final long serialVersionUID = -421330065304945228L;
+   /**
+     * 
+     */
+   private static final long serialVersionUID = -421330065304945228L;
 
-	private final Double scalar; // value in reference unit
+   private final Double scalar; // value in reference unit
 
-    private final Double value; // value in unit (Unit unit)
+   private final Double value; // value in unit (Unit unit)
 
-    private final TimeUnit unit;
+   private final TimeUnit unit;
 
 //    TimeQuantity(){
 //    }
