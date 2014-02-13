@@ -103,7 +103,7 @@ public enum BitUnit implements Unit<Information>, Multiplier, LongNameEnum<BitUn
     }
 
     @Override
-    public Unit<?> alternate(String symbol) {
+    public Unit<Information> alternate(String symbol) {
         return this;
     }
 

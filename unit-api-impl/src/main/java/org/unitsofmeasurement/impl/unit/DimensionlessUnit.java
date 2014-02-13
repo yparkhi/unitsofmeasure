@@ -67,7 +67,7 @@ public enum DimensionlessUnit implements Unit<Dimensionless>, Multiplier {
     }
 
     @Override
-    public Unit<?> alternate(String s) {
+    public Unit<Dimensionless> alternate(String s) {
         return null;  //To change body of implemented methods use File | Settings | File TemplateBuilder.
     }
 
