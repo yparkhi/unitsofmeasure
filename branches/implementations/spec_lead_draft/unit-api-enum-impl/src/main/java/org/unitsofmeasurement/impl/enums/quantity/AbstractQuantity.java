@@ -26,12 +26,8 @@ import javax.measure.function.Nameable;
  * @author Werner Keil
  * @version 1.10 ($Revision$), $Date$
  */
-public abstract class AbstractQuantity<Q extends Quantity<Q>> implements Quantity<Q> {
-
-    /**
-     * 
-     */
-    private static final long serialVersionUID = 859680039827023765L;
+public abstract class AbstractQuantity<Q extends Quantity<Q>> implements 
+	Quantity<Q> {
 
     public abstract Number getScalar();
 

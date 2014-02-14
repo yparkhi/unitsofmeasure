@@ -31,11 +31,6 @@ import javax.measure.quantity.Temperature;
  */
 public final class TemperatureQuantity extends AbstractQuantity<Temperature> 
   implements Temperature {
-    /**
-     * 
-     */
-    private static final long serialVersionUID = -421330065304945228L;
-
     private final Double scalar; // value in reference unit
 
     private final Double value; // value in unit (Unit unit)
@@ -73,17 +68,17 @@ public final class TemperatureQuantity extends AbstractQuantity<Temperature>
         return dn;
     }
 
-    public boolean eq(TemperatureQuantity dq) {
+    protected boolean eq(TemperatureQuantity dq) {
          return dq!=null && dq.getValue().equals(getValue()) && 
                  dq.getUnit().equals(getUnit()) &&
                  dq.getScalar().equals(getScalar());
     }
 
-    public boolean ne(TemperatureQuantity d1) {
+    boolean ne(TemperatureQuantity d1) {
         return ne((TemperatureQuantity) d1);
     }
 
-    public boolean gt(TemperatureQuantity d1) {
+    boolean gt(TemperatureQuantity d1) {
         return gt((TemperatureQuantity) d1);
     }
 
@@ -110,7 +105,7 @@ public final class TemperatureQuantity extends AbstractQuantity<Temperature>
     }
 
     @Override
-    public Number getScalar() {
+    public Double getScalar() {
         return scalar;
     }
 
