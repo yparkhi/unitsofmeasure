@@ -211,7 +211,7 @@ public final class TemperatureQuantity extends AbstractQuantity<Temperature>
 	}
 
 	@Override
-	public boolean eq(AbstractQuantity<Temperature> dq) {
+	protected boolean eq(AbstractQuantity<Temperature> dq) {
 		 return eq((TemperatureQuantity) dq);
 	}
 
