@@ -17,28 +17,24 @@ package org.unitsofmeasurement.impl.enums.unit;
 
 import static org.junit.Assert.*;
 import static org.unitsofmeasurement.impl.enums.unit.TimeUnit.*;
-import javax.measure.quantity.Time;
 import org.junit.Test;
-import org.unitsofmeasurement.impl.enums.quantity.TimeQuantity;
 
 
 /**
  * @author Werner Keil
  *
  */
-public class TimeQuantityTest {
+public class TimeUnitTest {
 
 	@Test
 	public void testInstanciate() {
-		Time t =  new TimeQuantity(23d, HOUR); // 23.0 h
-		assertEquals(Double.valueOf(23.0d), t.getValue());
-		assertEquals(HOUR, t.getUnit());
-		//assertEquals("km", l.getUnit().getSymbol());
+		TimeUnit t =  HOUR; // h
+		assertEquals("h", t.getSymbol());
 	}
 	
 	@Test
 	public void testToString() {
-		Time t =  new TimeQuantity(23.0d, MINUTE); // 23.0 min
-		assertEquals("23.0m", t.toString());
+		TimeUnit t =  MINUTE; // min
+		assertEquals("MINUTE", t.toString());
 	}
 }

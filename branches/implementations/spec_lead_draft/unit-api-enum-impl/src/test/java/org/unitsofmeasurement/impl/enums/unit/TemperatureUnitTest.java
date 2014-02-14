@@ -1,3 +1,4 @@
+
 /**
  *  Unit-API - Units of Measurement API for Java
  *  Copyright 2013-2014, Jean-Marie Dautelle, Werner Keil, V2COM and individual
@@ -16,29 +17,27 @@
 package org.unitsofmeasurement.impl.enums.unit;
 
 import static org.junit.Assert.*;
-import static org.unitsofmeasurement.impl.enums.unit.TemperatureUnit.CELSIUS;
-import javax.measure.quantity.Temperature;
+import static org.unitsofmeasurement.impl.enums.unit.TemperatureUnit.*;
+
 import org.junit.Test;
-import org.unitsofmeasurement.impl.enums.quantity.TemperatureQuantity;
 
 
 /**
  * @author Werner Keil
  *
  */
-public class TemperatureQuantityTest {
+public class TemperatureUnitTest {
 
 	@Test
 	public void testInstanciate() {
-		Temperature t =  new TemperatureQuantity(23.0, CELSIUS); // 23.0 °C
-		assertEquals(Double.valueOf(23.0d), t.getValue());
-		assertEquals(CELSIUS, t.getUnit());
-		//assertEquals("km", l.getUnit().getSymbol());
+		TemperatureUnit t =  CELSIUS; // C
+		assertEquals("°C", t.getSymbol());
 	}
 	
 	@Test
 	public void testToString() {
-		Temperature t =  new TemperatureQuantity(23.0d, CELSIUS); // 23.0 °C
-		assertEquals("23.0°C", t.toString());
+		TemperatureUnit t =  FAHRENHEIT; // F
+		assertEquals("FAHRENHEIT", t.toString());
 	}
+
 }
