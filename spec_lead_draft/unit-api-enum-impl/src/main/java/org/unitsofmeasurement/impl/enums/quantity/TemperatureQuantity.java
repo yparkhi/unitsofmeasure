@@ -19,7 +19,10 @@ import org.unitsofmeasurement.impl.enums.format.SimpleFormat;
 import org.unitsofmeasurement.impl.enums.unit.TemperatureUnit;
 
 import javax.measure.Measurement;
+import javax.measure.Quantity;
+import javax.measure.UnconvertibleException;
 import javax.measure.Unit;
+import javax.measure.function.UnitConverter;
 import javax.measure.quantity.Temperature;
 
 /**
@@ -43,9 +46,13 @@ public final class TemperatureQuantity extends AbstractQuantity<Temperature>
         value = val;
         unit = un;
         if (val!= null && un != null) {
-        	scalar = val.doubleValue() * un.getMultFactor();
+        	scalar = val.doubleValue() * un.getFactor();
         } 
         else scalar = null;        
+    }
+    
+    public TemperatureQuantity(Double val, Unit<Temperature> u) {
+    	this(val, (TemperatureUnit)u);
     }
 
     @Override
@@ -97,9 +104,9 @@ public final class TemperatureQuantity extends AbstractQuantity<Temperature>
                 unit);
     }
 
-    public TemperatureQuantity convert(TemperatureUnit newUnit) {
+    protected TemperatureQuantity convert(TemperatureUnit newUnit) {
         return new TemperatureQuantity(value.doubleValue() /  
-                newUnit.getMultFactor(), newUnit);
+                newUnit.getFactor(), newUnit);
     }
 
     @Override
@@ -172,10 +179,40 @@ public final class TemperatureQuantity extends AbstractQuantity<Temperature>
 		return null;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * Measurement#doubleValue(javax.measure.Unit)
+	 */
+	protected double doubleValue(Unit<Temperature> unit) {
+		Unit<Temperature> myUnit = getUnit();
+		try {
+			UnitConverter converter = unit.getConverterTo(myUnit);
+			return converter.convert(getValue().doubleValue());
+		} catch (UnconvertibleException e) {
+			throw e;
+		} // catch (IncommensurableException e) {
+		// throw new IllegalArgumentException(e.getMessage());
+		// }
+	}
+	
 	@Override
-	public Measurement<Temperature, Number> to(Unit<Temperature> unit) {
-		// TODO Auto-generated method stub
-		return null;
+	public Quantity<Temperature> to(Unit<Temperature> unit) {
+        if (this.unit.equals(unit)) {
+            return this;
+        }
+        if (unit instanceof TemperatureUnit) {
+//        	final TemperatureUnit asTU = (TemperatureUnit)unit;
+//        	for (TemperatureUnit tu : TemperatureUnit.values()) {
+//        		if (asTU.equals(tu)) {
+//        			return new TemperatureQuantity( asTU)
+//        		}
+//        	}
+        	return convert((TemperatureUnit)unit);
+        } else {
+        	throw new ArithmeticException("Cannot convert " + this.unit + " to " + unit);
+        }
 	}
 
 	@Override

@@ -16,7 +16,7 @@
 package org.unitsofmeasurement.impl.enums.quantity;
 
 import org.unitsofmeasurement.impl.enums.format.SimpleFormat;
-import org.unitsofmeasurement.impl.function.Multiplier;
+import org.unitsofmeasurement.impl.function.FactorSupplier;
 
 import javax.measure.Quantity;
 import javax.measure.Unit;
@@ -77,8 +77,8 @@ public abstract class AbstractQuantity<Q extends Quantity<Q>> implements Quantit
             throw new IllegalArgumentException("Null unit not allowed!");  //$NON-NLS-1$
         }
         double result;
-        if (u instanceof Multiplier) {
-            result = s.doubleValue() / ((Multiplier)u).getMultFactor();
+        if (u instanceof FactorSupplier) {
+            result = s.doubleValue() / ((FactorSupplier)u).getFactor();
         } else {
             result = s.doubleValue();
         }

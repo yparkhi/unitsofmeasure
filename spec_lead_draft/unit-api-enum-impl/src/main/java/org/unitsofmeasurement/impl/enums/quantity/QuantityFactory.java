@@ -15,9 +15,6 @@
  */
 package org.unitsofmeasurement.impl.enums.quantity;
 
-import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.Method;
-import java.lang.reflect.Proxy;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
@@ -32,13 +29,7 @@ import javax.measure.quantity.Length;
 import javax.measure.quantity.Temperature;
 import javax.measure.quantity.Time;
 
-import org.unitsofmeasurement.impl.enums.unit.BitRateUnit;
-import org.unitsofmeasurement.impl.enums.unit.BitUnit;
-import org.unitsofmeasurement.impl.enums.unit.DimensionlessUnit;
-import org.unitsofmeasurement.impl.enums.unit.DistanceUnit;
-import org.unitsofmeasurement.impl.enums.unit.TemperatureUnit;
-import org.unitsofmeasurement.impl.enums.unit.TimeUnit;
-
+import org.unitsofmeasurement.impl.enums.unit.*;
 
 /**
  * A factory producing simple quantities instances (tuples {@link Number}/
@@ -53,7 +44,7 @@ import org.unitsofmeasurement.impl.enums.unit.TimeUnit;
  *            The type of the quantity.
  * 
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.3.1 ($Revision$), $Date$
+ * @version 1.4 ($Revision$), $Date$
  * 
  */
 public abstract class QuantityFactory<Q extends Quantity<Q>>
@@ -225,10 +216,11 @@ public abstract class QuantityFactory<Q extends Quantity<Q>>
 		@Override
 		@SuppressWarnings("unchecked")
 		public Q apply(final Number value, final Unit<Q> unit) {
-			return (Q) Proxy
-					.newProxyInstance(type.getClassLoader(),
-							new Class<?>[] { type }, new GenericHandler<Q>(
-									value, unit));
+//			return (Q) Proxy
+//					.newProxyInstance(type.getClassLoader(),
+//							new Class<?>[] { type }, new GenericHandler<Q>(
+//									value, unit));
+			return null;
 		}
 
 		@Override
@@ -242,8 +234,9 @@ public abstract class QuantityFactory<Q extends Quantity<Q>>
 	 * {@link Number}. This is a fall back used when no specialized handler is
 	 * available for the number type.
 	 */
-	private static final class GenericHandler<Q extends Quantity<Q>> implements
-			InvocationHandler {
+/*	private static final class GenericHandler<Q extends Quantity<Q>>
+	  //implements InvocationHandler 
+			{
 		final Unit<Q> unit;
 		final Number value;
 
@@ -253,7 +246,7 @@ public abstract class QuantityFactory<Q extends Quantity<Q>>
 		}
 
 		@SuppressWarnings({ "unchecked", "rawtypes" })
-		public Object invoke(final Object proxy, final Method method,
+		public Object invoke(final Object proxy, final Nameable method,
 				final Object[] args) {
 			final String name = method.getName();
 			if (name.equals("doubleValue")) { // Most frequent.
@@ -294,5 +287,5 @@ public abstract class QuantityFactory<Q extends Quantity<Q>>
 				throw new UnsupportedOperationException(name);
 			}
 		}
-	}
+	}*/
 }

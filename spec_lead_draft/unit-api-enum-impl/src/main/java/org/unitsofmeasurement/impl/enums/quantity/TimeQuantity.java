@@ -15,10 +15,13 @@
  */
 package org.unitsofmeasurement.impl.enums.quantity;
 
+import static java.lang.Double.NaN;
+
 import org.unitsofmeasurement.impl.enums.format.SimpleFormat;
 import org.unitsofmeasurement.impl.enums.unit.TimeUnit;
 
 import javax.measure.Measurement;
+import javax.measure.Quantity;
 import javax.measure.Unit;
 import javax.measure.quantity.Time;
 
@@ -32,7 +35,7 @@ public class TimeQuantity extends AbstractQuantity<Time> implements Time {
      */
    private static final long serialVersionUID = -421330065304945228L;
 
-   private final Double scalar; // value in reference unit
+   private final double scalar; // value in reference unit
 
    private final Double value; // value in unit (Unit unit)
 
@@ -45,9 +48,9 @@ public class TimeQuantity extends AbstractQuantity<Time> implements Time {
         value = val;
         unit = un;
         if (val!= null && un != null) {
-        	scalar = val.doubleValue() * un.getMultFactor();
+        	scalar = val.doubleValue() * un.getFactor();
         } 
-        else scalar = null;        
+        else scalar = NaN;        
     }
 
     @Override
@@ -95,8 +98,8 @@ public class TimeQuantity extends AbstractQuantity<Time> implements Time {
         return new TimeQuantity(value.doubleValue() / v.doubleValue(), unit);
     }
 
-    public TimeQuantity convert(TimeUnit newUnit) {
-        return new TimeQuantity(value.doubleValue() /  newUnit.getMultFactor(), newUnit);
+    protected TimeQuantity convert(TimeUnit newUnit) {
+        return new TimeQuantity(value.doubleValue() * (this.unit.getFactor() / newUnit.getFactor()), newUnit);
     }
 
     @Override
@@ -107,9 +110,11 @@ public class TimeQuantity extends AbstractQuantity<Time> implements Time {
     @Override
     public String toString(boolean withUnit, boolean withSpace, int precision) {
         final StringBuilder sb = new StringBuilder();
-    	if(withUnit) sb.append(getUnit());
-    	if(withSpace) sb.append(" ");
     	sb.append(getValue());
+    	if(withUnit) {
+        	if(withSpace) sb.append(" ");
+    		sb.append(getUnit().getSymbol());
+    	}
     	return sb.toString();
     }
 
@@ -164,9 +169,12 @@ public class TimeQuantity extends AbstractQuantity<Time> implements Time {
 	}
 
 	@Override
-	public Measurement<Time, Number> to(Unit<Time> unit) {
-		// TODO Auto-generated method stub
-		return null;
+	public Quantity<Time> to(Unit<Time> unit) {
+		if (unit instanceof TimeUnit) {
+        	return convert((TimeUnit)unit);
+        } else {
+        	throw new ArithmeticException("Cannot convert " + this.unit + " to " + unit);
+        }
 	}
 
 	@Override

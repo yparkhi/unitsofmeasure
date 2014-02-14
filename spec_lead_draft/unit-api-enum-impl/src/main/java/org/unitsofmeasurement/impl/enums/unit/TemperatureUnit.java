@@ -18,7 +18,8 @@ package org.unitsofmeasurement.impl.enums.unit;
 import static org.unitsofmeasurement.impl.enums.unit.Constants.DEG;
 
 import org.unitsofmeasurement.impl.enums.quantity.QuantityFactory;
-import org.unitsofmeasurement.impl.function.Multiplier;
+import org.unitsofmeasurement.impl.function.DescriptionSupplier;
+import org.unitsofmeasurement.impl.function.FactorSupplier;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -33,42 +34,47 @@ import javax.measure.quantity.Temperature;
 
 /**
  * @author Werner Keil
- * @version 1.3 ($Revision$), $Date$
+ * @version 1.4 ($Revision$), $Date$
  */
-public enum TemperatureUnit implements Unit<Temperature>, Multiplier {
-   /** Celsius, used by most of the world's population. */
-   CELSIUS(new Double("0"), new Double("100"), DEG + "C", "Anders Celsius"),
-
-	/** Fahrenheit, commonly used in the United States. */
-	FAHRENHEIT(new Double("32"), new Double("212"), DEG + "F", 
-			"Daniel Gabriel Fahrenheit"),
+public enum TemperatureUnit implements Unit<Temperature>, FactorSupplier,
+	DescriptionSupplier {
 
 	/** Kelvin, commonly used in scientific endeavors. */
-	KELVIN(new Double("273.15"), new Double("373.15"), "K", 
+	KELVIN(1d, 0d, null, 273.15d, 373.15d, "K", 
 			"William Thomson, 1st Baron Kelvin"),
 
 	/** Rankine, used in scientific endeavors. */
-	RANKINE(new Double("491.67"), new Double("671.641"), DEG + "R", 
-			"William John Macquorn Rankine");
+	RANKINE(5/9, 0d, KELVIN, 491.67d, 671.641d, DEG + "R", 
+			"William John Macquorn Rankine"),
+			
+	/** Celsius, used by most of the world's population. */
+	CELSIUS(0d, 273.15d, KELVIN, 0d, 100d, DEG + "C", "Anders Celsius"),
+
+	/** Fahrenheit, commonly used in the United States. */
+	FAHRENHEIT(0d, 459.67d, RANKINE, 32d, 212d, DEG + "F", 
+				"Daniel Gabriel Fahrenheit");
    
     /** Units by which this temperature scale is expressed. */
     private final String description;
     
     private final double multFactor;
+    
     /** Freezing point of water for each temperature scale. */
-//    private final Double freezingPoint;
+    private final double freezingPoint;
 
     /** Boiling point of water for each temperature scale. */
-//    private final Double boilingPoint;
+    private final double boilingPoint;
 
     /** Name of person that this temperature scale is named for. */
     private final String namedFor;
+    
+    private final TemperatureUnit relativeTo;
 
 //	private static final Double FIVE = new Double("5");
 //    private static final Double NINE = new Double("9");
 //    private static final Double THIRTY_TWO = new Double("32");
 //    private static final Double KELVIN_CELSIUS_DELTA = new Double("273");
-//    private static final Double RANKINE_FAHRENHEIT_DELTA = new Double("459.67");
+    private static final double RANKINE_FAHRENHEIT_DELTA = 459.67d;
     
     /**
      * Constructor for TemperatureUnit that accepts key characteristics of each
@@ -80,23 +86,27 @@ public enum TemperatureUnit implements Unit<Temperature>, Multiplier {
      * @param newNamedFor Name of person after which temperature scale was named.
      */
     private TemperatureUnit(
-       final Double newFreezingPoint,
-       final Double newBoilingPoint,
+       double newMult,
+       double shift,
+       final TemperatureUnit rel,
+       double newFreezingPoint,
+       double newBoilingPoint,
        final String newSymbol,
        final String newNamedFor)
     {
-//       this.freezingPoint = newFreezingPoint;
-//       this.boilingPoint = newBoilingPoint;
+       this.multFactor = newMult;
+       this.relativeTo = rel;
+       this.freezingPoint = newFreezingPoint;
+       this.boilingPoint = newBoilingPoint;
        this.description = newSymbol;
        this.namedFor = newNamedFor;
-       this.multFactor = 1;
     }
 
     public String getSymbol() {
         return description;
     }
 
-    public double getMultFactor() {
+    public double getFactor() {
         return multFactor;
     }
     
@@ -129,14 +139,25 @@ public enum TemperatureUnit implements Unit<Temperature>, Multiplier {
 
     public UnitConverter getConverterTo(Unit<Temperature> that)
             throws UnconvertibleException {
-        // currently unused
-        return null;
+    	if ((this == that) || this.equals(that)) return AbstractConverter.IDENTITY; // Shortcut.
+    	Unit<Temperature> thisSystemUnit = this.getSystemUnit();
+        Unit<Temperature> thatSystemUnit = that.getSystemUnit();
+        if (!thisSystemUnit.equals(thatSystemUnit))
+			try {
+				return getConverterToAny(that);
+			} catch (IncommensurableException e) {
+				throw new UnconvertibleException(e);
+			}
+        return that.getConverterTo(thatSystemUnit);
     }
 
     public UnitConverter getConverterToAny(Unit<?> that)
             throws IncommensurableException, UnconvertibleException {
-        // currently unused
-        return null;
+        if (!isCompatible(that))
+            throw new IncommensurableException(this + " is not compatible with " + that);
+        DimensionalModel model = DimensionalModel.getCurrent();
+        final Unit thisSystemUnit = this.getSystemUnit();
+        return model.getDimensionalTransform(thisSystemUnit.getDimension()); //.concatenate(this.getConverterToSI());
     }
 
     @Override
@@ -201,4 +222,8 @@ public enum TemperatureUnit implements Unit<Temperature>, Multiplier {
     public Unit<Temperature> shift(double v) {
         return this;
     }
+
+	public String getDescription() {
+		return description;
+	}
 }
