@@ -13,48 +13,32 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-/**
- * 
- */
 package org.unitsofmeasurement.impl.enums.unit;
 
 import static org.junit.Assert.*;
-import static org.unitsofmeasurement.impl.enums.unit.DistanceUnit.KILOMETRE;
-import static org.unitsofmeasurement.impl.enums.unit.TimeUnit.MINUTE;
-
-import javax.measure.Quantity;
-import javax.measure.quantity.Length;
+import static org.unitsofmeasurement.impl.enums.unit.TimeUnit.*;
 import javax.measure.quantity.Time;
-
-import org.junit.Ignore;
 import org.junit.Test;
-import org.unitsofmeasurement.impl.enums.quantity.QuantityFactory;
+import org.unitsofmeasurement.impl.enums.quantity.TimeQuantity;
 
 
 /**
  * @author Werner Keil
  *
  */
-@Ignore
-public class QuantityFactoryTest {
-
+public class TimeQuantityTest {
 
 	@Test
-	public void testLength() {
-		Length l =  QuantityFactory.getInstance(Length.class).apply(23.5, KILOMETRE); // 23.0 km
-		assertEquals(Double.valueOf(23.5d), l.getValue());
-		assertEquals(KILOMETRE, l.getUnit());
-		assertEquals("km", l.getUnit().getSymbol());
+	public void testInstanciate() {
+		Time t =  new TimeQuantity(23d, HOUR); // 23.0 h
+		assertEquals(Double.valueOf(23.0d), t.getValue());
+		assertEquals(HOUR, t.getUnit());
+		//assertEquals("km", l.getUnit().getSymbol());
 	}
-
 	
 	@Test
-	public void testTime() {
-		Quantity<Time> t = QuantityFactory.getInstance(Time.class).apply(40, MINUTE); // 40 min
-		assertEquals(Integer.valueOf(40), t.getValue());
-		assertEquals(MINUTE, t.getUnit());
-		assertEquals("m", t.getUnit().getSymbol());
-		assertEquals("40 MINUTE", t.toString());
+	public void testToString() {
+		Time t =  new TimeQuantity(23.0d, MINUTE); // 23.0 min
+		assertEquals("23.0m", t.toString());
 	}
-
 }

@@ -19,7 +19,7 @@ import static org.unitsofmeasurement.impl.enums.unit.Constants.*;
 
 import org.unitsofmeasurement.impl.enums.DescriptiveEnum;
 import org.unitsofmeasurement.impl.enums.quantity.QuantityFactory;
-import org.unitsofmeasurement.impl.function.Multiplier;
+import org.unitsofmeasurement.impl.function.FactorSupplier;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -37,7 +37,7 @@ import javax.measure.quantity.InformationRate;
  * @author Werner Keil
  * @version 1.8 ($Revision$), $Date$
  */
-public enum BitRateUnit implements Unit<InformationRate>, Multiplier, DescriptiveEnum<BitRateUnit> {
+public enum BitRateUnit implements Unit<InformationRate>, FactorSupplier, DescriptiveEnum<BitRateUnit> {
 	bps("bps", BPS_NAME, 1.0), Kbps("Kbps", KBPS_NAME, 1.0e3), Mbps("Mbps", MBPS_NAME, 1.0e6),
     Gbps("Gbps", GBPS_NAME, 1.0e9), Tbps("Tbps", TBPS_NAME, 1.0e12), Pbps("Pbps", PBPS_NAME, 1.0e15), Ebps("Ebps", EBPS_NAME, 1.0e18),
     K("K", KBPS_NAME, 1.0e3), M("M", MBPS_NAME, 1.0e6), G("G", GBPS_NAME, 1.0e9), T("T", TBPS_NAME, 1.0e12), P("P", PBPS_NAME, 1.0e15),
@@ -59,7 +59,7 @@ public enum BitRateUnit implements Unit<InformationRate>, Multiplier, Descriptiv
         return symbol;
     }
 
-    public double getMultFactor() {
+    public double getFactor() {
         return multFactor;
     }
 

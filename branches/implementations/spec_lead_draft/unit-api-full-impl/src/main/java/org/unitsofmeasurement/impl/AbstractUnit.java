@@ -278,12 +278,12 @@ public abstract class AbstractUnit<Q extends Quantity<Q>> implements Unit<Q>, Se
             UnconvertibleException {
         if (!isCompatible(that))
             throw new IncommensurableException(this + " is not compatible with " + that);
-        AbstractUnit thatPhysics = (AbstractUnit)that; // Since both units are compatible they must be both physics units.
+        AbstractUnit thatAbstr = (AbstractUnit)that; // Since both units are compatible they must be both physics units.
         DimensionalModel model = DimensionalModel.getCurrent();
         AbstractUnit thisSystemUnit = this.getSystemUnit();
         UnitConverter thisToDimension = model.getDimensionalTransform(thisSystemUnit.getDimension()).concatenate(this.getConverterToSI());
-        AbstractUnit thatSystemUnit = thatPhysics.getSystemUnit();
-        UnitConverter thatToDimension = model.getDimensionalTransform(thatSystemUnit.getDimension()).concatenate(thatPhysics.getConverterToSI());
+        AbstractUnit thatSystemUnit = thatAbstr.getSystemUnit();
+        UnitConverter thatToDimension = model.getDimensionalTransform(thatSystemUnit.getDimension()).concatenate(thatAbstr.getConverterToSI());
         return thatToDimension.inverse().concatenate(thisToDimension);
     }
 

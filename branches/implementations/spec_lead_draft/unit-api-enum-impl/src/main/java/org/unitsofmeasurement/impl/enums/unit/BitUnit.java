@@ -19,7 +19,7 @@ import static org.unitsofmeasurement.impl.enums.unit.Constants.*;
 
 import org.unitsofmeasurement.impl.enums.DescriptiveEnum;
 import org.unitsofmeasurement.impl.enums.quantity.QuantityFactory;
-import org.unitsofmeasurement.impl.function.Multiplier;
+import org.unitsofmeasurement.impl.function.FactorSupplier;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -37,7 +37,7 @@ import javax.measure.quantity.Information;
  * @author Werner Keil
  * @version 1.7 ($Revision$), $Date$
  */
-public enum BitUnit implements Unit<Information>, Multiplier, DescriptiveEnum<BitUnit> {
+public enum BitUnit implements Unit<Information>, FactorSupplier, DescriptiveEnum<BitUnit> {
 	
     BIT(BIT_NAME, 1.0), // reference Unit
     Byte(BYTE_NAME, BYTE_FACTOR),
@@ -73,7 +73,7 @@ public enum BitUnit implements Unit<Information>, Multiplier, DescriptiveEnum<Bi
     }
 
     @Override
-    public double getMultFactor() {
+    public double getFactor() {
         return multFactor;
     }
 

@@ -289,8 +289,7 @@ public abstract class AbstractMeasurement<Q extends Quantity<Q>> implements Meas
         }
         return (int) longValue;
     }
-//
-    // Implements AbstractMeasurement
+
     protected long longValue(Unit<Q> unit) throws ArithmeticException {
         double result = doubleValue(unit);
         if ((result < Long.MIN_VALUE) || (result > Long.MAX_VALUE)) {
@@ -299,7 +298,6 @@ public abstract class AbstractMeasurement<Q extends Quantity<Q>> implements Meas
         return (long) result;
     }
 
-    // Implements Measurement
     protected final float floatValue(Unit<Q> unit) {
         return (float) doubleValue(unit);
     }
