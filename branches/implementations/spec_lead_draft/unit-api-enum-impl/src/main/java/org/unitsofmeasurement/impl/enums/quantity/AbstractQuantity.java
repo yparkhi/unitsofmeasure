@@ -29,11 +29,11 @@ import javax.measure.function.Nameable;
 public abstract class AbstractQuantity<Q extends Quantity<Q>> implements 
 	Quantity<Q> {
 
-    public abstract Number getScalar();
+    protected abstract Number getScalar();
 
-    public abstract boolean eq(AbstractQuantity<Q> dq);
+    protected abstract boolean eq(AbstractQuantity<Q> dq);
 
-    public abstract boolean isZero();
+    protected abstract boolean isZero();
 
     @SuppressWarnings("unchecked")
 	@Override
@@ -51,11 +51,11 @@ public abstract class AbstractQuantity<Q extends Quantity<Q>> implements
         return toString(withUnit, withSpace, 0);
     }
 
-    public String toString(boolean withSpace) {
+    protected String toString(boolean withSpace) {
         return toString(true, withSpace);
     }
 
-    public String toString(int precision) {
+    protected String toString(int precision) {
         return toString(true, false, precision);
     }
 
@@ -64,7 +64,7 @@ public abstract class AbstractQuantity<Q extends Quantity<Q>> implements
         return toString(false);
     }
 
-    public abstract String showInUnit(Unit<?> u, int precision, 
+    protected abstract String showInUnit(Unit<?> u, int precision, 
             SimpleFormat.Show show);
 
     protected String showInUnit(Unit<?> u, Number s, int precision, 
@@ -107,7 +107,7 @@ public abstract class AbstractQuantity<Q extends Quantity<Q>> implements
      * @param precision number of decimal places
      * @return
      */
-    public String showInUnit(Unit<?> u, int precision) {
+    protected String showInUnit(Unit<?> u, int precision) {
         return showInUnit(u, precision, SimpleFormat.Show.SYMBOL);
     }
 
