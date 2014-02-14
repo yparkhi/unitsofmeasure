@@ -15,7 +15,6 @@
  */
 package org.unitsofmeasurement.impl.enums.unit;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,14 +24,14 @@ import javax.measure.function.UnitConverter;
  * <p> The base class for our {@link UnitConverter} physics implementations.</p>
  *
  * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 0.5, $Date$
+ * @version 0.6, $Date$
  */
-public abstract class AbstractConverter implements UnitConverter, Serializable { //, XMLSerializable {
+public abstract class AbstractConverter implements UnitConverter {
 	
     /**
 	 * 
 	 */
-	private static final long serialVersionUID = 5790242858468427131L;
+	//private static final long serialVersionUID = 5790242858468427131L;
 
 	/**
      * The ratio of the circumference of a circle to its diameter.
