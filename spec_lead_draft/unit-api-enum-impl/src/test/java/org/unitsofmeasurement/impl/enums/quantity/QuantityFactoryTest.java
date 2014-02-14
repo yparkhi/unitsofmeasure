@@ -16,7 +16,7 @@
 /**
  * 
  */
-package org.unitsofmeasurement.impl.enums.unit;
+package org.unitsofmeasurement.impl.enums.quantity;
 
 import static org.junit.Assert.*;
 import static org.unitsofmeasurement.impl.enums.unit.DistanceUnit.KILOMETRE;
