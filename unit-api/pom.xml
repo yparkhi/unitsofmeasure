@@ -419,6 +419,13 @@ This API specifies Java packages for the programmatic, type safe handling
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-report-plugin</artifactId>
         <version>2.16</version>
+        <reportSets> <!-- Workaround for http://jira.codehaus.org/browse/SUREFIRE-257 -->
+          <reportSet>
+            <reports>
+              <report>report-only</report>
+            </reports>
+          </reportSet>
+        </reportSets>
       </plugin>
 
       <!-- Static analysis for occurrences of bug patterns -->
