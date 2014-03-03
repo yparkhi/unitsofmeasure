@@ -22,12 +22,12 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 import java.util.HashMap;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.function.BiFunction;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javax.measure.Quantity;
 import javax.measure.Unit;
+import javax.measure.function.BiFactory;
 import javax.measure.quantity.*;
 
 import org.unitsofmeasurement.impl.AbstractMeasurement;
@@ -49,7 +49,7 @@ import org.unitsofmeasurement.impl.util.SI;
  * @author  <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @version 5.2 ($Revision: 213 $), $Date$
  */
-public abstract class QuantityFactory<Q extends Quantity<Q>> implements BiFunction<Number, Unit<Q>, Q> {
+public abstract class QuantityFactory<Q extends Quantity<Q>> implements BiFactory<Number, Unit<Q>, Q> {
 // TODO BiFunction for SE 8, may need to factor back for ME but keep method signature
 	
     /**
@@ -133,7 +133,7 @@ public abstract class QuantityFactory<Q extends Quantity<Q>> implements BiFuncti
      * @param unit the unit
      * @return the corresponding quantity
      */
-    public abstract Q apply(Number value, Unit<Q> unit);
+    public abstract Q create(Number value, Unit<Q> unit);
 
     /**
      * Returns the metric unit for quantities produced by this factory
@@ -214,7 +214,7 @@ public abstract class QuantityFactory<Q extends Quantity<Q>> implements BiFuncti
 
         @Override
         @SuppressWarnings("unchecked")
-        public Q apply(final Number value, final Unit<Q> unit) {
+        public Q create(final Number value, final Unit<Q> unit) {
             //System.out.println("Type: " + type);
             return (Q) Proxy.newProxyInstance(type.getClassLoader(),
                     new Class<?>[]{type}, new GenericHandler<Q>(value, unit));
