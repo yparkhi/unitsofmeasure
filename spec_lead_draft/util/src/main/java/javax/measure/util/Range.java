@@ -15,7 +15,7 @@ package javax.measure.util;
  *            The value of the range.
  * 
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 0.8.1 ($Revision$)
+ * @version 0.8.2 ($Revision$)
  * @see <a href="http://www.botts-inc.com/SensorML_1.0.1/schemaBrowser/SensorML_QuantityRange.html"> SensorML:
  *      QuantityRange</a>
  */
@@ -80,7 +80,7 @@ public class Range<T> implements MinimumSupplier<T>, MaximumSupplier<T> {
      * Returns the smallest value of the range. The value is the same as that given as the constructor parameter for the smallest value.
      * @return the minimum value
      */
-    public T getMinimum() {
+    public T getMinimum() { // XXX could be getLower() ?
         return min;
     }
 
@@ -89,7 +89,7 @@ public class Range<T> implements MinimumSupplier<T>, MaximumSupplier<T> {
      * 
      * @return the maximum value
      */
-    public T getMaximum() {
+    public T getMaximum() { // XXX could be getUpper() ?
         return max;
     }
     
@@ -102,6 +102,27 @@ public class Range<T> implements MinimumSupplier<T>, MaximumSupplier<T> {
         return res;
     }
 
+    /**
+	 * Method to easily check if {@link #getMinimum()} is not
+	 * {@code null}.
+	 * 
+	 * @return {@code true} if {@link #getMinimum()} is not {@code null}
+	 *         .
+	 */
+	public boolean hasLowerBound() {
+		return min != null;
+	}
+
+	/**
+	 * Method to easily check if {@link #getMaximum()} is not
+	 * {@code null}.
+	 * 
+	 * @return {@code true} if {@link #getMaximum()} is not {@code null}.
+	 */
+	public boolean hasUpperBound() {
+		return max != null;
+	}
+    
 	/*
 	 * (non-Javadoc)
 	 * @see java.lang.Object#equals()
