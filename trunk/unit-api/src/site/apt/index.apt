@@ -1,5 +1,5 @@
 ~~ Unit-API - Units of Measurement API for Java (http://www.unitsofmeasurement.org)
-~~ Copyright (c) 2005-2010, Unit-API contributors, JScience and others
+~~ Copyright (c) 2005-2014, Unit-API contributors, JScience and others
 ~~ All rights reserved.
 ~~
 ~~ See LICENSE.txt for details.
@@ -13,12 +13,12 @@
 
 The Units of Measurement API for Java
 
-  Copyright (c) 2005-2010, Unit-API contributors, JScience and others.\
+  Copyright (c) 2005-2014, Unit-API contributors, JScience and others.\
   All rights reserved. See {{{./license.html}license}} for details.
 
   The <Unit of Measurement> library provides a set of Java language programming interfaces for
   handling units and quantities. The interfaces provide a layer which separates client code,
-  which would call the API, from library code, which implements the API. Various groups have
+  that would call the API, from library code, which implements the API. Various groups have
   implemented the API, see the {{{./implementations.html}list of known implementations}} for details.
 
 * The project
@@ -34,6 +34,8 @@ The Units of Measurement API for Java
 
 * Links
 
+	* {{{https://jcp.org/en/jsr/detail?id=363}JSR-363 New Units of Measurement Proposal}}    
+	
     * {{{./apidocs/index.html}Browse javadoc}}
 
     * {{{http://jenkins.geotoolkit.org/job/Unit-API/}Nightly builds}}
