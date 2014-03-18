@@ -15,7 +15,6 @@
  */
 package org.unitsofmeasurement.impl.enums.format;
 
-
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Locale;
@@ -30,8 +29,8 @@ import javax.measure.format.UnitFormat;
  * {@linkplain org.unitsofmeasurement.unit.Unit units}.
  * </p>
  *
- * @author <a href="mailto:werner.keil@gmail.com">Werner Keil</a>
- * @version 1.7 ($Revision$), $Date$
+ * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
+ * @version 1.7.1 ($Revision$), $Date$
  */
 public class SimpleFormat extends AbstractFormat {
     /**
@@ -39,7 +38,7 @@ public class SimpleFormat extends AbstractFormat {
      */
     private static final long serialVersionUID = -7753687108842507677L;
 
-    private final Map<String, String> symbolMap = new HashMap<String, String>();
+    private final Map<String, String> symbolMap = new HashMap<>(); // Diamond (Java 7+)
 
     private static final UnitFormat DEFAULT = new SimpleFormat();
 

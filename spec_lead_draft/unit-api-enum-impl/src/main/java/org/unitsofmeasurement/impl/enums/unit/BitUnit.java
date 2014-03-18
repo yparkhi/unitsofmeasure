@@ -19,7 +19,7 @@ import static org.unitsofmeasurement.impl.enums.unit.Constants.*;
 
 import org.unitsofmeasurement.impl.enums.DescriptiveEnum;
 import org.unitsofmeasurement.impl.enums.quantity.QuantityFactory;
-import org.unitsofmeasurement.impl.function.FactorSupplier;
+import org.unitsofmeasurement.impl.function.DoubleFactorSupplier;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -34,10 +34,10 @@ import javax.measure.quantity.Information;
 
 /**
  * Implements a measure of information. The metric system unit for this quantity is "bit".
- * @author Werner Keil
- * @version 1.7 ($Revision$), $Date$
+ * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
+ * @version 1.7.1 ($Revision$), $Date$
  */
-public enum BitUnit implements Unit<Information>, FactorSupplier, DescriptiveEnum<BitUnit> {
+public enum BitUnit implements Unit<Information>, DoubleFactorSupplier, DescriptiveEnum<BitUnit> {
 	
     BIT(BIT_NAME, 1.0), // reference Unit
     Byte(BYTE_NAME, BYTE_FACTOR),

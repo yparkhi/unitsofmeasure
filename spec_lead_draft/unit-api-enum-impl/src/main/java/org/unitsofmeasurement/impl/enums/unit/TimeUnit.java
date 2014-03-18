@@ -16,7 +16,7 @@
 package org.unitsofmeasurement.impl.enums.unit;
 
 import org.unitsofmeasurement.impl.enums.quantity.QuantityFactory;
-import org.unitsofmeasurement.impl.function.FactorSupplier;
+import org.unitsofmeasurement.impl.function.DoubleFactorSupplier;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -33,7 +33,7 @@ import javax.measure.quantity.Time;
  * @author Werner Keil
  * @version 1.2 ($Revision$), $Date$
  */
-public enum TimeUnit implements Unit<Time>, FactorSupplier {
+public enum TimeUnit implements Unit<Time>, DoubleFactorSupplier {
 
     SECOND("s", 1.0), // reference Unit
 	MINUTE("m", 60),

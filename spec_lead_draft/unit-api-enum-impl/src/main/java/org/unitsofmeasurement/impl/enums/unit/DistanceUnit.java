@@ -20,7 +20,7 @@ package org.unitsofmeasurement.impl.enums.unit;
 
 import org.unitsofmeasurement.impl.enums.DescriptiveEnum;
 import org.unitsofmeasurement.impl.enums.quantity.QuantityFactory;
-import org.unitsofmeasurement.impl.function.FactorSupplier;
+import org.unitsofmeasurement.impl.function.DoubleFactorSupplier;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -37,7 +37,7 @@ import javax.measure.quantity.Length;
  * @author Werner Keil
  * @version 1.3.1 ($Revision$), $Date$
  */
-public enum DistanceUnit implements Unit<Length>, FactorSupplier, DescriptiveEnum<DistanceUnit> {
+public enum DistanceUnit implements Unit<Length>, DoubleFactorSupplier, DescriptiveEnum<DistanceUnit> {
     METRE("m", "m", 1.0), // reference Unit
 	KILOMETRE("km", "km", 1.0e3);
 

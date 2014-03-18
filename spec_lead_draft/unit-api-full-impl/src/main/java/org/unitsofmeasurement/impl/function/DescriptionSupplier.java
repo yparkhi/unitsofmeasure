@@ -24,7 +24,7 @@ package org.unitsofmeasurement.impl.function;
  * <p>This is a <a href="http://download.java.net/jdk8/docs/api/java/util/function/package-summary.html">functional interface</a>
  * whose functional method is {@link #getDescription()}.
  * 
- * @author Werner Keil
+ * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
  */
 //equivalent to @FunctionalInterface
 public interface DescriptionSupplier {
