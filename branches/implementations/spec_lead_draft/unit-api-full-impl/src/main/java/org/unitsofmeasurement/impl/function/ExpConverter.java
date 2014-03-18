@@ -26,11 +26,16 @@ import java.math.MathContext;
  *     using the {@link LogConverter#inverse()} method.</p>
  *
  * @author  <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
- * @version 5.0, October 12, 2010
+ * @version 5.1, March 18, 2014
  */
 final class ExpConverter extends AbstractConverter { //implements Immutable {
 
     /**
+	 * 
+	 */
+	private static final long serialVersionUID = -8851436813812059827L;
+
+	/**
      * Holds the logarithmic base.
      */
     private double base;

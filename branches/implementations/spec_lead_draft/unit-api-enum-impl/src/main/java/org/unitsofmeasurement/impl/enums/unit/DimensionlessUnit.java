@@ -19,7 +19,7 @@
 package org.unitsofmeasurement.impl.enums.unit;
 
 import org.unitsofmeasurement.impl.enums.quantity.QuantityFactory;
-import org.unitsofmeasurement.impl.function.FactorSupplier;
+import org.unitsofmeasurement.impl.function.DoubleFactorSupplier;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -36,7 +36,7 @@ import javax.measure.quantity.Dimensionless;
  * @author Werner Keil
  * @version 1.1 ($Revision$), $Date$
  */
-public enum DimensionlessUnit implements Unit<Dimensionless>, FactorSupplier {
+public enum DimensionlessUnit implements Unit<Dimensionless>, DoubleFactorSupplier {
     ONE("", 1.0); // reference Unit
 
     private final String description;

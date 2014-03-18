@@ -26,11 +26,16 @@ import javax.measure.function.UnitConverter;
  *     to numeric values (<code>double</code> based).</p>
  *
  * @author  <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
- * @version 5.0, October 12, 2010
+ * @author Werner Keil
+ * @version 5.1, March 18, 2014
  */
-public final class AddConverter extends AbstractConverter { // implements Immutable<Double> {
+public final class AddConverter extends AbstractConverter {
 
     /**
+	 * 
+	 */
+	private static final long serialVersionUID = -2981335308595652284L;
+	/**
      * Holds the offset.
      */
     private double offset;

@@ -19,7 +19,7 @@ import static org.unitsofmeasurement.impl.enums.unit.Constants.DEG;
 
 import org.unitsofmeasurement.impl.enums.quantity.QuantityFactory;
 import org.unitsofmeasurement.impl.function.DescriptionSupplier;
-import org.unitsofmeasurement.impl.function.FactorSupplier;
+import org.unitsofmeasurement.impl.function.DoubleFactorSupplier;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -36,7 +36,7 @@ import javax.measure.quantity.Temperature;
  * @author Werner Keil
  * @version 1.4 ($Revision$), $Date$
  */
-public enum TemperatureUnit implements Unit<Temperature>, FactorSupplier,
+public enum TemperatureUnit implements Unit<Temperature>, DoubleFactorSupplier,
 	DescriptionSupplier {
 
 	/** Kelvin, commonly used in scientific endeavors. */

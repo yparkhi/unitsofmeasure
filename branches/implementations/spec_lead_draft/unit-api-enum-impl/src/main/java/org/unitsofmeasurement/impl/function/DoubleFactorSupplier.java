@@ -25,11 +25,11 @@ package org.unitsofmeasurement.impl.function;
  * <p>This is a <a href="http://download.java.net/jdk8/docs/api/java/util/function/package-summary.html">functional interface</a>
  * whose functional method is {@link #getFactor()}.
  *
- * @see <a href="http://download.java.net/jdk8/docs/api/java/util/function/Supplier.html">Supplier</a>
+ * @see <a href="http://download.java.net/jdk8/docs/api/java/util/function/DoubleSupplier.html">DoubleSupplier</a>
  * @author Werner Keil
- * @version 0.2, $Date$
+ * @version 0.3, $Date$
  */
 //equivalent to @FunctionalInterface
-public interface FactorSupplier {
+public interface DoubleFactorSupplier {
     double getFactor();
 }
