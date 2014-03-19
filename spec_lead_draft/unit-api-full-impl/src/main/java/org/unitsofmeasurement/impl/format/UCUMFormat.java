@@ -62,7 +62,7 @@ import org.unitsofmeasurement.impl.util.SIPrefix;
  *
  * @author <a href="mailto:eric-r@northwestern.edu">Eric Russell</a>
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 5.4, $Date$
+ * @version 5.5, 19 March 2014
  */
 public abstract class UCUMFormat implements UnitFormat, Serializable {
 
