@@ -54,19 +54,6 @@ public class SimpleFormat extends AbstractFormat {
         return DEFAULT;
     }
 
-    /** Returns the instance for formatting using "print" symbols */
-    public static UnitFormat getPrintInstance() {
-        return getInstance();
-    }
-
-    /**
-     * Returns the instance for formatting and parsing using case insensitive
-     * symbols
-     */
-    public static UnitFormat getStandardInstance() {
-        return getInstance();
-    }
-
     // ////////////////
     // Constructors //
     // ////////////////

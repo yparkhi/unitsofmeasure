@@ -16,6 +16,7 @@
 package org.unitsofmeasurement.impl.format;
 
 import static org.junit.Assert.*;
+import static org.unitsofmeasurement.impl.format.UCUMFormat.Variant.*;
 import static org.unitsofmeasurement.impl.util.SI.KILOGRAM;
 import static org.unitsofmeasurement.impl.util.SI.METRE;
 import static org.unitsofmeasurement.impl.util.SI.MINUTE;
@@ -35,7 +36,7 @@ import org.junit.Test;
 import org.unitsofmeasurement.impl.model.quantity.LengthAmount;
 
 /**
- * @author Werner Keil
+ * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
  *
  */
 public class UnitFormatTest {
@@ -71,7 +72,7 @@ public class UnitFormatTest {
 
 	@Test
 	public void testFormatUCUMPrint() {
-		final UnitFormat format = UCUMFormat.getPrintInstance();
+		final UnitFormat format = UCUMFormat.getInstance(PRINT);
 		final Appendable a = new StringBuilder();
 		try {
 			format.format(METRE, a);
@@ -94,7 +95,7 @@ public class UnitFormatTest {
 
 	@Test
 	public void testFormatUCUMCS() {
-		final UnitFormat format = UCUMFormat.getCaseSensitiveInstance();
+		final UnitFormat format = UCUMFormat.getInstance(CASE_SENSITIVE);
 		final Appendable a = new StringBuilder();
 		try {
 			format.format(METRE, a);
@@ -117,7 +118,7 @@ public class UnitFormatTest {
 
 	@Test
 	public void testFormatUCUMCI() {
-		final UnitFormat format = UCUMFormat.getCaseInsensitiveInstance();
+		final UnitFormat format = UCUMFormat.getInstance(CASE_INSENSITIVE);
 		final Appendable a = new StringBuilder();
 		try {
 			format.format(METRE, a);
@@ -133,17 +134,18 @@ public class UnitFormatTest {
 	public void testParseLocal() {
 		final UnitFormat format = LocalUnitFormat.getInstance();
 		try {
-			Unit u = format.parse("min");
+			Unit<?> u = format.parse("min");
+			assertEquals("min", u.getSymbol());
 		} catch (ParserException e) {
 			fail(e.getMessage());
 		}
 	}
 
 	@Test
-	public void testParseUCUMCI() {
-		final UnitFormat format = UCUMFormat.getCaseInsensitiveInstance();
+	public void testParseUCUMCS() {
+		final UnitFormat format = UCUMFormat.getInstance(CASE_SENSITIVE);
 		try {
-			Unit u = format.parse("min");
+			Unit<?> u = format.parse("min");
 			assertEquals(MINUTE, u);
 		} catch (ParserException e) {
 			fail(e.getMessage());
@@ -151,10 +153,10 @@ public class UnitFormatTest {
 	}
 	
 	@Test
-	public void testParseUCUMCS() {
-		final UnitFormat format = UCUMFormat.getCaseInsensitiveInstance();
+	public void testParseUCUMCI() {
+		final UnitFormat format = UCUMFormat.getInstance(CASE_INSENSITIVE);
 		try {
-			Unit u = format.parse("M");
+			Unit<?> u = format.parse("M");
 			assertEquals(METRE, u);
 		} catch (ParserException e) {
 			fail(e.getMessage());
@@ -163,9 +165,9 @@ public class UnitFormatTest {
 	
 	@Test(expected = UnsupportedOperationException.class)
 	public void testParseUCUMPrint() {
-		final UnitFormat format = UCUMFormat.getPrintInstance();
+		final UnitFormat format = UCUMFormat.getInstance(PRINT);
 		try {
-			Unit u = format.parse("kg");
+			Unit<?> u = format.parse("kg");
 			assertEquals(KILOGRAM, u);
 		} catch (ParserException e) {
 			fail(e.getMessage());

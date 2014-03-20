@@ -17,9 +17,8 @@ package org.unitsofmeasurement.impl.format;
 
 /**
  * A static helper class, checking e.g. if some tests require optional console
- * output XXX this could have options for using a logging framework eventually
- * TODO change to Service (either OSGi LogService or separate service)
- * @version 0.9.2, $Date$
+ * output XXX this could have options for using a logging framework or replaced by one
+ * @version 0.9.3, $Date$
  * @author Werner Keil
  */
 public abstract class OutputHelper {

@@ -37,9 +37,9 @@ import javax.measure.format.UnitFormat;
  * specification). For example:
  * 
  * <pre><code>
- *        UnitFormat.getStandard().valueOf("kW").equals(KILO(WATT))
- *        UnitFormat.getStandard().valueOf("[ft_i]").equals(METRE.multiply(3048).divide(10000))
- *        UnitFormat.getInstance(Locale.USA).valueOf("ft").equals(METRE.multiply(3048).divide(10000))
+ *        AbstractFormat.getInstance().parse("kW").equals(KILO(WATT))
+ *        AbstractFormat.getInstance().parse("[ft_i]").equals(METRE.multiply(3048).divide(10000))
+ *        AbstractFormat.getInstance(Locale.USA).parse("ft").equals(METRE.multiply(3048).divide(10000))
  * [/code]
  * </p>
  * 
@@ -49,7 +49,7 @@ import javax.measure.format.UnitFormat;
  * </p>
  * 
  * @author <a href="mailto:werner.keil@gmail.com">Werner Keil</a>
- * @version 1.3 ($Revision$), $Date$
+ * @version 1.4 ($Revision$), $Date$
  * @see <a href="http://unitsofmeasure.org">Unified Code of Measure (UCUM)</a>
  */
 abstract class AbstractFormat extends Format implements UnitFormat {
@@ -57,17 +57,6 @@ abstract class AbstractFormat extends Format implements UnitFormat {
 
 	/** The serialVersionUID */
 	private static final long serialVersionUID = 7765623276257908888L;
-
-	/**
-	 * Returns the standard unit format (UCUM). OSGi bundles should use
-	 * {@link javax.measure.format.UnitFormat} to parse/format standard (UCUM)
-	 * units.
-	 * 
-	 * @return the standard format.
-	 */
-	public static UnitFormat getStandardInstance() {
-		return SimpleFormat.getStandardInstance();
-	}
 
 	/**
 	 * Returns the unit format for the default locale.
