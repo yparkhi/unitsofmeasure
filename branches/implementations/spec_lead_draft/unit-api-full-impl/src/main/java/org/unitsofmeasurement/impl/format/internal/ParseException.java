@@ -33,7 +33,7 @@ import javax.measure.MeasurementException;
  * @version 5.2, $Date$
  */
 public class ParseException extends MeasurementException {
-//TODO try to merge this with UnitParseException
+//TODO try to merge this with ParserException
 	/**
 	 * The version identifier for this Serializable class.
      * Increment only if the <i>serialized</i> form of the

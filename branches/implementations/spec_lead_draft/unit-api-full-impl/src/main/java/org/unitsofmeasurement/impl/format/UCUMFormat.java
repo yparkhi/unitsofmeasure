@@ -62,7 +62,7 @@ import org.unitsofmeasurement.impl.util.SIPrefix;
  *
  * @author <a href="mailto:eric-r@northwestern.edu">Eric Russell</a>
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 5.5, 19 March 2014
+ * @version 5.5.1, 20 March 2014
  */
 public abstract class UCUMFormat implements UnitFormat, Serializable {
 
@@ -77,46 +77,42 @@ public abstract class UCUMFormat implements UnitFormat, Serializable {
     // /////////////////
     // Class methods //
     // /////////////////
-    /** Returns the instance for formatting using "print" symbols */
-    public static UCUMFormat getPrintInstance() {
-        return Print.DEFAULT;
-    }
-
-    /** Returns the instance for formatting using user defined symbols */
-    public static UCUMFormat getPrintInstance(SymbolMap symbolMap) {
-        return new Print(symbolMap);
-    }
 
     /**
-	 * Returns the instance for formatting and parsing using case sensitive
-	 * symbols
+	 * Returns the instance for formatting/parsing using the given variant
+	 * @param variant the <strong>UCUM</strong> variant to use
 	 */
-    public static UCUMFormat getCaseSensitiveInstance() {
-        return Parsing.DEFAULT_CS;
+    public static UCUMFormat getInstance(Variant variant) {
+        switch (variant) {
+        	case CASE_INSENSITIVE:
+        		return Parsing.DEFAULT_CI;
+        	case CASE_SENSITIVE:
+        		 return Parsing.DEFAULT_CS;
+        	case PRINT:
+        		return Print.DEFAULT;
+        	default:
+        		throw new IllegalArgumentException("Unknown variant: " + variant);
+        }
     }
 
     /**
-	 * Returns a case sensitive instance for formatting and parsing using user
+	 * Returns an instance for formatting and parsing using user
 	 * defined symbols
+	 * @param variant the <strong>UCUM</strong> variant to use
+	 * @param symbolMap the map of user defined symbols to use
 	 */
-    public static UCUMFormat getCaseSensitiveInstance(SymbolMap symbolMap) {
-        return new Parsing(symbolMap, true);
-    }
-
-    /**
-	 * Returns the instance for formatting and parsing using case insensitive
-	 * symbols
-	 */
-    public static UCUMFormat getCaseInsensitiveInstance() {
-        return Parsing.DEFAULT_CI;
-    }
-
-    /**
-	 * Returns a case insensitive instance for formatting and parsing using user
-	 * defined symbols
-	 */
-    public static UCUMFormat getCaseInsensitiveInstance(SymbolMap symbolMap) {
-        return new Parsing(symbolMap, false);
+    public static UCUMFormat getInstance(Variant variant, 
+    		SymbolMap symbolMap) {
+    	switch (variant) {
+	     	case CASE_INSENSITIVE:
+	     		return new Parsing(symbolMap, false);
+	     	case CASE_SENSITIVE:
+	     		return new Parsing(symbolMap, true);
+	     	case PRINT:
+	     		return new Print(symbolMap);
+	     	default:
+	     		throw new IllegalArgumentException("Unknown variant: " + variant);
+    	}
     }
     /**
      * The symbol map used by this instance to map between
@@ -163,9 +159,10 @@ public abstract class UCUMFormat implements UnitFormat, Serializable {
         if (mapSymbol != null) {
             symbol = mapSymbol;
         } else if (unit.getProductUnits() != null) {
-            Map<? extends AbstractUnit, Integer> productUnits = unit.getProductUnits();
+            @SuppressWarnings("unchecked")
+			Map<? extends AbstractUnit<?>, Integer> productUnits = unit.getProductUnits();
             StringBuffer app = new StringBuffer();
-            for (AbstractUnit u : productUnits.keySet()) {
+            for (AbstractUnit<?> u : productUnits.keySet()) {
                 StringBuffer temp = new StringBuffer();
                 temp = (StringBuffer) format(u, temp);
                 if ((temp.indexOf(".") >= 0) || (temp.indexOf("/") >= 0)) {
@@ -333,6 +330,17 @@ public abstract class UCUMFormat implements UnitFormat, Serializable {
     // /////////////////
     // Inner classes //
     // /////////////////
+    
+    /**
+     * Variant of unit representation in the UCUM standard
+     * 
+     * @see <a href="http://unitsofmeasure.org/ucum.html#section-Character-Set-and-Lexical-Rules">
+     * UCUM - Character Set and Lexical Rules</a>
+     */
+    public static enum Variant {
+    	CASE_SENSITIVE, CASE_INSENSITIVE, PRINT
+    }
+    
     /**
 	 * The Print format is used to output units according to the "print" column
 	 * in the UCUM standard. Because "print" symbols in UCUM are not unique,
@@ -398,7 +406,6 @@ public abstract class UCUMFormat implements UnitFormat, Serializable {
                		     if (locale.equals(new Locale("", "CS"))) {
                		    	 return Arrays.asList(
                					     locale,
-               					     // no Locale.GERMAN here
                					     Locale.ROOT);
                		     }
                		     return super.getCandidateLocales(baseName, locale);
@@ -414,9 +421,8 @@ public abstract class UCUMFormat implements UnitFormat, Serializable {
                   		     if (locale.equals(new Locale("", "CI"))) {
                   		    	 return Arrays.asList(
                   					     locale,
-                  					     // no Locale.GERMAN here
                   					     Locale.ROOT);
-                  		     } else if (locale.equals(Locale.GERMANY)) {
+                  		     } else if (locale.equals(Locale.GERMANY)) { // TODO why GERMANY?
                   			 return Arrays.asList(
                   			     locale,
                   			     // no Locale.GERMAN here

@@ -15,6 +15,8 @@
  */
 package org.unitsofmeasurement.impl;
 
+import static org.unitsofmeasurement.impl.format.UCUMFormat.Variant.CASE_INSENSITIVE;
+
 import java.io.IOException;
 import java.io.Serializable;
 import java.math.BigInteger;
@@ -51,7 +53,7 @@ import org.unitsofmeasurement.impl.util.SI;
  *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 5.2, Dec 26, 2013
+ * @version 5.3, Mar 19, 2014
  */
 public abstract class AbstractUnit<Q extends Quantity<Q>> implements Unit<Q>, Serializable {//, XMLSerializable {
 
@@ -152,7 +154,7 @@ public abstract class AbstractUnit<Q extends Quantity<Q>> implements Unit<Q>, Se
      *         cannot be correctly parsed (e.g. not UCUM compliant).
      */
     public static AbstractUnit<?> of(CharSequence charSequence) {
-        return UCUMFormat.getCaseSensitiveInstance().parse(charSequence);
+        return UCUMFormat.getInstance(CASE_INSENSITIVE).parse(charSequence);
     }
 
     /**

@@ -49,11 +49,11 @@ import org.unitsofmeasurement.impl.util.SIPrefix;
  * given unit may have any number of aliases, but may have only one label.</p>
  *
  * @author <a href="mailto:eric-r@northwestern.edu">Eric Russell</a>
- * @author Werner Keil
- * @version 5.2, January 23, 2014
+ * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
+ * @version 5.3, March 20, 2014
  */
-public class SymbolMap {
-	private static final Logger logger = Logger.getLogger("org.unitsofmeasurement.impl.unit.format.SymbolMap");
+public final class SymbolMap {
+	private static final Logger logger = Logger.getLogger(SymbolMap.class.getName());
 	
     private final Map<String, AbstractUnit<?>> symbolToUnit;
     private final Map<AbstractUnit<?>, String> unitToSymbol;
