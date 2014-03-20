@@ -28,13 +28,13 @@ import org.unitsofmeasurement.impl.model.QuantityDimension;
  *     {@linkplain UnitConverter converters}.</p>
  *
  * <p> Examples of transformed units:[code]
- *         CELSIUS = KELVIN.add(273.15);
- *         FOOT = METRE.times(3048).divide(10000);
+ *         CELSIUS = KELVIN.shift(273.15);
+ *         FOOT = METRE.multiply(3048).divide(10000);
  *         MILLISECOND = MILLI(SECOND);
  *     [/code]</p>
  *
  * <p> Transformed units have no label. But like any other units,
- *     they may have labels attached to them (see {@link org.unitsofmeasurement.impl.format.jscience.physics.unit.SymbolMap
+ *     they may have labels attached to them (see {@link org.unitsofmeasurement.impl.format.SymbolMap
  *     SymbolMap}</p>
  *
  * <p> Instances of this class are created through the {@link AbstractUnit#transform} method.</p>
@@ -42,7 +42,8 @@ import org.unitsofmeasurement.impl.model.QuantityDimension;
  * @param <Q> The type of the quantity measured by this unit.
  *
  * @author  <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
- * @version 5.2, December 30, 2013
+ * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
+ * @version 5.3, March 20, 2014
  */
 public final class TransformedUnit<Q extends Quantity<Q>> extends AbstractUnit<Q> {
   

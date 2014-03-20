@@ -84,10 +84,11 @@ import org.unitsofmeasurement.impl.util.SI;
  * 
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.0.3 ($Revision$), $Date$
+ * @version 1.0.4 ($Revision$), $Date$
  */
 public abstract class AbstractMeasurement<Q extends Quantity<Q>> implements Measurement<Q, Number>,
         Serializable {
+// TODO as it specializes using Number AbstractQuantity (like enum version) seems better
 	
     /**
 	 * 
