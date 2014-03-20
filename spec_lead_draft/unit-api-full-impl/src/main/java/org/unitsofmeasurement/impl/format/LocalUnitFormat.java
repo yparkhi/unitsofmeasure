@@ -98,7 +98,7 @@ public class LocalUnitFormat implements UnitFormat {
      * Default locale instance. If the default locale is changed after the class
      * is initialized, this instance will no longer be used.
      */
-    private static LocalUnitFormat DEFAULT_INSTANCE = new LocalUnitFormat(new SymbolMap(
+    private static LocalUnitFormat DEFAULT_INSTANCE = new LocalUnitFormat(SymbolMap.of(
     		ResourceBundle.getBundle(LocalUnitFormat.class.getPackage().getName() + ".messages")));
     /**
      * Multiplicand character
@@ -138,7 +138,7 @@ public class LocalUnitFormat implements UnitFormat {
      * @param locale
      */
     public static LocalUnitFormat getInstance(Locale locale) {
-        return new LocalUnitFormat(new SymbolMap(ResourceBundle.getBundle(LocalUnitFormat.class.getName(), locale)));
+        return new LocalUnitFormat(SymbolMap.of(ResourceBundle.getBundle(LocalUnitFormat.class.getName(), locale)));
     }
 
     /** Returns an instance for the given symbol map. */

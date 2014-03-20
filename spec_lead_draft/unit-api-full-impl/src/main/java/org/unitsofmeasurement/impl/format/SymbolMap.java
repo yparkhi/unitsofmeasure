@@ -64,7 +64,7 @@ public final class SymbolMap {
     /**
      * Creates an empty mapping.
      */
-    public SymbolMap() {
+    private SymbolMap() {
         symbolToUnit = new HashMap<>();
         unitToSymbol = new HashMap<>();
         symbolToPrefix = new HashMap<>();
@@ -77,7 +77,7 @@ public final class SymbolMap {
      *
      * @param rb the resource bundle.
      */
-    public SymbolMap(ResourceBundle rb) {
+    private SymbolMap(ResourceBundle rb) {
         this();
         for (Enumeration<String> i = rb.getKeys(); i.hasMoreElements();) {
             String fqn = i.nextElement();
@@ -112,6 +112,15 @@ public final class SymbolMap {
                 logger.log(Level.SEVERE, "Error", error);
             }
         }
+    }
+    
+    /** 
+     * Creates a symbol map from the specified resource bundle,
+     *
+     * @param rb the resource bundle.
+     */
+    public static SymbolMap of(ResourceBundle rb) {
+    	return new SymbolMap(rb);
     }
 
     /**

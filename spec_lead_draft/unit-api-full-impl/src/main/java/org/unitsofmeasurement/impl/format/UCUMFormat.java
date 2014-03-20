@@ -353,7 +353,7 @@ public abstract class UCUMFormat implements UnitFormat, Serializable {
          *
          */
         private static final long serialVersionUID = 2990875526976721414L;
-        private static final SymbolMap PRINT_SYMBOLS = new SymbolMap(
+        private static final SymbolMap PRINT_SYMBOLS = SymbolMap.of(
                 ResourceBundle.getBundle(BUNDLE_BASE + "_Print"));
         private static final Print DEFAULT = new Print(PRINT_SYMBOLS);
 
@@ -396,7 +396,7 @@ public abstract class UCUMFormat implements UnitFormat, Serializable {
     private static final class Parsing extends UCUMFormat {
 
         private static final long serialVersionUID = -922531801940132715L;
-        private static final SymbolMap CASE_SENSITIVE_SYMBOLS = new SymbolMap(
+        private static final SymbolMap CASE_SENSITIVE_SYMBOLS = SymbolMap.of(
                 ResourceBundle.getBundle(BUNDLE_BASE + "_CS", new Locale("", "CS"),
                	     new ResourceBundle.Control() {
                		 @Override
@@ -411,7 +411,7 @@ public abstract class UCUMFormat implements UnitFormat, Serializable {
                		     return super.getCandidateLocales(baseName, locale);
                		 }
                	     }));
-        private static final SymbolMap CASE_INSENSITIVE_SYMBOLS = new SymbolMap(
+        private static final SymbolMap CASE_INSENSITIVE_SYMBOLS = SymbolMap.of(
                 ResourceBundle.getBundle(BUNDLE_BASE + "_CI", 
                   	     new ResourceBundle.Control() {
                   		 @Override
