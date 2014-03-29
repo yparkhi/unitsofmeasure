@@ -20,7 +20,15 @@ Full Scale approach.</description>
 			<url>LICENSE.txt</url>
 		</license>
 	</licenses>
-
+	
+     <repositories>
+        <repository>
+            <id>unitsofmeasurement-github-repo</id>
+            <name>Local repository for Unit-API or other Units of Measurement artifacts we depend on</name>
+            <url>https://github.com/unitsofmeasurement/repository/raw/master</url>
+        </repository>
+    </repositories>
+    
 	<!-- ======================================================= -->
 	<!-- Build Settings -->
 	<!-- ======================================================= -->
