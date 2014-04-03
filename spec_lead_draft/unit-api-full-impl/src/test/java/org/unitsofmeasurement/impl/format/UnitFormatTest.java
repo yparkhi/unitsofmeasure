@@ -33,7 +33,7 @@ import javax.measure.quantity.Speed;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
-import org.unitsofmeasurement.impl.model.quantity.LengthAmount;
+import org.unitsofmeasurement.impl.quantity.LengthAmount;
 
 /**
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
