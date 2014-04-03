@@ -17,6 +17,7 @@ package org.unitsofmeasurement.impl.enums.quantity;
 
 import static java.lang.Double.NaN;
 
+import org.unitsofmeasurement.impl.enums.AbstractQuantity;
 import org.unitsofmeasurement.impl.enums.format.SimpleFormat;
 import org.unitsofmeasurement.impl.enums.unit.TimeUnit;
 
@@ -29,7 +30,7 @@ import javax.measure.quantity.Time;
  * @author Werner Keil
  * @version 1.4.1, $Date$
  */
-public class TimeQuantity extends AbstractQuantity<Time> implements Time {
+public class TimeAmount extends AbstractQuantity<Time> implements Time {
    private final double scalar; // value in reference unit
 
    private final Double value; // value in unit (Unit unit)
@@ -39,7 +40,7 @@ public class TimeQuantity extends AbstractQuantity<Time> implements Time {
 //    TimeQuantity(){
 //    }
 
-    public TimeQuantity(Double val, TimeUnit un) {
+    public TimeAmount(Double val, TimeUnit un) {
         value = val;
         unit = un;
         if (val!= null && un != null) {
@@ -53,48 +54,48 @@ public class TimeQuantity extends AbstractQuantity<Time> implements Time {
         return (value != null) && 0d==(value.doubleValue());
     }
 
-    public TimeQuantity add(TimeQuantity d1) {
-        final TimeQuantity dn = new TimeQuantity(Double.valueOf(this.value.doubleValue() + d1.value.doubleValue()),
+    public TimeAmount add(TimeAmount d1) {
+        final TimeAmount dn = new TimeAmount(Double.valueOf(this.value.doubleValue() + d1.value.doubleValue()),
         		this.unit);
         return dn;
     }
 
-    public TimeQuantity subtract(TimeQuantity d1) {
-    	final TimeQuantity dn = new TimeQuantity(this.value.doubleValue() - d1.value.doubleValue(), this.unit);
+    public TimeAmount subtract(TimeAmount d1) {
+    	final TimeAmount dn = new TimeAmount(this.value.doubleValue() - d1.value.doubleValue(), this.unit);
         return dn;
     }
 
-    public boolean eq(TimeQuantity dq) {
+    public boolean eq(TimeAmount dq) {
          return dq!=null && dq.getValue().equals(getValue()) && dq.getUnit().equals(getUnit()) &&
                  dq.getScalar().equals(getScalar());
     }
 
-    public boolean ne(TimeQuantity d1) {
-        return ne((TimeQuantity) d1);
+    public boolean ne(TimeAmount d1) {
+        return ne((TimeAmount) d1);
     }
 
-    public boolean gt(TimeQuantity d1) {
-        return gt((TimeQuantity) d1);
+    public boolean gt(TimeAmount d1) {
+        return gt((TimeAmount) d1);
     }
 
-    public boolean lt(TimeQuantity d1) {
-        return lt((TimeQuantity) d1);
+    public boolean lt(TimeAmount d1) {
+        return lt((TimeAmount) d1);
     }
 
-    public boolean ge(TimeQuantity d1) {
-        return ge((TimeQuantity)d1);
+    public boolean ge(TimeAmount d1) {
+        return ge((TimeAmount)d1);
     }
 
-    public boolean le(TimeQuantity d1) {
-        return le((TimeQuantity) d1);
+    public boolean le(TimeAmount d1) {
+        return le((TimeAmount) d1);
     }
 
-    public TimeQuantity divide(Double v) {
-        return new TimeQuantity(value.doubleValue() / v.doubleValue(), unit);
+    public TimeAmount divide(Double v) {
+        return new TimeAmount(value.doubleValue() / v.doubleValue(), unit);
     }
 
-    protected TimeQuantity convert(TimeUnit newUnit) {
-        return new TimeQuantity(value.doubleValue() * (this.unit.getFactor() / newUnit.getFactor()), newUnit);
+    protected TimeAmount convert(TimeUnit newUnit) {
+        return new TimeAmount(value.doubleValue() * (this.unit.getFactor() / newUnit.getFactor()), newUnit);
     }
 
     @Override
@@ -148,7 +149,7 @@ public class TimeQuantity extends AbstractQuantity<Time> implements Time {
 
 	@Override
 	public Measurement<?, Number> multiply(Number that) {
-		return new TimeQuantity(value.doubleValue() * that.doubleValue(), unit);
+		return new TimeAmount(value.doubleValue() * that.doubleValue(), unit);
 	}
 
 	@Override
@@ -174,7 +175,7 @@ public class TimeQuantity extends AbstractQuantity<Time> implements Time {
 
 	@Override
 	public boolean eq(AbstractQuantity<Time> dq) {
-		 return eq((TimeQuantity) dq);
+		 return eq((TimeAmount) dq);
 	}
 
 	@Override
