@@ -13,30 +13,39 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.unitsofmeasurement.impl.model.quantity;
+package org.unitsofmeasurement.impl.quantity;
 
-import javax.measure.Unit;
+import static org.junit.Assert.*;
+import static org.unitsofmeasurement.impl.util.SI.METRE;
+
 import javax.measure.quantity.Length;
 
-import org.unitsofmeasurement.impl.BaseMeasurement;
+import org.junit.Before;
+import org.junit.Test;
+import org.unitsofmeasurement.impl.quantity.LengthAmount;
 
-/**
- * Represents the extent of something along its greatest
- * dimension or the extent of space between two objects or places.
- * The metric system unit for this quantity is "m" (metre).
- *
- * @author  <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
- * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.6, $Date: 2013-12-25 $
- */
-public final class LengthAmount extends BaseMeasurement<Length> implements Length {
+public class LengthTest {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -1088138019909223368L;
-
-	public LengthAmount(Number number, Unit<Length> unit) {
-		super(number, unit);
+	private Length sut;
+	
+	@Before
+	public void init() {
+		sut = new LengthAmount(Integer.valueOf(10), METRE);
 	}
+	
+	@Test
+	public void testUnit() {
+		assertEquals(METRE, sut.getUnit());
+	}
+	
+	@Test
+	public void testValue() {
+		assertEquals(Integer.valueOf(10), sut.getValue());
+	}
+	
+	@Test
+	public void testToString() {
+		assertEquals("10 m", sut.toString());
+	}
+
 }

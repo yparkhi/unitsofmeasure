@@ -29,6 +29,7 @@ import javax.measure.format.ParserException;
 import javax.measure.quantity.Dimensionless;
 
 import org.unitsofmeasurement.impl.format.MeasurementFormat;
+import org.unitsofmeasurement.impl.format.QuantityFormat;
 import org.unitsofmeasurement.impl.function.AbstractConverter;
 import org.unitsofmeasurement.impl.util.SI;
 
@@ -57,7 +58,7 @@ import org.unitsofmeasurement.impl.util.SI;
  *         > 670616629.3843951 [mi_i]/h
  *     </code></p>
  * 
- * <p> Applications may sub-class {@link AbstractMeasurement} for particular measurements
+ * <p> Applications may sub-class {@link AbstractQuantity} for particular measurements
  *     types.<br/><code>
  *         // Measurement of type Mass based on <code>double</code> primitive types.
  *         public class MassAmount extends AbstractMeasurement<Mass> { 
@@ -84,11 +85,10 @@ import org.unitsofmeasurement.impl.util.SI;
  * 
  * <p> All instances of this class shall be immutable.</p>
  * 
- * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.1, $Date$
+ * @version 1.0, $Date: 2014-04-03 $
  */
-public abstract class AbstractMeasurement<Q extends Quantity<Q>> implements Measurement<Q, Number>,
+public abstract class AbstractQuantity<Q extends Quantity<Q>> implements Quantity<Q>,
         Serializable {
 // TODO as it specializes using Number AbstractQuantity (like enum version) seems better
 	
@@ -102,17 +102,17 @@ public abstract class AbstractMeasurement<Q extends Quantity<Q>> implements Meas
 	/**
 	 * Holds a dimensionless measure of none (exact).
 	 */
-	public static final AbstractMeasurement<Dimensionless> NONE = of(0, SI.ONE);
+	public static final AbstractQuantity<Dimensionless> NONE = of(0, SI.ONE);
 	
 	/**
 	 * Holds a dimensionless measure of one (exact).
 	 */
-	public static final AbstractMeasurement<Dimensionless> ONE = of(1, SI.ONE);
+	public static final AbstractQuantity<Dimensionless> ONE = of(1, SI.ONE);
 	
 	/**
      * constructor.
      */
-    protected AbstractMeasurement(Unit<Q> unit) {
+    protected AbstractQuantity(Unit<Q> unit) {
     	this.unit = unit;
     }
 
@@ -141,7 +141,7 @@ public abstract class AbstractMeasurement<Q extends Quantity<Q>> implements Meas
      * @throws ArithmeticException if the result is inexact and the quotient
      *         has a non-terminating decimal expansion.
      */
-    public AbstractMeasurement<Q> toSI() {
+    public AbstractQuantity<Q> toSI() {
         return to(this.getUnit().getSystemUnit());
     }
 
@@ -158,12 +158,12 @@ public abstract class AbstractMeasurement<Q extends Quantity<Q>> implements Meas
      * @throws ArithmeticException if the result is inexact and the quotient has
      *         a non-terminating decimal expansion.
      */
-    public AbstractMeasurement<Q> to(Unit<Q> unit) {
+    public AbstractQuantity<Q> to(Unit<Q> unit) {
         if (unit.equals(this.getUnit())) {
             return this;
         }
         //return AbstractMeasurement.of(doubleValue(unit), unit);
-        return AbstractMeasurement.of(decimalValue(unit, MathContext.UNLIMITED), unit);
+        return AbstractQuantity.of(decimalValue(unit, MathContext.UNLIMITED), unit);
     }
 
     /**
@@ -182,11 +182,11 @@ public abstract class AbstractMeasurement<Q extends Quantity<Q>> implements Meas
      *         <code>mathContext.precision == 0</code> and the quotient has
      *         a non-terminating decimal expansion.
      */
-    public AbstractMeasurement<Q> to(Unit<Q> unit, MathContext ctx) {
+    public AbstractQuantity<Q> to(Unit<Q> unit, MathContext ctx) {
         if (unit.equals(this.getUnit())) {
             return this;
         }
-        return AbstractMeasurement.of(decimalValue(unit, ctx), unit);
+        return AbstractQuantity.of(decimalValue(unit, ctx), unit);
     }
 
     /**
@@ -228,10 +228,10 @@ public abstract class AbstractMeasurement<Q extends Quantity<Q>> implements Meas
      */
     @Override
     public boolean equals(Object obj) {
-        if (!(obj instanceof AbstractMeasurement<?>)) {
+        if (!(obj instanceof AbstractQuantity<?>)) {
             return false;
         }
-        AbstractMeasurement<?> that = (AbstractMeasurement<?>) obj;
+        AbstractQuantity<?> that = (AbstractQuantity<?>) obj;
         return this.getUnit().equals(that.getUnit()) && this.getValue().equals(that.getValue());
     }
 
@@ -246,7 +246,7 @@ public abstract class AbstractMeasurement<Q extends Quantity<Q>> implements Meas
      * @param epsilonUnit the epsilon unit.
      * @return <code>abs(this.doubleValue(epsilonUnit) - that.doubleValue(epsilonUnit)) &lt;= epsilon</code>
      */
-    public boolean equals(AbstractMeasurement<Q> that, double epsilon, Unit<Q> epsilonUnit) {
+    public boolean equals(AbstractQuantity<Q> that, double epsilon, Unit<Q> epsilonUnit) {
         return Math.abs(this.doubleValue(epsilonUnit) - that.doubleValue(epsilonUnit)) <= epsilon;
     }
 
@@ -323,11 +323,11 @@ public abstract class AbstractMeasurement<Q extends Quantity<Q>> implements Meas
      * @see Unit#asType(Class)
      */
     @SuppressWarnings("unchecked")
-    public final <T extends Quantity<T>> AbstractMeasurement<T> asType(Class<T> type)
+    public final <T extends Quantity<T>> AbstractQuantity<T> asType(Class<T> type)
             throws ClassCastException {
         this.getUnit().asType(type); // Raises ClassCastException is dimension
         // mismatches.
-        return (AbstractMeasurement<T>) this;
+        return (AbstractQuantity<T>) this;
     }
 
     /**
@@ -347,9 +347,9 @@ public abstract class AbstractMeasurement<Q extends Quantity<Q>> implements Meas
      * @param csq the decimal value and its unit (if any) separated by space(s).
      * @return <code>MeasureFormat.getStandard().parse(csq, new ParsePosition(0))</code>
      */
-    public static AbstractMeasurement<?> of(CharSequence csq) {
+    public static AbstractQuantity<?> of(CharSequence csq) {
         try {
-			return MeasurementFormat.getInstance(LOCALE_NEUTRAL).parse(csq, new ParsePosition(0));
+			return QuantityFormat.getInstance(LOCALE_NEUTRAL).parse(csq, new ParsePosition(0));
 		} catch (IllegalArgumentException | ParserException e) {
 			throw new IllegalArgumentException(e); // TODO could we handle this differently?
 		}
@@ -363,12 +363,12 @@ public abstract class AbstractMeasurement<Q extends Quantity<Q>> implements Meas
      * @param unit the measurement unit.
      * @return the corresponding <code>int</code> measure.
      */
-    public static <Q extends Quantity<Q>> AbstractMeasurement<Q> of(int intValue,
+    public static <Q extends Quantity<Q>> AbstractQuantity<Q> of(int intValue,
             Unit<Q> unit) {
-        return new IntegerMeasurement<Q>(intValue, unit);
+        return new IntegerQuantity<Q>(intValue, unit);
     }
 
-    private static final class IntegerMeasurement<T extends Quantity<T>> extends AbstractMeasurement<T> {
+    private static final class IntegerQuantity<T extends Quantity<T>> extends AbstractQuantity<T> {
 
         /**
 		 * 
@@ -377,7 +377,7 @@ public abstract class AbstractMeasurement<Q extends Quantity<Q>> implements Meas
 		
 		final int value;
 
-        public IntegerMeasurement(int value, Unit<T> unit) {
+        public IntegerQuantity(int value, Unit<T> unit) {
         	super(unit);
         	this.value = value;
         }
@@ -415,7 +415,7 @@ public abstract class AbstractMeasurement<Q extends Quantity<Q>> implements Meas
 		}
 
 		@Override
-		public IntegerMeasurement<T> substract(Measurement<T, Number> that) {
+		public IntegerQuantity<T> substract(Measurement<T, Number> that) {
 			// TODO Auto-generated method stub
 			return null;
 		}
@@ -439,8 +439,8 @@ public abstract class AbstractMeasurement<Q extends Quantity<Q>> implements Meas
 
 		@SuppressWarnings("unchecked")
 		@Override
-		public AbstractMeasurement<T> inverse() {
-			return (AbstractMeasurement<T>) of(value, getUnit().inverse());
+		public AbstractQuantity<T> inverse() {
+			return (AbstractQuantity<T>) of(value, getUnit().inverse());
 		}
 
 		@Override
@@ -464,12 +464,12 @@ public abstract class AbstractMeasurement<Q extends Quantity<Q>> implements Meas
      * @param unit the measurement unit.
      * @return the corresponding <code>float</code> measure.
      */
-    public static <Q extends Quantity<Q>> AbstractMeasurement<Q> of(float floatValue,
+    public static <Q extends Quantity<Q>> AbstractQuantity<Q> of(float floatValue,
             Unit<Q> unit) {
-        return new FloatMeasurement<Q>(floatValue, unit);
+        return new FloatQuantity<Q>(floatValue, unit);
     }
 
-    private static final class FloatMeasurement<T extends Quantity<T>> extends AbstractMeasurement<T> {
+    private static final class FloatQuantity<T extends Quantity<T>> extends AbstractQuantity<T> {
 
         /**
 		 * 
@@ -478,7 +478,7 @@ public abstract class AbstractMeasurement<Q extends Quantity<Q>> implements Meas
 		
 		final float value;
 
-        public FloatMeasurement(float value, Unit<T> unit) {
+        public FloatQuantity(float value, Unit<T> unit) {
         	super(unit);
             this.value = value;
         }
@@ -509,19 +509,19 @@ public abstract class AbstractMeasurement<Q extends Quantity<Q>> implements Meas
 		}
 
 		@Override
-		public AbstractMeasurement<T> add(Measurement<T, Number> that) {
+		public AbstractQuantity<T> add(Measurement<T, Number> that) {
 			return of(value + that.getValue().floatValue(), getUnit()); // TODO use shift of the unit?
 		}
 
 		@Override
-		public AbstractMeasurement<T> substract(Measurement<T, Number> that) {
+		public AbstractQuantity<T> substract(Measurement<T, Number> that) {
 			return of(value - that.getValue().floatValue(), getUnit()); // TODO use shift of the unit?
 		}
 
 		@SuppressWarnings("unchecked")
 		@Override
-		public AbstractMeasurement<T> multiply(Measurement<?, Number> that) {
-			return (AbstractMeasurement<T>) of(value * that.getValue().floatValue(), 
+		public AbstractQuantity<T> multiply(Measurement<?, Number> that) {
+			return (AbstractQuantity<T>) of(value * that.getValue().floatValue(), 
 					getUnit().multiply(that.getUnit()));
 		}
 
@@ -539,8 +539,8 @@ public abstract class AbstractMeasurement<Q extends Quantity<Q>> implements Meas
 
 		@SuppressWarnings("unchecked")
 		@Override
-		public AbstractMeasurement<T> inverse() {
-			return (AbstractMeasurement<T>) of(value, getUnit().inverse());
+		public AbstractQuantity<T> inverse() {
+			return (AbstractQuantity<T>) of(value, getUnit().inverse());
 		}
 
 		@Override
@@ -562,16 +562,16 @@ public abstract class AbstractMeasurement<Q extends Quantity<Q>> implements Meas
      * @param unit the measurement unit.
      * @return the corresponding <code>double</code> measure.
      */
-    public static <Q extends Quantity<Q>> AbstractMeasurement<Q> of(double doubleValue,
+    public static <Q extends Quantity<Q>> AbstractQuantity<Q> of(double doubleValue,
             Unit<Q> unit) {
-        return new DoubleMeasurement<Q>(doubleValue, unit);
+        return new DoubleQuantity<Q>(doubleValue, unit);
     }
 
-    private static final class DoubleMeasurement<T extends Quantity<T>> extends AbstractMeasurement<T> {
+    private static final class DoubleQuantity<T extends Quantity<T>> extends AbstractQuantity<T> {
 
         final double value;
 
-        public DoubleMeasurement(double value, Unit<T> unit) {
+        public DoubleQuantity(double value, Unit<T> unit) {
         	super(unit);
             this.value = value;
         }
@@ -636,8 +636,8 @@ public abstract class AbstractMeasurement<Q extends Quantity<Q>> implements Meas
 
 		@SuppressWarnings("unchecked")
 		@Override
-		public AbstractMeasurement<T> inverse() {
-			return (AbstractMeasurement<T>) of(value, getUnit().inverse());
+		public AbstractQuantity<T> inverse() {
+			return (AbstractQuantity<T>) of(value, getUnit().inverse());
 		}
 
 		@Override
@@ -654,12 +654,12 @@ public abstract class AbstractMeasurement<Q extends Quantity<Q>> implements Meas
      * @param unit the measurement unit.
      * @return the corresponding <code>BigDecimal</code> measure.
      */
-    public static <Q extends Quantity<Q>> AbstractMeasurement<Q> of(
+    public static <Q extends Quantity<Q>> AbstractQuantity<Q> of(
             BigDecimal decimalValue, Unit<Q> unit) {
-        return new DecimalMeasurement<Q>(decimalValue, unit);
+        return new DecimalQuantity<Q>(decimalValue, unit);
     }
 
-    private static final class DecimalMeasurement<T extends Quantity<T>> extends AbstractMeasurement<T> {
+    private static final class DecimalQuantity<T extends Quantity<T>> extends AbstractQuantity<T> {
 
         /**
 		 * 
@@ -667,7 +667,7 @@ public abstract class AbstractMeasurement<Q extends Quantity<Q>> implements Meas
 		private static final long serialVersionUID = 6504081836032983882L;
 		final BigDecimal value;
 
-        public DecimalMeasurement(BigDecimal value, Unit<T> unit) {
+        public DecimalQuantity(BigDecimal value, Unit<T> unit) {
         	super(unit);
         	this.value = value;
         }
@@ -700,7 +700,7 @@ public abstract class AbstractMeasurement<Q extends Quantity<Q>> implements Meas
 		}
 
 		@Override
-		public AbstractMeasurement<?> multiply(Measurement<?, Number> that) {
+		public AbstractQuantity<?> multiply(Measurement<?, Number> that) {
 			return of(value.multiply((BigDecimal)that.getValue()), 
 					getUnit().multiply(that.getUnit()));
 		}
@@ -722,9 +722,9 @@ public abstract class AbstractMeasurement<Q extends Quantity<Q>> implements Meas
 		
 		@SuppressWarnings("unchecked")
 		@Override
-		public AbstractMeasurement<T> inverse() {
+		public AbstractQuantity<T> inverse() {
 			//return of(value.negate(), getUnit());
-			return (AbstractMeasurement<T>) of(value, getUnit().inverse());
+			return (AbstractQuantity<T>) of(value, getUnit().inverse());
 		}
 
 		protected long longValue(Unit<T> unit) {

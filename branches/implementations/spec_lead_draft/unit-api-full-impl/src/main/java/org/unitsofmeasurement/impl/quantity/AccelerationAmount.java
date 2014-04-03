@@ -13,11 +13,11 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.unitsofmeasurement.impl.model.quantity;
+package org.unitsofmeasurement.impl.quantity;
 
 import javax.measure.Unit;
 import javax.measure.quantity.Acceleration;
-import org.unitsofmeasurement.impl.BaseMeasurement;
+import org.unitsofmeasurement.impl.BaseQuantity;
 
 /**
  * Represents the rate of change of velocity with respect to time.
@@ -27,7 +27,7 @@ import org.unitsofmeasurement.impl.BaseMeasurement;
  * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @version 1.6.1, $Date$
  */
-public final class AccelerationAmount extends BaseMeasurement<Acceleration> 
+public final class AccelerationAmount extends BaseQuantity<Acceleration> 
    implements Acceleration {
 
 	/**

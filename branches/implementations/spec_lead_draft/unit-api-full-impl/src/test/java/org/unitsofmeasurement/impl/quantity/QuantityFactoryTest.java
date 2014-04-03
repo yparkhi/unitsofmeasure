@@ -13,7 +13,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.unitsofmeasurement.impl.model;
+package org.unitsofmeasurement.impl.quantity;
 
 import static org.junit.Assert.*;
 import static org.unitsofmeasurement.impl.util.SI.*;
@@ -22,6 +22,7 @@ import javax.measure.Quantity;
 import javax.measure.quantity.*;
 
 import org.junit.Test;
+import org.unitsofmeasurement.impl.quantity.QuantityFactory;
 
 /**
  * @author Werner Keil

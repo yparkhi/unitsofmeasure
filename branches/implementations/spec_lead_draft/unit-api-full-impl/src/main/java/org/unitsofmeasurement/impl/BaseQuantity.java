@@ -29,7 +29,7 @@ import javax.measure.function.UnitConverter;
 import org.unitsofmeasurement.impl.function.AbstractConverter;
 
 /**
- * An amount of measurement, consisting of a Number and a Unit. BaseMeasurement
+ * An amount of quantity, consisting of a Number and a Unit. BaseMeasurement
  * objects are immutable.
  * 
  * @see java.lang.Number
@@ -37,16 +37,17 @@ import org.unitsofmeasurement.impl.function.AbstractConverter;
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @param <Q>
  *            The type of the quantity.
- * @version 1.4.3 ($Revision: 212 $), $Date: 2013-12-25 $
+ * @version 1.5, $Date: 2014-04-03 $
  */
-public class BaseMeasurement<Q extends Quantity<Q>> extends AbstractQuantity<Q>
-		implements Measurement<Q, Number>, Comparable<BaseMeasurement<Q>> {
+public class BaseQuantity<Q extends Quantity<Q>> extends AbstractQuantity<Q>
+		implements Quantity<Q>, Comparable<BaseQuantity<Q>> {
 //FIXME Bug 338334 overwrite equals()
     
+
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1794798190459768561L;
+	private static final long serialVersionUID = 7312161895652321241L;
 
 	private final Number value;
 	
@@ -108,7 +109,7 @@ public class BaseMeasurement<Q extends Quantity<Q>> extends AbstractQuantity<Q>
 	 */
 	// private double maximum;
 
-	protected BaseMeasurement(Number number, Unit<Q> unit) {
+	protected BaseQuantity(Number number, Unit<Q> unit) {
 		super(unit);
 		value = number;
 		isExact = false;
@@ -197,9 +198,9 @@ public class BaseMeasurement<Q extends Quantity<Q>> extends AbstractQuantity<Q>
 	}
 	
 	@SuppressWarnings({ "rawtypes", "unchecked" })
-	public BaseMeasurement<Q> add(AbstractMeasurement<Q> that) {
+	public BaseQuantity<Q> add(AbstractMeasurement<Q> that) {
 		final AbstractMeasurement<Q> thatToUnit = that.to(getUnit());
-		return new BaseMeasurement(this.getValue().doubleValue()
+		return new BaseQuantity(this.getValue().doubleValue()
 				+ thatToUnit.getValue().doubleValue(), 
                                   getUnit());
 	}
@@ -229,8 +230,8 @@ public class BaseMeasurement<Q extends Quantity<Q>> extends AbstractQuantity<Q>
 	}
         
         @Override
-	public BaseMeasurement<?> multiply(Number that) {
-		return (BaseMeasurement<Q>) of((getValue().doubleValue() * that
+	public BaseQuantity<?> multiply(Number that) {
+		return (BaseQuantity<Q>) of((getValue().doubleValue() * that
 				.doubleValue()), getUnit());	
 	}
         
@@ -254,7 +255,7 @@ public class BaseMeasurement<Q extends Quantity<Q>> extends AbstractQuantity<Q>
 	@Override
 	public Measurement<Q, Number> inverse() {
 		@SuppressWarnings({ "rawtypes", "unchecked" })
-		final Measurement<Q, Number> m = new BaseMeasurement(getValue(),
+		final Measurement<Q, Number> m = new BaseQuantity(getValue(),
 				getUnit().inverse()); // TODO keep value same?
 		return m;
 	}
@@ -272,7 +273,7 @@ public class BaseMeasurement<Q extends Quantity<Q>> extends AbstractQuantity<Q>
 	}
 
 	@Override
-	public int compareTo(BaseMeasurement<Q> o) {
+	public int compareTo(BaseQuantity<Q> o) {
 		// TODO Auto-generated method stub
 		return 0;
 	}

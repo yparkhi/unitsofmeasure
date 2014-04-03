@@ -13,38 +13,30 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.unitsofmeasurement.impl.model.quantity;
+package org.unitsofmeasurement.impl.quantity;
 
-import static org.junit.Assert.*;
-import static org.unitsofmeasurement.impl.util.SI.METRE;
-
+import javax.measure.Unit;
 import javax.measure.quantity.Length;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.unitsofmeasurement.impl.BaseQuantity;
 
-public class LengthTest {
+/**
+ * Represents the extent of something along its greatest
+ * dimension or the extent of space between two objects or places.
+ * The metric system unit for this quantity is "m" (metre).
+ *
+ * @author  <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
+ * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
+ * @version 1.6, $Date: 2013-12-25 $
+ */
+public final class LengthAmount extends BaseQuantity<Length> implements Length {
 
-	private Length sut;
-	
-	@Before
-	public void init() {
-		sut = new LengthAmount(Integer.valueOf(10), METRE);
-	}
-	
-	@Test
-	public void testUnit() {
-		assertEquals(METRE, sut.getUnit());
-	}
-	
-	@Test
-	public void testValue() {
-		assertEquals(Integer.valueOf(10), sut.getValue());
-	}
-	
-	@Test
-	public void testToString() {
-		assertEquals("10 m", sut.toString());
-	}
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1088138019909223368L;
 
+	public LengthAmount(Number number, Unit<Length> unit) {
+		super(number, unit);
+	}
 }
