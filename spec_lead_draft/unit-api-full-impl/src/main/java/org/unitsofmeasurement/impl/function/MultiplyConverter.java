@@ -1,6 +1,6 @@
 /**
  *  Unit-API - Units of Measurement API for Java
- *  Copyright 2013-2014, Jean-Marie Dautelle, Werner Keil, V2COM and individual
+ *  Copyright 2005-2014, Jean-Marie Dautelle, Werner Keil, V2COM and individual
  *  contributors by the @author tag.
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
@@ -25,11 +25,16 @@ import javax.measure.function.UnitConverter;
  *     constant scaling factor (<code>double</code> based).</p>
  *
  * @author  <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
- * @version 5.0, October 12, 2010
+ * @version 5.1, April 3, 2014
  */
 public final class MultiplyConverter extends AbstractConverter { // implements Immutable<Double> {
 
     /**
+	 * 
+	 */
+	private static final long serialVersionUID = 6588759878444545649L;
+	
+	/**
      * Holds the scale factor.
      */
     private double factor;
