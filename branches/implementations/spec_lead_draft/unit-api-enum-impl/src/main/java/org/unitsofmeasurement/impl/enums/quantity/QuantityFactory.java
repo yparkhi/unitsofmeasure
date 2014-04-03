@@ -171,7 +171,7 @@ public abstract class QuantityFactory<Q extends Quantity<Q>>
 	/**
 	 * The default factory implementation. This factory uses reflection for
 	 * providing a default implementation for every 
-	 * {@link org.unitsofmeasurement.impl.enums.quantity.AbstractQuantity}
+	 * {@link org.unitsofmeasurement.impl.enums.AbstractQuantity}
 	 * sub-types.
 	 * 
 	 * @param <Q>

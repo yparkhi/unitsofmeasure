@@ -24,11 +24,11 @@ import javax.measure.quantity.Temperature;
 import org.junit.Ignore;
 import org.junit.Test;
 
-public class TemperatureQuantityTest {
+public class TemperatureTest {
 	
 	@Test
 	public void testInstanciate() {
-		Temperature t =  new TemperatureQuantity(23.0, CELSIUS); // 23.0 °C
+		Temperature t =  new TemperatureAmount(23.0, CELSIUS); // 23.0 °C
 		assertEquals(Double.valueOf(23.0d), t.getValue());
 		assertEquals(CELSIUS, t.getUnit());
 		//assertEquals("km", l.getUnit().getSymbol());
@@ -36,20 +36,20 @@ public class TemperatureQuantityTest {
 	
 	@Test
 	public void testToString() {
-		Temperature t =  new TemperatureQuantity(23.0d, CELSIUS); // 23.0 °C
+		Temperature t =  new TemperatureAmount(23.0d, CELSIUS); // 23.0 °C
 		assertEquals("23.0°C", t.toString());
 	}
 	
 	@Test
 	public void testTemperatureQuantityDoubleTemperatureUnit() {
-		Temperature t = new TemperatureQuantity(Double.valueOf(20d), CELSIUS);
+		Temperature t = new TemperatureAmount(Double.valueOf(20d), CELSIUS);
 		assertEquals(Double.valueOf(20d), t.getValue());
 	}
 
 	@Test
 	@Ignore
 	public void testTo() {
-		TemperatureQuantity t = new TemperatureQuantity(Double.valueOf(30d), CELSIUS);
+		TemperatureAmount t = new TemperatureAmount(Double.valueOf(30d), CELSIUS);
 		Quantity<Temperature> t2 = t.to(FAHRENHEIT);
 		assertEquals(Double.valueOf(20d), t2.getValue());
 	}
