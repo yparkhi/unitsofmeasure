@@ -22,6 +22,7 @@ import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.Map;
 
+import javax.measure.Dimension;
 import javax.measure.Quantity;
 import javax.measure.Unit;
 import javax.measure.IncommensurableException;
@@ -239,7 +240,7 @@ public abstract class AbstractUnit<Q extends Quantity<Q>> implements Unit<Q>, Se
      */
     @Override
     public final <T extends Quantity<T>> AbstractUnit<T> asType(Class<T> type) {
-        QuantityDimension typeDimension = QuantityDimension.of(type);
+        Dimension typeDimension = QuantityDimension.getInstance(type);
         if ((typeDimension != null) && (!this.getDimension().equals(typeDimension)))
            throw new ClassCastException("The unit: " + this + " is not compatible with quantities of type " + type);
         return (AbstractUnit<T>) this;

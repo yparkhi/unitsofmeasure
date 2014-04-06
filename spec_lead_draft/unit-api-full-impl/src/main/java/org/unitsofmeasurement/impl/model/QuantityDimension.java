@@ -33,7 +33,7 @@ import org.unitsofmeasurement.impl.util.SI;
  *
  * <p> The dimension associated to any given quantity are given by the
  *     OSGi published {@link PhysicsDimensionService} instances.
- *     For convenience, a static method {@link QuantityDimension#of(Class)
+ *     For convenience, a static method {@link QuantityDimension#getInstance(Class)
  *     aggregating the results of all {@link DimensionService} instances
  *     is provided.<br/><br/>
  *     <code>
@@ -101,13 +101,13 @@ public class QuantityDimension implements Dimension, Serializable {//, XMLSerial
 
     /**
      * Returns the dimension for the specified quantity type by aggregating
-     * the results of {@link PhysicsDimensionService} or <code>null</code>
+     * the results of {@link DimensionService} or <code>null</code>
      * if the specified quantity is unknown.
      *
      * @param quantityType the quantity type.
      * @return the dimension for the quantity type or <code>null</code>.
      */
-    public static <Q extends Quantity<Q>> QuantityDimension of(Class<Q> quantityType) {
+    public static final <Q extends Quantity<Q>> Dimension getInstance(Class<Q> quantityType) {
         // TODO: Track OSGi services and aggregate results.
         AbstractUnit<Q> siUnit = SI.getInstance().getUnit(quantityType);
         if (siUnit == null) logger.warning("Quantity type: " + quantityType + " unknown");
