@@ -37,7 +37,7 @@ import static org.unitsofmeasurement.impl.util.SIPrefix.*;
  * @author  <a href="mailto:eric-r@northwestern.edu">Eric Russell</a>
  * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @see <a href="http://www.unitsofmeasure.org">UCUM</a>
- * @version 2.3, $Date$
+ * @version 2.4, $Date$
  */
 public final class UCUM extends AbstractSystemOfUnits {
 
