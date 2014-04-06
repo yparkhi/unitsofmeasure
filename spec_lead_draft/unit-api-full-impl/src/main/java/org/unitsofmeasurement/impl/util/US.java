@@ -48,7 +48,7 @@ import javax.measure.util.SystemOfUnits;
  * 
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.16 ($Revision$), $Date$
+ * @version 1.17, $Date$
  * @see <a
  *      href="http://en.wikipedia.org/wiki/United_States_customary_units">Wikipedia:
  *      United State Customary Units</a>
@@ -294,7 +294,7 @@ public final class US extends AbstractSystemOfUnits {
 	 * A unit of data amount equal to <code>8 {@link SI#BIT}</code> (BinarY
 	 * TErm, standard name <code>byte</code>).
 	 */
-	public static final AbstractUnit<Information> BYTE = addUnit(BIT.multiply(8));
+	public static final Unit<Information> BYTE = addUnit(BIT.multiply(8));
 
 	/**
 	 * Equivalent {@link #BYTE}
@@ -408,7 +408,7 @@ public final class US extends AbstractSystemOfUnits {
      * @param type the quantity type.
      * @return <code>unit</code>.
      */
-    private static <U extends AbstractUnit<?>>  U addUnit(U unit, Class<? extends Quantity<?>> type) {
+    private static <U extends Unit<?>>  U addUnit(U unit, Class<? extends Quantity<?>> type) {
         INSTANCE.units.add(unit);
         return unit;
     }
@@ -422,8 +422,8 @@ public final class US extends AbstractSystemOfUnits {
 	 */
 	@SuppressWarnings("unchecked")
 	private static <U extends Unit<?>> U addUnit(U unit, String name) {
-		if (name != null && unit instanceof AbstractUnit) {
-			AbstractUnit<?> aUnit = (AbstractUnit<?>)unit;
+		if (name != null && unit instanceof Unit) {
+			Unit<?> aUnit = (Unit<?>)unit;
 			//aUnit.setName(name);
 			INSTANCE.units.add(aUnit);
 			return (U) aUnit;
