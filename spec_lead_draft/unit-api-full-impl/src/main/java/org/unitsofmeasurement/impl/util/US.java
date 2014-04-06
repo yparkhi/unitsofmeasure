@@ -23,7 +23,6 @@ import org.unitsofmeasurement.impl.ProductUnit;
 import org.unitsofmeasurement.impl.TransformedUnit;
 import org.unitsofmeasurement.impl.function.RationalConverter;
 
-import javax.measure.Quantity;
 import javax.measure.Unit;
 import javax.measure.quantity.Angle;
 import javax.measure.quantity.Area;
@@ -401,36 +400,36 @@ public final class US extends AbstractSystemOfUnits {
 
 	// private static final int INTERNATIONAL_FOOT_DIViSOR = 10000;
 
-    /**
-     * Adds a new unit and maps it to the specified quantity type.
-     *
-     * @param  unit the unit being added.
-     * @param type the quantity type.
-     * @return <code>unit</code>.
-     */
-    private static <U extends Unit<?>>  U addUnit(U unit, Class<? extends Quantity<?>> type) {
-        INSTANCE.units.add(unit);
-        return unit;
-    }
+//    /**
+//     * Adds a new unit and maps it to the specified quantity type.
+//     *
+//     * @param  unit the unit being added.
+//     * @param type the quantity type.
+//     * @return <code>unit</code>.
+//     */
+//    private static <U extends Unit<?>>  U addUnit(U unit, Class<? extends Quantity<?>> type) {
+//        INSTANCE.units.add(unit);
+//        return unit;
+//    }
     
-	/**
-	 * Adds a new named unit to the collection.
-	 * 
-	 * @param unit the unit being added.
-	 * @param name the name of the unit.
-	 * @return <code>unit</code>.
-	 */
-	@SuppressWarnings("unchecked")
-	private static <U extends Unit<?>> U addUnit(U unit, String name) {
-		if (name != null && unit instanceof Unit) {
-			Unit<?> aUnit = (Unit<?>)unit;
-			//aUnit.setName(name);
-			INSTANCE.units.add(aUnit);
-			return (U) aUnit;
-		}
-		INSTANCE.units.add(unit);
-		return unit;
-	}
+//	/**
+//	 * Adds a new named unit to the collection.
+//	 * 
+//	 * @param unit the unit being added.
+//	 * @param name the name of the unit.
+//	 * @return <code>unit</code>.
+//	 */
+//	@SuppressWarnings("unchecked")
+//	private static <U extends Unit<?>> U addUnit(U unit, String name) {
+//		if (name != null && unit instanceof Unit) {
+//			Unit<?> aUnit = (Unit<?>)unit;
+//			//aUnit.setName(name);
+//			INSTANCE.units.add(aUnit);
+//			return (U) aUnit;
+//		}
+//		INSTANCE.units.add(unit);
+//		return unit;
+//	}
 
 	/**
 	 * Adds a new unit to the collection.

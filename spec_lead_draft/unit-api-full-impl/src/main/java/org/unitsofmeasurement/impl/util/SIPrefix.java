@@ -19,7 +19,9 @@ import java.math.BigInteger;
 
 import javax.measure.Quantity;
 import javax.measure.Unit;
+import javax.measure.function.UnitConverter;
 
+import org.unitsofmeasurement.impl.function.ConverterSupplier;
 import org.unitsofmeasurement.impl.function.RationalConverter;
 
 /**
@@ -38,9 +40,9 @@ import org.unitsofmeasurement.impl.function.RationalConverter;
  * @see <a href="http://en.wikipedia.org/wiki/SI_prefix">Wikipedia: SI Prefix</a>
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 5.2, $Date$
+ * @version 5.3, $Date$
  */
-public enum SIPrefix {
+public enum SIPrefix implements ConverterSupplier {
 
     YOTTA(new RationalConverter(BigInteger.TEN.pow(24), BigInteger.ONE)),
     ZETTA(new RationalConverter(BigInteger.TEN.pow(21), BigInteger.ONE)),
@@ -63,7 +65,7 @@ public enum SIPrefix {
     ZEPTO(new RationalConverter( BigInteger.ONE, BigInteger.TEN.pow(21))),
     YOCTO(new RationalConverter( BigInteger.ONE, BigInteger.TEN.pow(24)));
 
-    private final RationalConverter _converter;
+    private final RationalConverter converter;
 
     /**
      * Creates a new prefix.
@@ -71,7 +73,7 @@ public enum SIPrefix {
      * @param converter the associated unit converter.
      */
     private SIPrefix (RationalConverter converter) {
-        _converter = converter;
+        this.converter = converter;
     }
 
     /**
@@ -79,8 +81,8 @@ public enum SIPrefix {
      *
      * @return the unit converter.
      */
-    public RationalConverter getConverter() {
-        return _converter;
+    public UnitConverter getConverter() {
+        return converter;
     }
 
     /**
