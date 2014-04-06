@@ -24,7 +24,7 @@ import javax.measure.function.UnitConverter;
  * <p> The base class for our {@link UnitConverter} physics implementations.</p>
  *
  * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 0.6, $Date$
+ * @version 0.7, $Date$
  */
 public abstract class AbstractConverter implements UnitConverter {
 	
@@ -102,12 +102,7 @@ public abstract class AbstractConverter implements UnitConverter {
      */
     private static final class Identity extends AbstractConverter {
 
-        /**
-		 * 
-		 */
-		private static final long serialVersionUID = -7766049239212237838L;
-
-		@Override
+        @Override
         public boolean isIdentity() {
             return true;
         }
@@ -151,11 +146,6 @@ public abstract class AbstractConverter implements UnitConverter {
     private static final class Compound extends AbstractConverter {
 
         /**
-		 * 
-		 */
-		private static final long serialVersionUID = -5358985230417381800L;
-
-		/**
          * Holds the first converter.
          */
         private UnitConverter left;
