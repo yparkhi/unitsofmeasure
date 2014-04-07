@@ -220,8 +220,8 @@ public abstract class AbstractUnit<Q extends Quantity<Q>> implements Unit<Q>, Se
     public final boolean isCompatible(Unit<?> that) {
         if ((this == that) || this.equals(that)) return true;
         if (!(that instanceof AbstractUnit)) return false;
-        QuantityDimension thisDimension = this.getDimension();
-        QuantityDimension thatDimension = ((AbstractUnit)that).getDimension();
+        Dimension thisDimension = this.getDimension();
+        Dimension thatDimension = that.getDimension();
         if (thisDimension.equals(thatDimension)) return true;
         DimensionalModel model = DimensionalModel.getCurrent(); // Use dimensional analysis model.
         return model.getFundamentalDimension(thisDimension).equals(model.getFundamentalDimension(thatDimension));
@@ -250,7 +250,7 @@ public abstract class AbstractUnit<Q extends Quantity<Q>> implements Unit<Q>, Se
     public abstract Map<? extends AbstractUnit<?>, Integer> getProductUnits();
 
     @Override
-    public abstract QuantityDimension getDimension();
+    public abstract Dimension getDimension();
 
 	protected void setName(String name) {
 		this.name = name;

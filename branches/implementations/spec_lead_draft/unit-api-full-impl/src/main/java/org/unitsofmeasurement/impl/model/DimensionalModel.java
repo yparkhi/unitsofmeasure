@@ -19,6 +19,8 @@ import java.lang.ref.Reference;
 import java.lang.ref.SoftReference;
 import java.util.Map;
 
+import javax.measure.Dimension;
+
 import org.unitsofmeasurement.impl.function.AbstractConverter;
 
 /**
@@ -61,7 +63,7 @@ import org.unitsofmeasurement.impl.function.AbstractConverter;
  * @see <a href="http://en.wikipedia.org/wiki/Dimensional_analysis">Wikipedia: Dimensional Analysis</a>
  * @author  <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 5.1, December 26, 2013
+ * @version 5.2, $Date$
  */
 public abstract class DimensionalModel {
 
@@ -108,12 +110,12 @@ public abstract class DimensionalModel {
      * @param dimension the dimension for which the fundamental dimension is returned.
      * @return <code>this</code> or a rational product of fundamental dimension.
      */
-    public QuantityDimension getFundamentalDimension(QuantityDimension dimension) {
-        Map<? extends QuantityDimension, Integer> dimensions = dimension.getProductDimensions();
+    public Dimension getFundamentalDimension(Dimension dimension) {
+        Map<? extends Dimension, Integer> dimensions = dimension.getProductDimensions();
         if (dimensions == null) return dimension; // Fundamental dimension.
         // Dimensional Product.
-        QuantityDimension fundamentalProduct = QuantityDimension.NONE;
-        for (Map.Entry<? extends QuantityDimension, Integer> e : dimensions.entrySet()) {
+        Dimension fundamentalProduct = QuantityDimension.NONE;
+        for (Map.Entry<? extends Dimension, Integer> e : dimensions.entrySet()) {
              fundamentalProduct = fundamentalProduct.multiply(this.getFundamentalDimension(e.getKey())).pow(e.getValue());
         }
         return fundamentalProduct;
@@ -130,12 +132,12 @@ public abstract class DimensionalModel {
      * @param dimension the dimension for which the dimensional transform is returned.
      * @return the dimensional transform (identity for fundamental dimensions).
      */
-    public AbstractConverter getDimensionalTransform(QuantityDimension dimension) {
-        Map<? extends QuantityDimension, Integer> dimensions = dimension.getProductDimensions();
+    public AbstractConverter getDimensionalTransform(Dimension dimension) {
+        Map<? extends Dimension, Integer> dimensions = dimension.getProductDimensions();
         if (dimensions == null) return AbstractConverter.IDENTITY; // Fundamental dimension.
         // Dimensional Product.
         AbstractConverter toFundamental = AbstractConverter.IDENTITY;
-        for (Map.Entry<? extends QuantityDimension, Integer> e : dimensions.entrySet()) {
+        for (Map.Entry<? extends Dimension, Integer> e : dimensions.entrySet()) {
             AbstractConverter cvtr = this.getDimensionalTransform(e.getKey());
             if (!(cvtr.isLinear()))
                 throw new UnsupportedOperationException("Non-linear dimensional transform");
@@ -150,5 +152,4 @@ public abstract class DimensionalModel {
         }
         return toFundamental;
     }
-
 }

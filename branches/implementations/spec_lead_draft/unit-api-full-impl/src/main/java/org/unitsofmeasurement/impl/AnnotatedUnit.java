@@ -17,6 +17,7 @@ package org.unitsofmeasurement.impl;
 
 import java.util.Map;
 
+import javax.measure.Dimension;
 import javax.measure.Quantity;
 import javax.measure.function.UnitConverter;
 
@@ -93,7 +94,7 @@ public final class AnnotatedUnit<Q extends Quantity<Q>> extends AbstractUnit<Q> 
     }
 
     @Override
-    public QuantityDimension getDimension() {
+    public Dimension getDimension() {
         return actualUnit.getDimension();
     }
 

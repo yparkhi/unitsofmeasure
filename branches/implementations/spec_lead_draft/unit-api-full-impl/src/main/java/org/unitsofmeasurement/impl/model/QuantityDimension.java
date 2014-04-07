@@ -44,7 +44,7 @@ import org.unitsofmeasurement.impl.util.SI;
  *
  * @author  <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 5.2, December 26, 2013
+ * @version 5.3, $Date$
  */
 public class QuantityDimension implements Dimension, Serializable {//, XMLSerializable {
 	private static final Logger logger = Logger.getLogger(Dimension.class.getName());
@@ -57,42 +57,42 @@ public class QuantityDimension implements Dimension, Serializable {//, XMLSerial
 	/**
      * Holds dimensionless.
      */
-    public static final QuantityDimension NONE = new QuantityDimension(SI.ONE);
+    public static final Dimension NONE = new QuantityDimension(SI.ONE);
 
     /**
      * Holds length dimension (L).
      */
-    public static final QuantityDimension LENGTH = new QuantityDimension('L');
+    public static final Dimension LENGTH = new QuantityDimension('L');
 
     /**
      * Holds mass dimension (M).
      */
-    public static final QuantityDimension MASS = new QuantityDimension('M');
+    public static final Dimension MASS = new QuantityDimension('M');
 
     /**
      * Holds time dimension (T).
      */
-    public static final QuantityDimension TIME = new QuantityDimension('T');
+    public static final Dimension TIME = new QuantityDimension('T');
 
     /**
      * Holds electric current dimension (I).
      */
-    public static final QuantityDimension ELECTRIC_CURRENT = new QuantityDimension('I');
+    public static final Dimension ELECTRIC_CURRENT = new QuantityDimension('I');
 
     /**
      * Holds temperature dimension (Θ).
      */
-    public static final QuantityDimension TEMPERATURE = new QuantityDimension('Θ');
+    public static final Dimension TEMPERATURE = new QuantityDimension('Θ');
 
     /**
      * Holds amount of substance dimension (N).
      */
-    public static final QuantityDimension AMOUNT_OF_SUBSTANCE = new QuantityDimension('N');
+    public static final Dimension AMOUNT_OF_SUBSTANCE = new QuantityDimension('N');
 
     /**
      * Holds luminous intensity dimension (J).
      */
-    public static final QuantityDimension LUMINOUS_INTENSITY = new QuantityDimension('J');
+    public static final Dimension LUMINOUS_INTENSITY = new QuantityDimension('J');
 
     /**
      * Holds the pseudo unit associated to this dimension.
