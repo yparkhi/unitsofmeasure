@@ -25,11 +25,17 @@ import java.math.MathContext;
  *     using the {@link PiMultiplierConverter#inverse()} method.</p>
  *
  * @author  <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
- * @version 5.0, October 12, 2010
+ * @version 5.1, October 12, 2010
  */
 final class PiDivisorConverter extends AbstractConverter { //implements Immutable<String> {
 	
-    /**
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5052794216568914141L;
+
+	/**
      * Creates a Pi multiplier converter.
      */
     public PiDivisorConverter() {

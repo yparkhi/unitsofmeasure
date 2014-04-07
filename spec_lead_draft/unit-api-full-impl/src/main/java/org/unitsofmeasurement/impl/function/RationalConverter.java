@@ -34,6 +34,11 @@ import javax.measure.function.UnitConverter;
 public final class RationalConverter extends AbstractConverter { //implements Immutable<Double> {
 
     /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/**
      * Holds the converter dividend.
      */
     private final BigInteger dividend;
