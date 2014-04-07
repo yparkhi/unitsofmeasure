@@ -17,6 +17,7 @@ package org.unitsofmeasurement.impl;
 
 import java.util.Map;
 
+import javax.measure.Dimension;
 import javax.measure.Quantity;
 import javax.measure.function.UnitConverter;
 
@@ -54,14 +55,14 @@ public class BaseUnit<Q extends Quantity<Q>> extends AbstractUnit<Q> {
     /**
      * Holds the base unit dimension.
      */
-    private final QuantityDimension dimension;
+    private final Dimension dimension;
 
     /**
      * Creates a base unit having the specified symbol and dimension.
      *
      * @param symbol the symbol of this base unit.
      */
-    public BaseUnit(String symbol, QuantityDimension dimension) {
+    public BaseUnit(String symbol, Dimension dimension) {
         this.symbol = symbol;
         this.dimension = dimension;
     }
@@ -105,7 +106,7 @@ public class BaseUnit<Q extends Quantity<Q>> extends AbstractUnit<Q> {
     }
 
     @Override
-    public QuantityDimension getDimension() {
+    public Dimension getDimension() {
         return dimension;
     }
 

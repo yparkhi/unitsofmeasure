@@ -20,6 +20,7 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.measure.Dimension;
 import javax.measure.Quantity;
 import javax.measure.Unit;
 import javax.measure.function.UnitConverter;
@@ -317,12 +318,12 @@ public final class ProductUnit<Q extends Quantity<Q>> extends AbstractUnit<Q> {
     }
 
     @Override
-    public QuantityDimension getDimension() {
-    	QuantityDimension dimension = QuantityDimension.NONE;
+    public Dimension getDimension() {
+    	Dimension dimension = QuantityDimension.NONE;
         for (int i = 0; i < this.getUnitCount(); i++) {
             AbstractUnit<?> unit = this.getUnit(i);
             if (this.elements != null && unit.getDimension() != null) {
-            	QuantityDimension d = unit.getDimension().pow(this.getUnitPow(i)).root(this.getUnitRoot(i));
+            	Dimension d = unit.getDimension().pow(this.getUnitPow(i)).root(this.getUnitRoot(i));
             	dimension = dimension.multiply(d);
             }
         }
