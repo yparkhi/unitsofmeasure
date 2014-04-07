@@ -47,10 +47,9 @@ import org.unitsofmeasurement.impl.util.SI;
  * @author  <a href="mailto:desruisseaux@users.sourceforge.net">Martin Desruisseaux</a>
  * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @author  <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
- * @version 5.2 ($Revision: 213 $), $Date$
+ * @version 5.3 ($Revision$), $Date$
  */
 public abstract class QuantityFactory<Q extends Quantity<Q>> implements BiFactory<Number, Unit<Q>, Q> {
-// TODO BiFunction for SE 8, may need to factor back for ME but keep method signature
 	
     /**
      * Holds the current instances.

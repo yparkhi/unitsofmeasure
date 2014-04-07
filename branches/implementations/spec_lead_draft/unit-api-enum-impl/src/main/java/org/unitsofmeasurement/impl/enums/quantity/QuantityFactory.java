@@ -158,7 +158,7 @@ public abstract class QuantityFactory<Q extends Quantity<Q>>
 	 *            the unit
 	 * @return the corresponding quantity
 	 */
-	public abstract Q apply(Number value, Unit<Q> unit);
+	public abstract Q create(Number value, Unit<Q> unit);
 
 	/**
 	 * Returns the metric unit for quantities produced by this factory or
@@ -215,7 +215,7 @@ public abstract class QuantityFactory<Q extends Quantity<Q>>
 
 		@Override
 		@SuppressWarnings("unchecked")
-		public Q apply(final Number value, final Unit<Q> unit) {
+		public Q create(final Number value, final Unit<Q> unit) {
 //			return (Q) Proxy
 //					.newProxyInstance(type.getClassLoader(),
 //							new Class<?>[] { type }, new GenericHandler<Q>(
