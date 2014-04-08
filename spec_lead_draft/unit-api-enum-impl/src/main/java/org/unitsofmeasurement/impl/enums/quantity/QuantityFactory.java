@@ -35,10 +35,10 @@ import org.unitsofmeasurement.impl.enums.unit.*;
  * A factory producing simple quantities instances (tuples {@link Number}/
  * {@link Unit}).
  * 
- * For example:[code] Mass m =
- * QuantityFactory.getInstance(Mass.class).create(23.0, KILOGRAM); // 23.0 kg
+ * For example:<br>
+ * <code>Mass m = QuantityFactory.getInstance(Mass.class).create(23.0, KILOGRAM); // 23.0 kg<br>
  * Time m = QuantityFactory.getInstance(Time.class).create(124, MILLI(SECOND));
- * // 124 ms [/code]
+ * // 124 ms </code>
  * 
  * @param <Q>
  *            The type of the quantity.
@@ -214,7 +214,6 @@ public abstract class QuantityFactory<Q extends Quantity<Q>>
 		}
 
 		@Override
-		@SuppressWarnings("unchecked")
 		public Q create(final Number value, final Unit<Q> unit) {
 //			return (Q) Proxy
 //					.newProxyInstance(type.getClassLoader(),
@@ -228,64 +227,4 @@ public abstract class QuantityFactory<Q extends Quantity<Q>>
 			return metricUnit;
 		}
 	}
-
-	/**
-	 * The method invocation handler for implementation backed by any kind of
-	 * {@link Number}. This is a fall back used when no specialized handler is
-	 * available for the number type.
-	 */
-/*	private static final class GenericHandler<Q extends Quantity<Q>>
-	  //implements InvocationHandler 
-			{
-		final Unit<Q> unit;
-		final Number value;
-
-		GenericHandler(final Number value, final Unit<Q> unit) {
-			this.unit = unit;
-			this.value = value;
-		}
-
-		@SuppressWarnings({ "unchecked", "rawtypes" })
-		public Object invoke(final Object proxy, final Nameable method,
-				final Object[] args) {
-			final String name = method.getName();
-			if (name.equals("doubleValue")) { // Most frequent.
-				final Unit<Q> toUnit = (Unit<Q>) args[0];
-				if ((toUnit == unit) || (toUnit.equals(unit)))
-					return value.doubleValue(); // Returns value directly.
-			   return unit.getConverterTo(toUnit).convert(value.doubleValue());
-			} else if (name.equals("longValue")) {
-				final Unit<Q> toUnit = (Unit<Q>) args[0];
-				if ((toUnit == unit) || (toUnit.equals(unit)))
-					return value.longValue(); // Returns value directly.
-				double doubleValue = unit.getConverterTo(toUnit).convert(
-						value.doubleValue());
-				if ((doubleValue < Long.MIN_VALUE)
-						|| (doubleValue > Long.MAX_VALUE))
-					throw new ArithmeticException("Overflow: " + doubleValue
-							+ " cannot be represented as a long");
-				return (long) doubleValue;
-			} else if (name.equals("getValue")) {
-				return value;
-			} else if (name.equals("getUnit")) {
-				return unit;
-			} else if (name.equals("toString")) {
-				final StringBuilder buffer = new StringBuilder();
-			   return buffer.append(value).append(' ').append(unit).toString();
-			} else if (name.equals("hashCode")) {
-				return value.hashCode() * 31 + unit.hashCode();
-			} else if (name.equals("equals")) {
-				final Object obj = args[0];
-				if (!(obj instanceof Quantity))
-					return false;
-				final Quantity that = (Quantity) obj;
-				return equals(that);
-			} else if (name.equals("compareTo")) {
-				final Quantity that = (Quantity) args[0];
-				return equals(that);
-			} else {
-				throw new UnsupportedOperationException(name);
-			}
-		}
-	}*/
 }
