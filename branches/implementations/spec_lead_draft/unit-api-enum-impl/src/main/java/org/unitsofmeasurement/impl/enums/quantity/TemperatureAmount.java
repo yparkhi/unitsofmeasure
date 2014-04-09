@@ -170,7 +170,7 @@ public final class TemperatureAmount extends AbstractQuantity<Temperature>
 	}
 
 	@Override
-	public Measurement<Temperature, Number> inverse() {
+	public Quantity<Temperature> inverse() {
 		// TODO Auto-generated method stub
 		return null;
 	}
