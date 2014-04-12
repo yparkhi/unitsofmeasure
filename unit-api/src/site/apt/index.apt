@@ -11,7 +11,17 @@
                     -----------------------------------------------------
 
 
-The Units of Measurement API for Java
+News
+
+  The Java Community Process (JCP) accepted a new Java Specification Request, namely
+  {{{https://jcp.org/en/jsr/detail?id=363}JSR-363}}, for a Units of Measurement API.
+  If successful, JSR-363 would replace this project.
+
+  The remaining of this page is specific to the <<<org.unitsofmeasurement>>> project,
+  defined prior JSR-363.
+
+
+* The Units of Measurement API for Java
 
   Copyright (c) 2005-2014, Unit-API contributors, JScience and others.\
   All rights reserved. See {{{./license.html}license}} for details.
@@ -21,7 +31,7 @@ The Units of Measurement API for Java
   that would call the API, from library code, which implements the API. Various groups have
   implemented the API, see the {{{./implementations.html}list of known implementations}} for details.
 
-* The project
+** The project
 
   The project is {{{http://unitsofmeasure.googlecode.com/}hosted on Google Code}}. It runs a public
   {{{./mail-lists.html}mailing list}} for user and developer questions, other issues, and general
@@ -32,10 +42,10 @@ The Units of Measurement API for Java
   code and derivative files. See the {{{./license.html}license}} page for details.
 
 
-* Links
+** Links
 
-	* {{{https://jcp.org/en/jsr/detail?id=363}JSR-363 New Units of Measurement Proposal}}    
-	
+    * {{{https://jcp.org/en/jsr/detail?id=363}JSR-363 New Units of Measurement Proposal}}
+
     * {{{./apidocs/index.html}Browse javadoc}}
 
     * {{{http://jenkins.geotoolkit.org/job/Unit-API/}Nightly builds}}
@@ -47,9 +57,9 @@ The Units of Measurement API for Java
     * {{{./legacy/JSR-275.odt}Legacy JSR-275 specification draft}} (LibreOffice/OpenOffice.org document)
 
 
-* UCUM
+** UCUM
 
-** What is it?
+*** What is it?
 
   The Unified Code for Units of Measure is a code system intended to include all units of measures
   being contemporarily used in international science, engineering, and business. The purpose is to
@@ -58,7 +68,7 @@ The Units of Measurement API for Java
   of The Unified Code for Units of Measure are electronic data interchange (EDI) protocols, but there
   is nothing that prevents it from being used in other types of machine communication.
 
-** How does it relate?
+*** How does it relate?
 
   The Unified Code for Units of Measure is inspired by and heavily based on ISO 2955-1983, ANSI X3.50-1986,
   and HL7's extensions called "ISO+". The respective ISO and ANSI standards are both entitled Representation
