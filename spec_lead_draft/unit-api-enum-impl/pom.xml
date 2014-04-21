@@ -5,7 +5,7 @@
 	<artifactId>unit-api-enum-impl</artifactId>
 	<version>0.5-SNAPSHOT</version>
 	<packaging>bundle</packaging>
-	<name>Units of Measurement API Enum Implementation</name>
+	<name>Units of Measurement Enum Implementation</name>
 	<organization>
 		<name>Units of Measurement project</name>
 		<url>http://code.google.com/p/unitsofmeasure/</url>
