@@ -6,7 +6,7 @@
 	<version>0.5-SNAPSHOT</version>
 
 	<packaging>bundle</packaging>
-	<name>Units of Measurement API Implementation</name>
+	<name>Units of Measurement Full Implementation</name>
 	<url>http://code.google.com/p/unitsofmeasure/</url>
 	<organization>
 		<name>Units of Measurement project</name>
