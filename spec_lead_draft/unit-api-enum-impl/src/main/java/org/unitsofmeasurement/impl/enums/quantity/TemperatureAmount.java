@@ -28,7 +28,7 @@ import javax.measure.quantity.Temperature;
 
 /**
  * @author Werner Keil
- * @version 0.5, $Date: 2014-06-09 $
+ * @version 0.6, $Date: 2014-06-10 $
  */
 public final class TemperatureAmount extends AbstractQuantity<Temperature> 
   implements Temperature {
@@ -213,6 +213,12 @@ public final class TemperatureAmount extends AbstractQuantity<Temperature>
 
 	@Override
 	public Measurement<Temperature, Number> divide(Number that) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Measurement<?, Number> multiply(Measurement<?, Number> that) {
 		// TODO Auto-generated method stub
 		return null;
 	}
