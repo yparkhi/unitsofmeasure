@@ -28,7 +28,7 @@ import javax.measure.quantity.Temperature;
 
 /**
  * @author Werner Keil
- * @version 1.5, $Date: 2014-01-23 15:03:08 +0100 (Do, 23 Jän 2014) $
+ * @version 0.5, $Date: 2014-06-09 $
  */
 public final class TemperatureAmount extends AbstractQuantity<Temperature> 
   implements Temperature {
@@ -152,22 +152,11 @@ public final class TemperatureAmount extends AbstractQuantity<Temperature>
 	}
 
 	@Override
-	public Measurement<?, Number> multiply(Measurement<?, Number> that) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Measurement<?, Number> multiply(Number that) {
+	public Quantity<Temperature> multiply(Number that) {
 		return new TemperatureAmount(value.doubleValue() * 
                         that.doubleValue(), unit);
 	}
 
-	@Override
-	public Measurement<?, Number> divide(Measurement<?, Number> that) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@Override
 	public Quantity<Temperature> inverse() {
@@ -217,7 +206,14 @@ public final class TemperatureAmount extends AbstractQuantity<Temperature>
 	}
 
 	@Override
-	public Measurement<?, Number> divide(Number that) {
-		return divide((Double)that);
+	public Quantity<?> divide(Quantity<?> that) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Measurement<Temperature, Number> divide(Number that) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

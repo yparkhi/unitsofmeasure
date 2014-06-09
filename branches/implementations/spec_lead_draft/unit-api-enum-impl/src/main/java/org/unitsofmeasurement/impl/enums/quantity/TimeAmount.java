@@ -28,7 +28,7 @@ import javax.measure.quantity.Time;
 
 /**
  * @author Werner Keil
- * @version 1.4.1, $Date$
+ * @version 0.4.1, $Date$
  */
 public class TimeAmount extends AbstractQuantity<Time> implements Time {
    private final double scalar; // value in reference unit
@@ -142,26 +142,8 @@ public class TimeAmount extends AbstractQuantity<Time> implements Time {
 	}
 
 	@Override
-	public Measurement<?, Number> multiply(Measurement<?, Number> that) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Measurement<?, Number> multiply(Number that) {
+	public Quantity<Time> multiply(Number that) {
 		return new TimeAmount(value.doubleValue() * that.doubleValue(), unit);
-	}
-
-	@Override
-	public Measurement<?, Number> divide(Measurement<?, Number> that) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Measurement<Time, Number> inverse() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 	@Override
@@ -179,7 +161,19 @@ public class TimeAmount extends AbstractQuantity<Time> implements Time {
 	}
 
 	@Override
-	public Measurement<?, Number> divide(Number that) {
+	public Quantity<?> divide(Quantity<?> that) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Measurement<Time, Number> divide(Number that) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Measurement<Time, Number> inverse() {
 		// TODO Auto-generated method stub
 		return null;
 	}
