@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.unitsofmeasurement.impl</groupId>
 	<artifactId>unit-api-enum-impl</artifactId>
-	<version>0.5-SNAPSHOT</version>
+	<version>0.6-SNAPSHOT</version>
 	<packaging>bundle</packaging>
 	<name>Units of Measurement Enum Implementation</name>
 	<organization>
@@ -25,11 +25,11 @@ Lightweight approach based on Java enums.</description>
 	<!-- ======================================================= -->
 	<properties>
 		<sourceEncoding>UTF-8</sourceEncoding> <!-- in Maven 3. -->
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.build.sourceEncoding>${sourceEncoding}</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>${sourceEncoding}</project.reporting.outputEncoding>
-		<project.build.javaVersion>1.8</project.build.javaVersion>
-		<jsr.version>0.5-SNAPSHOT</jsr.version>
-		<jdkVersion>1.8</jdkVersion>
+		<jdkVersion>1.6</jdkVersion>
+		<project.build.javaVersion>${jdkVersion}</project.build.javaVersion>
+		<jsr.version>0.6-SNAPSHOT</jsr.version>
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
 	</properties>
@@ -45,15 +45,7 @@ Lightweight approach based on Java enums.</description>
 	<dependencies>
 		<dependency>
 			<groupId>javax.measure</groupId>
-			<artifactId>unit-api-core</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>javax.measure</groupId>
-			<artifactId>unit-api-format</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>javax.measure</groupId>
-			<artifactId>unit-api-quantity</artifactId>
+			<artifactId>unit-api</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.hamcrest</groupId>
@@ -82,17 +74,7 @@ Lightweight approach based on Java enums.</description>
 			</dependency>
 			<dependency>
 				<groupId>javax.measure</groupId>
-				<artifactId>unit-api-core</artifactId>
-				<version>${jsr.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>javax.measure</groupId>
-				<artifactId>unit-api-format</artifactId>
-				<version>${jsr.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>javax.measure</groupId>
-				<artifactId>unit-api-quantity</artifactId>
+				<artifactId>unit-api</artifactId>
 				<version>${jsr.version}</version>
 			</dependency>
 		</dependencies>
@@ -107,8 +89,8 @@ Lightweight approach based on Java enums.</description>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.1</version>
 				<configuration>
-					<source>${project.build.javaVersion}</source>
-					<target>${project.build.javaVersion}</target>
+					<source>${maven.compile.sourceLevel}</source>
+					<target>${maven.compile.targetLevel}</target>
 					<encoding>${project.build.sourceEncoding}</encoding>
 				</configuration>
 			</plugin>

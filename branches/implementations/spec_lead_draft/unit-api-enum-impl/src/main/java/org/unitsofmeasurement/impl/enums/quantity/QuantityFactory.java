@@ -57,7 +57,7 @@ public abstract class QuantityFactory<Q extends Quantity<Q>>
 	 */
 	@SuppressWarnings("rawtypes")
 	private static final Map<Class, QuantityFactory> INSTANCES = 
-		new HashMap<>();
+		new HashMap<Class, QuantityFactory>(); // XXX could use Diamond
 
 	private static final Logger logger = Logger.getLogger(QuantityFactory.class
 			.getName());
@@ -203,7 +203,7 @@ public abstract class QuantityFactory<Q extends Quantity<Q>>
 		}
 
 		@SuppressWarnings("rawtypes")
-		static final Map<Class, Unit> CLASS_TO_METRIC_UNIT = new HashMap<>();
+		static final Map<Class, Unit> CLASS_TO_METRIC_UNIT = new HashMap<Class, Unit>(); // XXX could use Diamond
 		static {
 			CLASS_TO_METRIC_UNIT.put(Dimensionless.class, DimensionlessUnit.ONE);
 			CLASS_TO_METRIC_UNIT.put(Length.class, DistanceUnit.METRE);
