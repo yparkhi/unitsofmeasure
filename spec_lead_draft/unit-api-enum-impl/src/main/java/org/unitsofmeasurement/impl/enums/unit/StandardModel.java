@@ -48,7 +48,7 @@ class StandardModel extends DimensionalModel {
 
     @SuppressWarnings("rawtypes")
 	protected final Map<Class<? extends Quantity>, Unit>
-            quantityToUnit = new HashMap<>(); // Diamond (Java 7+)
+            quantityToUnit = new HashMap<Class<? extends Quantity>, Unit>(); // Diamond (Java 7+)
     
     @SuppressWarnings("unchecked")
     public <Q extends Quantity<Q>> Unit<Q> getUnit(Class<Q> quantityType) {
