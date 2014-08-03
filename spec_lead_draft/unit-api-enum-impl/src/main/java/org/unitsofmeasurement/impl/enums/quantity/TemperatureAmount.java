@@ -147,8 +147,7 @@ public final class TemperatureAmount extends AbstractQuantity<Temperature>
 	@Override
 	public Measurement<Temperature, Number> substract(
                 Measurement<Temperature, Number> that) {
-		// TODO Auto-generated method stub
-		return null;
+		return subtract((TemperatureAmount) that);
 	}
 
 	@Override
