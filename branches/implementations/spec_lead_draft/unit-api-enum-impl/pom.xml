@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.unitsofmeasurement.impl</groupId>
 	<artifactId>unit-api-enum-impl</artifactId>
-	<version>0.6-SNAPSHOT</version>
+	<version>0.6</version>
 	<packaging>bundle</packaging>
 	<name>Units of Measurement Enum Implementation</name>
 	<organization>
@@ -29,7 +29,7 @@ Lightweight approach based on Java enums.</description>
 		<project.reporting.outputEncoding>${sourceEncoding}</project.reporting.outputEncoding>
 		<jdkVersion>1.6</jdkVersion>
 		<project.build.javaVersion>${jdkVersion}</project.build.javaVersion>
-		<jsr.version>0.6-SNAPSHOT</jsr.version>
+		<jsr.version>0.6</jsr.version>
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
 	</properties>
