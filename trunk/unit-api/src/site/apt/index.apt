@@ -17,6 +17,12 @@ News
   {{{https://jcp.org/en/jsr/detail?id=363}JSR-363}}, for a Units of Measurement API.
   If successful, JSR-363 would replace this project.
 
+    * {{{https://jcp.org/en/jsr/detail?id=363}JSR-363 New Units of Measurement Proposal}}
+
+    * {{{./jsr-363/index.html}Maven web site for JSR-363}}
+
+    * {{{./jsr-363/apidocs/index.html}JSR-363 Javadoc}}
+
   The remaining of this page is specific to the <<<org.unitsofmeasurement>>> project,
   defined prior JSR-363.
 
@@ -43,8 +49,6 @@ News
 
 
 ** Links
-
-    * {{{https://jcp.org/en/jsr/detail?id=363}JSR-363 New Units of Measurement Proposal}}
 
     * {{{./apidocs/index.html}Browse javadoc}}
 
