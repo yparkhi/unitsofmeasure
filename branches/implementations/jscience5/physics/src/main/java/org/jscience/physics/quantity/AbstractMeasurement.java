@@ -319,7 +319,7 @@ public abstract class AbstractMeasurement<Q extends Quantity<Q>> implements Meas
      * <code>ClassCastException</code> if the dimension of the specified
      * quantity and this measure unit's dimension do not match. For
      * example:[code]
-     *     Measure<Length> length = Measure.valueOf("2 km").asType(Length.class);
+     *     Measurement<Length> length = AbstractMeasurement.of("2 km").asType(Length.class);
      * [/code]
      *
      * @param type the quantity class identifying the nature of the measure.
@@ -334,7 +334,7 @@ public abstract class AbstractMeasurement<Q extends Quantity<Q>> implements Meas
     @SuppressWarnings("unchecked")
     public final <T extends Quantity<T>> AbstractMeasurement<T> asType(Class<T> type)
             throws ClassCastException {
-        this.getUnit().asType(type); // Raises ClassCastException is dimension
+        this.getUnit().asType(type); // Raises ClassCastException if dimension
         // mismatches.
         return (AbstractMeasurement<T>) this;
     }
