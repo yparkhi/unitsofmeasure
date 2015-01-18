@@ -19,12 +19,15 @@ public class UnitDemo {
 		
 		System.out.println(UCUM.POUND);
 		System.out.println(UCUM.POUND.getSymbol());
+		System.out.println(UCUM.POUND.getName());
 		
 		System.out.println(SI.KILOGRAM);
 		System.out.println(SI.KILOGRAM.getSymbol());
+		System.out.println(SI.KILOGRAM.getName());
 		
 		System.out.println(SI.GRAM);
 		System.out.println(SI.GRAM.getSymbol());
+		System.out.println(SI.GRAM.getName());
 	}
 
 }
